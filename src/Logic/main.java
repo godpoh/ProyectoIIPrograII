@@ -4,6 +4,9 @@
  */
 package Logic;
 
+import Presentation.Log_In;
+
+
 /**
  *
  * @author Admin
@@ -14,7 +17,9 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Log_In Log_Window = new Log_In();
+        Log_Window.setVisible(true);
+        
     }
     
 }

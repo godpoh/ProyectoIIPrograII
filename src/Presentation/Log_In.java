@@ -103,8 +103,7 @@ public class Log_In extends javax.swing.JFrame {
         Pnl_Principal.add(lblImagenExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
 
         lblImagen.setForeground(new java.awt.Color(204, 204, 204));
-        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pxfuel.jpg"))); // NOI18N
-        Pnl_Principal.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 579, 419));
+        Pnl_Principal.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 419));
 
         getContentPane().add(Pnl_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
