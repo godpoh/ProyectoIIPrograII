@@ -4,12 +4,6 @@
  */
 package Presentation;
 
-import Data.Connection_SQL;
-import java.security.Principal;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author user
@@ -20,6 +14,11 @@ public class Principal_Panel extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         Btn_Creacion_Usuario.setVisible(false);
+
+        setPreferredSize(new java.awt.Dimension(720, 720));
+
+        // Llama a pack para ajustar el tamaño de la ventana según el contenido
+        pack();
 
         if ("Admin".equalsIgnoreCase(Role)) {
             Show_Admin_Panels();
@@ -111,8 +110,9 @@ public class Principal_Panel extends javax.swing.JFrame {
 
         getContentPane().add(Pnl_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 720));
 
-        Pnl_Titulo.setBackground(new java.awt.Color(245, 245, 245));
+        Pnl_Titulo.setBackground(new java.awt.Color(245, 215, 215));
         Pnl_Titulo.setPreferredSize(new java.awt.Dimension(760, 50));
+        Pnl_Titulo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Btn_Creacion_Usuario.setBackground(new java.awt.Color(255, 111, 97));
         Btn_Creacion_Usuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -124,6 +124,7 @@ public class Principal_Panel extends javax.swing.JFrame {
                 Btn_Creacion_UsuarioActionPerformed(evt);
             }
         });
+        Pnl_Titulo.add(Btn_Creacion_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 131, 29));
 
         Btn_Cerrar_Sesion.setBackground(new java.awt.Color(255, 111, 97));
         Btn_Cerrar_Sesion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -135,26 +136,7 @@ public class Principal_Panel extends javax.swing.JFrame {
                 Btn_Cerrar_SesionActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout Pnl_TituloLayout = new javax.swing.GroupLayout(Pnl_Titulo);
-        Pnl_Titulo.setLayout(Pnl_TituloLayout);
-        Pnl_TituloLayout.setHorizontalGroup(
-            Pnl_TituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pnl_TituloLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Btn_Creacion_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, Short.MAX_VALUE)
-                .addComponent(Btn_Cerrar_Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        Pnl_TituloLayout.setVerticalGroup(
-            Pnl_TituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pnl_TituloLayout.createSequentialGroup()
-                .addGroup(Pnl_TituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Btn_Creacion_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Btn_Cerrar_Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        Pnl_Titulo.add(Btn_Cerrar_Sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 0, 131, 29));
 
         getContentPane().add(Pnl_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 820, 30));
 
@@ -165,16 +147,14 @@ public class Principal_Panel extends javax.swing.JFrame {
         Pnl_Contenedor.setLayout(Pnl_ContenedorLayout);
         Pnl_ContenedorLayout.setHorizontalGroup(
             Pnl_ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         Pnl_ContenedorLayout.setVerticalGroup(
             Pnl_ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pnl_ContenedorLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 112, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        getContentPane().add(Pnl_Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 820, 690));
+        getContentPane().add(Pnl_Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 820, 680));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -252,7 +232,7 @@ public class Principal_Panel extends javax.swing.JFrame {
     private void Btn_Cerrar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cerrar_SesionActionPerformed
         this.dispose();
 
-        Log_In Login_Window = new Log_In();  
+        Log_In Login_Window = new Log_In();
         Login_Window.setVisible(true);
     }//GEN-LAST:event_Btn_Cerrar_SesionActionPerformed
 

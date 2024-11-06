@@ -33,21 +33,22 @@ public class Log_In extends javax.swing.JFrame {
         btnIngresar = new javax.swing.JButton();
         txtContrasena = new javax.swing.JPasswordField();
         lblImagenExit = new javax.swing.JLabel();
-        lblImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Pnl_Principal.setBackground(new java.awt.Color(250, 235, 215));
         Pnl_Principal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblIniciarSesion.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblIniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion.setForeground(new java.awt.Color(51, 51, 51));
         lblIniciarSesion.setText("INICIAR SESION");
         Pnl_Principal.add(lblIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 170, 40));
 
+        lblUsuario.setBackground(new java.awt.Color(51, 51, 51));
         lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        lblUsuario.setForeground(new java.awt.Color(51, 51, 51));
         lblUsuario.setText("CEDÚLA");
         Pnl_Principal.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
 
@@ -66,13 +67,15 @@ public class Log_In extends javax.swing.JFrame {
         });
         Pnl_Principal.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 350, 40));
 
+        lblContrasena.setBackground(new java.awt.Color(51, 51, 51));
         lblContrasena.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblContrasena.setForeground(new java.awt.Color(0, 0, 0));
+        lblContrasena.setForeground(new java.awt.Color(51, 51, 51));
         lblContrasena.setText("CONTRASEÑA");
         Pnl_Principal.add(lblContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
 
-        btnIngresar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnIngresar.setForeground(new java.awt.Color(0, 0, 0));
+        btnIngresar.setBackground(new java.awt.Color(255, 111, 97));
+        btnIngresar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnIngresar.setForeground(new java.awt.Color(51, 51, 51));
         btnIngresar.setText("INGRESAR");
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,10 +107,7 @@ public class Log_In extends javax.swing.JFrame {
         });
         Pnl_Principal.add(lblImagenExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
 
-        lblImagen.setForeground(new java.awt.Color(204, 204, 204));
-        Pnl_Principal.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 419));
-
-        getContentPane().add(Pnl_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(Pnl_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -199,7 +199,6 @@ public class Log_In extends javax.swing.JFrame {
     private javax.swing.JPanel Pnl_Principal;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JLabel lblContrasena;
-    private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblImagenExit;
     private javax.swing.JLabel lblIniciarSesion;
     private javax.swing.JLabel lblUsuario;
