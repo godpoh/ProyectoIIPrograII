@@ -47,6 +47,8 @@ public class Create_User extends javax.swing.JPanel {
         Jcb_Rol = new javax.swing.JComboBox<>();
         lblUsuario2 = new javax.swing.JLabel();
         Txt_Nombre = new javax.swing.JTextField();
+        Btn_Inactivo = new javax.swing.JButton();
+        Btn_Actualizar = new javax.swing.JButton();
         lblImagen = new javax.swing.JLabel();
 
         Pnl_Principal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,7 +85,7 @@ public class Create_User extends javax.swing.JPanel {
                 Btn_RegistrarActionPerformed(evt);
             }
         });
-        Pnl_Principal.add(Btn_Registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 480, -1, -1));
+        Pnl_Principal.add(Btn_Registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 510, -1, -1));
 
         Txt_Contrasena.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Contrasena.setForeground(new java.awt.Color(153, 153, 153));
@@ -133,6 +135,26 @@ public class Create_User extends javax.swing.JPanel {
             }
         });
         Pnl_Principal.add(Txt_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 350, 40));
+
+        Btn_Inactivo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Inactivo.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Inactivo.setText("Inactivo");
+        Btn_Inactivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_InactivoActionPerformed(evt);
+            }
+        });
+        Pnl_Principal.add(Btn_Inactivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 510, 100, -1));
+
+        Btn_Actualizar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Actualizar.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Actualizar.setText("Actualizar");
+        Btn_Actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_ActualizarActionPerformed(evt);
+            }
+        });
+        Pnl_Principal.add(Btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 100, -1));
 
         lblImagen.setForeground(new java.awt.Color(204, 204, 204));
         Pnl_Principal.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 688));
@@ -210,8 +232,18 @@ public class Create_User extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_Txt_NombreKeyPressed
 
+    private void Btn_InactivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_InactivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_InactivoActionPerformed
+
+    private void Btn_ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ActualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_ActualizarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_Actualizar;
+    private javax.swing.JButton Btn_Inactivo;
     private javax.swing.JButton Btn_Registrar;
     private javax.swing.JComboBox<String> Jcb_Rol;
     private javax.swing.JPanel Pnl_Principal;
