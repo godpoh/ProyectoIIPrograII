@@ -17,9 +17,9 @@ import javax.swing.JOptionPane;
  */
 public class Connection_SQL {
 
-    public static Connection getConnection() throws SQLException {
-        String Connection_String = "jdbc:sqlserver://192.168.0.22:1433;"
-                + "database=SoccerTournament;"
+    public static Connection getConnection() {
+        String Connection_String = "jdbc:sqlserver://localhost:1433;"
+                + "databaseName=Mechanical_Workshop;"
                 + "user=sa;"
                 + "password=popo;"
                 + "encrypt=true;trustServerCertificate=true;";
@@ -28,15 +28,15 @@ public class Connection_SQL {
             Connection con = DriverManager.getConnection(Connection_String);
             return con;
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.toString());
+            JOptionPane.showMessageDialog(null, "Error en la conexión: " + e.toString());
             return null;
         }
     }
 
-    public static boolean Verify_User(String username, String password) throws SQLException {
+    public static boolean Verify_User(int Id, String password) throws SQLException {
         boolean isValidUser = false;
 
-        String qry = "SELECT * FROM RegisteredPerson WHERE Name = '" + username + "' AND Password = '" + password + "'";
+        String qry = "SELECT * FROM Users WHERE Id = '" + Id + "' AND Password = '" + password + "'";
 
         Statement sql = Connection_SQL.getConnection().createStatement();
         ResultSet rs = sql.executeQuery(qry);
@@ -47,5 +47,20 @@ public class Connection_SQL {
         }
 
         return isValidUser;
+    }
+
+    public static String get_Role(int Id, String password) throws SQLException {
+        String Role = "";
+
+        String qry = "SELECT Role FROM Users WHERE Id = '" + Id + "' AND Password = '" + password + "'";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        ResultSet rs = sql.executeQuery(qry);
+
+        if (rs.next()) {
+            Role = rs.getString("Role");
+        }
+
+        return Role;
     }
 }

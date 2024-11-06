@@ -16,9 +16,25 @@ import java.util.logging.Logger;
  */
 public class Principal_Panel extends javax.swing.JFrame {
 
-    public Principal_Panel() {
+    public Principal_Panel(String Role) {
         initComponents();
         setLocationRelativeTo(null);
+        Btn_Creacion_Usuario.setVisible(false);
+
+        if ("Admin".equalsIgnoreCase(Role)) {
+            Show_Admin_Panels();
+        } else {
+            Hide_Admin_Panels();
+        }
+
+    }
+
+    private void Show_Admin_Panels() {
+        Btn_Creacion_Usuario.setVisible(true);
+    }
+
+    private void Hide_Admin_Panels() {
+        Btn_Creacion_Usuario.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -32,13 +48,14 @@ public class Principal_Panel extends javax.swing.JFrame {
         Btn_Gestion_Equipos1 = new javax.swing.JButton();
         Pnl_Titulo = new javax.swing.JPanel();
         Btn_Creacion_Usuario = new javax.swing.JButton();
-        Btn_Creacion_Usuario1 = new javax.swing.JButton();
+        Btn_Cerrar_Sesion = new javax.swing.JButton();
         Pnl_Contenedor = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1020, 716));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(720, 850));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Pnl_Menu.setBackground(new java.awt.Color(250, 235, 215));
@@ -94,7 +111,7 @@ public class Principal_Panel extends javax.swing.JFrame {
 
         getContentPane().add(Pnl_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 720));
 
-        Pnl_Titulo.setBackground(new java.awt.Color(240, 240, 240));
+        Pnl_Titulo.setBackground(new java.awt.Color(245, 245, 245));
         Pnl_Titulo.setPreferredSize(new java.awt.Dimension(760, 50));
 
         Btn_Creacion_Usuario.setBackground(new java.awt.Color(255, 111, 97));
@@ -108,14 +125,14 @@ public class Principal_Panel extends javax.swing.JFrame {
             }
         });
 
-        Btn_Creacion_Usuario1.setBackground(new java.awt.Color(255, 111, 97));
-        Btn_Creacion_Usuario1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Creacion_Usuario1.setForeground(new java.awt.Color(51, 51, 51));
-        Btn_Creacion_Usuario1.setText("Cerrar Sesión");
-        Btn_Creacion_Usuario1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Btn_Creacion_Usuario1.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Cerrar_Sesion.setBackground(new java.awt.Color(255, 111, 97));
+        Btn_Cerrar_Sesion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Cerrar_Sesion.setForeground(new java.awt.Color(51, 51, 51));
+        Btn_Cerrar_Sesion.setText("Cerrar Sesión");
+        Btn_Cerrar_Sesion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Btn_Cerrar_Sesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Creacion_Usuario1ActionPerformed(evt);
+                Btn_Cerrar_SesionActionPerformed(evt);
             }
         });
 
@@ -127,7 +144,7 @@ public class Principal_Panel extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(Btn_Creacion_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, Short.MAX_VALUE)
-                .addComponent(Btn_Creacion_Usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Btn_Cerrar_Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         Pnl_TituloLayout.setVerticalGroup(
@@ -135,7 +152,7 @@ public class Principal_Panel extends javax.swing.JFrame {
             .addGroup(Pnl_TituloLayout.createSequentialGroup()
                 .addGroup(Pnl_TituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Btn_Creacion_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Btn_Creacion_Usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Btn_Cerrar_Sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -154,26 +171,26 @@ public class Principal_Panel extends javax.swing.JFrame {
             Pnl_ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pnl_ContenedorLayout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 132, Short.MAX_VALUE))
+                .addGap(0, 112, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Pnl_Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 820, 820));
+        getContentPane().add(Pnl_Contenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 820, 690));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     private void Btn_Creacion_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Creacion_UsuarioActionPerformed
-//        Create_User User = new Create_User();
-//
-//        User.setSize(820, 688);
-//        User.setLocation(0, 0);
-//
-//        Pnl_Contenedor.removeAll();
-//        Pnl_Contenedor.add(User);
-//
-//        Pnl_Contenedor.revalidate();
-//        Pnl_Contenedor.repaint();
+        Create_User User = new Create_User();
+
+        User.setSize(820, 688);
+        User.setLocation(0, 0);
+
+        Pnl_Contenedor.removeAll();
+        Pnl_Contenedor.add(User);
+
+        Pnl_Contenedor.revalidate();
+        Pnl_Contenedor.repaint();
     }//GEN-LAST:event_Btn_Creacion_UsuarioActionPerformed
 
     private void Btn_Gestion_de_TorneosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Gestion_de_TorneosActionPerformed
@@ -232,9 +249,12 @@ public class Principal_Panel extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Btn_Gestion_Equipos1ActionPerformed
 
-    private void Btn_Creacion_Usuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Creacion_Usuario1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_Creacion_Usuario1ActionPerformed
+    private void Btn_Cerrar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cerrar_SesionActionPerformed
+        this.dispose();
+
+        Log_In Login_Window = new Log_In();  
+        Login_Window.setVisible(true);
+    }//GEN-LAST:event_Btn_Cerrar_SesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,14 +286,14 @@ public class Principal_Panel extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal_Panel().setVisible(true);
+                new Principal_Panel("User").setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_Cerrar_Sesion;
     private javax.swing.JButton Btn_Creacion_Usuario;
-    private javax.swing.JButton Btn_Creacion_Usuario1;
     private javax.swing.JButton Btn_Estadisticas;
     private javax.swing.JButton Btn_Gestion_Equipos1;
     private javax.swing.JButton Btn_Gestion_de_Torneos;

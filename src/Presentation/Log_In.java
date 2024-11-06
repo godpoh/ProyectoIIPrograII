@@ -14,6 +14,8 @@ import javax.swing.SwingUtilities;
 
 public class Log_In extends javax.swing.JFrame {
 
+    private Principal_Panel parent;
+
     public Log_In() {
         initComponents();
         setLocationRelativeTo(null);
@@ -46,12 +48,12 @@ public class Log_In extends javax.swing.JFrame {
 
         lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUsuario.setForeground(new java.awt.Color(0, 0, 0));
-        lblUsuario.setText("USUARIO");
+        lblUsuario.setText("CEDÚLA");
         Pnl_Principal.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
 
         txtUsuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(153, 153, 153));
-        txtUsuario.setText("Ingrese su usuario");
+        txtUsuario.setText("Ingrese su cedúla");
         txtUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtUsuarioMousePressed(evt);
@@ -114,10 +116,15 @@ public class Log_In extends javax.swing.JFrame {
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         Log_In_Logic login = new Log_In_Logic();
         try {
+
             login.Open_Principal_Panel_Logic(txtUsuario, txtContrasena);
+
+            this.dispose();
+
         } catch (SQLException ex) {
             Logger.getLogger(Log_In.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void lblImagenExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblImagenExitMouseClicked
@@ -130,6 +137,7 @@ public class Log_In extends javax.swing.JFrame {
             Log_In_Logic login = new Log_In_Logic();
             try {
                 login.Open_Principal_Panel_Logic(txtUsuario, txtContrasena);
+                this.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(Log_In.class.getName()).log(Level.SEVERE, null, ex);
             }

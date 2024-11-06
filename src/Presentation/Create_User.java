@@ -135,7 +135,6 @@ public class Create_User extends javax.swing.JPanel {
         Pnl_Principal.add(Txt_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 350, 40));
 
         lblImagen.setForeground(new java.awt.Color(204, 204, 204));
-        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/abstract-textured-backgound.jpg"))); // NOI18N
         Pnl_Principal.add(lblImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 688));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
