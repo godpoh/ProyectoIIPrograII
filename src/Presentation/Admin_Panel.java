@@ -5,7 +5,11 @@
 package Presentation;
 
 import static Data.CUD_SQL.Insert_User;
+import static Data.CUD_SQL.Insert_Vehicle;
+import static Data.CUD_SQL.Update_User;
+import static Data.CUD_SQL.Update_Vehicle;
 import Data.User_Creator;
+import Data.Vehicle_Obj;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -54,24 +58,24 @@ public class Admin_Panel extends javax.swing.JPanel {
         Pnl_Principal1 = new javax.swing.JPanel();
         lblIniciarSesion1 = new javax.swing.JLabel();
         lblUsuario1 = new javax.swing.JLabel();
-        Txt_Usuario1 = new javax.swing.JTextField();
-        Btn_Registrar1 = new javax.swing.JButton();
+        Txt_Placa = new javax.swing.JTextField();
+        Btn_Registrar_Vehiculo = new javax.swing.JButton();
         lblUsuario3 = new javax.swing.JLabel();
-        Txt_Nombre1 = new javax.swing.JTextField();
+        Txt_Marca = new javax.swing.JTextField();
         Btn_Inactivo1 = new javax.swing.JButton();
-        Btn_Actualizar1 = new javax.swing.JButton();
-        Txt_Nombre2 = new javax.swing.JTextField();
-        Txt_Nombre3 = new javax.swing.JTextField();
+        Btn_Actualizar_Vehiculo = new javax.swing.JButton();
+        Txt_Ano = new javax.swing.JTextField();
+        Txt_Modelo = new javax.swing.JTextField();
         lblUsuario4 = new javax.swing.JLabel();
         lblUsuario5 = new javax.swing.JLabel();
         lblUsuario6 = new javax.swing.JLabel();
-        Txt_Nombre5 = new javax.swing.JTextField();
-        Txt_Nombre6 = new javax.swing.JTextField();
+        Txt_Color = new javax.swing.JTextField();
         lblUsuario7 = new javax.swing.JLabel();
         lblUsuario8 = new javax.swing.JLabel();
-        Txt_Nombre7 = new javax.swing.JTextField();
-        Txt_Nombre8 = new javax.swing.JTextField();
+        Txt_Asientos = new javax.swing.JTextField();
+        Txt_Capacidad = new javax.swing.JTextField();
         lblUsuario9 = new javax.swing.JLabel();
+        Jcb_Tipo = new javax.swing.JComboBox<>();
         lblImagen1 = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -205,48 +209,48 @@ public class Admin_Panel extends javax.swing.JPanel {
         lblUsuario1.setText("Número de placa");
         Pnl_Principal1.add(lblUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, -1, -1));
 
-        Txt_Usuario1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Txt_Usuario1.setForeground(new java.awt.Color(153, 153, 153));
-        Txt_Usuario1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Txt_Placa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Placa.setForeground(new java.awt.Color(153, 153, 153));
+        Txt_Placa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                Txt_Usuario1MousePressed(evt);
+                Txt_PlacaMousePressed(evt);
             }
         });
-        Txt_Usuario1.addKeyListener(new java.awt.event.KeyAdapter() {
+        Txt_Placa.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Txt_Usuario1KeyPressed(evt);
+                Txt_PlacaKeyPressed(evt);
             }
         });
-        Pnl_Principal1.add(Txt_Usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 350, 40));
+        Pnl_Principal1.add(Txt_Placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 350, 40));
 
-        Btn_Registrar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Btn_Registrar1.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Registrar1.setText("Registrar");
-        Btn_Registrar1.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Registrar_Vehiculo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Registrar_Vehiculo.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Registrar_Vehiculo.setText("Registrar");
+        Btn_Registrar_Vehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Registrar1ActionPerformed(evt);
+                Btn_Registrar_VehiculoActionPerformed(evt);
             }
         });
-        Pnl_Principal1.add(Btn_Registrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 100, -1));
+        Pnl_Principal1.add(Btn_Registrar_Vehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 100, -1));
 
         lblUsuario3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUsuario3.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuario3.setText("Marca");
         Pnl_Principal1.add(lblUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
 
-        Txt_Nombre1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Txt_Nombre1.setForeground(new java.awt.Color(153, 153, 153));
-        Txt_Nombre1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Txt_Marca.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Marca.setForeground(new java.awt.Color(153, 153, 153));
+        Txt_Marca.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                Txt_Nombre1MousePressed(evt);
+                Txt_MarcaMousePressed(evt);
             }
         });
-        Txt_Nombre1.addKeyListener(new java.awt.event.KeyAdapter() {
+        Txt_Marca.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Txt_Nombre1KeyPressed(evt);
+                Txt_MarcaKeyPressed(evt);
             }
         });
-        Pnl_Principal1.add(Txt_Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 350, 40));
+        Pnl_Principal1.add(Txt_Marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 350, 40));
 
         Btn_Inactivo1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Btn_Inactivo1.setForeground(new java.awt.Color(0, 0, 0));
@@ -258,43 +262,43 @@ public class Admin_Panel extends javax.swing.JPanel {
         });
         Pnl_Principal1.add(Btn_Inactivo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 550, 110, -1));
 
-        Btn_Actualizar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Btn_Actualizar1.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Actualizar1.setText("Actualizar");
-        Btn_Actualizar1.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Actualizar_Vehiculo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Actualizar_Vehiculo.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Actualizar_Vehiculo.setText("Actualizar");
+        Btn_Actualizar_Vehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Actualizar1ActionPerformed(evt);
+                Btn_Actualizar_VehiculoActionPerformed(evt);
             }
         });
-        Pnl_Principal1.add(Btn_Actualizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 120, -1));
+        Pnl_Principal1.add(Btn_Actualizar_Vehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 120, -1));
 
-        Txt_Nombre2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Txt_Nombre2.setForeground(new java.awt.Color(153, 153, 153));
-        Txt_Nombre2.addMouseListener(new java.awt.event.MouseAdapter() {
+        Txt_Ano.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Ano.setForeground(new java.awt.Color(153, 153, 153));
+        Txt_Ano.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                Txt_Nombre2MousePressed(evt);
+                Txt_AnoMousePressed(evt);
             }
         });
-        Txt_Nombre2.addKeyListener(new java.awt.event.KeyAdapter() {
+        Txt_Ano.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Txt_Nombre2KeyPressed(evt);
+                Txt_AnoKeyPressed(evt);
             }
         });
-        Pnl_Principal1.add(Txt_Nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 350, 40));
+        Pnl_Principal1.add(Txt_Ano, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 350, 40));
 
-        Txt_Nombre3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Txt_Nombre3.setForeground(new java.awt.Color(153, 153, 153));
-        Txt_Nombre3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Txt_Modelo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Modelo.setForeground(new java.awt.Color(153, 153, 153));
+        Txt_Modelo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                Txt_Nombre3MousePressed(evt);
+                Txt_ModeloMousePressed(evt);
             }
         });
-        Txt_Nombre3.addKeyListener(new java.awt.event.KeyAdapter() {
+        Txt_Modelo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Txt_Nombre3KeyPressed(evt);
+                Txt_ModeloKeyPressed(evt);
             }
         });
-        Pnl_Principal1.add(Txt_Nombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 350, 40));
+        Pnl_Principal1.add(Txt_Modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 350, 40));
 
         lblUsuario4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUsuario4.setForeground(new java.awt.Color(0, 0, 0));
@@ -311,33 +315,19 @@ public class Admin_Panel extends javax.swing.JPanel {
         lblUsuario6.setText("Color");
         Pnl_Principal1.add(lblUsuario6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, -1, -1));
 
-        Txt_Nombre5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Txt_Nombre5.setForeground(new java.awt.Color(153, 153, 153));
-        Txt_Nombre5.addMouseListener(new java.awt.event.MouseAdapter() {
+        Txt_Color.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Color.setForeground(new java.awt.Color(153, 153, 153));
+        Txt_Color.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                Txt_Nombre5MousePressed(evt);
+                Txt_ColorMousePressed(evt);
             }
         });
-        Txt_Nombre5.addKeyListener(new java.awt.event.KeyAdapter() {
+        Txt_Color.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Txt_Nombre5KeyPressed(evt);
+                Txt_ColorKeyPressed(evt);
             }
         });
-        Pnl_Principal1.add(Txt_Nombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 350, 40));
-
-        Txt_Nombre6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Txt_Nombre6.setForeground(new java.awt.Color(153, 153, 153));
-        Txt_Nombre6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                Txt_Nombre6MousePressed(evt);
-            }
-        });
-        Txt_Nombre6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Txt_Nombre6KeyPressed(evt);
-            }
-        });
-        Pnl_Principal1.add(Txt_Nombre6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 350, 40));
+        Pnl_Principal1.add(Txt_Color, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 350, 40));
 
         lblUsuario7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUsuario7.setForeground(new java.awt.Color(0, 0, 0));
@@ -349,38 +339,43 @@ public class Admin_Panel extends javax.swing.JPanel {
         lblUsuario8.setText("Cantidad de Asientos");
         Pnl_Principal1.add(lblUsuario8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, -1, -1));
 
-        Txt_Nombre7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Txt_Nombre7.setForeground(new java.awt.Color(153, 153, 153));
-        Txt_Nombre7.addMouseListener(new java.awt.event.MouseAdapter() {
+        Txt_Asientos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Asientos.setForeground(new java.awt.Color(153, 153, 153));
+        Txt_Asientos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                Txt_Nombre7MousePressed(evt);
+                Txt_AsientosMousePressed(evt);
             }
         });
-        Txt_Nombre7.addKeyListener(new java.awt.event.KeyAdapter() {
+        Txt_Asientos.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Txt_Nombre7KeyPressed(evt);
+                Txt_AsientosKeyPressed(evt);
             }
         });
-        Pnl_Principal1.add(Txt_Nombre7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 350, 40));
+        Pnl_Principal1.add(Txt_Asientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 350, 40));
 
-        Txt_Nombre8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Txt_Nombre8.setForeground(new java.awt.Color(153, 153, 153));
-        Txt_Nombre8.addMouseListener(new java.awt.event.MouseAdapter() {
+        Txt_Capacidad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Capacidad.setForeground(new java.awt.Color(153, 153, 153));
+        Txt_Capacidad.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                Txt_Nombre8MousePressed(evt);
+                Txt_CapacidadMousePressed(evt);
             }
         });
-        Txt_Nombre8.addKeyListener(new java.awt.event.KeyAdapter() {
+        Txt_Capacidad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Txt_Nombre8KeyPressed(evt);
+                Txt_CapacidadKeyPressed(evt);
             }
         });
-        Pnl_Principal1.add(Txt_Nombre8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, 350, 40));
+        Pnl_Principal1.add(Txt_Capacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, 350, 40));
 
         lblUsuario9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUsuario9.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuario9.setText("Capacidad de carga");
         Pnl_Principal1.add(lblUsuario9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 460, -1, -1));
+
+        Jcb_Tipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jcb_Tipo.setForeground(new java.awt.Color(153, 153, 153));
+        Jcb_Tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un tipo:", "Automóvil", "Camión", "Furgoneta", "Autobús", "Motocicleta", "Bicicleta", "Camioneta", "SUV", "Deportivo", "Minivan", "Tractor", "Coche eléctrico", "Vehículo de carga", "Vehículo todoterreno", "Vehículo de lujo", "Vehículo de trabajo", "Vehículo de emergencias", "Vehículo público", "Vehículo híbrido", "Vehículo comercial" }));
+        Pnl_Principal1.add(Jcb_Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 350, 40));
 
         lblImagen1.setBackground(new java.awt.Color(242, 242, 242));
         lblImagen1.setForeground(new java.awt.Color(204, 204, 204));
@@ -440,7 +435,6 @@ public class Admin_Panel extends javax.swing.JPanel {
         try {
             Rows_Affected = Insert_User(User);
             if (Rows_Affected != 0) {
-                JOptionPane.showMessageDialog(null, "Datos guardados satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
                 Txt_Usuario.setText("");
                 Txt_Nombre.setText("");
                 Jcb_Rol.setSelectedItem("Seleccione un rol");
@@ -472,112 +466,167 @@ public class Admin_Panel extends javax.swing.JPanel {
     }//GEN-LAST:event_Btn_InactivoActionPerformed
 
     private void Btn_ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ActualizarActionPerformed
-       //gfdgdfgfdgdfgdfgfdgfdgdfgfdgfdgfdgfdgdfgdfgdfgdfgfdgfdgd
-       
-       
-       
-       
-       
+        int User_Id = Integer.parseInt(Txt_Usuario.getText());
+        String Name = Txt_Nombre.getText();
+        String Role = (String) Jcb_Rol.getSelectedItem();
+        String Password = String.valueOf(Txt_Contrasena.getText());
+
+        User_Creator User = new User_Creator(User_Id, Name, Password, Role);
+        int Rows_Affected;
+        try {
+            Rows_Affected = Update_User(User);
+            if (Rows_Affected != 0) {
+                Txt_Usuario.setText("");
+                Txt_Nombre.setText("");
+                Jcb_Rol.setSelectedItem("Seleccione un rol");
+                Txt_Contrasena.setText("");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_Btn_ActualizarActionPerformed
 
-    private void Txt_Usuario1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_Usuario1MousePressed
+    private void Txt_PlacaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_PlacaMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Usuario1MousePressed
+    }//GEN-LAST:event_Txt_PlacaMousePressed
 
-    private void Txt_Usuario1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_Usuario1KeyPressed
+    private void Txt_PlacaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_PlacaKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Usuario1KeyPressed
+    }//GEN-LAST:event_Txt_PlacaKeyPressed
 
-    private void Btn_Registrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_Registrar1ActionPerformed
+    private void Btn_Registrar_VehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_VehiculoActionPerformed
+        String License_Plate = Txt_Placa.getText();
+        String Brand = Txt_Marca.getText();
+        String Model = Txt_Modelo.getText();
+        int Year = Integer.valueOf(Txt_Ano.getText());
+        String Color = Txt_Color.getText();
+        String Type = (String) Jcb_Tipo.getSelectedItem();
+        int Seating = Integer.valueOf(Txt_Asientos.getText());
+        float Capacity = Float.parseFloat(Txt_Capacidad.getText());
 
-    private void Txt_Nombre1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_Nombre1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre1MousePressed
+        Vehicle_Obj Vehicle = new Vehicle_Obj(License_Plate, Brand, Model, Year, Color, Type, Seating, Capacity);
 
-    private void Txt_Nombre1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_Nombre1KeyPressed
+        try {
+            Insert_Vehicle(Vehicle);
+            Txt_Placa.setText("");
+            Txt_Marca.setText("");
+            Txt_Modelo.setText("");
+            Txt_Ano.setText("");
+            Txt_Color.setText("");
+            Jcb_Tipo.setSelectedItem("Seleccione un tipo:");
+            Txt_Asientos.setText("");
+            Txt_Capacidad.setText("");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_Btn_Registrar_VehiculoActionPerformed
+
+    private void Txt_MarcaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_MarcaMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre1KeyPressed
+    }//GEN-LAST:event_Txt_MarcaMousePressed
+
+    private void Txt_MarcaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_MarcaKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Txt_MarcaKeyPressed
 
     private void Btn_Inactivo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_Inactivo1ActionPerformed
 
-    private void Btn_Actualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_Actualizar1ActionPerformed
+    private void Btn_Actualizar_VehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_VehiculoActionPerformed
+        String License_Plate = Txt_Placa.getText();
+        String Brand = Txt_Marca.getText();
+        String Model = Txt_Modelo.getText();
+        int Year = Integer.valueOf(Txt_Ano.getText());
+        String Color = Txt_Color.getText();
+        String Type = (String) Jcb_Tipo.getSelectedItem();
+        int Seating = Integer.valueOf(Txt_Asientos.getText());
+        float Capacity = Float.parseFloat(Txt_Capacidad.getText());
 
-    private void Txt_Nombre2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_Nombre2MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre2MousePressed
+        Vehicle_Obj Vehicle = new Vehicle_Obj(License_Plate, Brand, Model, Year, Color, Type, Seating, Capacity);
 
-    private void Txt_Nombre2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_Nombre2KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre2KeyPressed
+        try {
+            Update_Vehicle(Vehicle);
+            Txt_Placa.setText("");
+            Txt_Marca.setText("");
+            Txt_Modelo.setText("");
+            Txt_Ano.setText("");
+            Txt_Color.setText("");
+            Jcb_Tipo.setSelectedItem("Seleccione un tipo:");
+            Txt_Asientos.setText("");
+            Txt_Capacidad.setText("");
 
-    private void Txt_Nombre3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_Nombre3MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre3MousePressed
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Btn_Actualizar_VehiculoActionPerformed
 
-    private void Txt_Nombre3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_Nombre3KeyPressed
+    private void Txt_AnoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_AnoMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre3KeyPressed
+    }//GEN-LAST:event_Txt_AnoMousePressed
 
-    private void Txt_Nombre5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_Nombre5MousePressed
+    private void Txt_AnoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_AnoKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre5MousePressed
+    }//GEN-LAST:event_Txt_AnoKeyPressed
 
-    private void Txt_Nombre5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_Nombre5KeyPressed
+    private void Txt_ModeloMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_ModeloMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre5KeyPressed
+    }//GEN-LAST:event_Txt_ModeloMousePressed
 
-    private void Txt_Nombre6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_Nombre6MousePressed
+    private void Txt_ModeloKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_ModeloKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre6MousePressed
+    }//GEN-LAST:event_Txt_ModeloKeyPressed
 
-    private void Txt_Nombre6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_Nombre6KeyPressed
+    private void Txt_ColorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_ColorMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre6KeyPressed
+    }//GEN-LAST:event_Txt_ColorMousePressed
 
-    private void Txt_Nombre7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_Nombre7MousePressed
+    private void Txt_ColorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_ColorKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre7MousePressed
+    }//GEN-LAST:event_Txt_ColorKeyPressed
 
-    private void Txt_Nombre7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_Nombre7KeyPressed
+    private void Txt_AsientosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_AsientosMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre7KeyPressed
+    }//GEN-LAST:event_Txt_AsientosMousePressed
 
-    private void Txt_Nombre8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_Nombre8MousePressed
+    private void Txt_AsientosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_AsientosKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre8MousePressed
+    }//GEN-LAST:event_Txt_AsientosKeyPressed
 
-    private void Txt_Nombre8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_Nombre8KeyPressed
+    private void Txt_CapacidadMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_CapacidadMousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre8KeyPressed
+    }//GEN-LAST:event_Txt_CapacidadMousePressed
+
+    private void Txt_CapacidadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_CapacidadKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Txt_CapacidadKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Actualizar;
-    private javax.swing.JButton Btn_Actualizar1;
+    private javax.swing.JButton Btn_Actualizar_Vehiculo;
     private javax.swing.JButton Btn_Inactivo;
     private javax.swing.JButton Btn_Inactivo1;
     private javax.swing.JButton Btn_Registrar;
-    private javax.swing.JButton Btn_Registrar1;
+    private javax.swing.JButton Btn_Registrar_Vehiculo;
     private javax.swing.JComboBox<String> Jcb_Rol;
+    private javax.swing.JComboBox<String> Jcb_Tipo;
     private javax.swing.JPanel Pnl_Principal;
     private javax.swing.JPanel Pnl_Principal1;
+    private javax.swing.JTextField Txt_Ano;
+    private javax.swing.JTextField Txt_Asientos;
+    private javax.swing.JTextField Txt_Capacidad;
+    private javax.swing.JTextField Txt_Color;
     private javax.swing.JPasswordField Txt_Contrasena;
+    private javax.swing.JTextField Txt_Marca;
+    private javax.swing.JTextField Txt_Modelo;
     private javax.swing.JTextField Txt_Nombre;
-    private javax.swing.JTextField Txt_Nombre1;
-    private javax.swing.JTextField Txt_Nombre2;
-    private javax.swing.JTextField Txt_Nombre3;
-    private javax.swing.JTextField Txt_Nombre5;
-    private javax.swing.JTextField Txt_Nombre6;
-    private javax.swing.JTextField Txt_Nombre7;
-    private javax.swing.JTextField Txt_Nombre8;
+    private javax.swing.JTextField Txt_Placa;
     private javax.swing.JTextField Txt_Usuario;
-    private javax.swing.JTextField Txt_Usuario1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

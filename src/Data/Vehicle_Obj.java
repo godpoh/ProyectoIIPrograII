@@ -20,8 +20,7 @@ public class Vehicle_Obj {
     private int SeatCount;
     private float Load_Capacity;
 
-    public Vehicle_Obj(int Id, String LicensePlate, String Brand, String Model, int Year, String Color, String Type, int SeatCount, float Load_Capacity) {
-        this.Id = Id;
+    public Vehicle_Obj(String LicensePlate, String Brand, String Model, int Year, String Color, String Type, int SeatCount, float Load_Capacity) {
         this.LicensePlate = LicensePlate;
         this.Brand = Brand;
         this.Model = Model;
