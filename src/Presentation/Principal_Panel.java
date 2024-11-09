@@ -13,11 +13,9 @@ public class Principal_Panel extends javax.swing.JFrame {
     public Principal_Panel(String Role) {
         initComponents();
         setLocationRelativeTo(null);
-        Btn_Creacion_Usuario.setVisible(false);
+        Btn_Pnl_Admin.setVisible(false);
 
         setPreferredSize(new java.awt.Dimension(720, 720));
-
-        // Llama a pack para ajustar el tamaño de la ventana según el contenido
         pack();
 
         if ("Admin".equalsIgnoreCase(Role)) {
@@ -29,11 +27,11 @@ public class Principal_Panel extends javax.swing.JFrame {
     }
 
     private void Show_Admin_Panels() {
-        Btn_Creacion_Usuario.setVisible(true);
+        Btn_Pnl_Admin.setVisible(true);
     }
 
     private void Hide_Admin_Panels() {
-        Btn_Creacion_Usuario.setVisible(false);
+        Btn_Pnl_Admin.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -46,15 +44,14 @@ public class Principal_Panel extends javax.swing.JFrame {
         Btn_Estadisticas = new javax.swing.JButton();
         Btn_Gestion_Equipos1 = new javax.swing.JButton();
         Pnl_Titulo = new javax.swing.JPanel();
-        Btn_Creacion_Usuario = new javax.swing.JButton();
         Btn_Cerrar_Sesion = new javax.swing.JButton();
+        Btn_Pnl_Admin = new javax.swing.JButton();
         Pnl_Contenedor = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1020, 716));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(720, 850));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Pnl_Menu.setBackground(new java.awt.Color(250, 235, 215));
@@ -114,18 +111,6 @@ public class Principal_Panel extends javax.swing.JFrame {
         Pnl_Titulo.setPreferredSize(new java.awt.Dimension(760, 50));
         Pnl_Titulo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Btn_Creacion_Usuario.setBackground(new java.awt.Color(255, 111, 97));
-        Btn_Creacion_Usuario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Creacion_Usuario.setForeground(new java.awt.Color(51, 51, 51));
-        Btn_Creacion_Usuario.setText("Creacion Usuario");
-        Btn_Creacion_Usuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Btn_Creacion_Usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Creacion_UsuarioActionPerformed(evt);
-            }
-        });
-        Pnl_Titulo.add(Btn_Creacion_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 131, 29));
-
         Btn_Cerrar_Sesion.setBackground(new java.awt.Color(255, 111, 97));
         Btn_Cerrar_Sesion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Cerrar_Sesion.setForeground(new java.awt.Color(51, 51, 51));
@@ -137,6 +122,18 @@ public class Principal_Panel extends javax.swing.JFrame {
             }
         });
         Pnl_Titulo.add(Btn_Cerrar_Sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 0, 131, 29));
+
+        Btn_Pnl_Admin.setBackground(new java.awt.Color(255, 111, 97));
+        Btn_Pnl_Admin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Pnl_Admin.setForeground(new java.awt.Color(51, 51, 51));
+        Btn_Pnl_Admin.setText("Panel de Admin");
+        Btn_Pnl_Admin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Btn_Pnl_Admin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Pnl_AdminActionPerformed(evt);
+            }
+        });
+        Pnl_Titulo.add(Btn_Pnl_Admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 131, 29));
 
         getContentPane().add(Pnl_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 820, 30));
 
@@ -159,19 +156,6 @@ public class Principal_Panel extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
-    private void Btn_Creacion_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Creacion_UsuarioActionPerformed
-        Create_User User = new Create_User();
-
-        User.setSize(820, 688);
-        User.setLocation(0, 0);
-
-        Pnl_Contenedor.removeAll();
-        Pnl_Contenedor.add(User);
-
-        Pnl_Contenedor.revalidate();
-        Pnl_Contenedor.repaint();
-    }//GEN-LAST:event_Btn_Creacion_UsuarioActionPerformed
 
     private void Btn_Gestion_de_TorneosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Gestion_de_TorneosActionPerformed
 //        Tournament_Management Tournament_Window = null;
@@ -236,6 +220,18 @@ public class Principal_Panel extends javax.swing.JFrame {
         Login_Window.setVisible(true);
     }//GEN-LAST:event_Btn_Cerrar_SesionActionPerformed
 
+    private void Btn_Pnl_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pnl_AdminActionPerformed
+        Admin_Panel Admin_Window = new Admin_Panel();
+        Admin_Window.setSize(820, 688);
+        Admin_Window.setLocation(0, 0);
+
+        Pnl_Contenedor.removeAll();
+        Pnl_Contenedor.add(Admin_Window);
+
+        Pnl_Contenedor.revalidate();
+        Pnl_Contenedor.repaint();
+    }//GEN-LAST:event_Btn_Pnl_AdminActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -273,10 +269,10 @@ public class Principal_Panel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Cerrar_Sesion;
-    private javax.swing.JButton Btn_Creacion_Usuario;
     private javax.swing.JButton Btn_Estadisticas;
     private javax.swing.JButton Btn_Gestion_Equipos1;
     private javax.swing.JButton Btn_Gestion_de_Torneos;
+    private javax.swing.JButton Btn_Pnl_Admin;
     private javax.swing.JButton Btn_Registro_Partidos;
     private javax.swing.JPanel Pnl_Contenedor;
     private javax.swing.JPanel Pnl_Menu;
