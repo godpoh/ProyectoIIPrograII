@@ -39,10 +39,9 @@ public class Principal_Panel extends javax.swing.JFrame {
     private void initComponents() {
 
         Pnl_Menu = new javax.swing.JPanel();
-        Btn_Gestion_de_Torneos = new javax.swing.JButton();
-        Btn_Registro_Partidos = new javax.swing.JButton();
+        Btn_Mecanico = new javax.swing.JButton();
         Btn_Estadisticas = new javax.swing.JButton();
-        Btn_Gestion_Equipos1 = new javax.swing.JButton();
+        Btn_Dispensador = new javax.swing.JButton();
         Pnl_Titulo = new javax.swing.JPanel();
         Btn_Cerrar_Sesion = new javax.swing.JButton();
         Btn_Pnl_Admin = new javax.swing.JButton();
@@ -57,29 +56,17 @@ public class Principal_Panel extends javax.swing.JFrame {
         Pnl_Menu.setBackground(new java.awt.Color(250, 235, 215));
         Pnl_Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Btn_Gestion_de_Torneos.setBackground(new java.awt.Color(255, 111, 97));
-        Btn_Gestion_de_Torneos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Gestion_de_Torneos.setForeground(new java.awt.Color(51, 51, 51));
-        Btn_Gestion_de_Torneos.setText("Gestión de Torneos");
-        Btn_Gestion_de_Torneos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Btn_Gestion_de_Torneos.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Mecanico.setBackground(new java.awt.Color(255, 111, 97));
+        Btn_Mecanico.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Mecanico.setForeground(new java.awt.Color(51, 51, 51));
+        Btn_Mecanico.setText("Mecanico");
+        Btn_Mecanico.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Btn_Mecanico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Gestion_de_TorneosActionPerformed(evt);
+                Btn_MecanicoActionPerformed(evt);
             }
         });
-        Pnl_Menu.add(Btn_Gestion_de_Torneos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 150, 50));
-
-        Btn_Registro_Partidos.setBackground(new java.awt.Color(255, 111, 97));
-        Btn_Registro_Partidos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Registro_Partidos.setForeground(new java.awt.Color(51, 51, 51));
-        Btn_Registro_Partidos.setText("Registro de Partidos");
-        Btn_Registro_Partidos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Btn_Registro_Partidos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Registro_PartidosActionPerformed(evt);
-            }
-        });
-        Pnl_Menu.add(Btn_Registro_Partidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 150, 50));
+        Pnl_Menu.add(Btn_Mecanico, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 150, 50));
 
         Btn_Estadisticas.setBackground(new java.awt.Color(255, 111, 97));
         Btn_Estadisticas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -91,19 +78,19 @@ public class Principal_Panel extends javax.swing.JFrame {
                 Btn_EstadisticasActionPerformed(evt);
             }
         });
-        Pnl_Menu.add(Btn_Estadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 150, 50));
+        Pnl_Menu.add(Btn_Estadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 150, 50));
 
-        Btn_Gestion_Equipos1.setBackground(new java.awt.Color(255, 111, 97));
-        Btn_Gestion_Equipos1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Gestion_Equipos1.setForeground(new java.awt.Color(51, 51, 51));
-        Btn_Gestion_Equipos1.setText("Gestión de Equipos");
-        Btn_Gestion_Equipos1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Btn_Gestion_Equipos1.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Dispensador.setBackground(new java.awt.Color(255, 111, 97));
+        Btn_Dispensador.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Dispensador.setForeground(new java.awt.Color(51, 51, 51));
+        Btn_Dispensador.setText("Dispensador");
+        Btn_Dispensador.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Btn_Dispensador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Gestion_Equipos1ActionPerformed(evt);
+                Btn_DispensadorActionPerformed(evt);
             }
         });
-        Pnl_Menu.add(Btn_Gestion_Equipos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 150, 50));
+        Pnl_Menu.add(Btn_Dispensador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 150, 50));
 
         getContentPane().add(Pnl_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 720));
 
@@ -157,7 +144,7 @@ public class Principal_Panel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-    private void Btn_Gestion_de_TorneosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Gestion_de_TorneosActionPerformed
+    private void Btn_MecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_MecanicoActionPerformed
 //        Tournament_Management Tournament_Window = null;
 //        try {
 ////            Tournament_Window = new Tournament_Management();
@@ -174,26 +161,13 @@ public class Principal_Panel extends javax.swing.JFrame {
 //        Pnl_Contenedor.revalidate();
 //        Pnl_Contenedor.repaint();
 
-    }//GEN-LAST:event_Btn_Gestion_de_TorneosActionPerformed
-
-    private void Btn_Registro_PartidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_PartidosActionPerformed
-//        Match_Registration Match_Window = new Match_Registration();
-//
-//        Match_Window.setSize(820, 688);
-//        Match_Window.setLocation(0, 0);
-//
-//        Pnl_Contenedor.removeAll();
-//        Pnl_Contenedor.add(Match_Window);
-//
-//        Pnl_Contenedor.revalidate();
-//        Pnl_Contenedor.repaint();
-    }//GEN-LAST:event_Btn_Registro_PartidosActionPerformed
+    }//GEN-LAST:event_Btn_MecanicoActionPerformed
 
     private void Btn_EstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EstadisticasActionPerformed
 
     }//GEN-LAST:event_Btn_EstadisticasActionPerformed
 
-    private void Btn_Gestion_Equipos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Gestion_Equipos1ActionPerformed
+    private void Btn_DispensadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_DispensadorActionPerformed
 //        Team_Managment Team = null;
 //        try {
 //            Team = new Team_Managment();
@@ -211,7 +185,7 @@ public class Principal_Panel extends javax.swing.JFrame {
 //        Pnl_Contenedor.revalidate();
 //        Pnl_Contenedor.repaint();
 
-    }//GEN-LAST:event_Btn_Gestion_Equipos1ActionPerformed
+    }//GEN-LAST:event_Btn_DispensadorActionPerformed
 
     private void Btn_Cerrar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cerrar_SesionActionPerformed
         this.dispose();
@@ -269,11 +243,10 @@ public class Principal_Panel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Cerrar_Sesion;
+    private javax.swing.JButton Btn_Dispensador;
     private javax.swing.JButton Btn_Estadisticas;
-    private javax.swing.JButton Btn_Gestion_Equipos1;
-    private javax.swing.JButton Btn_Gestion_de_Torneos;
+    private javax.swing.JButton Btn_Mecanico;
     private javax.swing.JButton Btn_Pnl_Admin;
-    private javax.swing.JButton Btn_Registro_Partidos;
     private javax.swing.JPanel Pnl_Contenedor;
     private javax.swing.JPanel Pnl_Menu;
     private javax.swing.JPanel Pnl_Titulo;
