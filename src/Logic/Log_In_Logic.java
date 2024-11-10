@@ -54,7 +54,7 @@ public class Log_In_Logic {
                 principal_panel.setVisible(true);
 
             } else {
-                JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta. Intentelo de nuevo", "Mensaje Importante!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "uuUsuario o contraseña incorrecta. Intentelo de nuevo", "Mensaje Importante!", JOptionPane.WARNING_MESSAGE);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();

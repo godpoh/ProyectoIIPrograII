@@ -108,19 +108,19 @@ public class Principal_Panel extends javax.swing.JFrame {
                 Btn_Cerrar_SesionActionPerformed(evt);
             }
         });
-        Pnl_Titulo.add(Btn_Cerrar_Sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 0, 131, 29));
+        Pnl_Titulo.add(Btn_Cerrar_Sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 131, 29));
 
         Btn_Pnl_Admin.setBackground(new java.awt.Color(255, 111, 97));
         Btn_Pnl_Admin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Pnl_Admin.setForeground(new java.awt.Color(51, 51, 51));
-        Btn_Pnl_Admin.setText("Panel de Admin");
+        Btn_Pnl_Admin.setText("Panel de Administrador");
         Btn_Pnl_Admin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Btn_Pnl_Admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Pnl_AdminActionPerformed(evt);
             }
         });
-        Pnl_Titulo.add(Btn_Pnl_Admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 131, 29));
+        Pnl_Titulo.add(Btn_Pnl_Admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 29));
 
         getContentPane().add(Pnl_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 820, 30));
 
@@ -145,22 +145,15 @@ public class Principal_Panel extends javax.swing.JFrame {
 
 
     private void Btn_MecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_MecanicoActionPerformed
-//        Tournament_Management Tournament_Window = null;
-//        try {
-////            Tournament_Window = new Tournament_Management();
-//        } catch (SQLException ex) {
-//            Logger.getLogger(Principal_Panel.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//        Tournament_Window.setSize(820, 688);
-//        Tournament_Window.setLocation(0, 0);
-//
-//        Pnl_Contenedor.removeAll();
-//        Pnl_Contenedor.add(Tournament_Window);
-//
-//        Pnl_Contenedor.revalidate();
-//        Pnl_Contenedor.repaint();
+        Mechanics_Section Mechanic_Window = new Mechanics_Section();
+        Mechanic_Window.setSize(820, 688);
+        Mechanic_Window.setLocation(0, 0);
 
+        Pnl_Contenedor.removeAll();
+        Pnl_Contenedor.add(Mechanic_Window);
+
+        Pnl_Contenedor.revalidate();
+        Pnl_Contenedor.repaint();
     }//GEN-LAST:event_Btn_MecanicoActionPerformed
 
     private void Btn_EstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EstadisticasActionPerformed
@@ -168,23 +161,16 @@ public class Principal_Panel extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_EstadisticasActionPerformed
 
     private void Btn_DispensadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_DispensadorActionPerformed
-//        Team_Managment Team = null;
-//        try {
-//            Team = new Team_Managment();
-//       
-//        } catch (SQLException ex) {
-//            Logger.getLogger(Principal_Panel.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//        Team.setSize(820, 688);
-//        Team.setLocation(0, 0);
-//        
-//        Pnl_Contenedor.removeAll();
-//        Pnl_Contenedor.add(Team);
-//
-//        Pnl_Contenedor.revalidate();
-//        Pnl_Contenedor.repaint();
+        Dispenser_Section Window = new Dispenser_Section();
 
+        Window.setSize(820, 688);
+        Window.setLocation(0, 0);
+
+        Pnl_Contenedor.removeAll();
+        Pnl_Contenedor.add(Window);
+
+        Pnl_Contenedor.revalidate();
+        Pnl_Contenedor.repaint();
     }//GEN-LAST:event_Btn_DispensadorActionPerformed
 
     private void Btn_Cerrar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cerrar_SesionActionPerformed

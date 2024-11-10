@@ -11,7 +11,7 @@ package Presentation;
 public class Mechanics_Section extends javax.swing.JPanel {
 
     /**
-     * Creates new form Mechanics_Section
+     * Creates new form Mechanic
      */
     public Mechanics_Section() {
         initComponents();
@@ -26,19 +26,183 @@ public class Mechanics_Section extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        lblUsuario = new javax.swing.JLabel();
+        Txt_Nombre_Pieza = new javax.swing.JTextField();
+        Btn_Registro_Pieza = new javax.swing.JButton();
+        lblContrasena2 = new javax.swing.JLabel();
+        lblContrasena1 = new javax.swing.JLabel();
+        lblUsuario2 = new javax.swing.JLabel();
+        Txt_Compatibilidad = new javax.swing.JTextField();
+        Btn_Actualizar_Pieza = new javax.swing.JButton();
+        Txt_Categoria_Pieza = new javax.swing.JTextField();
+        Txt_Manufactura = new javax.swing.JTextField();
+        Txt_Garantia = new javax.swing.JTextField();
+        lblContrasena3 = new javax.swing.JLabel();
+        Txt_Precio_Unidad = new javax.swing.JTextField();
+        lblContrasena4 = new javax.swing.JLabel();
+        lblIniciarSesion = new javax.swing.JLabel();
+        Btn_Inactivo_Combustible = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        Pnl_Principal1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        lblUsuario.setText("Nombre de la pieza");
+        jPanel2.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, -1, -1));
+
+        Txt_Nombre_Pieza.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Nombre_Pieza.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel2.add(Txt_Nombre_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 350, 40));
+
+        Btn_Registro_Pieza.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Registro_Pieza.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Registro_Pieza.setText("Registrar");
+        Btn_Registro_Pieza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Registro_PiezaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Btn_Registro_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 580, -1, -1));
+
+        lblContrasena2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblContrasena2.setForeground(new java.awt.Color(0, 0, 0));
+        lblContrasena2.setText("Manufactura");
+        jPanel2.add(lblContrasena2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, -1));
+
+        lblContrasena1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblContrasena1.setForeground(new java.awt.Color(0, 0, 0));
+        lblContrasena1.setText("Compatibilidad");
+        jPanel2.add(lblContrasena1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 110, -1));
+
+        lblUsuario2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblUsuario2.setForeground(new java.awt.Color(0, 0, 0));
+        lblUsuario2.setText("Categoria de la pieza");
+        jPanel2.add(lblUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
+
+        Txt_Compatibilidad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Compatibilidad.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel2.add(Txt_Compatibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 350, 40));
+
+        Btn_Actualizar_Pieza.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Actualizar_Pieza.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Actualizar_Pieza.setText("Actualizar");
+        Btn_Actualizar_Pieza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Actualizar_PiezaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Btn_Actualizar_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 580, 120, -1));
+
+        Txt_Categoria_Pieza.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Categoria_Pieza.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel2.add(Txt_Categoria_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 350, 40));
+
+        Txt_Manufactura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Manufactura.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel2.add(Txt_Manufactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 350, 40));
+
+        Txt_Garantia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Garantia.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel2.add(Txt_Garantia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 350, 40));
+
+        lblContrasena3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblContrasena3.setForeground(new java.awt.Color(0, 0, 0));
+        lblContrasena3.setText("Periodo de garantía(Meses)");
+        jPanel2.add(lblContrasena3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 210, -1));
+
+        Txt_Precio_Unidad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Precio_Unidad.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel2.add(Txt_Precio_Unidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 520, 350, 40));
+
+        lblContrasena4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblContrasena4.setForeground(new java.awt.Color(0, 0, 0));
+        lblContrasena4.setText("Precio por unidad");
+        jPanel2.add(lblContrasena4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 210, -1));
+
+        lblIniciarSesion.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblIniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion.setText("Registro de Equipo/Piezas");
+        jPanel2.add(lblIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 260, 40));
+
+        Btn_Inactivo_Combustible.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Inactivo_Combustible.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Inactivo_Combustible.setText("Inactivo");
+        Btn_Inactivo_Combustible.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Inactivo_CombustibleActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Btn_Inactivo_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 580, 100, -1));
+
+        jTabbedPane1.addTab("Partes de Equipos", jPanel2);
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Pnl_Principal1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.add(Pnl_Principal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4, 820, 760));
+
+        jTabbedPane1.addTab("Tipos de Mantenimientos", jPanel3);
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTabbedPane1.addTab("Asignación de Mantenimientos", jPanel4);
+
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTabbedPane1.addTab("Boletas de Mantenimiento", jPanel5);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void Btn_Registro_PiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_PiezaActionPerformed
+        
+
+    }//GEN-LAST:event_Btn_Registro_PiezaActionPerformed
+
+    private void Btn_Actualizar_PiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_PiezaActionPerformed
+
+    }//GEN-LAST:event_Btn_Actualizar_PiezaActionPerformed
+
+    private void Btn_Inactivo_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_CombustibleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Inactivo_CombustibleActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_Actualizar_Pieza;
+    private javax.swing.JButton Btn_Inactivo_Combustible;
+    private javax.swing.JButton Btn_Registro_Pieza;
+    private javax.swing.JPanel Pnl_Principal1;
+    private javax.swing.JTextField Txt_Categoria_Pieza;
+    private javax.swing.JTextField Txt_Compatibilidad;
+    private javax.swing.JTextField Txt_Garantia;
+    private javax.swing.JTextField Txt_Manufactura;
+    private javax.swing.JTextField Txt_Nombre_Pieza;
+    private javax.swing.JTextField Txt_Precio_Unidad;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblContrasena1;
+    private javax.swing.JLabel lblContrasena2;
+    private javax.swing.JLabel lblContrasena3;
+    private javax.swing.JLabel lblContrasena4;
+    private javax.swing.JLabel lblIniciarSesion;
+    private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblUsuario2;
     // End of variables declaration//GEN-END:variables
 }
