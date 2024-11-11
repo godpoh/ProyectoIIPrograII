@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -62,5 +63,35 @@ public class Connection_SQL {
         }
 
         return Role;
+    }
+
+    public static void get_Vehicle_Name(JComboBox JCB) throws SQLException {
+        String License_Plate = "";
+        String qry = "Select License_Plate From Vehicle";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        ResultSet rs = sql.executeQuery(qry);
+        JCB.removeAllItems();
+        JCB.addItem("Seleccione un vehiculo:");
+        if (rs.next()) {
+            License_Plate = rs.getString("License_Plate");
+            JCB.addItem(License_Plate);
+        };
+
+    }
+
+    public static int get_Vehicle_Id_By_Name(String License_Plate) throws SQLException {
+        int Id = 0;
+        String qry = "Select Id From Vehicle Where License_Plate = '" + License_Plate + "'";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        if (rs.next()) {
+            Id = rs.getInt("Id");
+        }
+        return Id;
     }
 }

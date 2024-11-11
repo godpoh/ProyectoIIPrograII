@@ -164,4 +164,37 @@ public class CUD_SQL {
 
         return affectedRows;
     }
+
+    public static int Insert_Maintenance_Type(Maintenance_Type_Obj maintenance) throws SQLException {
+        String qry = "Insert Into Maintenance_Types (Maintenance_Id, Type, Description, Frequency, Material_Cost_Estimate, Vehicle_Id) "
+                + "Values (" + maintenance.getMaintenance_Id() + ", '"
+                + maintenance.getType() + "', '"
+                + maintenance.getDescription() + "', '"
+                + maintenance.getFrequency() + "', "
+                + maintenance.getMaterial_Cost_Estimate() + ", "
+                + maintenance.getVehicle_Id() + ")";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Mantenimiento guardado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
+    public static int Update_Maintenance_Type(Maintenance_Type_Obj maintenance) throws SQLException {
+        String qry = "Update Maintenance_Types Set "
+                + "Type = '" + maintenance.getType() + "', "
+                + "Description = '" + maintenance.getDescription() + "', "
+                + "Frequency = '" + maintenance.getFrequency() + "', "
+                + "Material_Cost_Estimate = " + maintenance.getMaterial_Cost_Estimate() + ", "
+                + "Vehicle_Id = " + maintenance.getVehicle_Id() + " "
+                + "WHERE Maintenance_Id = " + maintenance.getMaintenance_Id();
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Mantenimiento actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
 }
