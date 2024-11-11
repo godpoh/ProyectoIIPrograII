@@ -4,6 +4,12 @@
  */
 package Presentation;
 
+import Data.CUD_SQL;
+import Data.Part_Obj;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Admin
@@ -44,6 +50,8 @@ public class Mechanics_Section extends javax.swing.JPanel {
         lblContrasena4 = new javax.swing.JLabel();
         lblIniciarSesion = new javax.swing.JLabel();
         Btn_Inactivo_Combustible = new javax.swing.JButton();
+        lblUsuario1 = new javax.swing.JLabel();
+        Txt_Id = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         Pnl_Principal1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -54,11 +62,11 @@ public class Mechanics_Section extends javax.swing.JPanel {
         lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUsuario.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuario.setText("Nombre de la pieza");
-        jPanel2.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, -1, -1));
+        jPanel2.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, -1, -1));
 
         Txt_Nombre_Pieza.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Nombre_Pieza.setForeground(new java.awt.Color(153, 153, 153));
-        jPanel2.add(Txt_Nombre_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 350, 40));
+        jPanel2.add(Txt_Nombre_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 350, 40));
 
         Btn_Registro_Pieza.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Btn_Registro_Pieza.setForeground(new java.awt.Color(0, 0, 0));
@@ -68,26 +76,26 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Btn_Registro_PiezaActionPerformed(evt);
             }
         });
-        jPanel2.add(Btn_Registro_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 580, -1, -1));
+        jPanel2.add(Btn_Registro_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 620, -1, -1));
 
         lblContrasena2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblContrasena2.setForeground(new java.awt.Color(0, 0, 0));
         lblContrasena2.setText("Manufactura");
-        jPanel2.add(lblContrasena2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, -1));
+        jPanel2.add(lblContrasena2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 220, -1));
 
         lblContrasena1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblContrasena1.setForeground(new java.awt.Color(0, 0, 0));
-        lblContrasena1.setText("Compatibilidad");
-        jPanel2.add(lblContrasena1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 110, -1));
+        lblContrasena1.setText("Compatibilidad(X Vehiculo)");
+        jPanel2.add(lblContrasena1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 200, -1));
 
         lblUsuario2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUsuario2.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuario2.setText("Categoria de la pieza");
-        jPanel2.add(lblUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
+        jPanel2.add(lblUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, -1, -1));
 
         Txt_Compatibilidad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Compatibilidad.setForeground(new java.awt.Color(153, 153, 153));
-        jPanel2.add(Txt_Compatibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 350, 40));
+        jPanel2.add(Txt_Compatibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 350, 40));
 
         Btn_Actualizar_Pieza.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Btn_Actualizar_Pieza.setForeground(new java.awt.Color(0, 0, 0));
@@ -97,33 +105,33 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Btn_Actualizar_PiezaActionPerformed(evt);
             }
         });
-        jPanel2.add(Btn_Actualizar_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 580, 120, -1));
+        jPanel2.add(Btn_Actualizar_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 620, 120, -1));
 
         Txt_Categoria_Pieza.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Categoria_Pieza.setForeground(new java.awt.Color(153, 153, 153));
-        jPanel2.add(Txt_Categoria_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 350, 40));
+        jPanel2.add(Txt_Categoria_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 350, 40));
 
         Txt_Manufactura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Manufactura.setForeground(new java.awt.Color(153, 153, 153));
-        jPanel2.add(Txt_Manufactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 350, 40));
+        jPanel2.add(Txt_Manufactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 350, 40));
 
         Txt_Garantia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Garantia.setForeground(new java.awt.Color(153, 153, 153));
-        jPanel2.add(Txt_Garantia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 350, 40));
+        jPanel2.add(Txt_Garantia, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, 350, 40));
 
         lblContrasena3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblContrasena3.setForeground(new java.awt.Color(0, 0, 0));
-        lblContrasena3.setText("Periodo de garantía(Meses)");
-        jPanel2.add(lblContrasena3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 210, -1));
+        lblContrasena3.setText("Periodo de garantía(Si no tiene coloque 0)(Meses)");
+        jPanel2.add(lblContrasena3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 350, -1));
 
         Txt_Precio_Unidad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Precio_Unidad.setForeground(new java.awt.Color(153, 153, 153));
-        jPanel2.add(Txt_Precio_Unidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 520, 350, 40));
+        jPanel2.add(Txt_Precio_Unidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 560, 350, 40));
 
         lblContrasena4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblContrasena4.setForeground(new java.awt.Color(0, 0, 0));
         lblContrasena4.setText("Precio por unidad");
-        jPanel2.add(lblContrasena4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 210, -1));
+        jPanel2.add(lblContrasena4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, 210, -1));
 
         lblIniciarSesion.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblIniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
@@ -138,7 +146,16 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Btn_Inactivo_CombustibleActionPerformed(evt);
             }
         });
-        jPanel2.add(Btn_Inactivo_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 580, 100, -1));
+        jPanel2.add(Btn_Inactivo_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 620, 100, -1));
+
+        lblUsuario1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblUsuario1.setForeground(new java.awt.Color(0, 0, 0));
+        lblUsuario1.setText("Id de la pieza");
+        jPanel2.add(lblUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, -1, -1));
+
+        Txt_Id.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Id.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel2.add(Txt_Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 350, 40));
 
         jTabbedPane1.addTab("Partes de Equipos", jPanel2);
 
@@ -168,12 +185,39 @@ public class Mechanics_Section extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_Registro_PiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_PiezaActionPerformed
-        
+        try {
+            int Part_Id = Integer.parseInt(Txt_Id.getText());
+            String Part_Name = Txt_Nombre_Pieza.getText();
+            String Part_Category = Txt_Categoria_Pieza.getText();
+            String Manufacture = Txt_Manufactura.getText();
+            String Compatiility = Txt_Compatibilidad.getText();
+            int Warrantly = Integer.parseInt(Txt_Garantia.getText());
+            float Price = Float.parseFloat(Txt_Precio_Unidad.getText());
 
+            Part_Obj Obj = new Part_Obj(Part_Id, Part_Name, Part_Category, Manufacture, Compatiility, Warrantly, Price);
+
+            CUD_SQL.Insert_Part(Obj);
+        } catch (SQLException ex) {
+            Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Btn_Registro_PiezaActionPerformed
 
     private void Btn_Actualizar_PiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_PiezaActionPerformed
+        try {
+            int Part_Id = Integer.parseInt(Txt_Id.getText());
+            String Part_Name = Txt_Nombre_Pieza.getText();
+            String Part_Category = Txt_Categoria_Pieza.getText();
+            String Manufacture = Txt_Manufactura.getText();
+            String Compatiility = Txt_Compatibilidad.getText();
+            int Warrantly = Integer.parseInt(Txt_Garantia.getText());
+            float Price = Float.parseFloat(Txt_Precio_Unidad.getText());
 
+            Part_Obj Obj = new Part_Obj(Part_Id, Part_Name, Part_Category, Manufacture, Compatiility, Warrantly, Price);
+
+            CUD_SQL.Update_Part(Obj);
+        } catch (SQLException ex) {
+            Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Btn_Actualizar_PiezaActionPerformed
 
     private void Btn_Inactivo_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_CombustibleActionPerformed
@@ -189,6 +233,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
     private javax.swing.JTextField Txt_Categoria_Pieza;
     private javax.swing.JTextField Txt_Compatibilidad;
     private javax.swing.JTextField Txt_Garantia;
+    private javax.swing.JTextField Txt_Id;
     private javax.swing.JTextField Txt_Manufactura;
     private javax.swing.JTextField Txt_Nombre_Pieza;
     private javax.swing.JTextField Txt_Precio_Unidad;
@@ -203,6 +248,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
     private javax.swing.JLabel lblContrasena4;
     private javax.swing.JLabel lblIniciarSesion;
     private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblUsuario1;
     private javax.swing.JLabel lblUsuario2;
     // End of variables declaration//GEN-END:variables
 }

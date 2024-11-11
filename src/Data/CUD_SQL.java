@@ -131,36 +131,36 @@ public class CUD_SQL {
     }
 
     public static int Insert_Part(Part_Obj part) throws SQLException {
-        String qry = "INSERT INTO Equipment_Parts (Part_Name, Part_Category, Manu_Facturer, Compatibility, Warranty_Period, Unit_Cost) "
-                + "VALUES ('" + part.getPart_Name() + "', '"
+        String qry = "Insert Into Equipment_Parts (Part_ID, Part_Name, Part_Category, Manu_Facturer, Compatibility, Warranty_Period, Unit_Cost) "
+                + "Values (" + part.getPart_Id() + ", '"
+                + part.getPart_Name() + "', '"
                 + part.getPart_Category() + "', '"
                 + part.getManu_Facturer() + "', '"
                 + part.getCompatibility() + "', "
                 + part.getWarrantly_Period() + ", "
                 + part.getUnit_Cost() + ")";
-
         Statement sql = Connection_SQL.getConnection().createStatement();
         int affectedRows = sql.executeUpdate(qry);
 
-        JOptionPane.showMessageDialog(null, "Parte guardada satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Pieza guardada satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
 
         return affectedRows;
     }
 
     public static int Update_Part(Part_Obj part) throws SQLException {
-        String qry = "UPDATE Equipment_Parts SET "
+        String qry = "Update Equipment_Parts Set "
                 + "Part_Name = '" + part.getPart_Name() + "', "
                 + "Part_Category = '" + part.getPart_Category() + "', "
                 + "Manu_Facturer = '" + part.getManu_Facturer() + "', "
                 + "Compatibility = '" + part.getCompatibility() + "', "
                 + "Warranty_Period = " + part.getWarrantly_Period() + ", "
                 + "Unit_Cost = " + part.getUnit_Cost() + " "
-                + "WHERE Part_ID = " + part.getPart_Id();
+                + "Where Part_ID = " + part.getPart_Id();
 
         Statement sql = Connection_SQL.getConnection().createStatement();
         int affectedRows = sql.executeUpdate(qry);
 
-        JOptionPane.showMessageDialog(null, "Parte actualizada satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Pieza actualizada satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
 
         return affectedRows;
     }

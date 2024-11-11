@@ -202,8 +202,8 @@
                           <StringArray count="4">
                             <StringItem index="0" value="Seleccione un rol"/>
                             <StringItem index="1" value="Admin"/>
-                            <StringItem index="2" value="Quiropractico"/>
-                            <StringItem index="3" value="Entrenador"/>
+                            <StringItem index="2" value="Chofer"/>
+                            <StringItem index="3" value="Usuario"/>
                           </StringArray>
                         </Property>
                       </Properties>

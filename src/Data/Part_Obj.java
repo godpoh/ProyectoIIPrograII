@@ -9,15 +9,17 @@ package Data;
  * @author Admin
  */
 public class Part_Obj {
+
     int Part_Id;
     String Part_Name;
     String Part_Category;
     String Manu_Facturer;
     String Compatibility;
-    String Warrantly_Period;
+    int Warrantly_Period;
     float Unit_Cost;
 
-    public Part_Obj(String Part_Name, String Part_Category, String Manu_Facturer, String Compatibility, String Warrantly_Period, float Unit_Cost) {
+    public Part_Obj(int Part_Id, String Part_Name, String Part_Category, String Manu_Facturer, String Compatibility, int Warrantly_Period, float Unit_Cost) {
+        this.Part_Id = Part_Id;
         this.Part_Name = Part_Name;
         this.Part_Category = Part_Category;
         this.Manu_Facturer = Manu_Facturer;
@@ -66,11 +68,11 @@ public class Part_Obj {
         this.Compatibility = Compatibility;
     }
 
-    public String getWarrantly_Period() {
+    public int getWarrantly_Period() {
         return Warrantly_Period;
     }
 
-    public void setWarrantly_Period(String Warrantly_Period) {
+    public void setWarrantly_Period(int Warrantly_Period) {
         this.Warrantly_Period = Warrantly_Period;
     }
 
@@ -81,5 +83,5 @@ public class Part_Obj {
     public void setUnit_Cost(float Unit_Cost) {
         this.Unit_Cost = Unit_Cost;
     }
-    
+
 }
