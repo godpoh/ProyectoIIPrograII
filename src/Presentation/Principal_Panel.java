@@ -4,6 +4,10 @@
  */
 package Presentation;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author user
@@ -42,6 +46,7 @@ public class Principal_Panel extends javax.swing.JFrame {
         Btn_Mecanico = new javax.swing.JButton();
         Btn_Estadisticas = new javax.swing.JButton();
         Btn_Dispensador = new javax.swing.JButton();
+        Btn_Estado = new javax.swing.JButton();
         Pnl_Titulo = new javax.swing.JPanel();
         Btn_Cerrar_Sesion = new javax.swing.JButton();
         Btn_Pnl_Admin = new javax.swing.JButton();
@@ -91,6 +96,18 @@ public class Principal_Panel extends javax.swing.JFrame {
             }
         });
         Pnl_Menu.add(Btn_Dispensador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 150, 50));
+
+        Btn_Estado.setBackground(new java.awt.Color(255, 111, 97));
+        Btn_Estado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Estado.setForeground(new java.awt.Color(51, 51, 51));
+        Btn_Estado.setText("Estado");
+        Btn_Estado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Btn_Estado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_EstadoActionPerformed(evt);
+            }
+        });
+        Pnl_Menu.add(Btn_Estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 650, 150, 50));
 
         getContentPane().add(Pnl_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 720));
 
@@ -145,7 +162,12 @@ public class Principal_Panel extends javax.swing.JFrame {
 
 
     private void Btn_MecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_MecanicoActionPerformed
-        Mechanics_Section Mechanic_Window = new Mechanics_Section();
+        Mechanics_Section Mechanic_Window = null;
+        try {
+            Mechanic_Window = new Mechanics_Section();
+        } catch (SQLException ex) {
+            Logger.getLogger(Principal_Panel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Mechanic_Window.setSize(820, 688);
         Mechanic_Window.setLocation(0, 0);
 
@@ -192,6 +214,10 @@ public class Principal_Panel extends javax.swing.JFrame {
         Pnl_Contenedor.repaint();
     }//GEN-LAST:event_Btn_Pnl_AdminActionPerformed
 
+    private void Btn_EstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EstadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_EstadoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -231,6 +257,7 @@ public class Principal_Panel extends javax.swing.JFrame {
     private javax.swing.JButton Btn_Cerrar_Sesion;
     private javax.swing.JButton Btn_Dispensador;
     private javax.swing.JButton Btn_Estadisticas;
+    private javax.swing.JButton Btn_Estado;
     private javax.swing.JButton Btn_Mecanico;
     private javax.swing.JButton Btn_Pnl_Admin;
     private javax.swing.JPanel Pnl_Contenedor;

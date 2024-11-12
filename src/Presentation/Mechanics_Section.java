@@ -101,6 +101,8 @@ public class Mechanics_Section extends javax.swing.JPanel {
         Btn_Actualizar_Mantenimiento = new javax.swing.JButton();
         Btn_Inactivo_Mantenimiento = new javax.swing.JButton();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -205,6 +207,8 @@ public class Mechanics_Section extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblIniciarSesion3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -226,6 +230,8 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 .addComponent(lblIniciarSesion3)
                 .addGap(0, 181, Short.MAX_VALUE))
         );
+
+        jPanel6.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 436, 810, -1));
 
         jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -249,62 +255,81 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 .addContainerGap(195, Short.MAX_VALUE))
         );
 
+        jPanel6.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 216, 810, -1));
+
         jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblIniciarSesion2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIniciarSesion2.setForeground(new java.awt.Color(0, 0, 0));
         lblIniciarSesion2.setText("Tipos de Mantenimientos");
+        jPanel11.add(lblIniciarSesion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 1, -1, -1));
 
         lblIniciarSesion4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblIniciarSesion4.setForeground(new java.awt.Color(0, 0, 0));
         lblIniciarSesion4.setText("Id del Mantenimiento");
+        jPanel11.add(lblIniciarSesion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 19, 147, -1));
 
         Txt_Id_Mantenimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Id_Mantenimiento.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel11.add(Txt_Id_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 35, 147, -1));
 
         Txt_Tipo_Mantenimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Tipo_Mantenimiento.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel11.add(Txt_Tipo_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 83, 147, -1));
 
         lblIniciarSesion6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblIniciarSesion6.setForeground(new java.awt.Color(0, 0, 0));
         lblIniciarSesion6.setText("Tipo de Mantenimiento");
+        jPanel11.add(lblIniciarSesion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 62, 147, -1));
 
         Txt_Frecuencia.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Frecuencia.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel11.add(Txt_Frecuencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 131, 147, -1));
 
         lblIniciarSesion7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblIniciarSesion7.setForeground(new java.awt.Color(0, 0, 0));
         lblIniciarSesion7.setText("Frecuencia");
+        jPanel11.add(lblIniciarSesion7, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 110, 147, -1));
 
         Txt_Costo_Estimado.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Costo_Estimado.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel11.add(Txt_Costo_Estimado, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 179, 147, -1));
 
         lblIniciarSesion8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblIniciarSesion8.setForeground(new java.awt.Color(0, 0, 0));
         lblIniciarSesion8.setText("Costos estimados");
+        jPanel11.add(lblIniciarSesion8, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 158, 147, -1));
 
         lblIniciarSesion9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblIniciarSesion9.setForeground(new java.awt.Color(0, 0, 0));
         lblIniciarSesion9.setText("Vehiculo");
+        jPanel11.add(lblIniciarSesion9, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 147, -1));
 
         lblIniciarSesion10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblIniciarSesion10.setForeground(new java.awt.Color(0, 0, 0));
         lblIniciarSesion10.setText("Id:");
+        jPanel11.add(lblIniciarSesion10, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, 31, -1));
 
         Lbl_Actualizar_Id.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Lbl_Actualizar_Id.setForeground(new java.awt.Color(0, 0, 0));
         Lbl_Actualizar_Id.setText("0");
+        jPanel11.add(Lbl_Actualizar_Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, 65, 21));
 
         Jcb_Vehiculo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jcb_Vehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un vehiculo:" }));
+        jPanel11.add(Jcb_Vehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, -1, -1));
 
         TxA_Descripcion.setColumns(20);
         TxA_Descripcion.setRows(5);
         jScrollPane1.setViewportView(TxA_Descripcion);
 
+        jPanel11.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 36, 360, 164));
+
         lblIniciarSesion5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblIniciarSesion5.setForeground(new java.awt.Color(0, 0, 0));
-        lblIniciarSesion5.setText("Descripcion");
+        lblIniciarSesion5.setText("Descripción");
+        jPanel11.add(lblIniciarSesion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 19, 79, -1));
 
         Btn_Registrar_Mantenimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Registrar_Mantenimiento.setForeground(new java.awt.Color(0, 0, 0));
@@ -314,6 +339,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Btn_Registrar_MantenimientoActionPerformed(evt);
             }
         });
+        jPanel11.add(Btn_Registrar_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 90, -1));
 
         Btn_Actualizar_Mantenimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Actualizar_Mantenimiento.setForeground(new java.awt.Color(0, 0, 0));
@@ -323,6 +349,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Btn_Actualizar_MantenimientoActionPerformed(evt);
             }
         });
+        jPanel11.add(Btn_Actualizar_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, 100, -1));
 
         Btn_Inactivo_Mantenimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Inactivo_Mantenimiento.setForeground(new java.awt.Color(0, 0, 0));
@@ -332,127 +359,15 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Btn_Inactivo_MantenimientoActionPerformed(evt);
             }
         });
+        jPanel11.add(Btn_Inactivo_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 170, 90, -1));
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblIniciarSesion2)
-                .addGap(313, 313, 313))
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Txt_Id_Mantenimiento)
-                        .addComponent(lblIniciarSesion4, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Txt_Tipo_Mantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIniciarSesion6, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIniciarSesion7, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Txt_Frecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Txt_Costo_Estimado, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIniciarSesion8, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIniciarSesion5, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblIniciarSesion9, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIniciarSesion10, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Lbl_Actualizar_Id, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(Btn_Registrar_Mantenimiento)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Btn_Actualizar_Mantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Btn_Inactivo_Mantenimiento))
-                    .addComponent(Jcb_Vehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(lblIniciarSesion2)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane1))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addComponent(Jcb_Vehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(lblIniciarSesion9))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblIniciarSesion10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Actualizar_Id, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Btn_Registrar_Mantenimiento)
-                                    .addComponent(Btn_Actualizar_Mantenimiento)
-                                    .addComponent(Btn_Inactivo_Mantenimiento)))))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblIniciarSesion4)
-                            .addComponent(lblIniciarSesion5))
-                        .addGap(1, 1, 1)
-                        .addComponent(Txt_Id_Mantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblIniciarSesion6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Txt_Tipo_Mantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblIniciarSesion7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Txt_Frecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblIniciarSesion8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Txt_Costo_Estimado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 820, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(114, 114, 114))
-        );
+        jPanel6.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 810, 210));
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 760));
 
         jTabbedPane1.addTab("Mantenimientos", jPanel1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
-        );
+        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_Inactivo_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_CombustibleActionPerformed
