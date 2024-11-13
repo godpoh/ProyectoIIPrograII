@@ -384,7 +384,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             int Warrantly = Integer.parseInt(Txt_Garantia.getText());
             float Price = Float.parseFloat(Txt_Precio_Unidad.getText());
 
-            Part_Obj Obj = new Part_Obj(Part_Id, Part_Name, Part_Category, Manufacture, Compatiility, Warrantly, Price);
+            Part_Obj Obj = new Part_Obj(Part_Id, Part_Name, Part_Category, Manufacture, Compatiility, Warrantly, Price, 1);
 
             CUD_SQL.Update_Part(Obj);
         } catch (SQLException ex) {
@@ -402,7 +402,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             int Warrantly = Integer.parseInt(Txt_Garantia.getText());
             float Price = Float.parseFloat(Txt_Precio_Unidad.getText());
 
-            Part_Obj Obj = new Part_Obj(Part_Id, Part_Name, Part_Category, Manufacture, Compatiility, Warrantly, Price);
+            Part_Obj Obj = new Part_Obj(Part_Id, Part_Name, Part_Category, Manufacture, Compatiility, Warrantly, Price, 1);
 
             CUD_SQL.Insert_Part(Obj);
         } catch (SQLException ex) {
@@ -419,7 +419,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
         String License_Plate = (String) Jcb_Vehiculo.getSelectedItem();
         try {
             int Vehicle_Id = Connection_SQL.get_Vehicle_Id_By_Name(License_Plate);
-            Maintenance_Type_Obj Obj = new Maintenance_Type_Obj(Maintenance_Id, Maintenance_Type, Description, Frequency, Approximate_Cost, Vehicle_Id);
+            Maintenance_Type_Obj Obj = new Maintenance_Type_Obj(Maintenance_Id, Maintenance_Type, Description, Frequency, Approximate_Cost, Vehicle_Id, 1);
             CUD_SQL.Insert_Maintenance_Type(Obj);
 
         } catch (SQLException ex) {
@@ -437,7 +437,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
         String License_Plate = (String) Jcb_Vehiculo.getSelectedItem();
         try {
             int Vehicle_Id = Connection_SQL.get_Vehicle_Id_By_Name(License_Plate);
-            Maintenance_Type_Obj Obj = new Maintenance_Type_Obj(Maintenance_Id, Maintenance_Type, Description, Frequency, Approximate_Cost, Vehicle_Id);
+            Maintenance_Type_Obj Obj = new Maintenance_Type_Obj(Maintenance_Id, Maintenance_Type, Description, Frequency, Approximate_Cost, Vehicle_Id, 1);
             CUD_SQL.Update_Maintenance_Type(Obj);
 
         } catch (SQLException ex) {

@@ -52,6 +52,37 @@ public class CUD_SQL {
 
     }
 
+    public static int Update_User_Status(int User_Id, int Status) throws SQLException {
+        int Rows_Affected = 0;
+        String Message;
+        if (Status == 0) {
+            Message = "¿Está seguro de que desea marcar al usuario como inactivo?";
+        } else {
+            Message = "¿Está seguro de que desea marcar al usuario como activo?";
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(null, Message,
+                "Confirmar actualización", JOptionPane.YES_NO_OPTION);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            String qry = "Update Users Set Status = " + Status + " Where Id = " + User_Id;
+            Statement sql = Connection_SQL.getConnection().createStatement();
+            Rows_Affected = sql.executeUpdate(qry);
+
+            String Status_Message;
+            if (Status == 0) {
+                Status_Message = "inactivo";
+            } else {
+                Status_Message = "activo";
+            }
+
+            JOptionPane.showMessageDialog(null, "El usuario ahora está " + Status_Message + ".");
+        } else {
+            JOptionPane.showMessageDialog(null, "Actualización cancelada.");
+        }
+        return Rows_Affected;
+    }
+
     public static int Insert_Vehicle(Vehicle_Obj Vehicle) throws SQLException {
         int Affected_Rows;
 
@@ -71,6 +102,33 @@ public class CUD_SQL {
         JOptionPane.showMessageDialog(null, "Datos guardados satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
         return Affected_Rows;
 
+    }
+
+    public static int Update_Vehicle(Vehicle_Obj Vehicle) throws SQLException {
+        int Affected_Rows;
+
+        // Crear la consulta de actualización
+        String qry = "UPDATE Vehicle SET "
+                + "Brand = '" + Vehicle.getBrand() + "', "
+                + "Model = '" + Vehicle.getModel() + "', "
+                + "Year = " + Vehicle.getYear() + ", "
+                + "Color = '" + Vehicle.getColor() + "', "
+                + "Type = '" + Vehicle.getType() + "', "
+                + "Seat_Count = " + Vehicle.getSeatCount() + ", "
+                + "Load_Capacity = " + Vehicle.getLoad_Capacity()
+                + " WHERE License_Plate = " + Vehicle.getLicensePlate();
+
+        Statement sql = (Statement) Connection_SQL.getConnection().createStatement();
+
+        Affected_Rows = sql.executeUpdate(qry);
+
+        if (Affected_Rows > 0) {
+            JOptionPane.showMessageDialog(null, "Datos actualizados satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontraron registros para actualizar", "Aviso importante", JOptionPane.WARNING_MESSAGE);
+        }
+
+        return Affected_Rows;
     }
 
     public static int Insert_Fuel(Fuel_Obj Fuel) throws SQLException {
@@ -99,33 +157,6 @@ public class CUD_SQL {
 
         int Affected_Rows = sql.executeUpdate(qry);
         JOptionPane.showMessageDialog(null, "Datos actualizados satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
-
-        return Affected_Rows;
-    }
-
-    public static int Update_Vehicle(Vehicle_Obj Vehicle) throws SQLException {
-        int Affected_Rows;
-
-        // Crear la consulta de actualización
-        String qry = "UPDATE Vehicle SET "
-                + "Brand = '" + Vehicle.getBrand() + "', "
-                + "Model = '" + Vehicle.getModel() + "', "
-                + "Year = " + Vehicle.getYear() + ", "
-                + "Color = '" + Vehicle.getColor() + "', "
-                + "Type = '" + Vehicle.getType() + "', "
-                + "Seat_Count = " + Vehicle.getSeatCount() + ", "
-                + "Load_Capacity = " + Vehicle.getLoad_Capacity()
-                + " WHERE License_Plate = " + Vehicle.getLicensePlate();
-
-        Statement sql = (Statement) Connection_SQL.getConnection().createStatement();
-
-        Affected_Rows = sql.executeUpdate(qry);
-
-        if (Affected_Rows > 0) {
-            JOptionPane.showMessageDialog(null, "Datos actualizados satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(null, "No se encontraron registros para actualizar", "Aviso importante", JOptionPane.WARNING_MESSAGE);
-        }
 
         return Affected_Rows;
     }

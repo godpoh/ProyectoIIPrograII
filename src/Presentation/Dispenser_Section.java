@@ -237,7 +237,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
         String Type = Txt_Tipo_Combustible.getText();
         float Price = Float.parseFloat(Txt_Precio_Litro.getText());
 
-        Fuel_Obj Fuel = new Fuel_Obj(Fuel_Id, Fuel_Name, Type, Price);
+        Fuel_Obj Fuel = new Fuel_Obj(Fuel_Id, Fuel_Name, Type, Price, 1);
         try {
             int Affected_Rows = CUD_SQL.Update_Fuel(Fuel);
             if (Affected_Rows != 0) {
@@ -269,7 +269,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
         String Type = Txt_Tipo_Combustible.getText();
         float Price = Float.parseFloat(Txt_Precio_Litro.getText());
 
-        Fuel_Obj Fuel = new Fuel_Obj(Fuel_Id, Fuel_Name, Type, Price);
+        Fuel_Obj Fuel = new Fuel_Obj(Fuel_Id, Fuel_Name, Type, Price, 1);
         try {
             int Affected_Rows = CUD_SQL.Insert_Fuel(Fuel);
             if (Affected_Rows != 0) {

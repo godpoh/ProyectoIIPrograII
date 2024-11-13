@@ -49,12 +49,18 @@ public class Log_In_Logic {
             Connection_SQL connectionSQL = new Connection_SQL();
             if (connectionSQL.Verify_User(get_User_Id, getPassword)) {
                 String Role = get_Role(get_User_Id, getPassword);
-
-                Principal_Panel principal_panel = new Principal_Panel(Role);
-                principal_panel.setVisible(true);
+                int Status = Connection_SQL.Verify_User_Status(get_User_Id);
+                if (Status != 0) {
+                    Principal_Panel principal_panel = new Principal_Panel(Role);
+                    principal_panel.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Este usuario está inactivo!", "Mensaje Informativo", JOptionPane.INFORMATION_MESSAGE);
+                    return;
+                }
 
             } else {
-                JOptionPane.showMessageDialog(null, "uuUsuario o contraseña incorrecta. Intentelo de nuevo", "Mensaje Importante!", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta. Intentelo de nuevo", "Mensaje Importante!", JOptionPane.WARNING_MESSAGE);
+                return;
             }
         } catch (SQLException ex) {
             ex.printStackTrace();

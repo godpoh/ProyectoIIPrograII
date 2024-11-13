@@ -19,8 +19,9 @@ public class Vehicle_Obj {
     private String Type;
     private int SeatCount;
     private float Load_Capacity;
+    private int Status;
 
-    public Vehicle_Obj(String LicensePlate, String Brand, String Model, int Year, String Color, String Type, int SeatCount, float Load_Capacity) {
+    public Vehicle_Obj(String LicensePlate, String Brand, String Model, int Year, String Color, String Type, int SeatCount, float Load_Capacity, int Status) {
         this.LicensePlate = LicensePlate;
         this.Brand = Brand;
         this.Model = Model;
@@ -29,6 +30,7 @@ public class Vehicle_Obj {
         this.Type = Type;
         this.SeatCount = SeatCount;
         this.Load_Capacity = Load_Capacity;
+        this.Status = Status;
     }
 
     public int getId() {
@@ -101,6 +103,14 @@ public class Vehicle_Obj {
 
     public void setLoad_Capacity(float Load_Capacity) {
         this.Load_Capacity = Load_Capacity;
+    }
+
+    public int getStatus() {
+        return Status;
+    }
+
+    public void setStatus(int Status) {
+        this.Status = Status;
     }
 
 }

@@ -15,14 +15,16 @@ public class Maintenance_Type_Obj {
     String Frequency;
     float Material_Cost_Estimate;
     int Vehicle_Id;
+    int Status;
 
-    public Maintenance_Type_Obj(int Maintenance_Id, String Type, String Description, String Frequency, float Material_Cost_Estimate, int Vehicle_Id) {
+    public Maintenance_Type_Obj(int Maintenance_Id, String Type, String Description, String Frequency, float Material_Cost_Estimate, int Vehicle_Id, int Status) {
         this.Maintenance_Id = Maintenance_Id;
         this.Type = Type;
         this.Description = Description;
         this.Frequency = Frequency;
         this.Material_Cost_Estimate = Material_Cost_Estimate;
         this.Vehicle_Id = Vehicle_Id;
+        this.Status = Status;
     }
 
     public int getMaintenance_Id() {
@@ -72,5 +74,14 @@ public class Maintenance_Type_Obj {
     public void setVehicle_Id(int Vehicle_Id) {
         this.Vehicle_Id = Vehicle_Id;
     }
-    
+
+    public int getStatus() {
+        return Status;
+    }
+
+    public void setStatus(int Status) {
+        this.Status = Status;
+    }
+
+   
 }

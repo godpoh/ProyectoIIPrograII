@@ -14,12 +14,14 @@ public class Fuel_Obj {
     String Name;
     String Type;
     float Price_Per_Liter;
+    int Status;
 
-    public Fuel_Obj(int Fuel_Id, String Name, String Type, float Price_Per_Liter) {
+    public Fuel_Obj(int Fuel_Id, String Name, String Type, float Price_Per_Liter, int Status) {
         this.Fuel_Id = Fuel_Id;
         this.Name = Name;
         this.Type = Type;
         this.Price_Per_Liter = Price_Per_Liter;
+        this.Status = Status;
     }
 
     public int getFuel_Id() {
@@ -52,6 +54,14 @@ public class Fuel_Obj {
 
     public void setPrice_Per_Liter(float Price_Per_Liter) {
         this.Price_Per_Liter = Price_Per_Liter;
+    }
+
+    public int getStatus() {
+        return Status;
+    }
+
+    public void setStatus(int Status) {
+        this.Status = Status;
     }
 
 }

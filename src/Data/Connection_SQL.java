@@ -50,6 +50,20 @@ public class Connection_SQL {
         return isValidUser;
     }
 
+    public static int Verify_User_Status(int Id) throws SQLException {
+        int Obtained_Status = 0;
+        String qry = "Select Status from Users Where Id = " + Id;
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        if (rs.next()) {
+            Obtained_Status = rs.getInt("Status");
+        }
+        return Obtained_Status;
+    }
+
     public static String get_Role(int Id, String password) throws SQLException {
         String Role = "";
 

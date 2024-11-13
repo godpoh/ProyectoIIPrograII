@@ -17,8 +17,9 @@ public class Part_Obj {
     String Compatibility;
     int Warrantly_Period;
     float Unit_Cost;
+    int Status;
 
-    public Part_Obj(int Part_Id, String Part_Name, String Part_Category, String Manu_Facturer, String Compatibility, int Warrantly_Period, float Unit_Cost) {
+    public Part_Obj(int Part_Id, String Part_Name, String Part_Category, String Manu_Facturer, String Compatibility, int Warrantly_Period, float Unit_Cost, int Status) {
         this.Part_Id = Part_Id;
         this.Part_Name = Part_Name;
         this.Part_Category = Part_Category;
@@ -26,6 +27,7 @@ public class Part_Obj {
         this.Compatibility = Compatibility;
         this.Warrantly_Period = Warrantly_Period;
         this.Unit_Cost = Unit_Cost;
+        this.Status = Status;
     }
 
     public int getPart_Id() {
@@ -82,6 +84,14 @@ public class Part_Obj {
 
     public void setUnit_Cost(float Unit_Cost) {
         this.Unit_Cost = Unit_Cost;
+    }
+
+    public int getStatus() {
+        return Status;
+    }
+
+    public void setStatus(int Status) {
+        this.Status = Status;
     }
 
 }

@@ -14,12 +14,14 @@ public class User_Creator {
     String Name;
     String Password;
     String Role;
+    int Status;
 
-    public User_Creator(int Id, String Name, String Password, String Role) {
+    public User_Creator(int Id, String Name, String Password, String Role, int Status) {
         this.Id = Id;
         this.Name = Name;
         this.Password = Password;
         this.Role = Role;
+        this.Status = Status;
     }
 
     public int getId() {
@@ -53,5 +55,15 @@ public class User_Creator {
     public void setRole(String Role) {
         this.Role = Role;
     }
+
+    public int getStatus() {
+        return Status;
+    }
+
+    public void setStatus(int Status) {
+        this.Status = Status;
+    }
+
+    
 
 }

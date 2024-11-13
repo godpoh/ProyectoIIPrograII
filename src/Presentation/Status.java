@@ -34,11 +34,13 @@ public class Status extends javax.swing.JPanel {
         jTable2 = new javax.swing.JTable();
         lblIniciarSesion1 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
+        CB_Estado = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
         lblIniciarSesion = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        CB_Estado1 = new javax.swing.JCheckBox();
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -52,16 +54,19 @@ public class Status extends javax.swing.JPanel {
 
         lblIniciarSesion1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblIniciarSesion1.setForeground(new java.awt.Color(0, 0, 0));
-        lblIniciarSesion1.setText("Estado Sector Mecanica");
-        jPanel6.add(lblIniciarSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 220, 40));
+        lblIniciarSesion1.setText("Estado Sector Dispensador");
+        jPanel6.add(lblIniciarSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 250, 40));
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Partes de Equipos", "Tipos de Mantenimientos", "Asignacion de Mantenimientos", "Boletas de Mantenimiento", " " }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Combustibles", "Tanques de Combustibles", "Ingreso de Combustibles", "Dispensadores", "Dispensado de Combustible", " " }));
         jPanel6.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 220, -1));
+
+        CB_Estado.setText("Estado Activo");
+        jPanel6.add(CB_Estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, -1, -1));
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 760));
 
-        jTabbedPane1.addTab("Mantenimientos", jPanel1);
+        jTabbedPane1.addTab("Sector Dispensador", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -77,6 +82,9 @@ public class Status extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 800, -1));
+
+        CB_Estado1.setText("Estado Activo");
+        jPanel2.add(CB_Estado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, -1, -1));
 
         jTabbedPane1.addTab("Sector Mecanica", jPanel2);
 
@@ -106,6 +114,8 @@ public class Status extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox CB_Estado;
+    private javax.swing.JCheckBox CB_Estado1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JPanel jPanel1;

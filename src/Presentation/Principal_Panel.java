@@ -215,7 +215,15 @@ public class Principal_Panel extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_Pnl_AdminActionPerformed
 
     private void Btn_EstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EstadoActionPerformed
-        // TODO add your handling code here:
+        Status Status_Window = new Status();
+        Status_Window.setSize(820, 688);
+        Status_Window.setLocation(0, 0);
+
+        Pnl_Contenedor.removeAll();
+        Pnl_Contenedor.add(Status_Window);
+
+        Pnl_Contenedor.revalidate();
+        Pnl_Contenedor.repaint();
     }//GEN-LAST:event_Btn_EstadoActionPerformed
 
     /**
