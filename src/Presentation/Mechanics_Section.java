@@ -71,7 +71,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
         Txt_Precio_Unidad = new javax.swing.JTextField();
         lblContrasena4 = new javax.swing.JLabel();
         lblIniciarSesion = new javax.swing.JLabel();
-        Btn_Inactivo_Combustible = new javax.swing.JButton();
+        Btn_Inactivo_Partes = new javax.swing.JButton();
         lblUsuario1 = new javax.swing.JLabel();
         Txt_Id = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
@@ -184,15 +184,15 @@ public class Mechanics_Section extends javax.swing.JPanel {
         lblIniciarSesion.setText("Registro de Equipo/Piezas");
         jPanel2.add(lblIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 260, 40));
 
-        Btn_Inactivo_Combustible.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Btn_Inactivo_Combustible.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Inactivo_Combustible.setText("Inactivo");
-        Btn_Inactivo_Combustible.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Inactivo_Partes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Inactivo_Partes.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Inactivo_Partes.setText("Inactivo");
+        Btn_Inactivo_Partes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Inactivo_CombustibleActionPerformed(evt);
+                Btn_Inactivo_PartesActionPerformed(evt);
             }
         });
-        jPanel2.add(Btn_Inactivo_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 620, 100, -1));
+        jPanel2.add(Btn_Inactivo_Partes, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 620, 100, -1));
 
         lblUsuario1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUsuario1.setForeground(new java.awt.Color(0, 0, 0));
@@ -370,9 +370,30 @@ public class Mechanics_Section extends javax.swing.JPanel {
         add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Btn_Inactivo_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_CombustibleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_Inactivo_CombustibleActionPerformed
+    private void Btn_Inactivo_PartesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_PartesActionPerformed
+        int Id = Integer.parseInt(Txt_Id.getText());
+
+        int Rows_Affected;
+
+        try {
+
+            Rows_Affected = CUD_SQL.Update_Part_Status(Id, 0);
+            if (Rows_Affected != 0) {
+                Txt_Id.setText("");
+                Txt_Nombre_Pieza.setText("");
+                Txt_Categoria_Pieza.setText("");
+                Txt_Manufactura.setText("");
+                Txt_Compatibilidad.setText("");
+                Txt_Garantia.setText("");
+                Txt_Precio_Unidad.setText("");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_Btn_Inactivo_PartesActionPerformed
 
     private void Btn_Actualizar_PiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_PiezaActionPerformed
         try {
@@ -386,7 +407,18 @@ public class Mechanics_Section extends javax.swing.JPanel {
 
             Part_Obj Obj = new Part_Obj(Part_Id, Part_Name, Part_Category, Manufacture, Compatiility, Warrantly, Price, 1);
 
-            CUD_SQL.Update_Part(Obj);
+            int Rows_Affected = CUD_SQL.Update_Part(Obj);
+
+            if (Rows_Affected != 0) {
+                Txt_Id.setText("");
+                Txt_Nombre_Pieza.setText("");
+                Txt_Categoria_Pieza.setText("");
+                Txt_Manufactura.setText("");
+                Txt_Compatibilidad.setText("");
+                Txt_Garantia.setText("");
+                Txt_Precio_Unidad.setText("");
+            }
+
         } catch (SQLException ex) {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -404,7 +436,18 @@ public class Mechanics_Section extends javax.swing.JPanel {
 
             Part_Obj Obj = new Part_Obj(Part_Id, Part_Name, Part_Category, Manufacture, Compatiility, Warrantly, Price, 1);
 
-            CUD_SQL.Insert_Part(Obj);
+            int Rows_Affected = CUD_SQL.Insert_Part(Obj);
+
+            if (Rows_Affected != 0) {
+                Txt_Id.setText("");
+                Txt_Nombre_Pieza.setText("");
+                Txt_Categoria_Pieza.setText("");
+                Txt_Manufactura.setText("");
+                Txt_Compatibilidad.setText("");
+                Txt_Garantia.setText("");
+                Txt_Precio_Unidad.setText("");
+            }
+
         } catch (SQLException ex) {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -420,7 +463,15 @@ public class Mechanics_Section extends javax.swing.JPanel {
         try {
             int Vehicle_Id = Connection_SQL.get_Vehicle_Id_By_Name(License_Plate);
             Maintenance_Type_Obj Obj = new Maintenance_Type_Obj(Maintenance_Id, Maintenance_Type, Description, Frequency, Approximate_Cost, Vehicle_Id, 1);
-            CUD_SQL.Insert_Maintenance_Type(Obj);
+            int Rows_Affected = CUD_SQL.Insert_Maintenance_Type(Obj);
+            if (Rows_Affected != 0) {
+                Txt_Id.setText("");
+                Txt_Tipo_Mantenimiento.setText("");
+                Txt_Frecuencia.setText("");
+                Txt_Costo_Estimado.setText("");
+                TxA_Descripcion.setText("");
+                Jcb_Vehiculo.setSelectedItem("Seleccione un vehiculo:");
+            }
 
         } catch (SQLException ex) {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
@@ -438,7 +489,15 @@ public class Mechanics_Section extends javax.swing.JPanel {
         try {
             int Vehicle_Id = Connection_SQL.get_Vehicle_Id_By_Name(License_Plate);
             Maintenance_Type_Obj Obj = new Maintenance_Type_Obj(Maintenance_Id, Maintenance_Type, Description, Frequency, Approximate_Cost, Vehicle_Id, 1);
-            CUD_SQL.Update_Maintenance_Type(Obj);
+            int Rows_Affected = CUD_SQL.Update_Maintenance_Type(Obj);
+            if (Rows_Affected != 0) {
+                Txt_Id.setText("");
+                Txt_Tipo_Mantenimiento.setText("");
+                Txt_Frecuencia.setText("");
+                Txt_Costo_Estimado.setText("");
+                TxA_Descripcion.setText("");
+                Jcb_Vehiculo.setSelectedItem("Seleccione un vehiculo:");
+            }
 
         } catch (SQLException ex) {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
@@ -447,15 +506,33 @@ public class Mechanics_Section extends javax.swing.JPanel {
     }//GEN-LAST:event_Btn_Actualizar_MantenimientoActionPerformed
 
     private void Btn_Inactivo_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_MantenimientoActionPerformed
-        // TODO add your handling code here:
+        int Id = Integer.parseInt(Txt_Id_Mantenimiento.getText());
+
+        int Rows_Affected;
+
+        try {
+
+            Rows_Affected = CUD_SQL.Update_Maintenance_Type_Status(Id, 0);
+            if (Rows_Affected != 0) {
+                Txt_Id.setText("");
+                Txt_Tipo_Mantenimiento.setText("");
+                Txt_Frecuencia.setText("");
+                Txt_Costo_Estimado.setText("");
+                TxA_Descripcion.setText("");
+                Jcb_Vehiculo.setSelectedItem("Seleccione un vehiculo:");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Btn_Inactivo_MantenimientoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Actualizar_Mantenimiento;
     private javax.swing.JButton Btn_Actualizar_Pieza;
-    private javax.swing.JButton Btn_Inactivo_Combustible;
     private javax.swing.JButton Btn_Inactivo_Mantenimiento;
+    private javax.swing.JButton Btn_Inactivo_Partes;
     private javax.swing.JButton Btn_Registrar_Mantenimiento;
     private javax.swing.JButton Btn_Registro_Pieza;
     private javax.swing.JComboBox<String> Jcb_Vehiculo;

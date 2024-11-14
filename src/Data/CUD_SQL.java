@@ -4,6 +4,9 @@
  */
 package Data;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,14 +21,32 @@ import java.sql.SQLException;
  */
 public class CUD_SQL {
 
+    public static String EncryptMD5(String S) {
+        try {
+            MessageDigest Md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = Md.digest(S.getBytes());
+            BigInteger number = new BigInteger(1, messageDigest);
+            String HashSet = number.toString(16);
+
+            while (HashSet.length() < 32) {
+                HashSet = "0" + HashSet;
+            }
+
+            return HashSet;
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static int Insert_User(User_Creator User) throws SQLException {
         int Affected_Rows;
 
-        String qry = "Insert Into Users (Id, Name, Password, Role) "
-                + "VALUES ('" + User.getId() + "', '"
+        String qry = "Insert Into Users (Id, Name, Password, Role, Status) "
+                + "Values ('" + User.getId() + "', '"
                 + User.getName() + "', '"
                 + User.getPassword() + "', '"
-                + User.getRole() + "')";
+                + User.getRole() + "', "
+                + User.getStatus() + ")";
 
         Statement sql = (Statement) Connection_SQL.getConnection().createStatement();
 
@@ -86,15 +107,16 @@ public class CUD_SQL {
     public static int Insert_Vehicle(Vehicle_Obj Vehicle) throws SQLException {
         int Affected_Rows;
 
-        String qry = "Insert Into Vehicle (License_Plate, Brand, Model, Year, Color, Type, Seat_Count, Load_Capacity) "
-                + "VALUES ('" + Vehicle.getLicensePlate() + "', '"
+        String qry = "Insert Into Vehicle (License_Plate, Brand, Model, Year, Color, Type, Seat_Count, Load_Capacity, Status) "
+                + "Values ('" + Vehicle.getLicensePlate() + "', '"
                 + Vehicle.getBrand() + "', '"
                 + Vehicle.getModel() + "', "
                 + Vehicle.getYear() + ", '"
                 + Vehicle.getColor() + "', '"
                 + Vehicle.getType() + "', "
                 + Vehicle.getSeatCount() + ", "
-                + Vehicle.getLoad_Capacity() + ")";
+                + Vehicle.getLoad_Capacity() + ", "
+                + Vehicle.getStatus() + ")";
 
         Statement sql = (Statement) Connection_SQL.getConnection().createStatement();
 
@@ -131,12 +153,43 @@ public class CUD_SQL {
         return Affected_Rows;
     }
 
+    public static int Update_Vehicle_Status(String Licensed_Plate, int Status) throws SQLException {
+        int Rows_Affected = 0;
+        String Message;
+        if (Status == 0) {
+            Message = "¿Está seguro de que desea marcar el vehículo como inactivo?";
+        } else {
+            Message = "¿Está seguro de que desea marcar el vehículo como activo?";
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(null, Message, "Confirmar actualización", JOptionPane.YES_NO_OPTION);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            String qry = "Update Vehicle Set Status = " + Status + " Where License_Plate = '" + Licensed_Plate + "'";
+            Statement sql = Connection_SQL.getConnection().createStatement();
+            Rows_Affected = sql.executeUpdate(qry);
+
+            String Status_Message;
+            if (Status == 0) {
+                Status_Message = "inactivo";
+            } else {
+                Status_Message = "activo";
+            }
+
+            JOptionPane.showMessageDialog(null, "El vehículo ahora está " + Status_Message + ".");
+        } else {
+            JOptionPane.showMessageDialog(null, "Actualización cancelada.");
+        }
+        return Rows_Affected;
+    }
+
     public static int Insert_Fuel(Fuel_Obj Fuel) throws SQLException {
-        String qry = "INSERT INTO Fuel (Fuel_ID, Name, Type, Price_Per_Liter) "
+        String qry = "INSERT INTO Fuel (Fuel_ID, Name, Type, Price_Per_Liter, Status) "
                 + "VALUES (" + Fuel.getFuel_Id() + ", '"
                 + Fuel.getName() + "', '"
                 + Fuel.getType() + "', "
-                + Fuel.getPrice_Per_Liter() + ")";
+                + Fuel.getPrice_Per_Liter() + ", "
+                + Fuel.getStatus() + ")";
 
         Statement sql = Connection_SQL.getConnection().createStatement();
 
@@ -161,15 +214,47 @@ public class CUD_SQL {
         return Affected_Rows;
     }
 
+    public static int Update_Fuel_Status(int Fuel_ID, int Status) throws SQLException {
+        int Rows_Affected = 0;
+        String Message;
+        if (Status == 0) {
+            Message = "¿Está seguro de que desea marcar el combustible como inactivo?";
+        } else {
+            Message = "¿Está seguro de que desea marcar el combustible como activo?";
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(null, Message, "Confirmar actualización", JOptionPane.YES_NO_OPTION);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            String qry = "Update Fuel Set Status = " + Status + " Where Fuel_ID = " + Fuel_ID;
+            Statement sql = Connection_SQL.getConnection().createStatement();
+            Rows_Affected = sql.executeUpdate(qry);
+
+            String Status_Message;
+            if (Status == 0) {
+                Status_Message = "inactivo";
+            } else {
+                Status_Message = "activo";
+            }
+
+            JOptionPane.showMessageDialog(null, "El combustible ahora está " + Status_Message + ".");
+        } else {
+            JOptionPane.showMessageDialog(null, "Actualización cancelada.");
+        }
+        return Rows_Affected;
+    }
+
     public static int Insert_Part(Part_Obj part) throws SQLException {
-        String qry = "Insert Into Equipment_Parts (Part_ID, Part_Name, Part_Category, Manu_Facturer, Compatibility, Warranty_Period, Unit_Cost) "
+        String qry = "Insert Into Equipment_Parts (Part_ID, Part_Name, Part_Category, Manu_Facturer, Compatibility, Warranty_Period, Unit_Cost, Status) "
                 + "Values (" + part.getPart_Id() + ", '"
                 + part.getPart_Name() + "', '"
                 + part.getPart_Category() + "', '"
                 + part.getManu_Facturer() + "', '"
                 + part.getCompatibility() + "', "
                 + part.getWarrantly_Period() + ", "
-                + part.getUnit_Cost() + ")";
+                + part.getUnit_Cost() + ", "
+                + part.getStatus() + ")";
+
         Statement sql = Connection_SQL.getConnection().createStatement();
         int affectedRows = sql.executeUpdate(qry);
 
@@ -196,15 +281,46 @@ public class CUD_SQL {
         return affectedRows;
     }
 
+    public static int Update_Part_Status(int Part_ID, int Status) throws SQLException {
+        int Rows_Affected = 0;
+        String Message;
+        if (Status == 0) {
+            Message = "¿Está seguro de que desea marcar la parte de equipo como inactiva?";
+        } else {
+            Message = "¿Está seguro de que desea marcar la parte de equipo como activa?";
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(null, Message, "Confirmar actualización", JOptionPane.YES_NO_OPTION);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            String qry = "Update Equipment_Parts Set Status = " + Status + " Where Part_ID = " + Part_ID;
+            Statement sql = Connection_SQL.getConnection().createStatement();
+            Rows_Affected = sql.executeUpdate(qry);
+
+            String Status_Message;
+            if (Status == 0) {
+                Status_Message = "inactiva";
+            } else {
+                Status_Message = "activa";
+            }
+
+            JOptionPane.showMessageDialog(null, "La parte de equipo ahora está " + Status_Message + ".");
+        } else {
+            JOptionPane.showMessageDialog(null, "Actualización cancelada.");
+        }
+        return Rows_Affected;
+    }
+
     public static int Insert_Maintenance_Type(Maintenance_Type_Obj maintenance) throws SQLException {
-        String qry = "Insert Into Maintenance_Types (Maintenance_Id, Type, Description, Frequency, Material_Cost_Estimate, Vehicle_Id) "
+        String qry = "Insert Into Maintenance_Types (Maintenance_Id, Type, Description, Frequency, Material_Cost_Estimate, Vehicle_Id, Status) "
                 + "Values (" + maintenance.getMaintenance_Id() + ", '"
                 + maintenance.getType() + "', '"
                 + maintenance.getDescription() + "', '"
                 + maintenance.getFrequency() + "', "
                 + maintenance.getMaterial_Cost_Estimate() + ", "
-                + maintenance.getVehicle_Id() + ")";
-
+                + maintenance.getVehicle_Id() + ", "
+                + maintenance.getStatus() + ")";
+        
         Statement sql = Connection_SQL.getConnection().createStatement();
         int affectedRows = sql.executeUpdate(qry);
 
@@ -226,6 +342,36 @@ public class CUD_SQL {
 
         JOptionPane.showMessageDialog(null, "Mantenimiento actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
         return affectedRows;
+    }
+
+    public static int Update_Maintenance_Type_Status(int Maintenance_Id, int Status) throws SQLException {
+        int Rows_Affected = 0;
+        String Message;
+        if (Status == 0) {
+            Message = "¿Está seguro de que desea marcar el tipo de mantenimiento como inactivo?";
+        } else {
+            Message = "¿Está seguro de que desea marcar el tipo de mantenimiento como activo?";
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(null, Message, "Confirmar actualización", JOptionPane.YES_NO_OPTION);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            String qry = "Update Maintenance_Types Set Status = " + Status + " Where Maintenance_Id = " + Maintenance_Id;
+            Statement sql = Connection_SQL.getConnection().createStatement();
+            Rows_Affected = sql.executeUpdate(qry);
+
+            String Status_Message;
+            if (Status == 0) {
+                Status_Message = "inactivo";
+            } else {
+                Status_Message = "activo";
+            }
+
+            JOptionPane.showMessageDialog(null, "El tipo de mantenimiento ahora está " + Status_Message + ".");
+        } else {
+            JOptionPane.showMessageDialog(null, "Actualización cancelada.");
+        }
+        return Rows_Affected;
     }
 
 }

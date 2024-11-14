@@ -15,6 +15,9 @@ public class Status extends javax.swing.JPanel {
      */
     public Status() {
         initComponents();
+        if (CB_Estado.isSelected()) {
+        
+        }
     }
 
     /**

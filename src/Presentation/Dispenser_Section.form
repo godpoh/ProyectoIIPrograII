@@ -109,11 +109,6 @@
                           <Color blue="99" green="99" red="99" type="rgb"/>
                         </Property>
                       </Properties>
-                      <Events>
-                        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Txt_Id_CombustibleMousePressed"/>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Txt_Id_CombustibleActionPerformed"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Txt_Id_CombustibleKeyPressed"/>
-                      </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="220" y="190" width="350" height="40"/>
@@ -196,10 +191,6 @@
                           <Color blue="99" green="99" red="99" type="rgb"/>
                         </Property>
                       </Properties>
-                      <Events>
-                        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Txt_Precio_LitroMousePressed"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Txt_Precio_LitroKeyPressed"/>
-                      </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="220" y="430" width="350" height="40"/>
@@ -253,10 +244,6 @@
                           <Color blue="99" green="99" red="99" type="rgb"/>
                         </Property>
                       </Properties>
-                      <Events>
-                        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Txt_Nombre_CombustibleMousePressed"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Txt_Nombre_CombustibleKeyPressed"/>
-                      </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="220" y="270" width="350" height="40"/>
@@ -272,10 +259,6 @@
                           <Color blue="99" green="99" red="99" type="rgb"/>
                         </Property>
                       </Properties>
-                      <Events>
-                        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Txt_Tipo_CombustibleMousePressed"/>
-                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Txt_Tipo_CombustibleKeyPressed"/>
-                      </Events>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="220" y="350" width="350" height="40"/>

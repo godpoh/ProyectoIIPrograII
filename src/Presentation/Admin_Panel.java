@@ -64,7 +64,7 @@ public class Admin_Panel extends javax.swing.JPanel {
         Btn_Registrar_Vehiculo = new javax.swing.JButton();
         lblUsuario3 = new javax.swing.JLabel();
         Txt_Marca = new javax.swing.JTextField();
-        Btn_Inactivo1 = new javax.swing.JButton();
+        Btn_Inactivo_Vehiculo = new javax.swing.JButton();
         Btn_Actualizar_Vehiculo = new javax.swing.JButton();
         Txt_Ano = new javax.swing.JTextField();
         Txt_Modelo = new javax.swing.JTextField();
@@ -204,15 +204,15 @@ public class Admin_Panel extends javax.swing.JPanel {
         Txt_Marca.setForeground(new java.awt.Color(153, 153, 153));
         Pnl_Principal1.add(Txt_Marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 350, 40));
 
-        Btn_Inactivo1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Btn_Inactivo1.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Inactivo1.setText("Inactivo");
-        Btn_Inactivo1.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Inactivo_Vehiculo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Inactivo_Vehiculo.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Inactivo_Vehiculo.setText("Inactivo");
+        Btn_Inactivo_Vehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Inactivo1ActionPerformed(evt);
+                Btn_Inactivo_VehiculoActionPerformed(evt);
             }
         });
-        Pnl_Principal1.add(Btn_Inactivo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 550, 110, -1));
+        Pnl_Principal1.add(Btn_Inactivo_Vehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 550, 110, -1));
 
         Btn_Actualizar_Vehiculo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Btn_Actualizar_Vehiculo.setForeground(new java.awt.Color(0, 0, 0));
@@ -323,8 +323,9 @@ public class Admin_Panel extends javax.swing.JPanel {
         String Name = Txt_Nombre.getText();
         String Role = (String) Jcb_Rol.getSelectedItem();
         String Password = String.valueOf(Txt_Contrasena.getText());
+        String Encrypted_Password = CUD_SQL.EncryptMD5(Password);
 
-        User_Creator User = new User_Creator(User_Id, Name, Password, Role, 1);
+        User_Creator User = new User_Creator(User_Id, Name, Encrypted_Password, Role, 1);
         int Rows_Affected;
         try {
             Rows_Affected = Insert_User(User);
@@ -417,9 +418,29 @@ public class Admin_Panel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_Btn_Registrar_VehiculoActionPerformed
 
-    private void Btn_Inactivo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_Inactivo1ActionPerformed
+    private void Btn_Inactivo_VehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_VehiculoActionPerformed
+        String License_PLate = Txt_Placa.getText();
+        int Rows_Affected;
+
+        try {
+
+            Rows_Affected = CUD_SQL.Update_Vehicle_Status(License_PLate, 0);
+            if (Rows_Affected != 0) {
+                Txt_Placa.setText("");
+                Txt_Marca.setText("");
+                Jcb_Tipo.setSelectedItem("Seleccione un tipo:");
+                Txt_Modelo.setText("");
+                Txt_Ano.setText("");
+                Txt_Color.setText("");
+                Txt_Asientos.setText("");
+                Txt_Capacidad.setText("");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_Btn_Inactivo_VehiculoActionPerformed
 
     private void Btn_Actualizar_VehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_VehiculoActionPerformed
         String License_Plate = Txt_Placa.getText();
@@ -454,7 +475,7 @@ public class Admin_Panel extends javax.swing.JPanel {
     private javax.swing.JButton Btn_Actualizar;
     private javax.swing.JButton Btn_Actualizar_Vehiculo;
     private javax.swing.JButton Btn_Inactivo;
-    private javax.swing.JButton Btn_Inactivo1;
+    private javax.swing.JButton Btn_Inactivo_Vehiculo;
     private javax.swing.JButton Btn_Registrar;
     private javax.swing.JButton Btn_Registrar_Vehiculo;
     private javax.swing.JComboBox<String> Jcb_Rol;

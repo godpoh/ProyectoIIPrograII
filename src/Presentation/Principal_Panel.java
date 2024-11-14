@@ -64,7 +64,7 @@ public class Principal_Panel extends javax.swing.JFrame {
         Btn_Mecanico.setBackground(new java.awt.Color(255, 111, 97));
         Btn_Mecanico.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Mecanico.setForeground(new java.awt.Color(51, 51, 51));
-        Btn_Mecanico.setText("Mecanico");
+        Btn_Mecanico.setText("Mecánica");
         Btn_Mecanico.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Btn_Mecanico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

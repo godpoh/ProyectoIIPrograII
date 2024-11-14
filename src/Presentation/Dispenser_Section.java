@@ -73,21 +73,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
 
         Txt_Id_Combustible.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Id_Combustible.setForeground(new java.awt.Color(153, 153, 153));
-        Txt_Id_Combustible.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                Txt_Id_CombustibleMousePressed(evt);
-            }
-        });
-        Txt_Id_Combustible.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Txt_Id_CombustibleActionPerformed(evt);
-            }
-        });
-        Txt_Id_Combustible.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Txt_Id_CombustibleKeyPressed(evt);
-            }
-        });
         Pnl_Principal.add(Txt_Id_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 350, 40));
 
         Btn_Registro_Combustible.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -117,16 +102,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
 
         Txt_Precio_Litro.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Precio_Litro.setForeground(new java.awt.Color(153, 153, 153));
-        Txt_Precio_Litro.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                Txt_Precio_LitroMousePressed(evt);
-            }
-        });
-        Txt_Precio_Litro.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Txt_Precio_LitroKeyPressed(evt);
-            }
-        });
         Pnl_Principal.add(Txt_Precio_Litro, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 350, 40));
 
         Btn_Inactivo_Combustible.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -151,30 +126,10 @@ public class Dispenser_Section extends javax.swing.JPanel {
 
         Txt_Nombre_Combustible.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Nombre_Combustible.setForeground(new java.awt.Color(153, 153, 153));
-        Txt_Nombre_Combustible.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                Txt_Nombre_CombustibleMousePressed(evt);
-            }
-        });
-        Txt_Nombre_Combustible.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Txt_Nombre_CombustibleKeyPressed(evt);
-            }
-        });
         Pnl_Principal.add(Txt_Nombre_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 350, 40));
 
         Txt_Tipo_Combustible.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Tipo_Combustible.setForeground(new java.awt.Color(153, 153, 153));
-        Txt_Tipo_Combustible.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                Txt_Tipo_CombustibleMousePressed(evt);
-            }
-        });
-        Txt_Tipo_Combustible.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Txt_Tipo_CombustibleKeyPressed(evt);
-            }
-        });
         Pnl_Principal.add(Txt_Tipo_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 350, 40));
 
         jPanel3.add(Pnl_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 760));
@@ -215,22 +170,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Txt_Tipo_CombustibleKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_Tipo_CombustibleKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Tipo_CombustibleKeyPressed
-
-    private void Txt_Tipo_CombustibleMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_Tipo_CombustibleMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Tipo_CombustibleMousePressed
-
-    private void Txt_Nombre_CombustibleKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_Nombre_CombustibleKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre_CombustibleKeyPressed
-
-    private void Txt_Nombre_CombustibleMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_Nombre_CombustibleMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Nombre_CombustibleMousePressed
-
     private void Btn_Actualizar_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_CombustibleActionPerformed
         int Fuel_Id = Integer.parseInt(Txt_Id_Combustible.getText());
         String Fuel_Name = Txt_Nombre_Combustible.getText();
@@ -252,16 +191,26 @@ public class Dispenser_Section extends javax.swing.JPanel {
     }//GEN-LAST:event_Btn_Actualizar_CombustibleActionPerformed
 
     private void Btn_Inactivo_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_CombustibleActionPerformed
-        // TODO add your handling code here:
+        int Fuel_Id = Integer.parseInt(Txt_Id_Combustible.getText());
+
+        int Rows_Affected;
+
+        try {
+
+            Rows_Affected = CUD_SQL.Update_Fuel_Status(Fuel_Id, 0);
+            if (Rows_Affected != 0) {
+                Txt_Id_Combustible.setText("");
+                Txt_Nombre_Combustible.setText("");
+                Txt_Tipo_Combustible.setText("");
+                Txt_Precio_Litro.setText("");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_Btn_Inactivo_CombustibleActionPerformed
-
-    private void Txt_Precio_LitroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_Precio_LitroKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Precio_LitroKeyPressed
-
-    private void Txt_Precio_LitroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_Precio_LitroMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Precio_LitroMousePressed
 
     private void Btn_Registro_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_CombustibleActionPerformed
         int Fuel_Id = Integer.parseInt(Txt_Id_Combustible.getText());
@@ -282,18 +231,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
             Logger.getLogger(Dispenser_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Registro_CombustibleActionPerformed
-
-    private void Txt_Id_CombustibleKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_Id_CombustibleKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Id_CombustibleKeyPressed
-
-    private void Txt_Id_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_Id_CombustibleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Id_CombustibleActionPerformed
-
-    private void Txt_Id_CombustibleMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Txt_Id_CombustibleMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_Id_CombustibleMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

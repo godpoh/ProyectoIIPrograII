@@ -4,6 +4,7 @@
  */
 package Logic;
 
+import Data.CUD_SQL;
 import Data.Connection_SQL;
 import static Data.Connection_SQL.get_Role;
 import Presentation.Principal_Panel;
@@ -43,12 +44,12 @@ public class Log_In_Logic {
 
     public void Open_Principal_Panel_Logic(JTextField txtUsuario, JPasswordField txtContrasena) throws SQLException {
         int get_User_Id = Integer.parseInt(txtUsuario.getText());
-        String getPassword = String.valueOf(txtContrasena.getPassword());
-
+        String get_Password = String.valueOf(txtContrasena.getPassword());
+        String Encrypted_Password = CUD_SQL.EncryptMD5(get_Password);
         try {
             Connection_SQL connectionSQL = new Connection_SQL();
-            if (connectionSQL.Verify_User(get_User_Id, getPassword)) {
-                String Role = get_Role(get_User_Id, getPassword);
+            if (connectionSQL.Verify_User(get_User_Id, Encrypted_Password)) {
+                String Role = get_Role(get_User_Id, Encrypted_Password);
                 int Status = Connection_SQL.Verify_User_Status(get_User_Id);
                 if (Status != 0) {
                     Principal_Panel principal_panel = new Principal_Panel(Role);
