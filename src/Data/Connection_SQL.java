@@ -108,4 +108,67 @@ public class Connection_SQL {
         }
         return Id;
     }
+
+    // Consultas TABLA DE ESTADO
+    public static ResultSet get_User_Information(int Status) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Id as Cedula, Name as Nombre,\n"
+                + "Role as Rol, Status as Estado from Users where Status = " + Status;
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        return rs;
+    }
+
+    public static ResultSet get_Vehicle_Information(int Status) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Id as Id_Vehiculo, License_Plate as Placa, "
+                + "Brand as Marca, Model as Modelo, Year as Año, "
+                + "Color as Color, Type as Tipo, Seat_Count as Asientos, "
+                + "Load_Capacity as Capacidad_Carga, Status as Estado "
+                + "From Vehicle Where Status = " + Status;
+        ResultSet rs = sql.executeQuery(qry);
+
+        return rs;
+    }
+
+    public static ResultSet get_Fuel_Information(int Status) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Fuel_ID as Id_Combustible, Name as Nombre, "
+                + "Type as Tipo, Price_Per_Liter as Precio_Por_Litro, "
+                + "Status as Estado "
+                + "From Fuel Where Status = " + Status;
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        return rs;
+    }
+
+    public static ResultSet get_Equipment_Parts_Information(int Status) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Part_ID as Id_Parte, Name as Nombre_Parte, "
+                + "Type as Tipo, Status as Estado "
+                + "From Equipment_Parts Where Status = " + Status;
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        return rs;
+    }
+
+    public static ResultSet get_Maintenance_Types_Information(int Status) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Maintenance_ID as Id_Mantenimiento, Type as Tipo_Mantenimiento, "
+                + "Description as Descripcion, Status as Estado "
+                + "From Maintenance_Types Where Status = " + Status;
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        return rs;
+    }
+
 }

@@ -14,28 +14,29 @@ import java.util.logging.Logger;
  */
 public class Principal_Panel extends javax.swing.JFrame {
 
+    String Instance_Role = "";
+
     public Principal_Panel(String Role) {
         initComponents();
         setLocationRelativeTo(null);
         Btn_Pnl_Admin.setVisible(false);
 
+        Instance_Role = Role;
+
         setPreferredSize(new java.awt.Dimension(720, 720));
         pack();
 
+        Show_Admin_Panel(Role);
+        
+    }
+
+    private void Show_Admin_Panel(String Role) {
         if ("Admin".equalsIgnoreCase(Role)) {
-            Show_Admin_Panels();
+            Btn_Pnl_Admin.setVisible(true);
         } else {
-            Hide_Admin_Panels();
+            Btn_Pnl_Admin.setVisible(false);
         }
 
-    }
-
-    private void Show_Admin_Panels() {
-        Btn_Pnl_Admin.setVisible(true);
-    }
-
-    private void Hide_Admin_Panels() {
-        Btn_Pnl_Admin.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -215,7 +216,7 @@ public class Principal_Panel extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_Pnl_AdminActionPerformed
 
     private void Btn_EstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EstadoActionPerformed
-        Status Status_Window = new Status();
+        Status Status_Window = new Status(Instance_Role);
         Status_Window.setSize(820, 688);
         Status_Window.setLocation(0, 0);
 
