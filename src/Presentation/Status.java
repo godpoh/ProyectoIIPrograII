@@ -43,6 +43,9 @@ public class Status extends javax.swing.JPanel {
         Jcb_Dispensador.addActionListener(evt -> Show_Dispenser_Tab_Information());
         Cb_Dispensador.addItemListener(evt -> Show_Dispenser_Tab_Information());
 
+        Jcb_Mecanica.addActionListener(evt -> Show_Mechanic_Tab_Information());
+        Cb_Estado_Mecanica.addItemListener(evt -> Show_Mechanic_Tab_Information());
+
     }
 
     private void Show_Admin_Tab_Information() {
@@ -79,15 +82,15 @@ public class Status extends javax.swing.JPanel {
     }
 
     private void Show_Dispenser_Tab_Information() {
-        String Selected_Item = (String) Jcb_Admin.getSelectedItem();
+        String Selected_Item = (String) Jcb_Dispensador.getSelectedItem();
         if (Selected_Item.equals("Combustibles")) {
             try {
-                if (Cb_Admin.isSelected()) {
+                if (Cb_Dispensador.isSelected()) {
                     ResultSet rs = Connection_SQL.get_Fuel_Information(1);
-                    Tbl_Admin.setModel(DbUtils.resultSetToTableModel(rs));
+                    Tbl_Dispensador.setModel(DbUtils.resultSetToTableModel(rs));
                 } else {
                     ResultSet rs = Connection_SQL.get_Fuel_Information(0);
-                    Tbl_Admin.setModel(DbUtils.resultSetToTableModel(rs));
+                    Tbl_Dispensador.setModel(DbUtils.resultSetToTableModel(rs));
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
@@ -100,6 +103,40 @@ public class Status extends javax.swing.JPanel {
         } else if (Selected_Item.equals("Dispensadores")) {
 
         } else if (Selected_Item.equals("Dispensado de Combustible")) {
+
+        }
+
+    }
+
+    private void Show_Mechanic_Tab_Information() {
+        String Selected_Item = (String) Jcb_Mecanica.getSelectedItem();
+        if (Selected_Item.equals("Partes de Equipos")) {
+            try {
+                if (Cb_Estado_Mecanica.isSelected()) {
+                    ResultSet rs = Connection_SQL.get_Equipment_Parts_Information(1);
+                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
+                } else {
+                    ResultSet rs = Connection_SQL.get_Equipment_Parts_Information(0);
+                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (Selected_Item.equals("Tipos de Mantenimientos")) {
+            try {
+                if (Cb_Estado_Mecanica.isSelected()) {
+                    ResultSet rs = Connection_SQL.get_Maintenance_Types_Information(1);
+                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
+                } else {
+                    ResultSet rs = Connection_SQL.get_Maintenance_Types_Information(0);
+                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (Selected_Item.equals("Asignacion de Mantenimientos")) {
+
+        } else if (Selected_Item.equals("Boletas de Mantenimiento")) {
 
         }
 
@@ -119,18 +156,18 @@ public class Status extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        Tbl_Dispensador = new javax.swing.JTable();
         lblIniciarSesion1 = new javax.swing.JLabel();
         Jcb_Dispensador = new javax.swing.JComboBox<>();
         Cb_Dispensador = new javax.swing.JCheckBox();
-        Btn_Registro_Combustible = new javax.swing.JButton();
-        Btn_Registro_Combustible1 = new javax.swing.JButton();
+        Btn_Registro_Combustible6 = new javax.swing.JButton();
+        Btn_Registro_Combustible7 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lblIniciarSesion = new javax.swing.JLabel();
         Jcb_Mecanica = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        CB_Estado1 = new javax.swing.JCheckBox();
+        Tbl_Mecanica = new javax.swing.JTable();
+        Cb_Estado_Mecanica = new javax.swing.JCheckBox();
         Btn_Registro_Combustible4 = new javax.swing.JButton();
         Btn_Registro_Combustible5 = new javax.swing.JButton();
         Pnl_Admin = new javax.swing.JPanel();
@@ -139,8 +176,8 @@ public class Status extends javax.swing.JPanel {
         lblIniciarSesion3 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         Tbl_Admin = new javax.swing.JTable();
-        Btn_Registro_Combustible2 = new javax.swing.JButton();
-        Btn_Registro_Combustible3 = new javax.swing.JButton();
+        Btn_Registro_Combustible8 = new javax.swing.JButton();
+        Btn_Registro_Combustible9 = new javax.swing.JButton();
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -148,7 +185,7 @@ public class Status extends javax.swing.JPanel {
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(Tbl_Dispensador);
 
         jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 800, -1));
 
@@ -164,25 +201,25 @@ public class Status extends javax.swing.JPanel {
         Cb_Dispensador.setText("Estado Activo");
         jPanel6.add(Cb_Dispensador, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, -1, -1));
 
-        Btn_Registro_Combustible.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Btn_Registro_Combustible.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Registro_Combustible.setText("Desactivar Estado");
-        Btn_Registro_Combustible.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Registro_Combustible6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Registro_Combustible6.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Registro_Combustible6.setText("Desactivar Estado");
+        Btn_Registro_Combustible6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Registro_CombustibleActionPerformed(evt);
+                Btn_Registro_Combustible6ActionPerformed(evt);
             }
         });
-        jPanel6.add(Btn_Registro_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, -1, -1));
+        jPanel6.add(Btn_Registro_Combustible6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, -1, -1));
 
-        Btn_Registro_Combustible1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Btn_Registro_Combustible1.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Registro_Combustible1.setText("Activar Estado");
-        Btn_Registro_Combustible1.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Registro_Combustible7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Registro_Combustible7.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Registro_Combustible7.setText("Activar Estado");
+        Btn_Registro_Combustible7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Registro_Combustible1ActionPerformed(evt);
+                Btn_Registro_Combustible7ActionPerformed(evt);
             }
         });
-        jPanel6.add(Btn_Registro_Combustible1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, -1, -1));
+        jPanel6.add(Btn_Registro_Combustible7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, -1, -1));
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 760));
 
@@ -199,12 +236,12 @@ public class Status extends javax.swing.JPanel {
         Jcb_Mecanica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Partes de Equipos", "Tipos de Mantenimientos", "Asignacion de Mantenimientos", "Boletas de Mantenimiento" }));
         jPanel2.add(Jcb_Mecanica, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 220, -1));
 
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Tbl_Mecanica);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 800, -1));
 
-        CB_Estado1.setText("Estado Activo");
-        jPanel2.add(CB_Estado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, -1, -1));
+        Cb_Estado_Mecanica.setText("Estado Activo");
+        jPanel2.add(Cb_Estado_Mecanica, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, -1, -1));
 
         Btn_Registro_Combustible4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Btn_Registro_Combustible4.setForeground(new java.awt.Color(0, 0, 0));
@@ -214,7 +251,7 @@ public class Status extends javax.swing.JPanel {
                 Btn_Registro_Combustible4ActionPerformed(evt);
             }
         });
-        jPanel2.add(Btn_Registro_Combustible4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, -1, -1));
+        jPanel2.add(Btn_Registro_Combustible4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, -1, -1));
 
         Btn_Registro_Combustible5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Btn_Registro_Combustible5.setForeground(new java.awt.Color(0, 0, 0));
@@ -224,7 +261,7 @@ public class Status extends javax.swing.JPanel {
                 Btn_Registro_Combustible5ActionPerformed(evt);
             }
         });
-        jPanel2.add(Btn_Registro_Combustible5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, -1, -1));
+        jPanel2.add(Btn_Registro_Combustible5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, -1, -1));
 
         jTabbedPane1.addTab("Sector Mecanica", jPanel2);
 
@@ -239,32 +276,32 @@ public class Status extends javax.swing.JPanel {
 
         lblIniciarSesion3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblIniciarSesion3.setForeground(new java.awt.Color(0, 0, 0));
-        lblIniciarSesion3.setText("Admin");
-        Pnl_Admin.add(lblIniciarSesion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 70, 40));
+        lblIniciarSesion3.setText("Estado Sector Administrativo");
+        Pnl_Admin.add(lblIniciarSesion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 270, 40));
 
         jScrollPane4.setViewportView(Tbl_Admin);
 
         Pnl_Admin.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 800, -1));
 
-        Btn_Registro_Combustible2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Btn_Registro_Combustible2.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Registro_Combustible2.setText("Activar Estado");
-        Btn_Registro_Combustible2.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Registro_Combustible8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Registro_Combustible8.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Registro_Combustible8.setText("Desactivar Estado");
+        Btn_Registro_Combustible8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Registro_Combustible2ActionPerformed(evt);
+                Btn_Registro_Combustible8ActionPerformed(evt);
             }
         });
-        Pnl_Admin.add(Btn_Registro_Combustible2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 500, -1, -1));
+        Pnl_Admin.add(Btn_Registro_Combustible8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, -1, -1));
 
-        Btn_Registro_Combustible3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Btn_Registro_Combustible3.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Registro_Combustible3.setText("Desactivar Estado");
-        Btn_Registro_Combustible3.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Registro_Combustible9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Registro_Combustible9.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Registro_Combustible9.setText("Activar Estado");
+        Btn_Registro_Combustible9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Registro_Combustible3ActionPerformed(evt);
+                Btn_Registro_Combustible9ActionPerformed(evt);
             }
         });
-        Pnl_Admin.add(Btn_Registro_Combustible3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, -1, -1));
+        Pnl_Admin.add(Btn_Registro_Combustible9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, -1, -1));
 
         jTabbedPane1.addTab("Admin ", Pnl_Admin);
 
@@ -292,22 +329,6 @@ public class Status extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Btn_Registro_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_CombustibleActionPerformed
-
-    }//GEN-LAST:event_Btn_Registro_CombustibleActionPerformed
-
-    private void Btn_Registro_Combustible1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_Combustible1ActionPerformed
-
-    }//GEN-LAST:event_Btn_Registro_Combustible1ActionPerformed
-
-    private void Btn_Registro_Combustible2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_Combustible2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_Registro_Combustible2ActionPerformed
-
-    private void Btn_Registro_Combustible3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_Combustible3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_Registro_Combustible3ActionPerformed
-
     private void Btn_Registro_Combustible4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_Combustible4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_Registro_Combustible4ActionPerformed
@@ -316,22 +337,40 @@ public class Status extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_Registro_Combustible5ActionPerformed
 
+    private void Btn_Registro_Combustible6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_Combustible6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Registro_Combustible6ActionPerformed
+
+    private void Btn_Registro_Combustible7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_Combustible7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Registro_Combustible7ActionPerformed
+
+    private void Btn_Registro_Combustible8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_Combustible8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Registro_Combustible8ActionPerformed
+
+    private void Btn_Registro_Combustible9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_Combustible9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Registro_Combustible9ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Btn_Registro_Combustible;
-    private javax.swing.JButton Btn_Registro_Combustible1;
-    private javax.swing.JButton Btn_Registro_Combustible2;
-    private javax.swing.JButton Btn_Registro_Combustible3;
     private javax.swing.JButton Btn_Registro_Combustible4;
     private javax.swing.JButton Btn_Registro_Combustible5;
-    private javax.swing.JCheckBox CB_Estado1;
+    private javax.swing.JButton Btn_Registro_Combustible6;
+    private javax.swing.JButton Btn_Registro_Combustible7;
+    private javax.swing.JButton Btn_Registro_Combustible8;
+    private javax.swing.JButton Btn_Registro_Combustible9;
     private javax.swing.JCheckBox Cb_Admin;
     private javax.swing.JCheckBox Cb_Dispensador;
+    private javax.swing.JCheckBox Cb_Estado_Mecanica;
     private javax.swing.JComboBox<String> Jcb_Admin;
     private javax.swing.JComboBox<String> Jcb_Dispensador;
     private javax.swing.JComboBox<String> Jcb_Mecanica;
     private javax.swing.JPanel Pnl_Admin;
     private javax.swing.JTable Tbl_Admin;
+    private javax.swing.JTable Tbl_Dispensador;
+    private javax.swing.JTable Tbl_Mecanica;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -340,8 +379,6 @@ public class Status extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JLabel lblIniciarSesion;
     private javax.swing.JLabel lblIniciarSesion1;
     private javax.swing.JLabel lblIniciarSesion3;

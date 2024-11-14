@@ -150,8 +150,10 @@ public class Connection_SQL {
     public static ResultSet get_Equipment_Parts_Information(int Status) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
 
-        String qry = "Select Part_ID as Id_Parte, Name as Nombre_Parte, "
-                + "Type as Tipo, Status as Estado "
+        String qry = "Select Part_ID as Id_Parte, Part_Name as Nombre, "
+                + "Part_Category as Categoria, Manu_Facturer as Fabricante, "
+                + "Compatibility as Compatibilidad, Warranty_Period as Periodo_Garantia, "
+                + "Unit_Cost as Costo_Unitario, Status as Estado "
                 + "From Equipment_Parts Where Status = " + Status;
 
         ResultSet rs = sql.executeQuery(qry);
@@ -161,9 +163,14 @@ public class Connection_SQL {
 
     public static ResultSet get_Maintenance_Types_Information(int Status) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
-
-        String qry = "Select Maintenance_ID as Id_Mantenimiento, Type as Tipo_Mantenimiento, "
-                + "Description as Descripcion, Status as Estado "
+        
+        String qry = "Select Maintenance_Id as Id_Mantenimiento, "
+                + "Type as Tipo_Mantenimiento, "
+                + "Description as Descripcion, "
+                + "Frequency as Frecuencia, "
+                + "Material_Cost_Estimate as Costo_Estimado, "
+                + "Vehicle_Id as Id_Vehiculo, "
+                + "Status as Estado "
                 + "From Maintenance_Types Where Status = " + Status;
 
         ResultSet rs = sql.executeQuery(qry);
