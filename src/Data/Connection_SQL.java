@@ -34,6 +34,7 @@ public class Connection_SQL {
         }
     }
 
+    // Metodo para verificar que las credenciales que ingresa el usuario son correctas
     public static boolean Verify_User(int Id, String password) throws SQLException {
         boolean isValidUser = false;
 
@@ -50,6 +51,7 @@ public class Connection_SQL {
         return isValidUser;
     }
 
+    // Verificar que al ingresar las credenciales, el usuario se encuentre activo
     public static int Verify_User_Status(int Id) throws SQLException {
         int Obtained_Status = 0;
         String qry = "Select Status from Users Where Id = " + Id;
@@ -64,6 +66,7 @@ public class Connection_SQL {
         return Obtained_Status;
     }
 
+    // Obtiene el rol del usuario, para los diferentes permiso del programa
     public static String get_Role(int Id, String password) throws SQLException {
         String Role = "";
 
@@ -79,6 +82,7 @@ public class Connection_SQL {
         return Role;
     }
 
+    // Obtiene la placa del vehiculo
     public static void get_Vehicle_Name(JComboBox JCB) throws SQLException {
         String License_Plate = "";
         String qry = "Select License_Plate From Vehicle";
@@ -95,6 +99,7 @@ public class Connection_SQL {
 
     }
 
+    // Obtiene el id del vehiculo por la placa
     public static int get_Vehicle_Id_By_Name(String License_Plate) throws SQLException {
         int Id = 0;
         String qry = "Select Id From Vehicle Where License_Plate = '" + License_Plate + "'";
@@ -110,6 +115,7 @@ public class Connection_SQL {
     }
 
     // Consultas TABLA DE ESTADO
+    // Devuelve en una tabla el estado e informacion del usuario
     public static ResultSet get_User_Information(int Status) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
 
@@ -121,6 +127,7 @@ public class Connection_SQL {
         return rs;
     }
 
+    // Devuelve en una tabla el estado del vehiculo y su informacion 
     public static ResultSet get_Vehicle_Information(int Status) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
 
@@ -134,6 +141,7 @@ public class Connection_SQL {
         return rs;
     }
 
+    // Devuelve en una tabla el estado de la gasolina y su informacion
     public static ResultSet get_Fuel_Information(int Status) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
 
@@ -147,6 +155,7 @@ public class Connection_SQL {
         return rs;
     }
 
+    // Devuelve en una tabla el estado de las piezas de vehiculos e informacion
     public static ResultSet get_Equipment_Parts_Information(int Status) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
 
@@ -161,9 +170,10 @@ public class Connection_SQL {
         return rs;
     }
 
+    // Devuelve en una tabla el estado de los tipos de mantenimientos e informacion
     public static ResultSet get_Maintenance_Types_Information(int Status) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
-        
+
         String qry = "Select Maintenance_Id as Id_Mantenimiento, "
                 + "Type as Tipo_Mantenimiento, "
                 + "Description as Descripcion, "

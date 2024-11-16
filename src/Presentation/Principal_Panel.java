@@ -27,9 +27,8 @@ public class Principal_Panel extends javax.swing.JFrame {
         pack();
 
         Show_Admin_Panel(Role);
-        
     }
-
+    // Obtiene el rol desde el login, y verifica que debe mostrar o no el panel de admin
     private void Show_Admin_Panel(String Role) {
         if ("Admin".equalsIgnoreCase(Role)) {
             Btn_Pnl_Admin.setVisible(true);
@@ -161,7 +160,7 @@ public class Principal_Panel extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+    // Boton que muestra el Panel de la seccion de mecanica
     private void Btn_MecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_MecanicoActionPerformed
         Mechanics_Section Mechanic_Window = null;
         try {
@@ -182,7 +181,7 @@ public class Principal_Panel extends javax.swing.JFrame {
     private void Btn_EstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EstadisticasActionPerformed
 
     }//GEN-LAST:event_Btn_EstadisticasActionPerformed
-
+    // Boton que muestra el Panel de la seccion del dispensador
     private void Btn_DispensadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_DispensadorActionPerformed
         Dispenser_Section Window = new Dispenser_Section();
 
@@ -195,14 +194,14 @@ public class Principal_Panel extends javax.swing.JFrame {
         Pnl_Contenedor.revalidate();
         Pnl_Contenedor.repaint();
     }//GEN-LAST:event_Btn_DispensadorActionPerformed
-
+    // Boton que cierra sesion y abre el login 
     private void Btn_Cerrar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cerrar_SesionActionPerformed
         this.dispose();
 
         Log_In Login_Window = new Log_In();
         Login_Window.setVisible(true);
     }//GEN-LAST:event_Btn_Cerrar_SesionActionPerformed
-
+    // Boton que muestra el Panel de la seccion de admin
     private void Btn_Pnl_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pnl_AdminActionPerformed
         Admin_Panel Admin_Window = new Admin_Panel();
         Admin_Window.setSize(820, 688);
@@ -214,7 +213,7 @@ public class Principal_Panel extends javax.swing.JFrame {
         Pnl_Contenedor.revalidate();
         Pnl_Contenedor.repaint();
     }//GEN-LAST:event_Btn_Pnl_AdminActionPerformed
-
+    // Boton que muestra el Panel de la seccion de los estados
     private void Btn_EstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EstadoActionPerformed
         Status Status_Window = new Status(Instance_Role);
         Status_Window.setSize(820, 688);

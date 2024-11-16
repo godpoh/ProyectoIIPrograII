@@ -26,6 +26,7 @@ public class Status extends javax.swing.JPanel {
         Hide_Buttons();
     }
 
+    // Metodo que setea todos los botones de activar/desactivar los estados
     private void Hide_Buttons() {
         Btn_Activar_Estado_Admin.setVisible(false);
         Btn_Desactivar_Estado_Admin.setVisible(false);
@@ -37,6 +38,7 @@ public class Status extends javax.swing.JPanel {
         Btn_Activar_Estado_Mecanica.setVisible(false);
     }
 
+    // Metodo obtiene el rol desde el panel principal y verifica si muestra o no el tab de admin
     private void Show_Admin_Tab(String Role) {
         if ("Admin".equalsIgnoreCase(Role)) {
             Pnl_Admin.setVisible(true);
@@ -48,8 +50,8 @@ public class Status extends javax.swing.JPanel {
         }
     }
 
+    // Metodo que contiene muchos Action_Listeners para inicializarlo en el constructor
     private void Action_Listeners_Method() {
-
         Jcb_Admin.addActionListener(evt -> Show_Admin_Tab_Information());
         Cb_Admin.addItemListener(evt -> Show_Admin_Tab_Information());
 
@@ -58,123 +60,6 @@ public class Status extends javax.swing.JPanel {
 
         Jcb_Mecanica.addActionListener(evt -> Show_Mechanic_Tab_Information());
         Cb_Estado_Mecanica.addItemListener(evt -> Show_Mechanic_Tab_Information());
-
-    }
-
-    private void Show_Admin_Tab_Information() {
-
-        String Selected_Item = (String) Jcb_Admin.getSelectedItem();
-
-        if (Selected_Item.equals("Usuarios")) {
-            try {
-                if (Cb_Admin.isSelected()) {
-                    Btn_Activar_Estado_Admin.setVisible(false);
-                    Btn_Desactivar_Estado_Admin.setVisible(true);
-                    ResultSet rs = Connection_SQL.get_User_Information(1);
-                    Tbl_Admin.setModel(DbUtils.resultSetToTableModel(rs));
-                } else {
-                    Btn_Activar_Estado_Admin.setVisible(true);
-                    Btn_Desactivar_Estado_Admin.setVisible(false);
-                    ResultSet rs = Connection_SQL.get_User_Information(0);
-                    Tbl_Admin.setModel(DbUtils.resultSetToTableModel(rs));
-                }
-
-            } catch (SQLException ex) {
-                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
-
-            }
-        } else {
-            try {
-                if (Cb_Admin.isSelected()) {
-                    Btn_Activar_Estado_Admin.setVisible(false);
-                    Btn_Desactivar_Estado_Admin.setVisible(true);
-                    ResultSet rs = Connection_SQL.get_Vehicle_Information(1);
-                    Tbl_Admin.setModel(DbUtils.resultSetToTableModel(rs));
-                } else {
-                    Btn_Activar_Estado_Admin.setVisible(true);
-                    Btn_Desactivar_Estado_Admin.setVisible(false);
-                    ResultSet rs = Connection_SQL.get_Vehicle_Information(0);
-                    Tbl_Admin.setModel(DbUtils.resultSetToTableModel(rs));
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
-
-            }
-        }
-
-    }
-
-    private void Show_Dispenser_Tab_Information() {
-        String Selected_Item = (String) Jcb_Dispensador.getSelectedItem();
-        if (Selected_Item.equals("Combustibles")) {
-            try {
-                if (Cb_Dispensador.isSelected()) {
-                    Btn_Activar_Estado_Dispensador.setVisible(false);
-                    Btn_Desactivar_Estado_Dispensador.setVisible(true);
-                    ResultSet rs = Connection_SQL.get_Fuel_Information(1);
-                    Tbl_Dispensador.setModel(DbUtils.resultSetToTableModel(rs));
-                } else {
-                    Btn_Activar_Estado_Dispensador.setVisible(true);
-                    Btn_Desactivar_Estado_Dispensador.setVisible(false);
-                    ResultSet rs = Connection_SQL.get_Fuel_Information(0);
-                    Tbl_Dispensador.setModel(DbUtils.resultSetToTableModel(rs));
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
-
-            }
-        } else if (Selected_Item.equals("Tanques de Combustibles")) {
-
-        } else if (Selected_Item.equals("Ingreso de Combustibles")) {
-
-        } else if (Selected_Item.equals("Dispensadores")) {
-
-        } else if (Selected_Item.equals("Dispensado de Combustible")) {
-
-        }
-
-    }
-
-    private void Show_Mechanic_Tab_Information() {
-        String Selected_Item = (String) Jcb_Mecanica.getSelectedItem();
-        if (Selected_Item.equals("Partes de Equipos")) {
-            try {
-                if (Cb_Estado_Mecanica.isSelected()) {
-                    Btn_Desactivar_Estado_Mecanica.setVisible(true);
-                    Btn_Activar_Estado_Mecanica.setVisible(false);
-                    ResultSet rs = Connection_SQL.get_Equipment_Parts_Information(1);
-                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
-                } else {
-                    Btn_Desactivar_Estado_Mecanica.setVisible(false);
-                    Btn_Activar_Estado_Mecanica.setVisible(true);
-                    ResultSet rs = Connection_SQL.get_Equipment_Parts_Information(0);
-                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else if (Selected_Item.equals("Tipos de Mantenimientos")) {
-            try {
-                if (Cb_Estado_Mecanica.isSelected()) {
-                    Btn_Desactivar_Estado_Mecanica.setVisible(true);
-                    Btn_Activar_Estado_Mecanica.setVisible(false);
-                    ResultSet rs = Connection_SQL.get_Maintenance_Types_Information(1);
-                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
-                } else {
-                    Btn_Desactivar_Estado_Mecanica.setVisible(false);
-                    Btn_Activar_Estado_Mecanica.setVisible(true);
-                    ResultSet rs = Connection_SQL.get_Maintenance_Types_Information(0);
-                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else if (Selected_Item.equals("Asignacion de Mantenimientos")) {
-
-        } else if (Selected_Item.equals("Boletas de Mantenimiento")) {
-
-        }
-
     }
 
     /**
@@ -346,7 +231,7 @@ public class Status extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1020, Short.MAX_VALUE)
+            .addGap(0, 820, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -363,7 +248,116 @@ public class Status extends javax.swing.JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
+    
+    // Metodo que es utilizado en el action listener para mostrar la informacion en una tabla, con la condicion del CheckBox
+    private void Show_Admin_Tab_Information() {
+        String Selected_Item = (String) Jcb_Admin.getSelectedItem();
 
+        if (Selected_Item.equals("Usuarios")) {
+            try {
+                if (Cb_Admin.isSelected()) {
+                    Btn_Activar_Estado_Admin.setVisible(false);
+                    Btn_Desactivar_Estado_Admin.setVisible(true);
+                    ResultSet rs = Connection_SQL.get_User_Information(1);
+                    Tbl_Admin.setModel(DbUtils.resultSetToTableModel(rs));
+                } else {
+                    Btn_Activar_Estado_Admin.setVisible(true);
+                    Btn_Desactivar_Estado_Admin.setVisible(false);
+                    ResultSet rs = Connection_SQL.get_User_Information(0);
+                    Tbl_Admin.setModel(DbUtils.resultSetToTableModel(rs));
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            try {
+                if (Cb_Admin.isSelected()) {
+                    Btn_Activar_Estado_Admin.setVisible(false);
+                    Btn_Desactivar_Estado_Admin.setVisible(true);
+                    ResultSet rs = Connection_SQL.get_Vehicle_Information(1);
+                    Tbl_Admin.setModel(DbUtils.resultSetToTableModel(rs));
+                } else {
+                    Btn_Activar_Estado_Admin.setVisible(true);
+                    Btn_Desactivar_Estado_Admin.setVisible(false);
+                    ResultSet rs = Connection_SQL.get_Vehicle_Information(0);
+                    Tbl_Admin.setModel(DbUtils.resultSetToTableModel(rs));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    // Metodo que es utilizado en el action listener para mostrar la informacion en una tabla, con la condicion del CheckBox
+    private void Show_Dispenser_Tab_Information() {
+        String Selected_Item = (String) Jcb_Dispensador.getSelectedItem();
+        if (Selected_Item.equals("Combustibles")) {
+            try {
+                if (Cb_Dispensador.isSelected()) {
+                    Btn_Activar_Estado_Dispensador.setVisible(false);
+                    Btn_Desactivar_Estado_Dispensador.setVisible(true);
+                    ResultSet rs = Connection_SQL.get_Fuel_Information(1);
+                    Tbl_Dispensador.setModel(DbUtils.resultSetToTableModel(rs));
+                } else {
+                    Btn_Activar_Estado_Dispensador.setVisible(true);
+                    Btn_Desactivar_Estado_Dispensador.setVisible(false);
+                    ResultSet rs = Connection_SQL.get_Fuel_Information(0);
+                    Tbl_Dispensador.setModel(DbUtils.resultSetToTableModel(rs));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (Selected_Item.equals("Tanques de Combustibles")) {
+
+        } else if (Selected_Item.equals("Ingreso de Combustibles")) {
+
+        } else if (Selected_Item.equals("Dispensadores")) {
+
+        } else if (Selected_Item.equals("Dispensado de Combustible")) {
+
+        }
+    }
+    // Metodo que es utilizado en el action listener para mostrar la informacion en una tabla, con la condicion del CheckBox
+    private void Show_Mechanic_Tab_Information() {
+        String Selected_Item = (String) Jcb_Mecanica.getSelectedItem();
+        if (Selected_Item.equals("Partes de Equipos")) {
+            try {
+                if (Cb_Estado_Mecanica.isSelected()) {
+                    Btn_Desactivar_Estado_Mecanica.setVisible(true);
+                    Btn_Activar_Estado_Mecanica.setVisible(false);
+                    ResultSet rs = Connection_SQL.get_Equipment_Parts_Information(1);
+                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
+                } else {
+                    Btn_Desactivar_Estado_Mecanica.setVisible(false);
+                    Btn_Activar_Estado_Mecanica.setVisible(true);
+                    ResultSet rs = Connection_SQL.get_Equipment_Parts_Information(0);
+                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (Selected_Item.equals("Tipos de Mantenimientos")) {
+            try {
+                if (Cb_Estado_Mecanica.isSelected()) {
+                    Btn_Desactivar_Estado_Mecanica.setVisible(true);
+                    Btn_Activar_Estado_Mecanica.setVisible(false);
+                    ResultSet rs = Connection_SQL.get_Maintenance_Types_Information(1);
+                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
+                } else {
+                    Btn_Desactivar_Estado_Mecanica.setVisible(false);
+                    Btn_Activar_Estado_Mecanica.setVisible(true);
+                    ResultSet rs = Connection_SQL.get_Maintenance_Types_Information(0);
+                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (Selected_Item.equals("Asignacion de Mantenimientos")) {
+
+        } else if (Selected_Item.equals("Boletas de Mantenimiento")) {
+        }
+    }
+    // Metodo para colocar inactivo el estado de todas las secciones de mecanica
     private void Btn_Desactivar_Estado_MecanicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Desactivar_Estado_MecanicaActionPerformed
         int Selected_Row = Tbl_Mecanica.getSelectedRow();
         String Selected_Item = (String) Jcb_Mecanica.getSelectedItem();
@@ -388,7 +382,7 @@ public class Status extends javax.swing.JPanel {
 
         }
     }//GEN-LAST:event_Btn_Desactivar_Estado_MecanicaActionPerformed
-
+    // Metodo para colocar inactivo el estado de todas las secciones de dispensador
     private void Btn_Desactivar_Estado_DispensadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Desactivar_Estado_DispensadorActionPerformed
         int Selected_Row = Tbl_Dispensador.getSelectedRow();
         String Selected_Item = (String) Jcb_Dispensador.getSelectedItem();
@@ -411,6 +405,7 @@ public class Status extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_Btn_Desactivar_Estado_DispensadorActionPerformed
 
+    // Metodo para colocar activo el estado de todas las secciones de dispensador
     private void Btn_Activar_Estado_DispensadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Activar_Estado_DispensadorActionPerformed
         int Selected_Row = Tbl_Dispensador.getSelectedRow();
         String Selected_Item = (String) Jcb_Dispensador.getSelectedItem();
@@ -432,7 +427,7 @@ public class Status extends javax.swing.JPanel {
 
         }
     }//GEN-LAST:event_Btn_Activar_Estado_DispensadorActionPerformed
-
+    // Metodo para colocar inactivo el estado de todas las secciones admin
     private void Btn_Desactivar_Estado_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Desactivar_Estado_AdminActionPerformed
         int Selected_Row = Tbl_Admin.getSelectedRow();
         String Selected_Item = (String) Jcb_Admin.getSelectedItem();
@@ -453,7 +448,7 @@ public class Status extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_Btn_Desactivar_Estado_AdminActionPerformed
-
+    // Metodo para colocar activo el estado de todas las secciones de admin
     private void Btn_Activar_Estado_AdminAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Activar_Estado_AdminAdminActionPerformed
         int Selected_Row = Tbl_Admin.getSelectedRow();
         String Selected_Item = (String) Jcb_Admin.getSelectedItem();
@@ -474,7 +469,7 @@ public class Status extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_Btn_Activar_Estado_AdminAdminActionPerformed
-
+    // Metodo para colocar activo el estado de todas las secciones de mecanica
     private void Btn_Activar_Estado_MecanicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Activar_Estado_MecanicaActionPerformed
         int Selected_Row = Tbl_Mecanica.getSelectedRow();
         String Selected_Item = (String) Jcb_Mecanica.getSelectedItem();

@@ -29,7 +29,8 @@ public class Mechanics_Section extends javax.swing.JPanel {
         Connection_SQL.get_Vehicle_Name(Jcb_Vehiculo);
         Actions_Listeners_Method();
     }
-
+    
+    // Metodo que contiene a Action Listeners
     private void Actions_Listeners_Method() {
         Jcb_Vehiculo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -369,14 +370,13 @@ public class Mechanics_Section extends javax.swing.JPanel {
 
         add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    // Boton que actualiza el estado de una pieza de vehiculo
     private void Btn_Inactivo_PartesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_PartesActionPerformed
         int Id = Integer.parseInt(Txt_Id.getText());
 
         int Rows_Affected;
-
         try {
-
             Rows_Affected = CUD_SQL.Update_Part_Status(Id, 0);
             if (Rows_Affected != 0) {
                 Txt_Id.setText("");
@@ -387,14 +387,12 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Txt_Garantia.setText("");
                 Txt_Precio_Unidad.setText("");
             }
-
         } catch (SQLException ex) {
             Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-
     }//GEN-LAST:event_Btn_Inactivo_PartesActionPerformed
-
+    // Boton que actualiza la informacion de una pieza de vehiculo mediante el id
     private void Btn_Actualizar_PiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_PiezaActionPerformed
         try {
             int Part_Id = Integer.parseInt(Txt_Id.getText());
@@ -423,7 +421,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Actualizar_PiezaActionPerformed
-
+    // Boton que ingresa la informacion de una pieza de vehiculo
     private void Btn_Registro_PiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_PiezaActionPerformed
         try {
             int Part_Id = Integer.parseInt(Txt_Id.getText());
@@ -447,12 +445,11 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Txt_Garantia.setText("");
                 Txt_Precio_Unidad.setText("");
             }
-
         } catch (SQLException ex) {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Registro_PiezaActionPerformed
-
+    // Boton que ingresa la informacion del tipo de mantenimiento vehicular
     private void Btn_Registrar_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_MantenimientoActionPerformed
         int Maintenance_Id = Integer.parseInt(Txt_Id_Mantenimiento.getText());
         String Maintenance_Type = Txt_Tipo_Mantenimiento.getText();
@@ -476,9 +473,8 @@ public class Mechanics_Section extends javax.swing.JPanel {
         } catch (SQLException ex) {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }//GEN-LAST:event_Btn_Registrar_MantenimientoActionPerformed
-
+    // Boton que actualiza la informacion del tipo de mantenimiento vehicular
     private void Btn_Actualizar_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_MantenimientoActionPerformed
         int Maintenance_Id = Integer.parseInt(Txt_Id_Mantenimiento.getText());
         String Maintenance_Type = Txt_Tipo_Mantenimiento.getText();
@@ -498,13 +494,11 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 TxA_Descripcion.setText("");
                 Jcb_Vehiculo.setSelectedItem("Seleccione un vehiculo:");
             }
-
         } catch (SQLException ex) {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }//GEN-LAST:event_Btn_Actualizar_MantenimientoActionPerformed
-
+    // Boton que actualiza el estado del tipo de mantenimiento vehicular
     private void Btn_Inactivo_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_MantenimientoActionPerformed
         int Id = Integer.parseInt(Txt_Id_Mantenimiento.getText());
 

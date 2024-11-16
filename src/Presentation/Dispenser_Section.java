@@ -169,7 +169,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
             .addComponent(jTabbedPane1)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    // Boton que actualiza los datos de un combustible mediante el id de combustible
     private void Btn_Actualizar_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_CombustibleActionPerformed
         int Fuel_Id = Integer.parseInt(Txt_Id_Combustible.getText());
         String Fuel_Name = Txt_Nombre_Combustible.getText();
@@ -189,7 +189,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
             Logger.getLogger(Dispenser_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Actualizar_CombustibleActionPerformed
-
+    // Boton que actualiza el estado de los datos de un combustible
     private void Btn_Inactivo_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_CombustibleActionPerformed
         int Fuel_Id = Integer.parseInt(Txt_Id_Combustible.getText());
 
@@ -211,7 +211,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
 
 
     }//GEN-LAST:event_Btn_Inactivo_CombustibleActionPerformed
-
+    // Boton que ingresa los datos de un combustible 
     private void Btn_Registro_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_CombustibleActionPerformed
         int Fuel_Id = Integer.parseInt(Txt_Id_Combustible.getText());
         String Fuel_Name = Txt_Nombre_Combustible.getText();

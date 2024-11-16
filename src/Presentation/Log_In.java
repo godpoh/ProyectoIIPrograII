@@ -112,7 +112,7 @@ public class Log_In extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+    // Boton que ingresa al panel principal despues de validad que las credenciales son correcta, utilizando el metodo de Logic
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         Log_In_Logic login = new Log_In_Logic();
         try {
@@ -126,12 +126,12 @@ public class Log_In extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnIngresarActionPerformed
-
+    // Label que actua como boton para salir del programa
     private void lblImagenExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblImagenExitMouseClicked
         Window window = SwingUtilities.getWindowAncestor(lblImagenExit);
         window.dispose();
     }//GEN-LAST:event_lblImagenExitMouseClicked
-
+    // Logica en TextField para que al presionar enter y se validen las credenciales abra el panel principal
     private void txtContrasenaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContrasenaKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             Log_In_Logic login = new Log_In_Logic();
@@ -143,7 +143,7 @@ public class Log_In extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_txtContrasenaKeyPressed
-
+    // Logica en TextField para que al presionar enter el focus vaya para el TextField de la contrasena
     private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             txtContrasena.requestFocus();
@@ -152,12 +152,12 @@ public class Log_In extends javax.swing.JFrame {
             login.Default_Text_PSW(txtContrasena, txtUsuario);
         }
     }//GEN-LAST:event_txtUsuarioKeyPressed
-
+    // TextField que tiene la logica para que se setee texto por defecto
     private void txtContrasenaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtContrasenaMousePressed
         Log_In_Logic login = new Log_In_Logic();
         login.Default_Text_PSW(txtContrasena, txtUsuario);
     }//GEN-LAST:event_txtContrasenaMousePressed
-
+    // TextField que tiene la logica para que se setee texto por defecto
     private void txtUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioMousePressed
         Log_In_Logic login = new Log_In_Logic();
         login.Default_Text_User_Field(txtUsuario, txtContrasena);

@@ -20,6 +20,7 @@ import javax.swing.JTextField;
  */
 public class Log_In_Logic {
 
+    // Setea el texto por defecto en el TextField de la contrasena
     public void Default_Text_PSW(JPasswordField txtContrasena, JTextField txtUsuario) {
         if (String.valueOf(txtContrasena.getPassword()).equals("********")) {
             txtContrasena.setText("");
@@ -31,6 +32,7 @@ public class Log_In_Logic {
         }
     }
 
+    // Setea el texto por defecto en el TextField de la cedula
     public void Default_Text_User_Field(JTextField txtUsuario, JPasswordField txtContrasena) {
         if (txtUsuario.getText().equals("Ingrese su cedúla")) {
             txtUsuario.setText("");
@@ -42,6 +44,7 @@ public class Log_In_Logic {
         }
     }
 
+    // Metodo que se utiliza en el JFrame para confirmar que las credenciales ingresadas son correctas 
     public void Open_Principal_Panel_Logic(JTextField txtUsuario, JPasswordField txtContrasena) throws SQLException {
         int get_User_Id = Integer.parseInt(txtUsuario.getText());
         String get_Password = String.valueOf(txtContrasena.getPassword());

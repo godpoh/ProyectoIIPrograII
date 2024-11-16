@@ -21,6 +21,7 @@ import java.sql.SQLException;
  */
 public class CUD_SQL {
 
+    // Metodo para encriptar la contrasena del usuario
     public static String EncryptMD5(String S) {
         try {
             MessageDigest Md = MessageDigest.getInstance("MD5");
@@ -38,6 +39,7 @@ public class CUD_SQL {
         }
     }
 
+    // Metodo para insertar los Usuarios
     public static int Insert_User(User_Creator User) throws SQLException {
         int Affected_Rows;
 
@@ -56,6 +58,7 @@ public class CUD_SQL {
 
     }
 
+    // Metodo para actualizar el Usuario
     public static int Update_User(User_Creator User) throws SQLException {
         int Affected_Rows;
 
@@ -73,6 +76,7 @@ public class CUD_SQL {
 
     }
 
+    // Metodo para actualizar el estado del usuario
     public static int Update_User_Status(int User_Id, int Status) throws SQLException {
         int Rows_Affected = 0;
         String Message;
@@ -104,6 +108,7 @@ public class CUD_SQL {
         return Rows_Affected;
     }
 
+    // Metodo para insertar vehiculos
     public static int Insert_Vehicle(Vehicle_Obj Vehicle) throws SQLException {
         int Affected_Rows;
 
@@ -126,6 +131,7 @@ public class CUD_SQL {
 
     }
 
+    // Metodo para actualizar vehiculos
     public static int Update_Vehicle(Vehicle_Obj Vehicle) throws SQLException {
         int Affected_Rows;
 
@@ -153,6 +159,7 @@ public class CUD_SQL {
         return Affected_Rows;
     }
 
+    // Metodo para actualizar el estado de vehiculo
     public static int Update_Vehicle_Status(String Licensed_Plate, int Status) throws SQLException {
         int Rows_Affected = 0;
         String Message;
@@ -183,6 +190,7 @@ public class CUD_SQL {
         return Rows_Affected;
     }
 
+    // Metodo para insertar la gasolina
     public static int Insert_Fuel(Fuel_Obj Fuel) throws SQLException {
         String qry = "INSERT INTO Fuel (Fuel_ID, Name, Type, Price_Per_Liter, Status) "
                 + "VALUES (" + Fuel.getFuel_Id() + ", '"
@@ -199,6 +207,7 @@ public class CUD_SQL {
         return Affected_Rows;
     }
 
+    // Metodo para actualizar gasolina
     public static int Update_Fuel(Fuel_Obj Fuel) throws SQLException {
         String qry = "UPDATE Fuel SET "
                 + "Name = '" + Fuel.getName() + "', "
@@ -214,6 +223,7 @@ public class CUD_SQL {
         return Affected_Rows;
     }
 
+    // Metodo para actualizar el estado de la gasolina
     public static int Update_Fuel_Status(int Fuel_ID, int Status) throws SQLException {
         int Rows_Affected = 0;
         String Message;
@@ -244,6 +254,7 @@ public class CUD_SQL {
         return Rows_Affected;
     }
 
+    // Metodo para insertar las partes de un vehiculo 
     public static int Insert_Part(Part_Obj part) throws SQLException {
         String qry = "Insert Into Equipment_Parts (Part_ID, Part_Name, Part_Category, Manu_Facturer, Compatibility, Warranty_Period, Unit_Cost, Status) "
                 + "Values (" + part.getPart_Id() + ", '"
@@ -263,6 +274,7 @@ public class CUD_SQL {
         return affectedRows;
     }
 
+    // Metodo para actualizar las partes de un vehiculo
     public static int Update_Part(Part_Obj part) throws SQLException {
         String qry = "Update Equipment_Parts Set "
                 + "Part_Name = '" + part.getPart_Name() + "', "
@@ -281,6 +293,7 @@ public class CUD_SQL {
         return affectedRows;
     }
 
+    // Metodo para actualizar el estado de las partes de un vehiculo
     public static int Update_Part_Status(int Part_ID, int Status) throws SQLException {
         int Rows_Affected = 0;
         String Message;
@@ -311,6 +324,7 @@ public class CUD_SQL {
         return Rows_Affected;
     }
 
+    // Metodo para insertar los tipos de mantenimiento de un vehiculo
     public static int Insert_Maintenance_Type(Maintenance_Type_Obj maintenance) throws SQLException {
         String qry = "Insert Into Maintenance_Types (Maintenance_Id, Type, Description, Frequency, Material_Cost_Estimate, Vehicle_Id, Status) "
                 + "Values (" + maintenance.getMaintenance_Id() + ", '"
@@ -320,7 +334,7 @@ public class CUD_SQL {
                 + maintenance.getMaterial_Cost_Estimate() + ", "
                 + maintenance.getVehicle_Id() + ", "
                 + maintenance.getStatus() + ")";
-        
+
         Statement sql = Connection_SQL.getConnection().createStatement();
         int affectedRows = sql.executeUpdate(qry);
 
@@ -328,6 +342,7 @@ public class CUD_SQL {
         return affectedRows;
     }
 
+    // Metodo para actualizar los tipos de mantenimiento de un vehiculo
     public static int Update_Maintenance_Type(Maintenance_Type_Obj maintenance) throws SQLException {
         String qry = "Update Maintenance_Types Set "
                 + "Type = '" + maintenance.getType() + "', "
@@ -343,6 +358,7 @@ public class CUD_SQL {
         JOptionPane.showMessageDialog(null, "Mantenimiento actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
         return affectedRows;
     }
+    // Metodo para actualizar el estado de los tipos de mantenimiento de un vehiculo
 
     public static int Update_Maintenance_Type_Status(int Maintenance_Id, int Status) throws SQLException {
         int Rows_Affected = 0;

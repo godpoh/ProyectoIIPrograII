@@ -317,7 +317,7 @@ public class Admin_Panel extends javax.swing.JPanel {
             .addComponent(jTabbedPane1)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    // Boton que ingresa los datos del usuario 
     private void Btn_RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_RegistrarActionPerformed
         int User_Id = Integer.parseInt(Txt_Usuario.getText());
         String Name = Txt_Nombre.getText();
@@ -339,7 +339,7 @@ public class Admin_Panel extends javax.swing.JPanel {
             Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_RegistrarActionPerformed
-
+    // Boton que actualiza el estado de los datos del usuario 
     private void Btn_InactivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_InactivoActionPerformed
         int User_Id = Integer.parseInt(Txt_Usuario.getText());
         int Rows_Affected;
@@ -365,7 +365,7 @@ public class Admin_Panel extends javax.swing.JPanel {
 
 
     }//GEN-LAST:event_Btn_InactivoActionPerformed
-
+    // Boton que actualiza los datos del usuario mediante la cedula o id
     private void Btn_ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ActualizarActionPerformed
         int User_Id = Integer.parseInt(Txt_Usuario.getText());
         String Name = Txt_Nombre.getText();
@@ -388,7 +388,7 @@ public class Admin_Panel extends javax.swing.JPanel {
 
 
     }//GEN-LAST:event_Btn_ActualizarActionPerformed
-
+    // Boton que ingresa los datos de un nuevo vehiculo
     private void Btn_Registrar_VehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_VehiculoActionPerformed
         String License_Plate = Txt_Placa.getText();
         String Brand = Txt_Marca.getText();
@@ -417,7 +417,7 @@ public class Admin_Panel extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event_Btn_Registrar_VehiculoActionPerformed
-
+    // Boton que actualiza el estado del vehiculo mediante la Placa
     private void Btn_Inactivo_VehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_VehiculoActionPerformed
         String License_PLate = Txt_Placa.getText();
         int Rows_Affected;
@@ -441,7 +441,7 @@ public class Admin_Panel extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event_Btn_Inactivo_VehiculoActionPerformed
-
+    // Boton que actualiza los datos del vehiculo mediante la Placa
     private void Btn_Actualizar_VehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_VehiculoActionPerformed
         String License_Plate = Txt_Placa.getText();
         String Brand = Txt_Marca.getText();
