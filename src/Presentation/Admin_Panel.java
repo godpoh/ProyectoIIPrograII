@@ -127,7 +127,7 @@ public class Admin_Panel extends javax.swing.JPanel {
 
         Jcb_Rol.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jcb_Rol.setForeground(new java.awt.Color(153, 153, 153));
-        Jcb_Rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un rol", "Admin", "Chofer", "Usuario" }));
+        Jcb_Rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un rol", "Admin", "Chofer", "Mecanico", " " }));
         Pnl_Principal.add(Jcb_Rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 350, 40));
 
         lblUsuario2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

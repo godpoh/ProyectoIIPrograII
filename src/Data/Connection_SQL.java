@@ -91,7 +91,7 @@ public class Connection_SQL {
 
         ResultSet rs = sql.executeQuery(qry);
         JCB.removeAllItems();
-        JCB.addItem("Seleccione un vehiculo:");
+        JCB.addItem("Seleccione una matricula:");
         if (rs.next()) {
             License_Plate = rs.getString("License_Plate");
             JCB.addItem(License_Plate);
