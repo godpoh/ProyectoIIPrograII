@@ -47,6 +47,7 @@ public class Principal_Panel extends javax.swing.JFrame {
         Btn_Estadisticas = new javax.swing.JButton();
         Btn_Dispensador = new javax.swing.JButton();
         Btn_Estado = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         Pnl_Titulo = new javax.swing.JPanel();
         Btn_Cerrar_Sesion = new javax.swing.JButton();
         Btn_Pnl_Admin = new javax.swing.JButton();
@@ -107,7 +108,10 @@ public class Principal_Panel extends javax.swing.JFrame {
                 Btn_EstadoActionPerformed(evt);
             }
         });
-        Pnl_Menu.add(Btn_Estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 650, 150, 50));
+        Pnl_Menu.add(Btn_Estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 150, 50));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mecanico-removebg-preview.png"))); // NOI18N
+        Pnl_Menu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 20, 220, 190));
 
         getContentPane().add(Pnl_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 720));
 
@@ -272,5 +276,6 @@ public class Principal_Panel extends javax.swing.JFrame {
     private javax.swing.JPanel Pnl_Menu;
     private javax.swing.JPanel Pnl_Titulo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

@@ -144,7 +144,7 @@ public class CUD_SQL {
                 + "Type = '" + Vehicle.getType() + "', "
                 + "Seat_Count = " + Vehicle.getSeatCount() + ", "
                 + "Load_Capacity = " + Vehicle.getLoad_Capacity()
-                + " WHERE License_Plate = " + Vehicle.getLicensePlate();
+                + " WHERE License_Plate = '" + Vehicle.getLicensePlate() + "'";
 
         Statement sql = (Statement) Connection_SQL.getConnection().createStatement();
 

@@ -371,8 +371,9 @@ public class Admin_Panel extends javax.swing.JPanel {
         String Name = Txt_Nombre.getText();
         String Role = (String) Jcb_Rol.getSelectedItem();
         String Password = String.valueOf(Txt_Contrasena.getText());
+        String Encrypted_Password = CUD_SQL.EncryptMD5(Password);
 
-        User_Creator User = new User_Creator(User_Id, Name, Password, Role, 1);
+        User_Creator User = new User_Creator(User_Id, Name, Encrypted_Password, Role, 1);
         int Rows_Affected;
         try {
             Rows_Affected = Update_User(User);
