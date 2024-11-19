@@ -21,7 +21,7 @@
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
+          <AbsoluteConstraints x="0" y="0" width="-1" height="690"/>
         </Constraint>
       </Constraints>
 
@@ -700,7 +700,6 @@
                                   <Component id="Jcb_Vehiculo1" max="32767" attributes="0"/>
                                   <Component id="Txt_Costo_Estimado1" alignment="0" max="32767" attributes="0"/>
                                   <Component id="Txt_Id_Mantenimiento1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="dateChooserCombo1" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -763,18 +762,14 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="lblIniciarSesion12" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="dateChooserCombo1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="lblIniciarSesion12" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
                                               <Component id="Txt_Costo_Estimado4" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="lblIniciarSesion17" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Component id="lblIniciarSesion11" min="-2" max="-2" attributes="0"/>
@@ -889,8 +884,6 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Matricula del vehiculo"/>
                       </Properties>
-                    </Component>
-                    <Component class="datechooser.beans.DateChooserCombo" name="dateChooserCombo1">
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblIniciarSesion13">
                       <Properties>

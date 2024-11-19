@@ -51,9 +51,73 @@ public class Dispenser_Section extends javax.swing.JPanel {
         lblImagen = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         Pnl_Principal1 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        lblIniciarSesion4 = new javax.swing.JLabel();
+        Txt_Id_Mantenimiento = new javax.swing.JTextField();
+        lblIniciarSesion7 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TxA_Descripcion = new javax.swing.JTextArea();
+        lblIniciarSesion5 = new javax.swing.JLabel();
+        Btn_Registrar_Mantenimiento = new javax.swing.JButton();
+        Btn_Actualizar_Mantenimiento = new javax.swing.JButton();
+        Btn_Inactivo_Mantenimiento = new javax.swing.JButton();
+        Jcb_Vehiculo8 = new javax.swing.JComboBox<>();
+        lblIniciarSesion8 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        lblIniciarSesion9 = new javax.swing.JLabel();
+        Txt_Id_Mantenimiento1 = new javax.swing.JTextField();
+        Txt_Tipo_Mantenimiento1 = new javax.swing.JTextField();
+        lblIniciarSesion10 = new javax.swing.JLabel();
+        lblIniciarSesion11 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TxA_Descripcion1 = new javax.swing.JTextArea();
+        lblIniciarSesion12 = new javax.swing.JLabel();
+        Btn_Registrar_Mantenimiento1 = new javax.swing.JButton();
+        Btn_Actualizar_Mantenimiento1 = new javax.swing.JButton();
+        Btn_Inactivo_Mantenimiento1 = new javax.swing.JButton();
+        Jcb_Vehiculo9 = new javax.swing.JComboBox<>();
+        lblIniciarSesion13 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        Pnl_Principal2 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
+        lblIniciarSesion17 = new javax.swing.JLabel();
+        Txt_Id_Mantenimiento3 = new javax.swing.JTextField();
+        Txt_Tipo_Mantenimiento2 = new javax.swing.JTextField();
+        lblIniciarSesion18 = new javax.swing.JLabel();
+        lblIniciarSesion19 = new javax.swing.JLabel();
+        Btn_Registrar_Mantenimiento3 = new javax.swing.JButton();
+        Btn_Actualizar_Mantenimiento3 = new javax.swing.JButton();
+        Btn_Inactivo_Mantenimiento3 = new javax.swing.JButton();
+        Jcb_Vehiculo11 = new javax.swing.JComboBox<>();
+        lblIniciarSesion21 = new javax.swing.JLabel();
+        lblIniciarSesion22 = new javax.swing.JLabel();
+        Txt_Tipo_Mantenimiento3 = new javax.swing.JTextField();
+        lblIniciarSesion23 = new javax.swing.JLabel();
+        Jcb_Vehiculo15 = new javax.swing.JComboBox<>();
+        lblIniciarSesion31 = new javax.swing.JLabel();
+        Jcb_Vehiculo16 = new javax.swing.JComboBox<>();
+        lblIniciarSesion32 = new javax.swing.JLabel();
+        Txt_Tipo_Mantenimiento6 = new javax.swing.JTextField();
+        jPanel16 = new javax.swing.JPanel();
+        lblIniciarSesion24 = new javax.swing.JLabel();
+        Txt_Id_Mantenimiento4 = new javax.swing.JTextField();
+        Txt_Tipo_Mantenimiento4 = new javax.swing.JTextField();
+        lblIniciarSesion25 = new javax.swing.JLabel();
+        lblIniciarSesion26 = new javax.swing.JLabel();
+        Btn_Registrar_Mantenimiento4 = new javax.swing.JButton();
+        Btn_Actualizar_Mantenimiento4 = new javax.swing.JButton();
+        Btn_Inactivo_Mantenimiento4 = new javax.swing.JButton();
+        Jcb_Vehiculo13 = new javax.swing.JComboBox<>();
+        lblIniciarSesion28 = new javax.swing.JLabel();
+        lblIniciarSesion29 = new javax.swing.JLabel();
+        Jcb_Vehiculo14 = new javax.swing.JComboBox<>();
+        Txt_Tipo_Mantenimiento5 = new javax.swing.JTextField();
+        lblIniciarSesion30 = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -145,18 +209,378 @@ public class Dispenser_Section extends javax.swing.JPanel {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Pnl_Principal1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblIniciarSesion4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion4.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion4.setText("Id del dispensador");
+        jPanel12.add(lblIniciarSesion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 147, -1));
+
+        Txt_Id_Mantenimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Id_Mantenimiento.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel12.add(Txt_Id_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 170, -1));
+
+        lblIniciarSesion7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion7.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion7.setText("Id del Tanque");
+        jPanel12.add(lblIniciarSesion7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 170, -1));
+
+        TxA_Descripcion.setColumns(20);
+        TxA_Descripcion.setRows(5);
+        jScrollPane1.setViewportView(TxA_Descripcion);
+
+        jPanel12.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 360, 120));
+
+        lblIniciarSesion5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion5.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion5.setText("Descripción");
+        jPanel12.add(lblIniciarSesion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 79, -1));
+
+        Btn_Registrar_Mantenimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Registrar_Mantenimiento.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Registrar_Mantenimiento.setText("Registrar");
+        Btn_Registrar_Mantenimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Registrar_MantenimientoActionPerformed(evt);
+            }
+        });
+        jPanel12.add(Btn_Registrar_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 90, -1));
+
+        Btn_Actualizar_Mantenimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Actualizar_Mantenimiento.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Actualizar_Mantenimiento.setText("Actualizar");
+        Btn_Actualizar_Mantenimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Actualizar_MantenimientoActionPerformed(evt);
+            }
+        });
+        jPanel12.add(Btn_Actualizar_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 100, -1));
+
+        Btn_Inactivo_Mantenimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Inactivo_Mantenimiento.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Inactivo_Mantenimiento.setText("Inactivo");
+        Btn_Inactivo_Mantenimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Inactivo_MantenimientoActionPerformed(evt);
+            }
+        });
+        jPanel12.add(Btn_Inactivo_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 90, -1));
+
+        Jcb_Vehiculo8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jcb_Vehiculo8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
+        jPanel12.add(Jcb_Vehiculo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 170, -1));
+
+        lblIniciarSesion8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblIniciarSesion8.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion8.setText("Dispensador");
+        jPanel12.add(lblIniciarSesion8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
+
+        jPanel8.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 810, 290));
+
+        jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblIniciarSesion9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion9.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion9.setText("Id del tanque");
+        jPanel13.add(lblIniciarSesion9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 147, -1));
+
+        Txt_Id_Mantenimiento1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Id_Mantenimiento1.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel13.add(Txt_Id_Mantenimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 170, -1));
+
+        Txt_Tipo_Mantenimiento1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Tipo_Mantenimiento1.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel13.add(Txt_Tipo_Mantenimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 170, -1));
+
+        lblIniciarSesion10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion10.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion10.setText("Capacidad");
+        jPanel13.add(lblIniciarSesion10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 147, -1));
+
+        lblIniciarSesion11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion11.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion11.setText("Tipo de Gasolina");
+        jPanel13.add(lblIniciarSesion11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 147, -1));
+
+        TxA_Descripcion1.setColumns(20);
+        TxA_Descripcion1.setRows(5);
+        jScrollPane2.setViewportView(TxA_Descripcion1);
+
+        jPanel13.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 360, 120));
+
+        lblIniciarSesion12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion12.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion12.setText("Descripción");
+        jPanel13.add(lblIniciarSesion12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 79, -1));
+
+        Btn_Registrar_Mantenimiento1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Registrar_Mantenimiento1.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Registrar_Mantenimiento1.setText("Registrar");
+        Btn_Registrar_Mantenimiento1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Registrar_Mantenimiento1ActionPerformed(evt);
+            }
+        });
+        jPanel13.add(Btn_Registrar_Mantenimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 90, -1));
+
+        Btn_Actualizar_Mantenimiento1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Actualizar_Mantenimiento1.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Actualizar_Mantenimiento1.setText("Actualizar");
+        Btn_Actualizar_Mantenimiento1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Actualizar_Mantenimiento1ActionPerformed(evt);
+            }
+        });
+        jPanel13.add(Btn_Actualizar_Mantenimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 100, -1));
+
+        Btn_Inactivo_Mantenimiento1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Inactivo_Mantenimiento1.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Inactivo_Mantenimiento1.setText("Inactivo");
+        Btn_Inactivo_Mantenimiento1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Inactivo_Mantenimiento1ActionPerformed(evt);
+            }
+        });
+        jPanel13.add(Btn_Inactivo_Mantenimiento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 90, -1));
+
+        Jcb_Vehiculo9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jcb_Vehiculo9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
+        jPanel13.add(Jcb_Vehiculo9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 170, -1));
+
+        lblIniciarSesion13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblIniciarSesion13.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion13.setText("Tanques de Combustible");
+        jPanel13.add(lblIniciarSesion13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, -1, -1));
+
+        jPanel8.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 810, 350));
+
+        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 760));
+
+        Pnl_Principal1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jPanel2.add(Pnl_Principal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4, 820, 760));
 
-        jTabbedPane1.addTab("Tanques Combustible", jPanel2);
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jTabbedPane1.addTab("Ingreso de combustible", jPanel4);
-
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jTabbedPane1.addTab("Dispensadores", jPanel5);
+        jTabbedPane1.addTab("Tanque/Dispensador de Combustible", jPanel2);
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jTabbedPane1.addTab("Dispensado de combustible", jPanel6);
+
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Pnl_Principal2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblIniciarSesion17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion17.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion17.setText("Id del ingreso");
+        jPanel15.add(lblIniciarSesion17, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 220, -1));
+
+        Txt_Id_Mantenimiento3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Id_Mantenimiento3.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel15.add(Txt_Id_Mantenimiento3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 220, -1));
+
+        Txt_Tipo_Mantenimiento2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Tipo_Mantenimiento2.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel15.add(Txt_Tipo_Mantenimiento2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 220, -1));
+
+        lblIniciarSesion18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion18.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion18.setText("Id del dispensador");
+        jPanel15.add(lblIniciarSesion18, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 147, -1));
+
+        lblIniciarSesion19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion19.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion19.setText("Matricula de vehiculo ");
+        jPanel15.add(lblIniciarSesion19, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 147, -1));
+
+        Btn_Registrar_Mantenimiento3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Registrar_Mantenimiento3.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Registrar_Mantenimiento3.setText("Registrar");
+        Btn_Registrar_Mantenimiento3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Registrar_Mantenimiento3ActionPerformed(evt);
+            }
+        });
+        jPanel15.add(Btn_Registrar_Mantenimiento3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 90, -1));
+
+        Btn_Actualizar_Mantenimiento3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Actualizar_Mantenimiento3.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Actualizar_Mantenimiento3.setText("Actualizar");
+        Btn_Actualizar_Mantenimiento3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Actualizar_Mantenimiento3ActionPerformed(evt);
+            }
+        });
+        jPanel15.add(Btn_Actualizar_Mantenimiento3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 100, -1));
+
+        Btn_Inactivo_Mantenimiento3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Inactivo_Mantenimiento3.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Inactivo_Mantenimiento3.setText("Inactivo");
+        Btn_Inactivo_Mantenimiento3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Inactivo_Mantenimiento3ActionPerformed(evt);
+            }
+        });
+        jPanel15.add(Btn_Inactivo_Mantenimiento3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 90, -1));
+
+        Jcb_Vehiculo11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jcb_Vehiculo11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
+        Jcb_Vehiculo11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Jcb_Vehiculo11ActionPerformed(evt);
+            }
+        });
+        jPanel15.add(Jcb_Vehiculo11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 220, -1));
+
+        lblIniciarSesion21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblIniciarSesion21.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion21.setText("Ingreso de combustible");
+        jPanel15.add(lblIniciarSesion21, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, -1));
+
+        lblIniciarSesion22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion22.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion22.setText("Cantidad que ingresa(Litros)");
+        jPanel15.add(lblIniciarSesion22, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 200, -1));
+
+        Txt_Tipo_Mantenimiento3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Tipo_Mantenimiento3.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel15.add(Txt_Tipo_Mantenimiento3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 220, -1));
+
+        lblIniciarSesion23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion23.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion23.setText("Tipo de Combustible");
+        jPanel15.add(lblIniciarSesion23, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 40, 147, -1));
+
+        Jcb_Vehiculo15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jcb_Vehiculo15.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
+        jPanel15.add(Jcb_Vehiculo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 220, -1));
+
+        lblIniciarSesion31.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion31.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion31.setText("Fecha de ingreso");
+        jPanel15.add(lblIniciarSesion31, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 147, -1));
+
+        Jcb_Vehiculo16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jcb_Vehiculo16.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
+        jPanel15.add(Jcb_Vehiculo16, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, 220, -1));
+
+        lblIniciarSesion32.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion32.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion32.setText("Kilometraje");
+        jPanel15.add(lblIniciarSesion32, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 147, -1));
+
+        Txt_Tipo_Mantenimiento6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Tipo_Mantenimiento6.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel15.add(Txt_Tipo_Mantenimiento6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 220, -1));
+
+        jPanel11.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 810, 350));
+
+        jPanel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblIniciarSesion24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion24.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion24.setText("Id del dispensador de combustible");
+        jPanel16.add(lblIniciarSesion24, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 220, -1));
+
+        Txt_Id_Mantenimiento4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Id_Mantenimiento4.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel16.add(Txt_Id_Mantenimiento4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 220, -1));
+
+        Txt_Tipo_Mantenimiento4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Tipo_Mantenimiento4.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel16.add(Txt_Tipo_Mantenimiento4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 220, -1));
+
+        lblIniciarSesion25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion25.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion25.setText("Id del dispensador");
+        jPanel16.add(lblIniciarSesion25, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 147, -1));
+
+        lblIniciarSesion26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion26.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion26.setText("Matricula de vehiculo ");
+        jPanel16.add(lblIniciarSesion26, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 147, -1));
+
+        Btn_Registrar_Mantenimiento4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Registrar_Mantenimiento4.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Registrar_Mantenimiento4.setText("Registrar");
+        Btn_Registrar_Mantenimiento4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Registrar_Mantenimiento4ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(Btn_Registrar_Mantenimiento4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 90, -1));
+
+        Btn_Actualizar_Mantenimiento4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Actualizar_Mantenimiento4.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Actualizar_Mantenimiento4.setText("Actualizar");
+        Btn_Actualizar_Mantenimiento4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Actualizar_Mantenimiento4ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(Btn_Actualizar_Mantenimiento4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 100, -1));
+
+        Btn_Inactivo_Mantenimiento4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Inactivo_Mantenimiento4.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Inactivo_Mantenimiento4.setText("Inactivo");
+        Btn_Inactivo_Mantenimiento4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Inactivo_Mantenimiento4ActionPerformed(evt);
+            }
+        });
+        jPanel16.add(Btn_Inactivo_Mantenimiento4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 90, -1));
+
+        Jcb_Vehiculo13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jcb_Vehiculo13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
+        jPanel16.add(Jcb_Vehiculo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 220, -1));
+
+        lblIniciarSesion28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblIniciarSesion28.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion28.setText("Dispensador de Combustible");
+        jPanel16.add(lblIniciarSesion28, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, -1));
+
+        lblIniciarSesion29.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion29.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion29.setText("Fecha de ingreso");
+        jPanel16.add(lblIniciarSesion29, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 147, -1));
+
+        Jcb_Vehiculo14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Jcb_Vehiculo14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
+        jPanel16.add(Jcb_Vehiculo14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 220, -1));
+
+        Txt_Tipo_Mantenimiento5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Txt_Tipo_Mantenimiento5.setForeground(new java.awt.Color(153, 153, 153));
+        jPanel16.add(Txt_Tipo_Mantenimiento5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 220, -1));
+
+        lblIniciarSesion30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIniciarSesion30.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion30.setText("Kilometraje");
+        jPanel16.add(lblIniciarSesion30, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, 147, -1));
+
+        jPanel11.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 810, 350));
+
+        jPanel10.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 760));
+
+        Pnl_Principal2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel9.add(Pnl_Principal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4, 820, 760));
+
+        jPanel6.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("Dispensado/Ingreso de Combustible", jPanel6);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -169,6 +593,31 @@ public class Dispenser_Section extends javax.swing.JPanel {
             .addComponent(jTabbedPane1)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Btn_Inactivo_Mantenimiento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_Mantenimiento1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Inactivo_Mantenimiento1ActionPerformed
+
+    private void Btn_Actualizar_Mantenimiento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Mantenimiento1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Actualizar_Mantenimiento1ActionPerformed
+
+    private void Btn_Registrar_Mantenimiento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Mantenimiento1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Registrar_Mantenimiento1ActionPerformed
+
+    private void Btn_Inactivo_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_MantenimientoActionPerformed
+    
+    }//GEN-LAST:event_Btn_Inactivo_MantenimientoActionPerformed
+
+    private void Btn_Actualizar_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_MantenimientoActionPerformed
+    
+    }//GEN-LAST:event_Btn_Actualizar_MantenimientoActionPerformed
+
+    private void Btn_Registrar_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_MantenimientoActionPerformed
+  
+    }//GEN-LAST:event_Btn_Registrar_MantenimientoActionPerformed
+
     // Boton que actualiza los datos de un combustible mediante el id de combustible
     private void Btn_Actualizar_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_CombustibleActionPerformed
         int Fuel_Id = Integer.parseInt(Txt_Id_Combustible.getText());
@@ -189,6 +638,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
             Logger.getLogger(Dispenser_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Actualizar_CombustibleActionPerformed
+
     // Boton que actualiza el estado de los datos de un combustible
     private void Btn_Inactivo_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_CombustibleActionPerformed
         int Fuel_Id = Integer.parseInt(Txt_Id_Combustible.getText());
@@ -209,8 +659,8 @@ public class Dispenser_Section extends javax.swing.JPanel {
             Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-
     }//GEN-LAST:event_Btn_Inactivo_CombustibleActionPerformed
+
     // Boton que ingresa los datos de un combustible 
     private void Btn_Registro_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_CombustibleActionPerformed
         int Fuel_Id = Integer.parseInt(Txt_Id_Combustible.getText());
@@ -232,28 +682,120 @@ public class Dispenser_Section extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_Btn_Registro_CombustibleActionPerformed
 
+    private void Btn_Registrar_Mantenimiento3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Mantenimiento3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Registrar_Mantenimiento3ActionPerformed
+
+    private void Btn_Actualizar_Mantenimiento3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Mantenimiento3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Actualizar_Mantenimiento3ActionPerformed
+
+    private void Btn_Inactivo_Mantenimiento3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_Mantenimiento3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Inactivo_Mantenimiento3ActionPerformed
+
+    private void Btn_Registrar_Mantenimiento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Mantenimiento4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Registrar_Mantenimiento4ActionPerformed
+
+    private void Btn_Actualizar_Mantenimiento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Mantenimiento4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Actualizar_Mantenimiento4ActionPerformed
+
+    private void Btn_Inactivo_Mantenimiento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_Mantenimiento4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Inactivo_Mantenimiento4ActionPerformed
+
+    private void Jcb_Vehiculo11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jcb_Vehiculo11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Jcb_Vehiculo11ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Actualizar_Combustible;
+    private javax.swing.JButton Btn_Actualizar_Mantenimiento;
+    private javax.swing.JButton Btn_Actualizar_Mantenimiento1;
+    private javax.swing.JButton Btn_Actualizar_Mantenimiento3;
+    private javax.swing.JButton Btn_Actualizar_Mantenimiento4;
     private javax.swing.JButton Btn_Inactivo_Combustible;
+    private javax.swing.JButton Btn_Inactivo_Mantenimiento;
+    private javax.swing.JButton Btn_Inactivo_Mantenimiento1;
+    private javax.swing.JButton Btn_Inactivo_Mantenimiento3;
+    private javax.swing.JButton Btn_Inactivo_Mantenimiento4;
+    private javax.swing.JButton Btn_Registrar_Mantenimiento;
+    private javax.swing.JButton Btn_Registrar_Mantenimiento1;
+    private javax.swing.JButton Btn_Registrar_Mantenimiento3;
+    private javax.swing.JButton Btn_Registrar_Mantenimiento4;
     private javax.swing.JButton Btn_Registro_Combustible;
+    private javax.swing.JComboBox<String> Jcb_Vehiculo11;
+    private javax.swing.JComboBox<String> Jcb_Vehiculo13;
+    private javax.swing.JComboBox<String> Jcb_Vehiculo14;
+    private javax.swing.JComboBox<String> Jcb_Vehiculo15;
+    private javax.swing.JComboBox<String> Jcb_Vehiculo16;
+    private javax.swing.JComboBox<String> Jcb_Vehiculo8;
+    private javax.swing.JComboBox<String> Jcb_Vehiculo9;
     private javax.swing.JPanel Pnl_Principal;
     private javax.swing.JPanel Pnl_Principal1;
+    private javax.swing.JPanel Pnl_Principal2;
+    private javax.swing.JTextArea TxA_Descripcion;
+    private javax.swing.JTextArea TxA_Descripcion1;
     private javax.swing.JTextField Txt_Id_Combustible;
+    private javax.swing.JTextField Txt_Id_Mantenimiento;
+    private javax.swing.JTextField Txt_Id_Mantenimiento1;
+    private javax.swing.JTextField Txt_Id_Mantenimiento3;
+    private javax.swing.JTextField Txt_Id_Mantenimiento4;
     private javax.swing.JTextField Txt_Nombre_Combustible;
     private javax.swing.JTextField Txt_Precio_Litro;
     private javax.swing.JTextField Txt_Tipo_Combustible;
+    private javax.swing.JTextField Txt_Tipo_Mantenimiento1;
+    private javax.swing.JTextField Txt_Tipo_Mantenimiento2;
+    private javax.swing.JTextField Txt_Tipo_Mantenimiento3;
+    private javax.swing.JTextField Txt_Tipo_Mantenimiento4;
+    private javax.swing.JTextField Txt_Tipo_Mantenimiento5;
+    private javax.swing.JTextField Txt_Tipo_Mantenimiento6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblContrasena1;
     private javax.swing.JLabel lblContrasena2;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblIniciarSesion;
+    private javax.swing.JLabel lblIniciarSesion10;
+    private javax.swing.JLabel lblIniciarSesion11;
+    private javax.swing.JLabel lblIniciarSesion12;
+    private javax.swing.JLabel lblIniciarSesion13;
+    private javax.swing.JLabel lblIniciarSesion17;
+    private javax.swing.JLabel lblIniciarSesion18;
+    private javax.swing.JLabel lblIniciarSesion19;
+    private javax.swing.JLabel lblIniciarSesion21;
+    private javax.swing.JLabel lblIniciarSesion22;
+    private javax.swing.JLabel lblIniciarSesion23;
+    private javax.swing.JLabel lblIniciarSesion24;
+    private javax.swing.JLabel lblIniciarSesion25;
+    private javax.swing.JLabel lblIniciarSesion26;
+    private javax.swing.JLabel lblIniciarSesion28;
+    private javax.swing.JLabel lblIniciarSesion29;
+    private javax.swing.JLabel lblIniciarSesion30;
+    private javax.swing.JLabel lblIniciarSesion31;
+    private javax.swing.JLabel lblIniciarSesion32;
+    private javax.swing.JLabel lblIniciarSesion4;
+    private javax.swing.JLabel lblIniciarSesion5;
+    private javax.swing.JLabel lblIniciarSesion7;
+    private javax.swing.JLabel lblIniciarSesion8;
+    private javax.swing.JLabel lblIniciarSesion9;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JLabel lblUsuario2;
     // End of variables declaration//GEN-END:variables

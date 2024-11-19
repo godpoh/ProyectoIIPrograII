@@ -101,7 +101,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
         lblIniciarSesion14 = new javax.swing.JLabel();
         Jcb_Vehiculo1 = new javax.swing.JComboBox<>();
         lblIniciarSesion15 = new javax.swing.JLabel();
-        dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
         lblIniciarSesion13 = new javax.swing.JLabel();
         Txt_Costo_Estimado2 = new javax.swing.JTextField();
         Txt_Costo_Estimado3 = new javax.swing.JTextField();
@@ -640,8 +639,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
                     .addComponent(lblIniciarSesion11, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Jcb_Vehiculo1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Txt_Costo_Estimado1)
-                    .addComponent(Txt_Id_Mantenimiento1)
-                    .addComponent(dateChooserCombo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Txt_Id_Mantenimiento1))
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -690,15 +688,12 @@ public class Mechanics_Section extends javax.swing.JPanel {
                             .addComponent(lblIniciarSesion16))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addComponent(lblIniciarSesion12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(dateChooserCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblIniciarSesion12)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
                                 .addComponent(Txt_Costo_Estimado4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblIniciarSesion17))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(8, 8, 8)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addComponent(lblIniciarSesion11)
@@ -827,7 +822,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Mantenimientos", jPanel1);
 
-        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 690));
     }// </editor-fold>//GEN-END:initComponents
     
     // Boton que actualiza el estado de una pieza de vehiculo
@@ -1004,17 +999,17 @@ public class Mechanics_Section extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_Actualizar_Mantenimiento2ActionPerformed
 
-    private void Btn_Actualizar_Mantenimiento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Mantenimiento4ActionPerformed
+    private void Btn_Registrar_Mantenimiento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Mantenimiento4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_Actualizar_Mantenimiento4ActionPerformed
+    }//GEN-LAST:event_Btn_Registrar_Mantenimiento4ActionPerformed
 
     private void Btn_Inactivo_Mantenimiento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_Mantenimiento4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_Inactivo_Mantenimiento4ActionPerformed
 
-    private void Btn_Registrar_Mantenimiento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Mantenimiento4ActionPerformed
+    private void Btn_Actualizar_Mantenimiento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Mantenimiento4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_Registrar_Mantenimiento4ActionPerformed
+    }//GEN-LAST:event_Btn_Actualizar_Mantenimiento4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1062,7 +1057,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
     private javax.swing.JTextField Txt_Nombre_Pieza;
     private javax.swing.JTextField Txt_Precio_Unidad;
     private javax.swing.JTextField Txt_Tipo_Mantenimiento;
-    private datechooser.beans.DateChooserCombo dateChooserCombo1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
