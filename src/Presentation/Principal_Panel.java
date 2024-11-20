@@ -187,7 +187,12 @@ public class Principal_Panel extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_EstadisticasActionPerformed
     // Boton que muestra el Panel de la seccion del dispensador
     private void Btn_DispensadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_DispensadorActionPerformed
-        Dispenser_Section Window = new Dispenser_Section();
+        Dispenser_Section Window = null;
+        try {
+            Window = new Dispenser_Section();
+        } catch (SQLException ex) {
+            Logger.getLogger(Principal_Panel.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         Window.setSize(820, 688);
         Window.setLocation(0, 0);

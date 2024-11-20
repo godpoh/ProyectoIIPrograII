@@ -390,4 +390,219 @@ public class CUD_SQL {
         return Rows_Affected;
     }
 
+    // Metodo para insertar un tanque de combustible
+    public static int Insert_Fuel_Tank(Fuel_Tank_Obj Fuel_Tank) throws SQLException {
+        String qry = "Insert Into Fuel_Tank (Id, Description, Capacity, Fuel_Id, Status) "
+                + "Values (" + Fuel_Tank.getId() + ", '"
+                + Fuel_Tank.getDescription() + "', "
+                + Fuel_Tank.getCapacity() + ", "
+                + Fuel_Tank.getFuel_Id() + ", "
+                + Fuel_Tank.getStatus() + ")";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Tanque de combustible guardado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
+// Metodo para actualizar un tanque de combustible
+    public static int Update_Fuel_Tank(Fuel_Tank_Obj Fuel_Tank) throws SQLException {
+        int Affected_Rows = 0;
+
+        int confirm = JOptionPane.showConfirmDialog(null, "Desea actualizar los datos actuales?", "Confirmar actualización", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            String qry = "Update Fuel_Tank Set "
+                    + "Description = '" + Fuel_Tank.getDescription() + "', "
+                    + "Capacity = " + Fuel_Tank.getCapacity() + ", "
+                    + "Fuel_Id = " + Fuel_Tank.getFuel_Id() + ", "
+                    + "Status = " + Fuel_Tank.getStatus() + " "
+                    + "Where Id = " + Fuel_Tank.getId();
+            Statement sql = Connection_SQL.getConnection().createStatement();
+            Affected_Rows = sql.executeUpdate(qry);
+
+            JOptionPane.showMessageDialog(null, "Tanque de combustible actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+        return Affected_Rows;
+    }
+
+// Metodo para actualizar el estado de un tanque de combustible
+    public static int Update_Fuel_Tank_Status(int Id, int Status) throws SQLException {
+        int Rows_Affected = 0;
+        String Message;
+
+        if (Status == 0) {
+            Message = "¿Está seguro de que desea marcar el tanque como inactivo?";
+        } else {
+            Message = "¿Está seguro de que desea marcar el tanque como activo?";
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(null, Message, "Confirmar actualización", JOptionPane.YES_NO_OPTION);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            String qry = "Update Fuel_Tank Set Status = " + Status + " Where Id = " + Id;
+            Statement sql = Connection_SQL.getConnection().createStatement();
+            Rows_Affected = sql.executeUpdate(qry);
+
+            String Status_Message;
+            if (Status == 0) {
+                Status_Message = "inactivo";
+            } else {
+                Status_Message = "activo";
+            }
+
+            JOptionPane.showMessageDialog(null, "El tanque de combustible ahora está " + Status_Message + ".");
+        } else {
+            JOptionPane.showMessageDialog(null, "Actualización cancelada.");
+        }
+
+        return Rows_Affected;
+    }
+
+    // Metodo para insertar un dispensador
+    public static int Insert_Dispenser(Dispenser_Obj Dispenser) throws SQLException {
+        String qry = "Insert Into Dispenser (Id, Description, Fuel_Tank_Id, Status) "
+                + "Values (" + Dispenser.getId() + ", '"
+                + Dispenser.getDescription() + "', "
+                + Dispenser.getFuel_Tank_Id() + ", "
+                + Dispenser.getStatus() + ")";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Dispensador guardado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
+// Metodo para actualizar un dispensador
+    public static int Update_Dispenser(Dispenser_Obj Dispenser) throws SQLException {
+        int Affected_Rows = 0;
+
+        int confirm = JOptionPane.showConfirmDialog(null, "Desea actualizar los datos actuales?", "Confirmar actualización", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            String qry = "Update Dispenser Set "
+                    + "Description = '" + Dispenser.getDescription() + "', "
+                    + "Fuel_Tank_Id = " + Dispenser.getFuel_Tank_Id() + ", "
+                    + "Status = " + Dispenser.getStatus() + " "
+                    + "Where Id = " + Dispenser.getId();
+            Statement sql = Connection_SQL.getConnection().createStatement();
+            Affected_Rows = sql.executeUpdate(qry);
+
+            JOptionPane.showMessageDialog(null, "Dispensador actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+        return Affected_Rows;
+    }
+
+// Metodo para actualizar el estado de un dispensador
+    public static int Update_Dispenser_Status(int Id, int Status) throws SQLException {
+        int Rows_Affected = 0;
+        String Message;
+
+        if (Status == 0) {
+            Message = "¿Está seguro de que desea marcar el dispensador como inactivo?";
+        } else {
+            Message = "¿Está seguro de que desea marcar el dispensador como activo?";
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(null, Message, "Confirmar actualización", JOptionPane.YES_NO_OPTION);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            String qry = "Update Dispenser Set Status = " + Status + " Where Id = " + Id;
+            Statement sql = Connection_SQL.getConnection().createStatement();
+            Rows_Affected = sql.executeUpdate(qry);
+
+            String Status_Message;
+            if (Status == 0) {
+                Status_Message = "inactivo";
+            } else {
+                Status_Message = "activo";
+            }
+
+            JOptionPane.showMessageDialog(null, "El dispensador ahora está " + Status_Message + ".");
+        } else {
+            JOptionPane.showMessageDialog(null, "Actualización cancelada.");
+        }
+
+        return Rows_Affected;
+    }
+
+    // Método para insertar un registro en la tabla Fuel_Entry_Exit
+    public static int Insert_Fuel_Entry_Exit(Fuel_Entry_Exit_Obj Fuel_Entry_Exit) throws SQLException {
+        String qry = "Insert Into Fuel_Entry_Exit (Id, Vehicle_License_Plate, Dispenser_Id, Fuel_Amount, Mileage, Date, Transaction_Type, Status) "
+                + "Values (" + Fuel_Entry_Exit.getId() + ", '"
+                + Fuel_Entry_Exit.getVehicle_License_Plate() + "', "
+                + Fuel_Entry_Exit.getDispenser_Id() + ", "
+                + Fuel_Entry_Exit.getFuel_Amount() + ", "
+                + Fuel_Entry_Exit.getMileage() + ", '"
+                + Fuel_Entry_Exit.getDate() + "', '"
+                + Fuel_Entry_Exit.getTransaction_Type() + "', "
+                + Fuel_Entry_Exit.getStatus() + ")";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Registro de entrada/salida de combustible guardado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
+// Método para actualizar un registro en la tabla Fuel_Entry_Exit
+    public static int Update_Fuel_Entry_Exit(Fuel_Entry_Exit_Obj Fuel_Entry_Exit) throws SQLException {
+        int Affected_Rows = 0;
+
+        int confirm = JOptionPane.showConfirmDialog(null, "¿Desea actualizar los datos actuales?", "Confirmar actualización", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            String qry = "Update Fuel_Entry_Exit Set "
+                    + "Vehicle_License_Plate = '" + Fuel_Entry_Exit.getVehicle_License_Plate() + "', "
+                    + "Dispenser_Id = " + Fuel_Entry_Exit.getDispenser_Id() + ", "
+                    + "Fuel_Amount = " + Fuel_Entry_Exit.getFuel_Amount() + ", "
+                    + "Mileage = " + Fuel_Entry_Exit.getMileage() + ", "
+                    + "Date = '" + Fuel_Entry_Exit.getDate() + "', "
+                    + "Transaction_Type = '" + Fuel_Entry_Exit.getTransaction_Type() + "', "
+                    + "Status = " + Fuel_Entry_Exit.getStatus() + " "
+                    + "Where Id = " + Fuel_Entry_Exit.getId();
+
+            Statement sql = Connection_SQL.getConnection().createStatement();
+            Affected_Rows = sql.executeUpdate(qry);
+
+            JOptionPane.showMessageDialog(null, "Registro de entrada/salida de combustible actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+        return Affected_Rows;
+    }
+
+// Método para actualizar el estado de un registro en la tabla Fuel_Entry_Exit
+    public static int Update_Fuel_Entry_Exit_Status(int Id, int Status) throws SQLException {
+        int Rows_Affected = 0;
+        String Message;
+
+        if (Status == 0) {
+            Message = "¿Está seguro de que desea marcar el registro como inactivo?";
+        } else {
+            Message = "¿Está seguro de que desea marcar el registro como activo?";
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(null, Message, "Confirmar actualización", JOptionPane.YES_NO_OPTION);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            String qry = "Update Fuel_Entry_Exit Set Status = " + Status + " Where Id = " + Id;
+            Statement sql = Connection_SQL.getConnection().createStatement();
+            Rows_Affected = sql.executeUpdate(qry);
+
+            String Status_Message;
+            if (Status == 0) {
+                Status_Message = "inactivo";
+            } else {
+                Status_Message = "activo";
+            }
+
+            JOptionPane.showMessageDialog(null, "El registro de entrada/salida de combustible ahora está " + Status_Message + ".");
+        } else {
+            JOptionPane.showMessageDialog(null, "Actualización cancelada.");
+        }
+
+        return Rows_Affected;
+    }
+
 }

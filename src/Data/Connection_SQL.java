@@ -188,4 +188,46 @@ public class Connection_SQL {
         return rs;
     }
 
+    public static int get_Fuel_Id_By_Name(String Fuel_Name) throws SQLException {
+
+        int Id = 0;
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Fuel_Id from Fuel Where Name = '" + Fuel_Name + "'";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            Id = rs.getInt("Fuel_Id");
+        }
+        return Id;
+    }
+
+    public static void get_Fuel_Name_In_JCB(JComboBox Jcb) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Name From Fuel";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            String Name = rs.getString("Name");
+            Jcb.addItem(Name);
+        }
+    }
+
+        public static void get_Tank_Id_In_JCB(JComboBox Jcb) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Id From Fuel_Tank";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            String Name = rs.getString("Id");
+            Jcb.addItem(Name);
+        }
+    }
+
+    
 }
