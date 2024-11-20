@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -530,13 +531,17 @@ public class CUD_SQL {
 
     // Método para insertar un registro en la tabla Fuel_Entry_Exit
     public static int Insert_Fuel_Entry_Exit(Fuel_Entry_Exit_Obj Fuel_Entry_Exit) throws SQLException {
+
+        SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
+        String Formatted_Date = SDF.format(Fuel_Entry_Exit.getDate());
+
         String qry = "Insert Into Fuel_Entry_Exit (Id, Vehicle_License_Plate, Dispenser_Id, Fuel_Amount, Mileage, Date, Transaction_Type, Status) "
                 + "Values (" + Fuel_Entry_Exit.getId() + ", '"
                 + Fuel_Entry_Exit.getVehicle_License_Plate() + "', "
                 + Fuel_Entry_Exit.getDispenser_Id() + ", "
                 + Fuel_Entry_Exit.getFuel_Amount() + ", "
                 + Fuel_Entry_Exit.getMileage() + ", '"
-                + Fuel_Entry_Exit.getDate() + "', '"
+                + Formatted_Date + "', '"
                 + Fuel_Entry_Exit.getTransaction_Type() + "', "
                 + Fuel_Entry_Exit.getStatus() + ")";
 

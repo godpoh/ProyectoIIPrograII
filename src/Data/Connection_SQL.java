@@ -216,7 +216,7 @@ public class Connection_SQL {
         }
     }
 
-        public static void get_Tank_Id_In_JCB(JComboBox Jcb) throws SQLException {
+    public static void get_Tank_Id_In_JCB(JComboBox Jcb) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
 
         String qry = "Select Id From Fuel_Tank";
@@ -229,5 +229,17 @@ public class Connection_SQL {
         }
     }
 
-    
+    public static void get_Dispenser_Id(JComboBox Jcb) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Id From Dispenser";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            String Name = rs.getString("Id");
+            Jcb.addItem(Name);
+        }
+    }
+
 }

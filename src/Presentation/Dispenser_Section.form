@@ -796,7 +796,7 @@
                   </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="0" y="4" width="820" height="760"/>
+                      <AbsoluteConstraints x="0" y="4" width="820" height="650"/>
                     </Constraint>
                   </Constraints>
 
@@ -818,7 +818,7 @@
                         <Container class="javax.swing.JPanel" name="jPanel11">
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="0" y="0" width="820" height="760"/>
+                              <AbsoluteConstraints x="0" y="0" width="820" height="650"/>
                             </Constraint>
                           </Constraints>
 
@@ -860,7 +860,7 @@
                                     </Constraint>
                                   </Constraints>
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="Txt_Id_Mantenimiento3">
+                                <Component class="javax.swing.JTextField" name="Txt_Id_Ingreso">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Tahoma" size="12" style="1"/>
@@ -872,21 +872,6 @@
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                       <AbsoluteConstraints x="200" y="60" width="220" height="-1"/>
-                                    </Constraint>
-                                  </Constraints>
-                                </Component>
-                                <Component class="javax.swing.JTextField" name="Txt_Tipo_Mantenimiento2">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Tahoma" size="12" style="1"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="99" green="99" red="99" type="rgb"/>
-                                    </Property>
-                                  </Properties>
-                                  <Constraints>
-                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                      <AbsoluteConstraints x="200" y="110" width="220" height="-1"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
@@ -906,7 +891,7 @@
                                     </Constraint>
                                   </Constraints>
                                 </Component>
-                                <Component class="javax.swing.JButton" name="Btn_Registrar_Mantenimiento3">
+                                <Component class="javax.swing.JButton" name="Btn_Registrar_Ingreso_Combustible">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Tahoma" size="12" style="1"/>
@@ -917,7 +902,7 @@
                                     <Property name="text" type="java.lang.String" value="Registrar"/>
                                   </Properties>
                                   <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Registrar_Mantenimiento3ActionPerformed"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Registrar_Ingreso_CombustibleActionPerformed"/>
                                   </Events>
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -925,7 +910,7 @@
                                     </Constraint>
                                   </Constraints>
                                 </Component>
-                                <Component class="javax.swing.JButton" name="Btn_Actualizar_Mantenimiento3">
+                                <Component class="javax.swing.JButton" name="Btn_Actualizar_Ingreso_Combustible">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Tahoma" size="12" style="1"/>
@@ -934,17 +919,26 @@
                                       <Color blue="0" green="0" red="0" type="rgb"/>
                                     </Property>
                                     <Property name="text" type="java.lang.String" value="Actualizar"/>
+                                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                      <Dimension value="[86, 22]"/>
+                                    </Property>
+                                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                      <Dimension value="[86, 22]"/>
+                                    </Property>
+                                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                      <Dimension value="[86, 22]"/>
+                                    </Property>
                                   </Properties>
                                   <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Actualizar_Mantenimiento3ActionPerformed"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Actualizar_Ingreso_CombustibleActionPerformed"/>
                                   </Events>
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                      <AbsoluteConstraints x="360" y="200" width="100" height="-1"/>
+                                      <AbsoluteConstraints x="360" y="200" width="100" height="25"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
-                                <Component class="javax.swing.JButton" name="Btn_Inactivo_Mantenimiento3">
+                                <Component class="javax.swing.JButton" name="Btn_Inactivo_Ingreso_Combustible">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Tahoma" size="12" style="1"/>
@@ -955,34 +949,11 @@
                                     <Property name="text" type="java.lang.String" value="Inactivo"/>
                                   </Properties>
                                   <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Inactivo_Mantenimiento3ActionPerformed"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Inactivo_Ingreso_CombustibleActionPerformed"/>
                                   </Events>
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                       <AbsoluteConstraints x="460" y="200" width="90" height="-1"/>
-                                    </Constraint>
-                                  </Constraints>
-                                </Component>
-                                <Component class="javax.swing.JComboBox" name="Jcb_Vehiculo11">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Tahoma" size="12" style="1"/>
-                                    </Property>
-                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                      <StringArray count="1">
-                                        <StringItem index="0" value="Seleccione una opcion"/>
-                                      </StringArray>
-                                    </Property>
-                                  </Properties>
-                                  <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Jcb_Vehiculo11ActionPerformed"/>
-                                  </Events>
-                                  <AuxValues>
-                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                                  </AuxValues>
-                                  <Constraints>
-                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                      <AbsoluteConstraints x="450" y="60" width="220" height="-1"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
@@ -1014,11 +985,11 @@
                                   </Properties>
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                      <AbsoluteConstraints x="200" y="140" width="200" height="-1"/>
+                                      <AbsoluteConstraints x="450" y="40" width="200" height="-1"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="Txt_Tipo_Mantenimiento3">
+                                <Component class="javax.swing.JTextField" name="Txt_Ingreso_Litros">
                                   <Properties>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Tahoma" size="12" style="1"/>
@@ -1029,23 +1000,7 @@
                                   </Properties>
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                      <AbsoluteConstraints x="200" y="160" width="220" height="-1"/>
-                                    </Constraint>
-                                  </Constraints>
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="lblIniciarSesion23">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Tahoma" size="12" style="1"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="0" green="0" red="0" type="rgb"/>
-                                    </Property>
-                                    <Property name="text" type="java.lang.String" value="Tipo de Combustible"/>
-                                  </Properties>
-                                  <Constraints>
-                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                      <AbsoluteConstraints x="450" y="40" width="147" height="-1"/>
+                                      <AbsoluteConstraints x="450" y="60" width="220" height="-1"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
@@ -1069,6 +1024,26 @@
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                       <AbsoluteConstraints x="450" y="110" width="220" height="-1"/>
+                                    </Constraint>
+                                  </Constraints>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="Jcb_Disp">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Tahoma" size="12" style="1"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="1">
+                                        <StringItem index="0" value="Seleccione una opcion"/>
+                                      </StringArray>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                                      <AbsoluteConstraints x="200" y="110" width="220" height="-1"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
@@ -1120,21 +1095,6 @@
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                       <AbsoluteConstraints x="300" y="50" width="220" height="-1"/>
-                                    </Constraint>
-                                  </Constraints>
-                                </Component>
-                                <Component class="javax.swing.JTextField" name="Txt_Id">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Tahoma" size="12" style="1"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="99" green="99" red="99" type="rgb"/>
-                                    </Property>
-                                  </Properties>
-                                  <Constraints>
-                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                      <AbsoluteConstraints x="300" y="100" width="220" height="-1"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
@@ -1345,6 +1305,26 @@
                                   <Constraints>
                                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                       <AbsoluteConstraints x="300" y="200" width="220" height="-1"/>
+                                    </Constraint>
+                                  </Constraints>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="Jcb_Id_Dispensador">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Tahoma" size="12" style="1"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="1">
+                                        <StringItem index="0" value="Seleccione una opcion"/>
+                                      </StringArray>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                                      <AbsoluteConstraints x="300" y="100" width="220" height="-1"/>
                                     </Constraint>
                                   </Constraints>
                                 </Component>
