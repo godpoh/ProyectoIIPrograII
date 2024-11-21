@@ -15,18 +15,19 @@ public class Fuel_Entry_Exit_Obj {
     int Id;
     String Vehicle_License_Plate;
     int Dispenser_Id;
-    Float Fuel_Amount;
+    double Fuel_Amount;
     int Buy_Id;
     double Mileage;
     Date Date;
     String Transaction_Type;
     int Status;
 
-    public Fuel_Entry_Exit_Obj(int Id, String Vehicle_License_Plate, int Dispenser_Id, Float Fuel_Amount, double Mileage, Date Date, String Transaction_Type, int Status) {
+    public Fuel_Entry_Exit_Obj(int Id, String Vehicle_License_Plate, int Dispenser_Id, double Fuel_Amount, double Mileage, Date Date, String Transaction_Type, int Status) {
         this.Id = Id;
         this.Vehicle_License_Plate = Vehicle_License_Plate;
         this.Dispenser_Id = Dispenser_Id;
         this.Fuel_Amount = Fuel_Amount;
+        this.Buy_Id = Buy_Id;
         this.Mileage = Mileage;
         this.Date = Date;
         this.Transaction_Type = Transaction_Type;
@@ -61,7 +62,7 @@ public class Fuel_Entry_Exit_Obj {
         return Fuel_Amount;
     }
 
-    public void setFuel_Amount(Float Fuel_Amount) {
+    public void setFuel_Amount(double Fuel_Amount) {
         this.Fuel_Amount = Fuel_Amount;
     }
 
@@ -105,4 +106,5 @@ public class Fuel_Entry_Exit_Obj {
         this.Status = Status;
     }
 
+    
 }

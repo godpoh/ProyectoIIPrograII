@@ -4,9 +4,13 @@
  */
 package Presentation;
 
+import Logic.Log_In_Logic;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -19,7 +23,7 @@ public class Principal_Panel extends javax.swing.JFrame {
     public Principal_Panel(String Role) {
         initComponents();
         setLocationRelativeTo(null);
-        Btn_Pnl_Admin.setVisible(false);
+        Btn_Pnl_Ad.setVisible(false);
 
         Instance_Role = Role;
 
@@ -28,12 +32,13 @@ public class Principal_Panel extends javax.swing.JFrame {
 
         Show_Admin_Panel(Role);
     }
+
     // Obtiene el rol desde el login, y verifica que debe mostrar o no el panel de admin
     private void Show_Admin_Panel(String Role) {
         if ("Admin".equalsIgnoreCase(Role)) {
-            Btn_Pnl_Admin.setVisible(true);
+            Btn_Pnl_Ad.setVisible(true);
         } else {
-            Btn_Pnl_Admin.setVisible(false);
+            Btn_Pnl_Ad.setVisible(false);
         }
 
     }
@@ -50,7 +55,8 @@ public class Principal_Panel extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Pnl_Titulo = new javax.swing.JPanel();
         Btn_Cerrar_Sesion = new javax.swing.JButton();
-        Btn_Pnl_Admin = new javax.swing.JButton();
+        Btn_Pnl_Ad = new javax.swing.JButton();
+        Btn_Chofer_Conductor = new javax.swing.JButton();
         Pnl_Contenedor = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -131,17 +137,29 @@ public class Principal_Panel extends javax.swing.JFrame {
         });
         Pnl_Titulo.add(Btn_Cerrar_Sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 131, 29));
 
-        Btn_Pnl_Admin.setBackground(new java.awt.Color(255, 111, 97));
-        Btn_Pnl_Admin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Pnl_Admin.setForeground(new java.awt.Color(51, 51, 51));
-        Btn_Pnl_Admin.setText("Panel de Administrador");
-        Btn_Pnl_Admin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Btn_Pnl_Admin.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Pnl_Ad.setBackground(new java.awt.Color(255, 111, 97));
+        Btn_Pnl_Ad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Pnl_Ad.setForeground(new java.awt.Color(51, 51, 51));
+        Btn_Pnl_Ad.setText("Panel de Administrador");
+        Btn_Pnl_Ad.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Btn_Pnl_Ad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Pnl_AdminActionPerformed(evt);
+                Btn_Pnl_AdActionPerformed(evt);
             }
         });
-        Pnl_Titulo.add(Btn_Pnl_Admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 29));
+        Pnl_Titulo.add(Btn_Pnl_Ad, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 29));
+
+        Btn_Chofer_Conductor.setBackground(new java.awt.Color(255, 111, 97));
+        Btn_Chofer_Conductor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Chofer_Conductor.setForeground(new java.awt.Color(51, 51, 51));
+        Btn_Chofer_Conductor.setText("Empleados");
+        Btn_Chofer_Conductor.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Btn_Chofer_Conductor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Chofer_ConductorActionPerformed(evt);
+            }
+        });
+        Pnl_Titulo.add(Btn_Chofer_Conductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 180, 29));
 
         getContentPane().add(Pnl_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 820, 30));
 
@@ -203,25 +221,7 @@ public class Principal_Panel extends javax.swing.JFrame {
         Pnl_Contenedor.revalidate();
         Pnl_Contenedor.repaint();
     }//GEN-LAST:event_Btn_DispensadorActionPerformed
-    // Boton que cierra sesion y abre el login 
-    private void Btn_Cerrar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cerrar_SesionActionPerformed
-        this.dispose();
 
-        Log_In Login_Window = new Log_In();
-        Login_Window.setVisible(true);
-    }//GEN-LAST:event_Btn_Cerrar_SesionActionPerformed
-    // Boton que muestra el Panel de la seccion de admin
-    private void Btn_Pnl_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pnl_AdminActionPerformed
-        Admin_Panel Admin_Window = new Admin_Panel();
-        Admin_Window.setSize(820, 688);
-        Admin_Window.setLocation(0, 0);
-
-        Pnl_Contenedor.removeAll();
-        Pnl_Contenedor.add(Admin_Window);
-
-        Pnl_Contenedor.revalidate();
-        Pnl_Contenedor.repaint();
-    }//GEN-LAST:event_Btn_Pnl_AdminActionPerformed
     // Boton que muestra el Panel de la seccion de los estados
     private void Btn_EstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EstadoActionPerformed
         Status Status_Window = new Status(Instance_Role);
@@ -234,6 +234,30 @@ public class Principal_Panel extends javax.swing.JFrame {
         Pnl_Contenedor.revalidate();
         Pnl_Contenedor.repaint();
     }//GEN-LAST:event_Btn_EstadoActionPerformed
+//GEN-FIRST:event_Btn_Pnl_AdminActionPerformed
+//GEN-LAST:event_Btn_Pnl_AdminActionPerformed
+    private void Btn_Pnl_AdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Pnl_AdActionPerformed
+        Admin_Panel Admin = new Admin_Panel();
+        Admin.setSize(820, 688);
+        Admin.setLocation(0, 0);
+
+        Pnl_Contenedor.removeAll();
+        Pnl_Contenedor.add(Admin);
+
+        Pnl_Contenedor.revalidate();
+        Pnl_Contenedor.repaint();
+    }//GEN-LAST:event_Btn_Pnl_AdActionPerformed
+
+    private void Btn_Cerrar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cerrar_SesionActionPerformed
+        Window window = SwingUtilities.getWindowAncestor(Btn_Cerrar_Sesion);
+        window.dispose();
+        Log_In Log_Window = new Log_In();
+        Log_Window.setVisible(true);
+    }//GEN-LAST:event_Btn_Cerrar_SesionActionPerformed
+
+    private void Btn_Chofer_ConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Chofer_ConductorActionPerformed
+        
+    }//GEN-LAST:event_Btn_Chofer_ConductorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,11 +296,12 @@ public class Principal_Panel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Cerrar_Sesion;
+    private javax.swing.JButton Btn_Chofer_Conductor;
     private javax.swing.JButton Btn_Dispensador;
     private javax.swing.JButton Btn_Estadisticas;
     private javax.swing.JButton Btn_Estado;
     private javax.swing.JButton Btn_Mecanico;
-    private javax.swing.JButton Btn_Pnl_Admin;
+    private javax.swing.JButton Btn_Pnl_Ad;
     private javax.swing.JPanel Pnl_Contenedor;
     private javax.swing.JPanel Pnl_Menu;
     private javax.swing.JPanel Pnl_Titulo;

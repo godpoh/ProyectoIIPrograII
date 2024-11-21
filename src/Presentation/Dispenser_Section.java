@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -50,7 +51,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
         lblContrasena1 = new javax.swing.JLabel();
         lblUsuario2 = new javax.swing.JLabel();
         Txt_Precio_Litro = new javax.swing.JTextField();
-        Btn_Inactivo_Combustible = new javax.swing.JButton();
         Btn_Actualizar_Combustible = new javax.swing.JButton();
         Txt_Nombre_Combustible = new javax.swing.JTextField();
         Txt_Tipo_Combustible = new javax.swing.JTextField();
@@ -68,7 +68,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
         lblIniciarSesion5 = new javax.swing.JLabel();
         Btn_Registrar_Dispensador = new javax.swing.JButton();
         Btn_Actualizar_Dispensador = new javax.swing.JButton();
-        Btn_Inactivo_Dispensador = new javax.swing.JButton();
         Jcb_Id_Tanque = new javax.swing.JComboBox<>();
         lblIniciarSesion8 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
@@ -82,7 +81,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
         lblIniciarSesion12 = new javax.swing.JLabel();
         Btn_Registrar_Tanque = new javax.swing.JButton();
         Btn_Actualizar_Tanque = new javax.swing.JButton();
-        Btn_Inactivo_Tanque = new javax.swing.JButton();
         Jcb_Gasolina_Tanque = new javax.swing.JComboBox<>();
         lblIniciarSesion13 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -96,7 +94,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
         lblIniciarSesion18 = new javax.swing.JLabel();
         Btn_Registrar_Ingreso_Combustible = new javax.swing.JButton();
         Btn_Actualizar_Ingreso_Combustible = new javax.swing.JButton();
-        Btn_Inactivo_Ingreso_Combustible = new javax.swing.JButton();
         lblIniciarSesion21 = new javax.swing.JLabel();
         lblIniciarSesion22 = new javax.swing.JLabel();
         Txt_Ingreso_Litros = new javax.swing.JTextField();
@@ -110,7 +107,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
         lblIniciarSesion26 = new javax.swing.JLabel();
         Btn_Registrar_Dispensado_Combustible = new javax.swing.JButton();
         Btn_Actualizar_Dispensado_Combustible = new javax.swing.JButton();
-        Btn_Inactivo_Dispensado_Combustible = new javax.swing.JButton();
         Jcb_Matricula = new javax.swing.JComboBox<>();
         lblIniciarSesion28 = new javax.swing.JLabel();
         lblIniciarSesion29 = new javax.swing.JLabel();
@@ -149,7 +145,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 Btn_Registro_CombustibleActionPerformed(evt);
             }
         });
-        Pnl_Principal.add(Btn_Registro_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, -1, -1));
+        Pnl_Principal.add(Btn_Registro_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 510, -1, -1));
 
         lblContrasena2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblContrasena2.setForeground(new java.awt.Color(0, 0, 0));
@@ -170,16 +166,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
         Txt_Precio_Litro.setForeground(new java.awt.Color(153, 153, 153));
         Pnl_Principal.add(Txt_Precio_Litro, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 350, 40));
 
-        Btn_Inactivo_Combustible.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Btn_Inactivo_Combustible.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Inactivo_Combustible.setText("Inactivo");
-        Btn_Inactivo_Combustible.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Inactivo_CombustibleActionPerformed(evt);
-            }
-        });
-        Pnl_Principal.add(Btn_Inactivo_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 510, 100, -1));
-
         Btn_Actualizar_Combustible.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Btn_Actualizar_Combustible.setForeground(new java.awt.Color(0, 0, 0));
         Btn_Actualizar_Combustible.setText("Actualizar");
@@ -188,7 +174,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 Btn_Actualizar_CombustibleActionPerformed(evt);
             }
         });
-        Pnl_Principal.add(Btn_Actualizar_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, 120, -1));
+        Pnl_Principal.add(Btn_Actualizar_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 510, 120, -1));
 
         Txt_Nombre_Combustible.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Nombre_Combustible.setForeground(new java.awt.Color(153, 153, 153));
@@ -252,7 +238,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 Btn_Registrar_DispensadorActionPerformed(evt);
             }
         });
-        jPanel12.add(Btn_Registrar_Dispensador, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 90, -1));
+        jPanel12.add(Btn_Registrar_Dispensador, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 90, -1));
 
         Btn_Actualizar_Dispensador.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Actualizar_Dispensador.setForeground(new java.awt.Color(0, 0, 0));
@@ -262,17 +248,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 Btn_Actualizar_DispensadorActionPerformed(evt);
             }
         });
-        jPanel12.add(Btn_Actualizar_Dispensador, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 100, -1));
-
-        Btn_Inactivo_Dispensador.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Inactivo_Dispensador.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Inactivo_Dispensador.setText("Inactivo");
-        Btn_Inactivo_Dispensador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Inactivo_DispensadorActionPerformed(evt);
-            }
-        });
-        jPanel12.add(Btn_Inactivo_Dispensador, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 90, -1));
+        jPanel12.add(Btn_Actualizar_Dispensador, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 100, -1));
 
         Jcb_Id_Tanque.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jcb_Id_Tanque.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
@@ -330,7 +306,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 Btn_Registrar_TanqueActionPerformed(evt);
             }
         });
-        jPanel13.add(Btn_Registrar_Tanque, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 90, -1));
+        jPanel13.add(Btn_Registrar_Tanque, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 90, -1));
 
         Btn_Actualizar_Tanque.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Actualizar_Tanque.setForeground(new java.awt.Color(0, 0, 0));
@@ -340,17 +316,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 Btn_Actualizar_TanqueActionPerformed(evt);
             }
         });
-        jPanel13.add(Btn_Actualizar_Tanque, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 100, -1));
-
-        Btn_Inactivo_Tanque.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Inactivo_Tanque.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Inactivo_Tanque.setText("Inactivo");
-        Btn_Inactivo_Tanque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Inactivo_TanqueActionPerformed(evt);
-            }
-        });
-        jPanel13.add(Btn_Inactivo_Tanque, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, 90, -1));
+        jPanel13.add(Btn_Actualizar_Tanque, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 100, -1));
 
         Jcb_Gasolina_Tanque.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jcb_Gasolina_Tanque.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
@@ -406,7 +372,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 Btn_Registrar_Ingreso_CombustibleActionPerformed(evt);
             }
         });
-        jPanel15.add(Btn_Registrar_Ingreso_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 90, -1));
+        jPanel15.add(Btn_Registrar_Ingreso_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 90, -1));
 
         Btn_Actualizar_Ingreso_Combustible.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Actualizar_Ingreso_Combustible.setForeground(new java.awt.Color(0, 0, 0));
@@ -419,17 +385,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 Btn_Actualizar_Ingreso_CombustibleActionPerformed(evt);
             }
         });
-        jPanel15.add(Btn_Actualizar_Ingreso_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 100, 25));
-
-        Btn_Inactivo_Ingreso_Combustible.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Inactivo_Ingreso_Combustible.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Inactivo_Ingreso_Combustible.setText("Inactivo");
-        Btn_Inactivo_Ingreso_Combustible.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Inactivo_Ingreso_CombustibleActionPerformed(evt);
-            }
-        });
-        jPanel15.add(Btn_Inactivo_Ingreso_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 90, -1));
+        jPanel15.add(Btn_Actualizar_Ingreso_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 100, 25));
 
         lblIniciarSesion21.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIniciarSesion21.setForeground(new java.awt.Color(0, 0, 0));
@@ -487,7 +443,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 Btn_Registrar_Dispensado_CombustibleActionPerformed(evt);
             }
         });
-        jPanel16.add(Btn_Registrar_Dispensado_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 90, -1));
+        jPanel16.add(Btn_Registrar_Dispensado_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 90, -1));
 
         Btn_Actualizar_Dispensado_Combustible.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Actualizar_Dispensado_Combustible.setForeground(new java.awt.Color(0, 0, 0));
@@ -497,17 +453,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 Btn_Actualizar_Dispensado_CombustibleActionPerformed(evt);
             }
         });
-        jPanel16.add(Btn_Actualizar_Dispensado_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 100, -1));
-
-        Btn_Inactivo_Dispensado_Combustible.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Inactivo_Dispensado_Combustible.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Inactivo_Dispensado_Combustible.setText("Inactivo");
-        Btn_Inactivo_Dispensado_Combustible.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Inactivo_Dispensado_CombustibleActionPerformed(evt);
-            }
-        });
-        jPanel16.add(Btn_Inactivo_Dispensado_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, 90, -1));
+        jPanel16.add(Btn_Actualizar_Dispensado_Combustible, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 100, -1));
 
         Jcb_Matricula.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jcb_Matricula.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
@@ -579,24 +525,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
 
     }
 
-    private void Btn_Inactivo_TanqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_TanqueActionPerformed
-        int Id = Integer.parseInt(Txt_Id_Tanque.getText());
-
-        int Rows_Affected;
-        try {
-            Rows_Affected = CUD_SQL.Update_Fuel_Status(Id, 0);
-            if (Rows_Affected != 0) {
-                Txt_Id_Tanque.setText("");
-                Txt_Capacidad_Tanque.setText("");
-                Jcb_Gasolina_Tanque.setSelectedItem("Seleccione una opcion");
-                TxA_Descripcion_Tanque.setText("");
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Btn_Inactivo_TanqueActionPerformed
-
     private void Btn_Actualizar_TanqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_TanqueActionPerformed
         try {
             int Id = Integer.parseInt(Txt_Id_Tanque.getText());
@@ -648,22 +576,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
 
 
     }//GEN-LAST:event_Btn_Registrar_TanqueActionPerformed
-
-    private void Btn_Inactivo_DispensadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_DispensadorActionPerformed
-        try {
-            int Id = Integer.parseInt(Txt_Id_Dispensador.getText());
-
-            int Rows_Affected = CUD_SQL.Update_Dispenser_Status(Id, 0);
-            if (Rows_Affected != 0) {
-                Txt_Id_Dispensador.setText("");
-                Jcb_Id_Tanque.setSelectedItem("Seleccione una opcion");
-                TxA_Descripcion_Dispensador.setText("");
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Dispenser_Section.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Btn_Inactivo_DispensadorActionPerformed
 
     private void Btn_Actualizar_DispensadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_DispensadorActionPerformed
         try {
@@ -730,28 +642,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
             Logger.getLogger(Dispenser_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Actualizar_CombustibleActionPerformed
-
-    // Boton que actualiza el estado de los datos de un combustible
-    private void Btn_Inactivo_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_CombustibleActionPerformed
-        int Fuel_Id = Integer.parseInt(Txt_Id_Combustible.getText());
-
-        int Rows_Affected;
-
-        try {
-
-            Rows_Affected = CUD_SQL.Update_Fuel_Status(Fuel_Id, 0);
-            if (Rows_Affected != 0) {
-                Txt_Id_Combustible.setText("");
-                Txt_Nombre_Combustible.setText("");
-                Txt_Tipo_Combustible.setText("");
-                Txt_Precio_Litro.setText("");
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_Btn_Inactivo_CombustibleActionPerformed
 
     // Boton que ingresa los datos de un combustible 
     private void Btn_Registro_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registro_CombustibleActionPerformed
@@ -821,35 +711,20 @@ public class Dispenser_Section extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_Btn_Actualizar_Ingreso_CombustibleActionPerformed
 
-    private void Btn_Inactivo_Ingreso_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_Ingreso_CombustibleActionPerformed
-        int Id = Integer.parseInt(Txt_Id_Ingreso.getText());
-
-        int Rows_Affected;
-
-        try {
-
-            Rows_Affected = CUD_SQL.Update_Fuel_Entry_Exit_Status(Id, 0);
-            if (Rows_Affected != 0) {
-                Txt_Id_Ingreso.setText("");
-                Jcb_Disp.setSelectedItem("Seleccione una opcion");
-                DCC_Fecha_Ingreso.setText("");
-                Txt_Ingreso_Litros.setText("");
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_Btn_Inactivo_Ingreso_CombustibleActionPerformed
-
     private void Btn_Registrar_Dispensado_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Dispensado_CombustibleActionPerformed
         try {
             int Id_Dispenser_Fuel = Integer.parseInt(Txt_Id_Dispensador_Combustible.getText());
             int Dispenser = Integer.parseInt((String) Jcb_Id_Dispensador.getSelectedItem());
             String License_Plate = (String) Jcb_Matricula.getSelectedItem();
             Date Exit_Date = DCC_Fecha_Combustible.getSelectedDate().getTime();
-            Float Mileage = Float.parseFloat(Txt_Kilometraje.getText());
+            double Mileage = Float.parseFloat(Txt_Kilometraje.getText());
             int Liters = Integer.parseInt(Txt_Litros_Retiro.getText());
+
+            double Liters_On_Dispenser = Connection_SQL.get_Fuel_Amount_On_Dispenser(Dispenser);
+            if (Liters_On_Dispenser < Liters) {
+                JOptionPane.showMessageDialog(null, "No hay esa cantidad de combustible en el dispensador.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
 
             Fuel_Entry_Exit_Obj Obj = new Fuel_Entry_Exit_Obj(Id_Dispenser_Fuel, License_Plate, Dispenser, Mileage, 0, Exit_Date, "Salida de Combustible", Liters);
 
@@ -894,29 +769,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_Btn_Actualizar_Dispensado_CombustibleActionPerformed
 
-    private void Btn_Inactivo_Dispensado_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_Dispensado_CombustibleActionPerformed
-        int Id_Dispenser_Fuel = Integer.parseInt(Txt_Id_Combustible.getText());
-
-        int Rows_Affected;
-
-        try {
-
-            Rows_Affected = CUD_SQL.Update_Fuel_Entry_Exit_Status(Id_Dispenser_Fuel, 0);
-            if (Rows_Affected != 0) {
-                Txt_Id_Dispensador_Combustible.setText("");
-                Jcb_Id_Dispensador.setSelectedItem("Seleccione una opcion");
-                Jcb_Matricula.setSelectedItem("Seleccione una opcion");
-                DCC_Fecha_Combustible.setText("");
-                Txt_Kilometraje.setText("");
-                Txt_Litros_Retiro.setText("");
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_Btn_Inactivo_Dispensado_CombustibleActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Actualizar_Combustible;
@@ -924,11 +776,6 @@ public class Dispenser_Section extends javax.swing.JPanel {
     private javax.swing.JButton Btn_Actualizar_Dispensador;
     private javax.swing.JButton Btn_Actualizar_Ingreso_Combustible;
     private javax.swing.JButton Btn_Actualizar_Tanque;
-    private javax.swing.JButton Btn_Inactivo_Combustible;
-    private javax.swing.JButton Btn_Inactivo_Dispensado_Combustible;
-    private javax.swing.JButton Btn_Inactivo_Dispensador;
-    private javax.swing.JButton Btn_Inactivo_Ingreso_Combustible;
-    private javax.swing.JButton Btn_Inactivo_Tanque;
     private javax.swing.JButton Btn_Registrar_Dispensado_Combustible;
     private javax.swing.JButton Btn_Registrar_Dispensador;
     private javax.swing.JButton Btn_Registrar_Ingreso_Combustible;

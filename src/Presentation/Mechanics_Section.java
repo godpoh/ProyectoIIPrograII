@@ -72,7 +72,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
         Txt_Precio_Unidad = new javax.swing.JTextField();
         lblContrasena4 = new javax.swing.JLabel();
         lblIniciarSesion = new javax.swing.JLabel();
-        Btn_Inactivo_Partes = new javax.swing.JButton();
         lblUsuario1 = new javax.swing.JLabel();
         Txt_Id = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
@@ -90,7 +89,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
         Txt_Costo_Estimado10 = new javax.swing.JTextField();
         lblIniciarSesion33 = new javax.swing.JLabel();
         Btn_Actualizar_Mantenimiento4 = new javax.swing.JButton();
-        Btn_Inactivo_Mantenimiento4 = new javax.swing.JButton();
         Btn_Registrar_Mantenimiento4 = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         lblIniciarSesion3 = new javax.swing.JLabel();
@@ -121,7 +119,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
         Jcb_Vehiculo4 = new javax.swing.JComboBox<>();
         lblIniciarSesion22 = new javax.swing.JLabel();
         Btn_Registrar_Mantenimiento2 = new javax.swing.JButton();
-        Btn_Inactivo_Mantenimiento2 = new javax.swing.JButton();
         Btn_Actualizar_Mantenimiento2 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         lblIniciarSesion2 = new javax.swing.JLabel();
@@ -142,7 +139,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
         lblIniciarSesion5 = new javax.swing.JLabel();
         Btn_Registrar_Mantenimiento = new javax.swing.JButton();
         Btn_Actualizar_Mantenimiento = new javax.swing.JButton();
-        Btn_Inactivo_Mantenimiento = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -165,7 +161,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Btn_Registro_PiezaActionPerformed(evt);
             }
         });
-        jPanel2.add(Btn_Registro_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 620, -1, -1));
+        jPanel2.add(Btn_Registro_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 620, -1, -1));
 
         lblContrasena2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblContrasena2.setForeground(new java.awt.Color(0, 0, 0));
@@ -194,7 +190,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Btn_Actualizar_PiezaActionPerformed(evt);
             }
         });
-        jPanel2.add(Btn_Actualizar_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 620, 120, -1));
+        jPanel2.add(Btn_Actualizar_Pieza, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 620, 120, -1));
 
         Txt_Categoria_Pieza.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Txt_Categoria_Pieza.setForeground(new java.awt.Color(153, 153, 153));
@@ -226,16 +222,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
         lblIniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
         lblIniciarSesion.setText("Registro de Equipo/Piezas");
         jPanel2.add(lblIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 260, 40));
-
-        Btn_Inactivo_Partes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Btn_Inactivo_Partes.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Inactivo_Partes.setText("Inactivo");
-        Btn_Inactivo_Partes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Inactivo_PartesActionPerformed(evt);
-            }
-        });
-        jPanel2.add(Btn_Inactivo_Partes, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 620, 100, -1));
 
         lblUsuario1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUsuario1.setForeground(new java.awt.Color(0, 0, 0));
@@ -302,15 +288,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
             }
         });
 
-        Btn_Inactivo_Mantenimiento4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Inactivo_Mantenimiento4.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Inactivo_Mantenimiento4.setText("Inactivo");
-        Btn_Inactivo_Mantenimiento4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Inactivo_Mantenimiento4ActionPerformed(evt);
-            }
-        });
-
         Btn_Registrar_Mantenimiento4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Registrar_Mantenimiento4.setForeground(new java.awt.Color(0, 0, 0));
         Btn_Registrar_Mantenimiento4.setText("Registrar");
@@ -361,15 +338,10 @@ public class Mechanics_Section extends javax.swing.JPanel {
                                 .addComponent(lblIniciarSesion33, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(153, 153, 153))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(Btn_Registrar_Mantenimiento4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Btn_Inactivo_Mantenimiento4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(Btn_Actualizar_Mantenimiento4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(283, 283, 283))))
+                        .addComponent(Btn_Registrar_Mantenimiento4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Btn_Actualizar_Mantenimiento4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(273, 273, 273))))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -403,10 +375,8 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Btn_Registrar_Mantenimiento4)
-                    .addComponent(Btn_Inactivo_Mantenimiento4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Btn_Actualizar_Mantenimiento4)
-                .addGap(42, 42, 42))
+                    .addComponent(Btn_Actualizar_Mantenimiento4))
+                .addGap(70, 70, 70))
         );
 
         jPanel6.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 436, 810, 210));
@@ -533,15 +503,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
             }
         });
 
-        Btn_Inactivo_Mantenimiento2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Inactivo_Mantenimiento2.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Inactivo_Mantenimiento2.setText("Inactivo");
-        Btn_Inactivo_Mantenimiento2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Inactivo_Mantenimiento2ActionPerformed(evt);
-            }
-        });
-
         Btn_Actualizar_Mantenimiento2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Actualizar_Mantenimiento2.setForeground(new java.awt.Color(0, 0, 0));
         Btn_Actualizar_Mantenimiento2.setText("Actualizar");
@@ -567,16 +528,11 @@ public class Mechanics_Section extends javax.swing.JPanel {
                             .addComponent(lblIniciarSesion20, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Jcb_Vehiculo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblIniciarSesion21, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(Btn_Registrar_Mantenimiento2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Btn_Inactivo_Mantenimiento2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(Btn_Actualizar_Mantenimiento2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(29, 29, 29))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(Btn_Registrar_Mantenimiento2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Btn_Actualizar_Mantenimiento2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Txt_Id_Mantenimiento2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -610,14 +566,12 @@ public class Mechanics_Section extends javax.swing.JPanel {
                         .addComponent(Jcb_Vehiculo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblIniciarSesion21)
-                        .addGap(1, 1, 1))
+                        .addGap(7, 7, 7))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Btn_Registrar_Mantenimiento2)
-                            .addComponent(Btn_Inactivo_Mantenimiento2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Btn_Actualizar_Mantenimiento2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Btn_Actualizar_Mantenimiento2))
+                        .addGap(34, 34, 34)))
                 .addComponent(Jcb_Vehiculo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -794,7 +748,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Btn_Registrar_MantenimientoActionPerformed(evt);
             }
         });
-        jPanel11.add(Btn_Registrar_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 90, -1));
+        jPanel11.add(Btn_Registrar_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 170, 90, -1));
 
         Btn_Actualizar_Mantenimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Actualizar_Mantenimiento.setForeground(new java.awt.Color(0, 0, 0));
@@ -804,17 +758,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Btn_Actualizar_MantenimientoActionPerformed(evt);
             }
         });
-        jPanel11.add(Btn_Actualizar_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, 100, -1));
-
-        Btn_Inactivo_Mantenimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Inactivo_Mantenimiento.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Inactivo_Mantenimiento.setText("Inactivo");
-        Btn_Inactivo_Mantenimiento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Inactivo_MantenimientoActionPerformed(evt);
-            }
-        });
-        jPanel11.add(Btn_Inactivo_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 170, 90, -1));
+        jPanel11.add(Btn_Actualizar_Mantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 100, -1));
 
         jPanel6.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 810, 210));
 
@@ -825,28 +769,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
         add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 690));
     }// </editor-fold>//GEN-END:initComponents
     
-    // Boton que actualiza el estado de una pieza de vehiculo
-    private void Btn_Inactivo_PartesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_PartesActionPerformed
-        int Id = Integer.parseInt(Txt_Id.getText());
-
-        int Rows_Affected;
-        try {
-            Rows_Affected = CUD_SQL.Update_Part_Status(Id, 0);
-            if (Rows_Affected != 0) {
-                Txt_Id.setText("");
-                Txt_Nombre_Pieza.setText("");
-                Txt_Categoria_Pieza.setText("");
-                Txt_Manufactura.setText("");
-                Txt_Compatibilidad.setText("");
-                Txt_Garantia.setText("");
-                Txt_Precio_Unidad.setText("");
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_Btn_Inactivo_PartesActionPerformed
-    // Boton que actualiza la informacion de una pieza de vehiculo mediante el id
+   // Boton que actualiza la informacion de una pieza de vehiculo mediante el id
     private void Btn_Actualizar_PiezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_PiezaActionPerformed
         try {
             int Part_Id = Integer.parseInt(Txt_Id.getText());
@@ -952,28 +875,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Actualizar_MantenimientoActionPerformed
-    // Boton que actualiza el estado del tipo de mantenimiento vehicular
-    private void Btn_Inactivo_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_MantenimientoActionPerformed
-        int Id = Integer.parseInt(Txt_Id_Mantenimiento.getText());
-
-        int Rows_Affected;
-
-        try {
-
-            Rows_Affected = CUD_SQL.Update_Maintenance_Type_Status(Id, 0);
-            if (Rows_Affected != 0) {
-                Txt_Id.setText("");
-                Txt_Tipo_Mantenimiento.setText("");
-                Txt_Frecuencia.setText("");
-                Txt_Costo_Estimado.setText("");
-                TxA_Descripcion.setText("");
-                Jcb_Vehiculo.setSelectedItem("Seleccione una matricula:");
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Admin_Panel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Btn_Inactivo_MantenimientoActionPerformed
 
     private void Btn_Registrar_Mantenimiento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Mantenimiento1ActionPerformed
         // TODO add your handling code here:
@@ -991,10 +892,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_Registrar_Mantenimiento2ActionPerformed
 
-    private void Btn_Inactivo_Mantenimiento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_Mantenimiento2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_Inactivo_Mantenimiento2ActionPerformed
-
     private void Btn_Actualizar_Mantenimiento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Mantenimiento2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_Actualizar_Mantenimiento2ActionPerformed
@@ -1002,10 +899,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
     private void Btn_Registrar_Mantenimiento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Mantenimiento4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_Registrar_Mantenimiento4ActionPerformed
-
-    private void Btn_Inactivo_Mantenimiento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_Mantenimiento4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_Inactivo_Mantenimiento4ActionPerformed
 
     private void Btn_Actualizar_Mantenimiento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Mantenimiento4ActionPerformed
         // TODO add your handling code here:
@@ -1018,11 +911,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
     private javax.swing.JButton Btn_Actualizar_Mantenimiento2;
     private javax.swing.JButton Btn_Actualizar_Mantenimiento4;
     private javax.swing.JButton Btn_Actualizar_Pieza;
-    private javax.swing.JButton Btn_Inactivo_Mantenimiento;
     private javax.swing.JButton Btn_Inactivo_Mantenimiento1;
-    private javax.swing.JButton Btn_Inactivo_Mantenimiento2;
-    private javax.swing.JButton Btn_Inactivo_Mantenimiento4;
-    private javax.swing.JButton Btn_Inactivo_Partes;
     private javax.swing.JButton Btn_Registrar_Mantenimiento;
     private javax.swing.JButton Btn_Registrar_Mantenimiento1;
     private javax.swing.JButton Btn_Registrar_Mantenimiento2;

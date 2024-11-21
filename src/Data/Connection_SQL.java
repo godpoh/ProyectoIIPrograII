@@ -242,4 +242,23 @@ public class Connection_SQL {
         }
     }
 
+    public static double get_Fuel_Amount_On_Dispenser(int Dispenser_Id) throws SQLException {
+        double Liters = 0;
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Fuel_Amount Where Fuel_Id = " + Dispenser_Id;
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            Liters = rs.getFloat("Fuel_Amount");
+        }
+        return Liters;
+    }
+    
+//    public static double get_Tank_Capacity() {
+//        
+//    }
+
 }
