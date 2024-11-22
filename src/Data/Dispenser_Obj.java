@@ -14,6 +14,7 @@ public class Dispenser_Obj {
     String Description;
     int Fuel_Tank_Id;
     int Status;
+    double Current_Fuel_Amount;
 
     public Dispenser_Obj(int Id, String Description, int Fuel_Tank_Id, int Status) {
         this.Id = Id;
@@ -52,6 +53,14 @@ public class Dispenser_Obj {
 
     public void setStatus(int Status) {
         this.Status = Status;
+    }
+
+    public double getCurrent_Fuel_Amount() {
+        return Current_Fuel_Amount;
+    }
+
+    public void setCurrent_Fuel_Amount(double Current_Fuel_Amount) {
+        this.Current_Fuel_Amount = Current_Fuel_Amount;
     }
 
 }

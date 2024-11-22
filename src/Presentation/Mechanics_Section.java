@@ -107,7 +107,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
         lblIniciarSesion17 = new javax.swing.JLabel();
         Btn_Registrar_Mantenimiento1 = new javax.swing.JButton();
         Btn_Actualizar_Mantenimiento1 = new javax.swing.JButton();
-        Btn_Inactivo_Mantenimiento1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         lblIniciarSesion18 = new javax.swing.JLabel();
         lblIniciarSesion19 = new javax.swing.JLabel();
@@ -451,15 +450,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
             }
         });
 
-        Btn_Inactivo_Mantenimiento1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Inactivo_Mantenimiento1.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_Inactivo_Mantenimiento1.setText("Inactivo");
-        Btn_Inactivo_Mantenimiento1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Inactivo_Mantenimiento1ActionPerformed(evt);
-            }
-        });
-
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblIniciarSesion18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -594,22 +584,17 @@ public class Mechanics_Section extends javax.swing.JPanel {
                     .addComponent(Jcb_Vehiculo1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Txt_Costo_Estimado1)
                     .addComponent(Txt_Id_Mantenimiento1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblIniciarSesion13, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txt_Costo_Estimado2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIniciarSesion16, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txt_Costo_Estimado3, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIniciarSesion17, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Txt_Costo_Estimado4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(Btn_Registrar_Mantenimiento1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblIniciarSesion13, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Txt_Costo_Estimado2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblIniciarSesion16, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Txt_Costo_Estimado3, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblIniciarSesion17, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Txt_Costo_Estimado4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addComponent(Btn_Registrar_Mantenimiento1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Btn_Inactivo_Mantenimiento1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
                         .addComponent(Btn_Actualizar_Mantenimiento1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -647,19 +632,18 @@ public class Mechanics_Section extends javax.swing.JPanel {
                                 .addGap(16, 16, 16)
                                 .addComponent(Txt_Costo_Estimado4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblIniciarSesion17))
-                        .addGap(8, 8, 8)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
                                 .addComponent(lblIniciarSesion11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Txt_Costo_Estimado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(Btn_Registrar_Mantenimiento1)
-                                    .addComponent(Btn_Inactivo_Mantenimiento1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Btn_Actualizar_Mantenimiento1)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(Btn_Actualizar_Mantenimiento1))))
+                        .addGap(0, 8, Short.MAX_VALUE))
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(1, 1, 1))
         );
@@ -884,10 +868,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_Actualizar_Mantenimiento1ActionPerformed
 
-    private void Btn_Inactivo_Mantenimiento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Inactivo_Mantenimiento1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Btn_Inactivo_Mantenimiento1ActionPerformed
-
     private void Btn_Registrar_Mantenimiento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Mantenimiento2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Btn_Registrar_Mantenimiento2ActionPerformed
@@ -911,7 +891,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
     private javax.swing.JButton Btn_Actualizar_Mantenimiento2;
     private javax.swing.JButton Btn_Actualizar_Mantenimiento4;
     private javax.swing.JButton Btn_Actualizar_Pieza;
-    private javax.swing.JButton Btn_Inactivo_Mantenimiento1;
     private javax.swing.JButton Btn_Registrar_Mantenimiento;
     private javax.swing.JButton Btn_Registrar_Mantenimiento1;
     private javax.swing.JButton Btn_Registrar_Mantenimiento2;

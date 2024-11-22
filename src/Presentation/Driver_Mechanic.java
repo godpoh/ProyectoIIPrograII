@@ -4,6 +4,12 @@
  */
 package Presentation;
 
+import Data.CUD_SQL;
+import Data.Employee_Obj;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Admin
@@ -38,7 +44,7 @@ public class Driver_Mechanic extends javax.swing.JPanel {
         lblUsuario2 = new javax.swing.JLabel();
         Btn_Actualizar = new javax.swing.JButton();
         Txt_Nombre = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Jcb_Rol = new javax.swing.JComboBox<>();
         lblImagen = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -95,8 +101,8 @@ public class Driver_Mechanic extends javax.swing.JPanel {
         Txt_Nombre.setForeground(new java.awt.Color(153, 153, 153));
         Pnl_Principal.add(Txt_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 350, 40));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Chofer", "Mecanico", " " }));
-        Pnl_Principal.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 350, 40));
+        Jcb_Rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Chofer", "Mecanico", " " }));
+        Pnl_Principal.add(Jcb_Rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 350, 40));
 
         jPanel3.add(Pnl_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 760));
 
@@ -122,20 +128,60 @@ public class Driver_Mechanic extends javax.swing.JPanel {
 
     private void Btn_ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ActualizarActionPerformed
 
+        try {
+            int Id = Integer.parseInt(Txt_Cedula.getText());
+            String Name = Txt_Nombre.getText();
+            String Role = (String) Jcb_Rol.getSelectedItem();
+
+            Employee_Obj Obj = new Employee_Obj(Id, Name, Role, 1);
+
+            int Rows_Affected = CUD_SQL.Update_Employee(Obj);
+
+            if (Rows_Affected != 0) {
+                Txt_Cedula.setText("");
+                Txt_Nombre.setText("");
+                Jcb_Rol.setSelectedItem("Seleccione una opcion");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Driver_Mechanic.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_Btn_ActualizarActionPerformed
 
     private void Btn_RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_RegistrarActionPerformed
-      
+
+        try {
+            int Id = Integer.parseInt(Txt_Cedula.getText());
+            String Name = Txt_Nombre.getText();
+            String Role = (String) Jcb_Rol.getSelectedItem();
+
+            Employee_Obj Obj = new Employee_Obj(Id, Name, Role, 1);
+
+            int Rows_Affected = CUD_SQL.Insert_Employee(Obj);
+
+            if (Rows_Affected != 0) {
+                Txt_Cedula.setText("");
+                Txt_Nombre.setText("");
+                Jcb_Rol.setSelectedItem("Seleccione una opcion");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Driver_Mechanic.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_Btn_RegistrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Actualizar;
     private javax.swing.JButton Btn_Registrar;
+    private javax.swing.JComboBox<String> Jcb_Rol;
     private javax.swing.JPanel Pnl_Principal;
     private javax.swing.JTextField Txt_Cedula;
     private javax.swing.JTextField Txt_Nombre;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane1;

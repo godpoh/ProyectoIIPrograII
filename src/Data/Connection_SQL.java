@@ -247,12 +247,12 @@ public class Connection_SQL {
 
         Statement sql = Connection_SQL.getConnection().createStatement();
 
-        String qry = "Select Fuel_Amount Where Fuel_Id = " + Dispenser_Id;
+        String qry = "Select Current_Fuel_Amount From Dispenser Where Id = " + Dispenser_Id;
 
         ResultSet rs = sql.executeQuery(qry);
 
         while (rs.next()) {
-            Liters = rs.getFloat("Fuel_Amount");
+            Liters = rs.getFloat("Current_Fuel_Amount");
         }
         return Liters;
     }

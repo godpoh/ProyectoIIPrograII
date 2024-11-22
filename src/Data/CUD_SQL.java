@@ -610,4 +610,67 @@ public class CUD_SQL {
         return Rows_Affected;
     }
 
+    public static boolean Update_Fuel_Amount_On_Tank(int Dispenser_Id, double Liters_Dispensed) throws SQLException {
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = " Update Dispenser Set Current_Fuel_Amount = Current_Fuel_Amount - " + Liters_Dispensed + "Where Id = " + Dispenser_Id + " And Current_Fuel_Amount >=  0";
+
+        int Rows_Affected = sql.executeUpdate(qry);
+
+        return Rows_Affected > 0;
+
+    }
+
+    public static boolean Add_Fuel_Amount_On_Tank(int Dispenser_Id, double Liters_Dispensed) throws SQLException {
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Update D "
+                + "Set Current_Fuel_Amount = D.Current_Fuel_Amount + " + Liters_Dispensed + " "
+                + "From Dispenser D "
+                + "Inner Join Fuel_Tank FT On D.Fuel_Tank_Id = FT.Id "
+                + "Where D.Id = " + Dispenser_Id + " "
+                + "And D.Current_Fuel_Amount + " + Liters_Dispensed + " <= FT.Capacity";
+
+        int Rows_Affected = sql.executeUpdate(qry);
+
+        return Rows_Affected > 0;
+
+    }
+
+    public static int Insert_Employee(Employee_Obj Employee) throws SQLException {
+
+        String qry = "Insert Into Employees (Id, Name, Type, Status) "
+                + "Values (" + Employee.getId() + ", '"
+                + Employee.getName() + "', '"
+                + Employee.getRole() + "', "
+                + Employee.getStatus() + ")";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Empleado registrado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
+    public static int Update_Employee(Employee_Obj employee) throws SQLException {
+
+        String qry = "Update Employees "
+                + "Set Name = '" + employee.getName() + "', "
+                + "Type = '" + employee.getRole() + "', "
+                + "Status = " + employee.getStatus() + " "
+                + "Where Id = " + employee.getId();
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        if (affectedRows > 0) {
+            JOptionPane.showMessageDialog(null, "Empleado actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontró un empleado con el ID especificado", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        return affectedRows;
+    }
+
 }

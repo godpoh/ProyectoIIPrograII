@@ -352,7 +352,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
 
         lblIniciarSesion17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblIniciarSesion17.setForeground(new java.awt.Color(0, 0, 0));
-        lblIniciarSesion17.setText("Id de ingreso");
+        lblIniciarSesion17.setText("Id de ingreso de combustible");
         jPanel15.add(lblIniciarSesion17, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 220, -1));
 
         Txt_Id_Ingreso.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -418,7 +418,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
 
         lblIniciarSesion24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblIniciarSesion24.setForeground(new java.awt.Color(0, 0, 0));
-        lblIniciarSesion24.setText("Id del dispensador de combustible");
+        lblIniciarSesion24.setText("Id del retiro de combustible");
         jPanel16.add(lblIniciarSesion24, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 220, -1));
 
         Txt_Id_Dispensador_Combustible.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -673,15 +673,22 @@ public class Dispenser_Section extends javax.swing.JPanel {
             Date Exit_Date = DCC_Fecha_Ingreso.getSelectedDate().getTime();
             Fuel_Entry_Exit_Obj Obj = new Fuel_Entry_Exit_Obj(Id, "", Dispenser_Id, Liters, 0, Exit_Date, "Entrada de Combustible", 1);
 
-            int Affected_Rows = CUD_SQL.Insert_Fuel_Entry_Exit(Obj);
+            boolean Updated = CUD_SQL.Add_Fuel_Amount_On_Tank(Dispenser_Id, Liters);
 
-            if (Affected_Rows != 0) {
-                Txt_Id_Ingreso.setText("");
-                Jcb_Disp.setSelectedItem("Seleccione una opcion");
-                DCC_Fecha_Ingreso.setText("");
-                Txt_Ingreso_Litros.setText("");
+            if (Updated) {
+                int Affected_Rows = CUD_SQL.Insert_Fuel_Entry_Exit(Obj);
+                if (Affected_Rows != 0) {
 
+                    Txt_Id_Ingreso.setText("");
+                    Jcb_Disp.setSelectedItem("Seleccione una opcion");
+                    DCC_Fecha_Ingreso.setText("");
+                    Txt_Ingreso_Litros.setText("");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "No puede exceder la capacidad del tanque del dispensador. Intente de nuevo con una menor cantidad");
+                return;
             }
+
         } catch (SQLException ex) {
             Logger.getLogger(Dispenser_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -718,7 +725,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
             String License_Plate = (String) Jcb_Matricula.getSelectedItem();
             Date Exit_Date = DCC_Fecha_Combustible.getSelectedDate().getTime();
             double Mileage = Float.parseFloat(Txt_Kilometraje.getText());
-            int Liters = Integer.parseInt(Txt_Litros_Retiro.getText());
+            double Liters = Integer.parseInt(Txt_Litros_Retiro.getText());
 
             double Liters_On_Dispenser = Connection_SQL.get_Fuel_Amount_On_Dispenser(Dispenser);
             if (Liters_On_Dispenser < Liters) {
@@ -726,17 +733,23 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 return;
             }
 
-            Fuel_Entry_Exit_Obj Obj = new Fuel_Entry_Exit_Obj(Id_Dispenser_Fuel, License_Plate, Dispenser, Mileage, 0, Exit_Date, "Salida de Combustible", Liters);
+            Fuel_Entry_Exit_Obj Obj = new Fuel_Entry_Exit_Obj(Id_Dispenser_Fuel, License_Plate, Dispenser, Liters, Mileage, Exit_Date, "Salida de Combustible", 1);
 
             int Affected_Rows = CUD_SQL.Insert_Fuel_Entry_Exit(Obj);
 
             if (Affected_Rows != 0) {
-                Txt_Id_Dispensador_Combustible.setText("");
-                Jcb_Id_Dispensador.setSelectedItem("Seleccione una opcion");
-                Jcb_Matricula.setSelectedItem("Seleccione una opcion");
-                DCC_Fecha_Combustible.setText("");
-                Txt_Kilometraje.setText("");
-                Txt_Litros_Retiro.setText("");
+
+                boolean Updated = CUD_SQL.Update_Fuel_Amount_On_Tank(Dispenser, Liters);
+
+                if (Updated) {
+                    Txt_Id_Dispensador_Combustible.setText("");
+                    Jcb_Id_Dispensador.setSelectedItem("Seleccione una opcion");
+                    Jcb_Matricula.setSelectedItem("Seleccione una opcion");
+                    DCC_Fecha_Combustible.setText("");
+                    Txt_Kilometraje.setText("");
+                    Txt_Litros_Retiro.setText("");
+                }
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(Dispenser_Section.class.getName()).log(Level.SEVERE, null, ex);
@@ -750,9 +763,9 @@ public class Dispenser_Section extends javax.swing.JPanel {
             String License_Plate = (String) Jcb_Matricula.getSelectedItem();
             Date Exit_Date = DCC_Fecha_Combustible.getSelectedDate().getTime();
             Float Mileage = Float.parseFloat(Txt_Kilometraje.getText());
-            int Liters = Integer.parseInt(Txt_Litros_Retiro.getText());
+            double Liters = Integer.parseInt(Txt_Litros_Retiro.getText());
 
-            Fuel_Entry_Exit_Obj Obj = new Fuel_Entry_Exit_Obj(Id_Dispenser_Fuel, License_Plate, Dispenser, Mileage, 0, Exit_Date, "Salida de Combustible", Liters);
+            Fuel_Entry_Exit_Obj Obj = new Fuel_Entry_Exit_Obj(Id_Dispenser_Fuel, License_Plate, Dispenser, Liters, Mileage, Exit_Date, "Salida de Combustible", 1);
 
             int Affected_Rows = CUD_SQL.Update_Fuel_Entry_Exit(Obj);
 

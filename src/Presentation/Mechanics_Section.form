@@ -658,25 +658,17 @@
                                   <Component id="Txt_Costo_Estimado1" alignment="0" max="32767" attributes="0"/>
                                   <Component id="Txt_Id_Mantenimiento1" alignment="0" max="32767" attributes="0"/>
                               </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblIniciarSesion13" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <Component id="Txt_Costo_Estimado2" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
+                                  <Component id="lblIniciarSesion16" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <Component id="Txt_Costo_Estimado3" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
+                                  <Component id="lblIniciarSesion17" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <Component id="Txt_Costo_Estimado4" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Btn_Registrar_Mantenimiento1" min="-2" pref="90" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblIniciarSesion13" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                                          <Component id="Txt_Costo_Estimado2" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
-                                          <Component id="lblIniciarSesion16" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                                          <Component id="Txt_Costo_Estimado3" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
-                                          <Component id="lblIniciarSesion17" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                                          <Component id="Txt_Costo_Estimado4" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="Btn_Registrar_Mantenimiento1" min="-2" pref="90" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="Btn_Inactivo_Mantenimiento1" min="-2" pref="90" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                                       <Component id="Btn_Actualizar_Mantenimiento1" min="-2" pref="100" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -726,23 +718,22 @@
                                           </Group>
                                           <Component id="lblIniciarSesion17" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                               <Component id="lblIniciarSesion11" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="Txt_Costo_Estimado1" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="Btn_Registrar_Mantenimiento1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="Btn_Inactivo_Mantenimiento1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Btn_Actualizar_Mantenimiento1" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="Btn_Actualizar_Mantenimiento1" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jPanel4" max="32767" attributes="0"/>
                               </Group>
@@ -931,20 +922,6 @@
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Actualizar_Mantenimiento1ActionPerformed"/>
-                      </Events>
-                    </Component>
-                    <Component class="javax.swing.JButton" name="Btn_Inactivo_Mantenimiento1">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="12" style="1"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="0" green="0" red="0" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Inactivo"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Inactivo_Mantenimiento1ActionPerformed"/>
                       </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel4">
