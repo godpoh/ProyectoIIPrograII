@@ -79,7 +79,7 @@ public class Driver_Mechanic extends javax.swing.JPanel {
 
         lblContrasena2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblContrasena2.setForeground(new java.awt.Color(0, 0, 0));
-        lblContrasena2.setText("Rol (Chofer/Conductor)");
+        lblContrasena2.setText("Rol (Chofer/Mecanico)");
         Pnl_Principal.add(lblContrasena2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 220, -1));
 
         lblUsuario2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -101,7 +101,7 @@ public class Driver_Mechanic extends javax.swing.JPanel {
         Txt_Nombre.setForeground(new java.awt.Color(153, 153, 153));
         Pnl_Principal.add(Txt_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 350, 40));
 
-        Jcb_Rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Chofer", "Mecanico", " " }));
+        Jcb_Rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Chofer", "Mecanico" }));
         Pnl_Principal.add(Jcb_Rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 350, 40));
 
         jPanel3.add(Pnl_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 760));

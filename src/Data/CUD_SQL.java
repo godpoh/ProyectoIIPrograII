@@ -673,4 +673,133 @@ public class CUD_SQL {
         return affectedRows;
     }
 
+    // Insertar un registro en la tabla Header
+    public static int Insert_Header(Header_Obj Header) throws SQLException {
+        String qry = "Insert Into Header (Id, Vehicle_License_Plate, Date, Mechanic_Name, Driver, Mileage) "
+                + "Values (" + Header.getId() + ", '"
+                + Header.getLicense_Plate() + "', '"
+                + Header.getDate() + "', '"
+                + Header.getMechanic_Name() + "', '"
+                + Header.getDriver_Name() + "', "
+                + Header.getMileage() + ")";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Registro de encabezado guardado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
+// Actualizar un registro en la tabla Header
+    public static int Update_Header(Header_Obj Header) throws SQLException {
+        String qry = "Update Header Set "
+                + "Vehicle_License_Plate = '" + Header.getLicense_Plate() + "', "
+                + "Date = '" + Header.getDate() + "', "
+                + "Mechanic_Name = '" + Header.getMechanic_Name() + "', "
+                + "Driver = '" + Header.getDriver_Name() + "', "
+                + "Mileage = " + Header.getMileage() + " "
+                + "Where Id = " + Header.getId();
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Registro de encabezado actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
+    // Actualizar el estado en la tabla Header
+    public static int Update_Header_Status(int id, int status) throws SQLException {
+        String qry = "Update Header Set Status = " + status + " Where Id = " + id;
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Estado del encabezado actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
+    // Insertar un registro en la tabla Details
+    public static int Insert_Details(Details_Obj Details) throws SQLException {
+        String qry = "Insert Into Details (Detail_Id, Header_Id, Part_Id, Maintenance_Id) "
+                + "Values (" + Details.getDetail_Id() + ", "
+                + Details.getHeader_Id() + ", "
+                + Details.getPart_Id() + ", "
+                + Details.getMaintenance_Id() + ")";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Registro de detalle guardado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
+// Actualizar un registro en la tabla Details
+    public static int Update_Details(Details_Obj Details) throws SQLException {
+        String qry = "Update Details Set "
+                + "Header_Id = " + Details.getHeader_Id() + ", "
+                + "Part_Id = " + Details.getPart_Id() + ", "
+                + "Maintenance_Id = " + Details.getMaintenance_Id() + " "
+                + "Where Detail_Id = " + Details.getDetail_Id();
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Registro de detalle actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+// Actualizar el estado en la tabla Details
+
+    public static int Update_Details_Status(int detailId, int status) throws SQLException {
+        String qry = "Update Details Set Status = " + status + " Where Detail_Id = " + detailId;
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Estado del detalle actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
+    // Insertar un registro en la tabla Maintenance_Assigments
+    public static int Insert_Maintenance_Assigments(Maintenance_Assigments_Obj Assignment) throws SQLException {
+        String qry = "Insert Into Maintenance_Assigments (License_Plate, Maintenance_Type_Id, Part_Id, Date_Days, Mileage) "
+                + "Values ('" + Assignment.getLicense_Plate() + "', "
+                + Assignment.getMaintenance_Type_Id() + ", "
+                + Assignment.getPart_Id() + ", '"
+                + Assignment.getDate_Days() + "', "
+                + Assignment.getMileage() + ")";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Registro de asignación de mantenimiento guardado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
+// Actualizar un registro en la tabla Maintenance_Assigments
+    public static int Update_Maintenance_Assigments(Maintenance_Assigments_Obj Assignment) throws SQLException {
+        String qry = "Update Maintenance_Assigments Set "
+                + "Maintenance_Type_Id = " + Assignment.getMaintenance_Type_Id() + ", "
+                + "Part_Id = " + Assignment.getPart_Id() + ", "
+                + "Date_Days = '" + Assignment.getDate_Days() + "', "
+                + "Mileage = " + Assignment.getMileage() + " "
+                + "Where License_Plate = '" + Assignment.getLicense_Plate() + "'";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Registro de asignación de mantenimiento actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+// Actualizar el estado en la tabla Maintenance_Assigments
+
+    public static int Update_Maintenance_Assigments_Status(String licensePlate, int status) throws SQLException {
+        String qry = "Update Maintenance_Assigments Set Status = " + status + " Where License_Plate = '" + licensePlate + "'";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Estado de la asignación de mantenimiento actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
 }

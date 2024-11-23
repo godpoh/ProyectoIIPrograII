@@ -360,7 +360,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Component id="Jcb_Vehiculo5" min="-2" pref="206" max="-2" attributes="0"/>
+                                              <Component id="Jcb_Matricula_Asignacion" min="-2" pref="206" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
@@ -370,12 +370,12 @@
                                       </Group>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="lblIniciarSesion30" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="Jcb_Vehiculo6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Jcb_Id_Mantenimiento" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lblIniciarSesion31" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
-                                          <Component id="Jcb_Vehiculo7" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
+                                          <Component id="Jcb_Nombre_Pieza_Asignacipn" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                                   </Group>
@@ -385,7 +385,7 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="Txt_Costo_Estimado9" min="-2" pref="207" max="-2" attributes="0"/>
+                                          <Component id="Txt_Frecuencia_Dias" min="-2" pref="207" max="-2" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="lblIniciarSesion32" min="-2" pref="128" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
@@ -394,7 +394,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="Txt_Costo_Estimado10" min="-2" pref="207" max="-2" attributes="0"/>
+                                              <Component id="Txt_Kilometraje" min="-2" pref="207" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
@@ -404,9 +404,9 @@
                                       <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="Btn_Registrar_Mantenimiento4" min="-2" pref="90" max="-2" attributes="0"/>
+                                      <Component id="Btn_Registrar_Asignacion_Mantenimiento" min="-2" pref="90" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="Btn_Actualizar_Mantenimiento4" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <Component id="Btn_Actualizar_Asignacion_Mantenimiento" min="-2" pref="100" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -430,9 +430,9 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="Jcb_Vehiculo6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Jcb_Vehiculo7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Jcb_Vehiculo5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Jcb_Id_Mantenimiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Jcb_Nombre_Pieza_Asignacipn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Jcb_Matricula_Asignacion" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -444,17 +444,17 @@
                                           <Component id="lblIniciarSesion32" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Component id="Txt_Costo_Estimado10" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Txt_Kilometraje" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                      <Component id="Txt_Costo_Estimado9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Txt_Frecuencia_Dias" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Btn_Registrar_Mantenimiento4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Btn_Actualizar_Mantenimiento4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Btn_Registrar_Asignacion_Mantenimiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Btn_Actualizar_Asignacion_Mantenimiento" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                           </Group>
@@ -473,7 +473,7 @@
                         <Property name="text" type="java.lang.String" value="Asignaci&#xf3;n de Mantenimientos"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="Jcb_Vehiculo5">
+                    <Component class="javax.swing.JComboBox" name="Jcb_Matricula_Asignacion">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
@@ -499,7 +499,7 @@
                         <Property name="text" type="java.lang.String" value="Matricula del vehiculo"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="Jcb_Vehiculo6">
+                    <Component class="javax.swing.JComboBox" name="Jcb_Id_Mantenimiento">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
@@ -527,7 +527,7 @@
                         <Property name="text" type="java.lang.String" value="Id del tipo de mantenimiento"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="Jcb_Vehiculo7">
+                    <Component class="javax.swing.JComboBox" name="Jcb_Nombre_Pieza_Asignacipn">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
@@ -553,7 +553,7 @@
                         <Property name="text" type="java.lang.String" value="Nombre de la pieza"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="Txt_Costo_Estimado9">
+                    <Component class="javax.swing.JTextField" name="Txt_Frecuencia_Dias">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
@@ -571,10 +571,10 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Cada cuanto(Dias)"/>
+                        <Property name="text" type="java.lang.String" value="Frecuencia(Dias)"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="Txt_Costo_Estimado10">
+                    <Component class="javax.swing.JTextField" name="Txt_Kilometraje">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
@@ -595,7 +595,7 @@
                         <Property name="text" type="java.lang.String" value="Kilometraje"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="Btn_Actualizar_Mantenimiento4">
+                    <Component class="javax.swing.JButton" name="Btn_Actualizar_Asignacion_Mantenimiento">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
@@ -606,10 +606,10 @@
                         <Property name="text" type="java.lang.String" value="Actualizar"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Actualizar_Mantenimiento4ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Actualizar_Asignacion_MantenimientoActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="Btn_Registrar_Mantenimiento4">
+                    <Component class="javax.swing.JButton" name="Btn_Registrar_Asignacion_Mantenimiento">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
@@ -620,7 +620,7 @@
                         <Property name="text" type="java.lang.String" value="Registrar"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Registrar_Mantenimiento4ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Registrar_Asignacion_MantenimientoActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -654,23 +654,22 @@
                                   <Component id="lblIniciarSesion14" min="-2" pref="147" max="-2" attributes="0"/>
                                   <Component id="lblIniciarSesion12" min="-2" pref="147" max="-2" attributes="0"/>
                                   <Component id="lblIniciarSesion11" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <Component id="Jcb_Vehiculo1" max="32767" attributes="0"/>
-                                  <Component id="Txt_Costo_Estimado1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="Txt_Id_Mantenimiento1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Jcb_Matricula_Boleta" max="32767" attributes="0"/>
+                                  <Component id="Txt_Id_Boleta" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="DCC_Fecha" max="32767" attributes="0"/>
+                                  <Component id="Jcb_Mecanico" alignment="1" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblIniciarSesion13" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <Component id="Txt_Costo_Estimado2" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
                                   <Component id="lblIniciarSesion16" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <Component id="Txt_Costo_Estimado3" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
                                   <Component id="lblIniciarSesion17" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <Component id="Txt_Costo_Estimado4" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
+                                  <Component id="Txt_Kilometraje_Boleta" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="Btn_Registrar_Mantenimiento1" min="-2" pref="90" max="-2" attributes="0"/>
+                                      <Component id="Btn_Registrar_Boleta_Mantenimiento" min="-2" pref="90" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="Btn_Actualizar_Mantenimiento1" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <Component id="Btn_Actualizar_Boleta_Mantenimiento" min="-2" pref="100" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="Jcb_Chofer" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel4" max="32767" attributes="0"/>
@@ -690,50 +689,46 @@
                                               <Component id="lblIniciarSesion14" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="Txt_Id_Mantenimiento1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="Txt_Costo_Estimado2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Txt_Id_Boleta" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Jcb_Chofer" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                          </Group>
-                                          <Component id="lblIniciarSesion13" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                                               <Component id="lblIniciarSesion15" min="-2" pref="15" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="Jcb_Vehiculo1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Jcb_Matricula_Boleta" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                                              <Component id="Txt_Costo_Estimado3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblIniciarSesion16" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                                                      <Component id="Txt_Kilometraje_Boleta" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="lblIniciarSesion17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <Component id="lblIniciarSesion16" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="lblIniciarSesion12" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="DCC_Fecha" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblIniciarSesion12" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                                              <Component id="Txt_Costo_Estimado4" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="lblIniciarSesion17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                              <Component id="lblIniciarSesion11" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="Txt_Costo_Estimado1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="Btn_Registrar_Mantenimiento1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="Btn_Actualizar_Mantenimiento1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Btn_Registrar_Boleta_Mantenimiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="Btn_Actualizar_Boleta_Mantenimiento" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                              <Component id="lblIniciarSesion11" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="Jcb_Mecanico" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jPanel4" max="32767" attributes="0"/>
                               </Group>
@@ -752,16 +747,6 @@
                           <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value="Boletas de Mantenimientos"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Txt_Costo_Estimado1">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="12" style="1"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="99" green="99" red="99" type="rgb"/>
-                        </Property>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblIniciarSesion11">
@@ -786,7 +771,7 @@
                         <Property name="text" type="java.lang.String" value="Fecha"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="Txt_Id_Mantenimiento1">
+                    <Component class="javax.swing.JTextField" name="Txt_Id_Boleta">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
@@ -807,7 +792,7 @@
                         <Property name="text" type="java.lang.String" value="Id de Boleta"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="Jcb_Vehiculo1">
+                    <Component class="javax.swing.JComboBox" name="Jcb_Matricula_Boleta">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
@@ -833,37 +818,6 @@
                         <Property name="text" type="java.lang.String" value="Matricula del vehiculo"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lblIniciarSesion13">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="12" style="1"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="0" green="0" red="0" type="rgb"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="Nombre del mecanico"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Txt_Costo_Estimado2">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="12" style="1"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="99" green="99" red="99" type="rgb"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="Txt_Costo_Estimado3">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Tahoma" size="12" style="1"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="99" green="99" red="99" type="rgb"/>
-                        </Property>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="lblIniciarSesion16">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -875,7 +829,7 @@
                         <Property name="text" type="java.lang.String" value="Nombre del chofer"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="Txt_Costo_Estimado4">
+                    <Component class="javax.swing.JTextField" name="Txt_Kilometraje_Boleta">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
@@ -896,7 +850,7 @@
                         <Property name="text" type="java.lang.String" value="Kilometraje"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="Btn_Registrar_Mantenimiento1">
+                    <Component class="javax.swing.JButton" name="Btn_Registrar_Boleta_Mantenimiento">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
@@ -907,10 +861,10 @@
                         <Property name="text" type="java.lang.String" value="Registrar"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Registrar_Mantenimiento1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Registrar_Boleta_MantenimientoActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="Btn_Actualizar_Mantenimiento1">
+                    <Component class="javax.swing.JButton" name="Btn_Actualizar_Boleta_Mantenimiento">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Tahoma" size="12" style="1"/>
@@ -921,7 +875,7 @@
                         <Property name="text" type="java.lang.String" value="Actualizar"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Actualizar_Mantenimiento1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Actualizar_Boleta_MantenimientoActionPerformed"/>
                       </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel4">
@@ -947,29 +901,29 @@
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="lblIniciarSesion20" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                                              <Component id="Jcb_Vehiculo2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Jcb_Id_Boleta" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="lblIniciarSesion21" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="30" max="32767" attributes="0"/>
-                                          <Component id="Btn_Registrar_Mantenimiento2" min="-2" pref="90" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="Btn_Registrar_Detalle_Mantenimiento" min="-2" pref="90" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="Btn_Actualizar_Mantenimiento2" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="Btn_Actualizar_Detalle_Mantenimiento" min="-2" pref="100" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="Txt_Id_Mantenimiento2" min="-2" pref="157" max="-2" attributes="0"/>
+                                              <Component id="Txt_Id_Detalle" min="-2" pref="157" max="-2" attributes="0"/>
                                               <Component id="lblIniciarSesion19" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="Jcb_Vehiculo4" max="32767" attributes="0"/>
+                                              <Component id="Jcb_Tipo_Mantenimiento_Detalle" max="32767" attributes="0"/>
                                               <Component id="lblIniciarSesion22" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="Jcb_Vehiculo3" min="-2" pref="157" max="-2" attributes="0"/>
+                                          <Component id="Jcb_Nombre_Pieza" min="-2" pref="157" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -989,27 +943,27 @@
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="Jcb_Vehiculo4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Txt_Id_Mantenimiento2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Jcb_Tipo_Mantenimiento_Detalle" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Txt_Id_Detalle" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="lblIniciarSesion20" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Jcb_Vehiculo2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Jcb_Id_Boleta" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="lblIniciarSesion21" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="Btn_Registrar_Mantenimiento2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Btn_Actualizar_Mantenimiento2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Btn_Registrar_Detalle_Mantenimiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="Btn_Actualizar_Detalle_Mantenimiento" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="Jcb_Vehiculo3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="Jcb_Nombre_Pieza" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1037,7 +991,7 @@
                             <Property name="text" type="java.lang.String" value="Id de Detalle"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="Txt_Id_Mantenimiento2">
+                        <Component class="javax.swing.JTextField" name="Txt_Id_Detalle">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="1"/>
@@ -1069,7 +1023,7 @@
                             <Property name="text" type="java.lang.String" value="Nombre de la pieza"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="Jcb_Vehiculo2">
+                        <Component class="javax.swing.JComboBox" name="Jcb_Id_Boleta">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="1"/>
@@ -1084,7 +1038,7 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="Jcb_Vehiculo3">
+                        <Component class="javax.swing.JComboBox" name="Jcb_Nombre_Pieza">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="1"/>
@@ -1099,7 +1053,7 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="Jcb_Vehiculo4">
+                        <Component class="javax.swing.JComboBox" name="Jcb_Tipo_Mantenimiento_Detalle">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="1"/>
@@ -1127,7 +1081,7 @@
                             <Property name="text" type="java.lang.String" value="Id del tipo de mantenimiento"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Btn_Registrar_Mantenimiento2">
+                        <Component class="javax.swing.JButton" name="Btn_Registrar_Detalle_Mantenimiento">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="1"/>
@@ -1138,10 +1092,10 @@
                             <Property name="text" type="java.lang.String" value="Registrar"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Registrar_Mantenimiento2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Registrar_Detalle_MantenimientoActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="Btn_Actualizar_Mantenimiento2">
+                        <Component class="javax.swing.JButton" name="Btn_Actualizar_Detalle_Mantenimiento">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Tahoma" size="12" style="1"/>
@@ -1152,11 +1106,43 @@
                             <Property name="text" type="java.lang.String" value="Actualizar"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Actualizar_Mantenimiento2ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Btn_Actualizar_Detalle_MantenimientoActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
                     </Container>
+                    <Component class="datechooser.beans.DateChooserCombo" name="DCC_Fecha">
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="Jcb_Chofer">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="12" style="1"/>
+                        </Property>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="1">
+                            <StringItem index="0" value="Seleccione un chofer:"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="Jcb_Mecanico">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="12" style="1"/>
+                        </Property>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="1">
+                            <StringItem index="0" value="Seleccione un mecanico:"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
                   </SubComponents>
                 </Container>
                 <Container class="javax.swing.JPanel" name="jPanel11">
@@ -1278,7 +1264,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" red="0" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Frecuencia"/>
+                        <Property name="text" type="java.lang.String" value="Frecuencia(Dias)"/>
                       </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
