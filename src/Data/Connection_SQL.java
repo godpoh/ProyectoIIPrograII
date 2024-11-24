@@ -256,9 +256,37 @@ public class Connection_SQL {
         }
         return Liters;
     }
-    
+
 //    public static double get_Tank_Capacity() {
 //        
 //    }
+    public static int get_Maintenance_Type_Id_By_Name(String Name) throws SQLException {
+        int Id = 0;
 
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Maintenance_Id From Maintenance_Types Where Type = '" + Name + "'";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            Id = rs.getInt("Maintenance_Id");
+        }
+        return Id;
+    }
+
+    public static int get_Part_Id_By_Name(String Name) throws SQLException {
+        int Id = 0;
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Part_Id From Equipment_Parts Where Part_Name = '" + Name + "'";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            Id = rs.getInt("Maintenance_Id");
+        }
+        return Id;
+    }
 }

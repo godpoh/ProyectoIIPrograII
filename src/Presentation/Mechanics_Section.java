@@ -6,6 +6,9 @@ package Presentation;
 
 import Data.CUD_SQL;
 import Data.Connection_SQL;
+import Data.Details_Obj;
+import Data.Header_Obj;
+import Data.Maintenance_Assigments_Obj;
 import Data.Maintenance_Type_Obj;
 import Data.Part_Obj;
 import java.awt.event.ActionEvent;
@@ -255,7 +258,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
 
         lblIniciarSesion30.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblIniciarSesion30.setForeground(new java.awt.Color(0, 0, 0));
-        lblIniciarSesion30.setText("Id del tipo de mantenimiento");
+        lblIniciarSesion30.setText("Tipo de mantenimiento");
 
         Jcb_Nombre_Pieza_Asignacipn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jcb_Nombre_Pieza_Asignacipn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la pieza" }));
@@ -311,9 +314,11 @@ public class Mechanics_Section extends javax.swing.JPanel {
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addComponent(lblIniciarSesion28, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)))
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblIniciarSesion30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Jcb_Id_Mantenimiento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Jcb_Id_Mantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addComponent(lblIniciarSesion30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblIniciarSesion31, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -469,7 +474,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
 
         lblIniciarSesion22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblIniciarSesion22.setForeground(new java.awt.Color(0, 0, 0));
-        lblIniciarSesion22.setText("Id del tipo de mantenimiento");
+        lblIniciarSesion22.setText("Tipo de mantenimiento");
 
         Btn_Registrar_Detalle_Mantenimiento.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Btn_Registrar_Detalle_Mantenimiento.setForeground(new java.awt.Color(0, 0, 0));
@@ -505,7 +510,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
                             .addComponent(lblIniciarSesion20, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Jcb_Id_Boleta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblIniciarSesion21, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                         .addComponent(Btn_Registrar_Detalle_Mantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Btn_Actualizar_Detalle_Mantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -514,7 +519,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Txt_Id_Detalle, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblIniciarSesion19, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Jcb_Tipo_Mantenimiento_Detalle, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblIniciarSesion22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -526,14 +531,14 @@ public class Mechanics_Section extends javax.swing.JPanel {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(lblIniciarSesion18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblIniciarSesion22, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblIniciarSesion19))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblIniciarSesion18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblIniciarSesion19)
+                    .addComponent(lblIniciarSesion22, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Jcb_Tipo_Mantenimiento_Detalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Txt_Id_Detalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -544,7 +549,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblIniciarSesion21)
                         .addGap(7, 7, 7))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Btn_Registrar_Detalle_Mantenimiento)
                             .addComponent(Btn_Actualizar_Detalle_Mantenimiento))
@@ -851,34 +856,161 @@ public class Mechanics_Section extends javax.swing.JPanel {
     }//GEN-LAST:event_Btn_Actualizar_MantenimientoActionPerformed
 
     private void Btn_Registrar_Boleta_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Boleta_MantenimientoActionPerformed
-        int Id = Integer.parseInt(Txt_Id_Boleta.getText());
-        String License_Plate = (String) Jcb_Matricula_Boleta.getSelectedItem();
-        Date Date = DCC_Fecha.getSelectedDate().getTime();
-        String Driver = (String) Jcb_Chofer.getSelectedItem();
-        String Mechanic = (String) Jcb_Mecanico.getSelectedItem();
-        double Mileage = Float.parseFloat(Txt_Kilometraje_Boleta.getText());
-        
-        
+
+        try {
+
+            int Id = Integer.parseInt(Txt_Id_Boleta.getText());
+            String License_Plate = (String) Jcb_Matricula_Boleta.getSelectedItem();
+            Date Date = DCC_Fecha.getSelectedDate().getTime();
+            String Driver = (String) Jcb_Chofer.getSelectedItem();
+            String Mechanic = (String) Jcb_Mecanico.getSelectedItem();
+            double Mileage = Float.parseFloat(Txt_Kilometraje_Boleta.getText());
+
+            Header_Obj Obj = new Header_Obj(Id, License_Plate, Date, Mechanic, Driver, Mileage);
+
+            int Affected_Rows;
+            Affected_Rows = CUD_SQL.Insert_Header(Obj);
+            if (Affected_Rows != 0) {
+                Txt_Id_Boleta.setText("");
+                Jcb_Matricula_Boleta.setSelectedItem("Seleccione una matricula:");
+
+                Jcb_Chofer.setSelectedItem("Seleccione un chofer:");
+                Jcb_Mecanico.setSelectedItem("Seleccione un mecanico:");
+                Txt_Kilometraje_Boleta.setText("");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_Btn_Registrar_Boleta_MantenimientoActionPerformed
 
     private void Btn_Actualizar_Boleta_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Boleta_MantenimientoActionPerformed
+        try {
 
+            int Id = Integer.parseInt(Txt_Id_Boleta.getText());
+            String License_Plate = (String) Jcb_Matricula_Boleta.getSelectedItem();
+            Date Date = DCC_Fecha.getSelectedDate().getTime();
+            String Driver = (String) Jcb_Chofer.getSelectedItem();
+            String Mechanic = (String) Jcb_Mecanico.getSelectedItem();
+            double Mileage = Float.parseFloat(Txt_Kilometraje_Boleta.getText());
+
+            Header_Obj Obj = new Header_Obj(Id, License_Plate, Date, Mechanic, Driver, Mileage);
+
+            int Affected_Rows;
+            Affected_Rows = CUD_SQL.Update_Header(Obj);
+            if (Affected_Rows != 0) {
+                Txt_Id_Boleta.setText("");
+                Jcb_Matricula_Boleta.setSelectedItem("Seleccione una matricula:");
+
+                Jcb_Chofer.setSelectedItem("Seleccione un chofer:");
+                Jcb_Mecanico.setSelectedItem("Seleccione un mecanico:");
+                Txt_Kilometraje_Boleta.setText("");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Btn_Actualizar_Boleta_MantenimientoActionPerformed
 
     private void Btn_Registrar_Detalle_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Detalle_MantenimientoActionPerformed
-        // TODO add your handling code here:
+        try {
+            int Detail_Id = Integer.parseInt(Txt_Id_Detalle.getText());
+            int Ticket_Id = (int) Jcb_Id_Boleta.getSelectedItem();
+            String Part_Name = (String) Jcb_Nombre_Pieza.getSelectedItem();
+            int Part_Id = Connection_SQL.get_Part_Id_By_Name(Part_Name);
+            String Maintenance_Type = (String) Jcb_Nombre_Pieza.getSelectedItem();
+            int Maintenance_Type_Id = Connection_SQL.get_Maintenance_Type_Id_By_Name(Maintenance_Type);
+
+            Details_Obj Obj = new Details_Obj(Detail_Id, Part_Id, Part_Id, Maintenance_Type_Id);
+
+            int Affected_Rows;
+            Affected_Rows = CUD_SQL.Insert_Details(Obj);
+            if (Affected_Rows != 0) {
+                Txt_Id_Detalle.setText("");
+                Jcb_Id_Boleta.setSelectedItem("Seleccione la boleta:");
+                Jcb_Nombre_Pieza.setSelectedItem("Seleccione la pieza");
+                Jcb_Nombre_Pieza.setSelectedItem("Seleccione el mantenimiento");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Btn_Registrar_Detalle_MantenimientoActionPerformed
 
     private void Btn_Actualizar_Detalle_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Detalle_MantenimientoActionPerformed
-        // TODO add your handling code here:
+        try {
+            int Detail_Id = Integer.parseInt(Txt_Id_Detalle.getText());
+            int Ticket_Id = (int) Jcb_Id_Boleta.getSelectedItem();
+            String Part_Name = (String) Jcb_Nombre_Pieza.getSelectedItem();
+            int Part_Id = Connection_SQL.get_Part_Id_By_Name(Part_Name);
+            String Maintenance_Type = (String) Jcb_Nombre_Pieza.getSelectedItem();
+            int Maintenance_Type_Id = Connection_SQL.get_Maintenance_Type_Id_By_Name(Maintenance_Type);
+
+            Details_Obj Obj = new Details_Obj(Detail_Id, Part_Id, Part_Id, Maintenance_Type_Id);
+
+            int Affected_Rows;
+            Affected_Rows = CUD_SQL.Update_Details(Obj);
+            if (Affected_Rows != 0) {
+                Txt_Id_Detalle.setText("");
+                Jcb_Id_Boleta.setSelectedItem("Seleccione la boleta:");
+                Jcb_Nombre_Pieza.setSelectedItem("Seleccione la pieza");
+                Jcb_Nombre_Pieza.setSelectedItem("Seleccione el mantenimiento");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Btn_Actualizar_Detalle_MantenimientoActionPerformed
 
     private void Btn_Registrar_Asignacion_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Asignacion_MantenimientoActionPerformed
-        // TODO add your handling code here:
+
+        try {
+            String License_Plate = (String) Jcb_Matricula_Asignacion.getSelectedItem();
+            String Part_Name = (String) Jcb_Nombre_Pieza_Asignacipn.getSelectedItem();
+            int Part_Id = Connection_SQL.get_Part_Id_By_Name(Part_Name);
+            String Maintenance_Type = (String) Jcb_Id_Mantenimiento.getSelectedItem();
+            int Maintenance_Type_Id = Connection_SQL.get_Maintenance_Type_Id_By_Name(Maintenance_Type);
+            int Frecuency = Integer.parseInt(Txt_Frecuencia_Dias.getText());
+            double Mileage = Double.parseDouble(Txt_Kilometraje.getText());
+
+            Maintenance_Assigments_Obj Obj = new Maintenance_Assigments_Obj(License_Plate, Maintenance_Type_Id, Part_Id, Frecuency, Mileage);
+            int Affected_Rows;
+            Affected_Rows = CUD_SQL.Insert_Maintenance_Assigments(Obj);
+            if (Affected_Rows != 0) {
+                Txt_Frecuencia_Dias.setText("");
+                Txt_Kilometraje.setText("");
+                Jcb_Matricula_Asignacion.setSelectedItem("Seleccione la matricula:");
+                Jcb_Nombre_Pieza_Asignacipn.setSelectedItem("Seleccione la pieza");
+                Jcb_Id_Mantenimiento.setSelectedItem("Seleccione el mantenimiento");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Btn_Registrar_Asignacion_MantenimientoActionPerformed
 
     private void Btn_Actualizar_Asignacion_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Asignacion_MantenimientoActionPerformed
-        // TODO add your handling code here:
+        try {
+            String License_Plate = (String) Jcb_Matricula_Asignacion.getSelectedItem();
+            String Part_Name = (String) Jcb_Nombre_Pieza_Asignacipn.getSelectedItem();
+            int Part_Id = Connection_SQL.get_Part_Id_By_Name(Part_Name);
+            String Maintenance_Type = (String) Jcb_Id_Mantenimiento.getSelectedItem();
+            int Maintenance_Type_Id = Connection_SQL.get_Maintenance_Type_Id_By_Name(Maintenance_Type);
+            int Frecuency = Integer.parseInt(Txt_Frecuencia_Dias.getText());
+            double Mileage = Double.parseDouble(Txt_Kilometraje.getText());
+
+            Maintenance_Assigments_Obj Obj = new Maintenance_Assigments_Obj(License_Plate, Maintenance_Type_Id, Part_Id, Frecuency, Mileage);
+            int Affected_Rows;
+            Affected_Rows = CUD_SQL.Update_Maintenance_Assigments(Obj);
+            if (Affected_Rows != 0) {
+                Txt_Frecuencia_Dias.setText("");
+                Txt_Kilometraje.setText("");
+                Jcb_Matricula_Asignacion.setSelectedItem("Seleccione la matricula:");
+                Jcb_Nombre_Pieza_Asignacipn.setSelectedItem("Seleccione la pieza");
+                Jcb_Id_Mantenimiento.setSelectedItem("Seleccione el mantenimiento");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Btn_Actualizar_Asignacion_MantenimientoActionPerformed
 
 

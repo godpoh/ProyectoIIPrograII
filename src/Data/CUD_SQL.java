@@ -765,7 +765,7 @@ public class CUD_SQL {
                 + "Values ('" + Assignment.getLicense_Plate() + "', "
                 + Assignment.getMaintenance_Type_Id() + ", "
                 + Assignment.getPart_Id() + ", '"
-                + Assignment.getDate_Days() + "', "
+                + Assignment.getFrecuency_Days() + "', "
                 + Assignment.getMileage() + ")";
 
         Statement sql = Connection_SQL.getConnection().createStatement();
@@ -780,7 +780,7 @@ public class CUD_SQL {
         String qry = "Update Maintenance_Assigments Set "
                 + "Maintenance_Type_Id = " + Assignment.getMaintenance_Type_Id() + ", "
                 + "Part_Id = " + Assignment.getPart_Id() + ", "
-                + "Date_Days = '" + Assignment.getDate_Days() + "', "
+                + "Date_Days = '" + Assignment.getFrecuency_Days() + "', "
                 + "Mileage = " + Assignment.getMileage() + " "
                 + "Where License_Plate = '" + Assignment.getLicense_Plate() + "'";
 
