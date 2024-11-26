@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
@@ -257,9 +259,6 @@ public class Connection_SQL {
         return Liters;
     }
 
-//    public static double get_Tank_Capacity() {
-//        
-//    }
     public static int get_Maintenance_Type_Id_By_Name(String Name) throws SQLException {
         int Id = 0;
 
@@ -285,8 +284,117 @@ public class Connection_SQL {
         ResultSet rs = sql.executeQuery(qry);
 
         while (rs.next()) {
-            Id = rs.getInt("Maintenance_Id");
+            Id = rs.getInt("Part_Id");
         }
         return Id;
     }
+
+    public static void get_Drivers(JComboBox Jcb) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Name From Employees Where Type = '" + "Chofer" + "'";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            String Name = rs.getString("Name");
+            Jcb.addItem(Name);
+        }
+    }
+
+    public static void get_Mechanics(JComboBox Jcb) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Name From Employees Where Type = '" + "Mecanico" + "'";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            String Name = rs.getString("Name");
+            Jcb.addItem(Name);
+        }
+
+    }
+
+    public static void get_Parts_Name(JComboBox Jcb) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Part_Name From Equipment_Parts";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            String Name = rs.getString("Part_Name");
+            Jcb.addItem(Name);
+        }
+
+    }
+
+    public static void get_Maintenance_Type(JComboBox Jcb) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Type From Maintenance_Types";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            String Name = rs.getString("Type");
+            Jcb.addItem(Name);
+        }
+
+    }
+
+    public static void get_Ticket_Id(JComboBox Jcb) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Id From Header";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            String Name = rs.getString("Id");
+            Jcb.addItem(Name);
+        }
+
+    }
+
+    public static Date get_Header_Date() throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Date From Header";
+
+        Date Obtained_Date = null;
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        if (rs.next()) {
+            Obtained_Date = rs.getDate("Date");
+        }
+
+        return Obtained_Date;
+    }
+
+    public static ResultSet get_Vehicle_Movements(Date Start_Date, Date End_Date, String License_Plate) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        // Convertir las fechas Java a String en formato SQL (yyyy-MM-dd)
+        SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
+        String Start_Date_Str = SDF.format(Start_Date);
+        String End_Date_Str = SDF.format(End_Date);
+
+        // Consulta SQL con las fechas proporcionadas
+        String qry = "SELECT H.Id, H.Vehicle_License_Plate as Placa_Vehicular, H.Date as Fecha_Mantenimiento, "
+                + "H.Mechanic_Name as Mecanico_Cargo, H.Driver_Name as Chofer, H.Mileage as Kilometraje, "
+                + "D.Detail_Id as Id_Detalle, EP.Part_Name as Nombre_Pieza, MT.Type as Tipo_Mantenimiento "
+                + "FROM Header H "
+                + "JOIN Details D ON D.Header_Id = H.Id "
+                + "JOIN Equipment_Parts EP ON EP.Part_Id = D.Part_Id "
+                + "JOIN Maintenance_Types MT ON MT.Maintenance_Id = D.Maintenance_Id "
+                + "WHERE H.Vehicle_License_Plate = '" + License_Plate + "' "
+                + "AND H.Date BETWEEN '" + Start_Date_Str + "' AND '" + End_Date_Str + "' "
+                + "ORDER BY H.Date DESC";
+        ResultSet rs = sql.executeQuery(qry);
+        return rs;
+    }
+
 }

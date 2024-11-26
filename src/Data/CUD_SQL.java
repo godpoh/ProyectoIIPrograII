@@ -327,13 +327,12 @@ public class CUD_SQL {
 
     // Metodo para insertar los tipos de mantenimiento de un vehiculo
     public static int Insert_Maintenance_Type(Maintenance_Type_Obj maintenance) throws SQLException {
-        String qry = "Insert Into Maintenance_Types (Maintenance_Id, Type, Description, Frequency, Material_Cost_Estimate, Vehicle_Id, Status) "
+        String qry = "Insert Into Maintenance_Types (Maintenance_Id, Type, Description, Frequency, Material_Cost_Estimate, Status) "
                 + "Values (" + maintenance.getMaintenance_Id() + ", '"
                 + maintenance.getType() + "', '"
                 + maintenance.getDescription() + "', '"
                 + maintenance.getFrequency() + "', "
                 + maintenance.getMaterial_Cost_Estimate() + ", "
-                + maintenance.getVehicle_Id() + ", "
                 + maintenance.getStatus() + ")";
 
         Statement sql = Connection_SQL.getConnection().createStatement();
@@ -350,7 +349,6 @@ public class CUD_SQL {
                 + "Description = '" + maintenance.getDescription() + "', "
                 + "Frequency = '" + maintenance.getFrequency() + "', "
                 + "Material_Cost_Estimate = " + maintenance.getMaterial_Cost_Estimate() + ", "
-                + "Vehicle_Id = " + maintenance.getVehicle_Id() + " "
                 + "WHERE Maintenance_Id = " + maintenance.getMaintenance_Id();
 
         Statement sql = Connection_SQL.getConnection().createStatement();
@@ -675,10 +673,14 @@ public class CUD_SQL {
 
     // Insertar un registro en la tabla Header
     public static int Insert_Header(Header_Obj Header) throws SQLException {
-        String qry = "Insert Into Header (Id, Vehicle_License_Plate, Date, Mechanic_Name, Driver, Mileage) "
+
+        SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
+        String Formatted_Date = SDF.format(Header.getDate());
+
+        String qry = "Insert Into Header (Id, Vehicle_License_Plate, Date, Mechanic_Name, Driver_Name, Mileage) "
                 + "Values (" + Header.getId() + ", '"
                 + Header.getLicense_Plate() + "', '"
-                + Header.getDate() + "', '"
+                + Formatted_Date + "', '"
                 + Header.getMechanic_Name() + "', '"
                 + Header.getDriver_Name() + "', "
                 + Header.getMileage() + ")";
@@ -692,11 +694,14 @@ public class CUD_SQL {
 
 // Actualizar un registro en la tabla Header
     public static int Update_Header(Header_Obj Header) throws SQLException {
+        SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
+        String Formatted_Date = SDF.format(Header.getDate());
+
         String qry = "Update Header Set "
                 + "Vehicle_License_Plate = '" + Header.getLicense_Plate() + "', "
-                + "Date = '" + Header.getDate() + "', "
+                + "Date = '" + Formatted_Date + "', "
                 + "Mechanic_Name = '" + Header.getMechanic_Name() + "', "
-                + "Driver = '" + Header.getDriver_Name() + "', "
+                + "Driver_Name = '" + Header.getDriver_Name() + "', "
                 + "Mileage = " + Header.getMileage() + " "
                 + "Where Id = " + Header.getId();
 
@@ -761,7 +766,7 @@ public class CUD_SQL {
 
     // Insertar un registro en la tabla Maintenance_Assigments
     public static int Insert_Maintenance_Assigments(Maintenance_Assigments_Obj Assignment) throws SQLException {
-        String qry = "Insert Into Maintenance_Assigments (License_Plate, Maintenance_Type_Id, Part_Id, Date_Days, Mileage) "
+        String qry = "Insert Into Maintenance_Assigments (License_Plate, Maintenance_Type_Id, Part_Id, Frecuency_Days, Mileage) "
                 + "Values ('" + Assignment.getLicense_Plate() + "', "
                 + Assignment.getMaintenance_Type_Id() + ", "
                 + Assignment.getPart_Id() + ", '"
@@ -780,7 +785,7 @@ public class CUD_SQL {
         String qry = "Update Maintenance_Assigments Set "
                 + "Maintenance_Type_Id = " + Assignment.getMaintenance_Type_Id() + ", "
                 + "Part_Id = " + Assignment.getPart_Id() + ", "
-                + "Date_Days = '" + Assignment.getFrecuency_Days() + "', "
+                + "Frecuency_Days = '" + Assignment.getFrecuency_Days() + "', "
                 + "Mileage = " + Assignment.getMileage() + " "
                 + "Where License_Plate = '" + Assignment.getLicense_Plate() + "'";
 

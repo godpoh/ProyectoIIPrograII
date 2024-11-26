@@ -49,7 +49,7 @@ public class Principal_Panel extends javax.swing.JFrame {
 
         Pnl_Menu = new javax.swing.JPanel();
         Btn_Mecanico = new javax.swing.JButton();
-        Btn_Estadisticas = new javax.swing.JButton();
+        Btn_Reportes = new javax.swing.JButton();
         Btn_Dispensador = new javax.swing.JButton();
         Btn_Estado = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -80,17 +80,17 @@ public class Principal_Panel extends javax.swing.JFrame {
         });
         Pnl_Menu.add(Btn_Mecanico, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 150, 50));
 
-        Btn_Estadisticas.setBackground(new java.awt.Color(255, 111, 97));
-        Btn_Estadisticas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Btn_Estadisticas.setForeground(new java.awt.Color(51, 51, 51));
-        Btn_Estadisticas.setText("Estadísticas");
-        Btn_Estadisticas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Btn_Estadisticas.addActionListener(new java.awt.event.ActionListener() {
+        Btn_Reportes.setBackground(new java.awt.Color(255, 111, 97));
+        Btn_Reportes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Btn_Reportes.setForeground(new java.awt.Color(51, 51, 51));
+        Btn_Reportes.setText("Reportes");
+        Btn_Reportes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Btn_Reportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_EstadisticasActionPerformed(evt);
+                Btn_ReportesActionPerformed(evt);
             }
         });
-        Pnl_Menu.add(Btn_Estadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 150, 50));
+        Pnl_Menu.add(Btn_Reportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 150, 50));
 
         Btn_Dispensador.setBackground(new java.awt.Color(255, 111, 97));
         Btn_Dispensador.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -200,9 +200,23 @@ public class Principal_Panel extends javax.swing.JFrame {
         Pnl_Contenedor.repaint();
     }//GEN-LAST:event_Btn_MecanicoActionPerformed
 
-    private void Btn_EstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_EstadisticasActionPerformed
+    private void Btn_ReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ReportesActionPerformed
+        Reports Window = null;
+        try {
+            Window = new Reports();
+        } catch (SQLException ex) {
+            Logger.getLogger(Principal_Panel.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-    }//GEN-LAST:event_Btn_EstadisticasActionPerformed
+        Window.setSize(820, 688);
+        Window.setLocation(0, 0);
+
+        Pnl_Contenedor.removeAll();
+        Pnl_Contenedor.add(Window);
+
+        Pnl_Contenedor.revalidate();
+        Pnl_Contenedor.repaint();
+    }//GEN-LAST:event_Btn_ReportesActionPerformed
     // Boton que muestra el Panel de la seccion del dispensador
     private void Btn_DispensadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_DispensadorActionPerformed
         Dispenser_Section Window = null;
@@ -256,7 +270,7 @@ public class Principal_Panel extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_Cerrar_SesionActionPerformed
 
     private void Btn_Chofer_ConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Chofer_ConductorActionPerformed
-              Driver_Mechanic Window = new Driver_Mechanic();
+        Driver_Mechanic Window = new Driver_Mechanic();
         Window.setSize(820, 688);
         Window.setLocation(0, 0);
 
@@ -265,7 +279,7 @@ public class Principal_Panel extends javax.swing.JFrame {
 
         Pnl_Contenedor.revalidate();
         Pnl_Contenedor.repaint();
-        
+
     }//GEN-LAST:event_Btn_Chofer_ConductorActionPerformed
 
     /**
@@ -307,10 +321,10 @@ public class Principal_Panel extends javax.swing.JFrame {
     private javax.swing.JButton Btn_Cerrar_Sesion;
     private javax.swing.JButton Btn_Chofer_Conductor;
     private javax.swing.JButton Btn_Dispensador;
-    private javax.swing.JButton Btn_Estadisticas;
     private javax.swing.JButton Btn_Estado;
     private javax.swing.JButton Btn_Mecanico;
     private javax.swing.JButton Btn_Pnl_Ad;
+    private javax.swing.JButton Btn_Reportes;
     private javax.swing.JPanel Pnl_Contenedor;
     private javax.swing.JPanel Pnl_Menu;
     private javax.swing.JPanel Pnl_Titulo;

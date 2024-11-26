@@ -4,7 +4,20 @@
  */
 package Presentation;
 
+import Data.Connection_SQL;
+import java.util.Calendar;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.proteanit.sql.DbUtils;
+
 /**
+ * /**
  *
  * @author Admin
  */
@@ -13,8 +26,27 @@ public class Reports extends javax.swing.JPanel {
     /**
      * Creates new form Reports
      */
-    public Reports() {
+    public Reports() throws SQLException {
         initComponents();
+        Attention();
+        Load_JCB();
+        Action_Listener();
+
+    }
+
+    private void Action_Listener() {
+        JCB.addActionListener(evt -> {
+            try {
+                load_info();
+            } catch (SQLException ex) {
+                Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        
+    }
+    
+    private void Load_JCB() throws SQLException {
+        Connection_SQL.get_Vehicle_Name(JCB);
     }
 
     /**
@@ -26,19 +58,136 @@ public class Reports extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel3 = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Tbl_Info = new javax.swing.JTable();
+        lblIniciarSesion1 = new javax.swing.JLabel();
+        JCB = new javax.swing.JComboBox<>();
+        lblIniciarSesion13 = new javax.swing.JLabel();
+        lblIniciarSesion23 = new javax.swing.JLabel();
+        CCC_Inicio = new datechooser.beans.DateChooserCombo();
+        CCB_Final = new datechooser.beans.DateChooserCombo();
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane2.setViewportView(Tbl_Info);
+
+        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 800, -1));
+
+        lblIniciarSesion1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblIniciarSesion1.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion1.setText("Fecha Final");
+        jPanel6.add(lblIniciarSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 110, 30));
+
+        JCB.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        JCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Combustibles", "Tanques de Combustibles", "Ingreso de Combustibles", "Dispensadores", "Dispensado de Combustible" }));
+        jPanel6.add(JCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 220, -1));
+
+        lblIniciarSesion13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblIniciarSesion13.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion13.setText("Mantenimientos realizados por Vehiculo");
+        jPanel6.add(lblIniciarSesion13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 370, 40));
+
+        lblIniciarSesion23.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblIniciarSesion23.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion23.setText("Fecha de Inicio");
+        jPanel6.add(lblIniciarSesion23, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 140, 30));
+        jPanel6.add(CCC_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
+        jPanel6.add(CCB_Final, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, -1, -1));
+
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 760));
+
+        jTabbedPane1.addTab("Sector Dispensador", jPanel1);
+
+        jPanel3.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 820, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 791, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
+    private void Attention() throws SQLException {
+        Date Current_Date = new Date();
+
+        String qry = "SELECT V.License_Plate, H.Date, MA.Frecuency_Days "
+                + "FROM Vehicle V "
+                + "JOIN Header H ON V.License_Plate = H.Vehicle_License_Plate "
+                + "JOIN Maintenance_Assigments MA ON V.License_Plate = MA.License_Plate";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            String License_Plate = rs.getString("License_Plate");
+            Date Ticket_Date = rs.getDate("Date");
+            int Maintenance_Frecuency = rs.getInt("Frecuency_Days");
+
+            if (Ticket_Date != null) {
+                // Calcular la proxima fecha de mantenimiento sumando la frecuencia de dias
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(Ticket_Date);
+                calendar.add(Calendar.DAY_OF_MONTH, Maintenance_Frecuency);
+                Date Next_Maintenance_Date = calendar.getTime();
+
+                // Comparar la fecha actual con la proxima fecha de mantenimiento
+                if (Current_Date.after(Next_Maintenance_Date)) {
+                    // Si el mnatenimientoe es verdadero, mostrar el mensaje
+                    JOptionPane.showMessageDialog(null, "El vehiculo con matrícula " + License_Plate + " tiene mantenimiento pendiente.",
+                            "ATENCION!", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+        }
+    }
+
+    private void Attention2() {
+
+    }
+
+    private void load_info() throws SQLException {
+        String License_Plate = (String) JCB.getSelectedItem();
+
+        Date Start_Date = CCC_Inicio.getSelectedDate().getTime();
+        Date End_Date = CCB_Final.getSelectedDate().getTime();
+        ResultSet rs = Connection_SQL.get_Vehicle_Movements(Start_Date, End_Date, License_Plate);
+        Tbl_Info.setModel(DbUtils.resultSetToTableModel(rs));
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private datechooser.beans.DateChooserCombo CCB_Final;
+    private datechooser.beans.DateChooserCombo CCC_Inicio;
+    private javax.swing.JComboBox<String> JCB;
+    private javax.swing.JTable Tbl_Info;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblIniciarSesion1;
+    private javax.swing.JLabel lblIniciarSesion13;
+    private javax.swing.JLabel lblIniciarSesion23;
     // End of variables declaration//GEN-END:variables
 }
