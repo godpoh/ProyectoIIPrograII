@@ -92,6 +92,14 @@ public class Status extends javax.swing.JPanel {
         Cb_Estado_Mecanica = new javax.swing.JCheckBox();
         Btn_Activar_Estado_Mecanica = new javax.swing.JButton();
         Btn_Desactivar_Estado_Mecanica = new javax.swing.JButton();
+        Pnl_Empleados = new javax.swing.JPanel();
+        Cb_Empleado = new javax.swing.JCheckBox();
+        Jcb_Empleados = new javax.swing.JComboBox<>();
+        lblIniciarSesion4 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        Tbl_Empleados = new javax.swing.JTable();
+        Btn_Desactivar_Estado_Empleado = new javax.swing.JButton();
+        Btn_Activar_Estado_Empleado = new javax.swing.JButton();
         Pnl_Admin = new javax.swing.JPanel();
         Cb_Admin = new javax.swing.JCheckBox();
         Jcb_Admin = new javax.swing.JComboBox<>();
@@ -117,7 +125,7 @@ public class Status extends javax.swing.JPanel {
         jPanel6.add(lblIniciarSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 250, 40));
 
         Jcb_Dispensador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Jcb_Dispensador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Combustibles", "Tanques de Combustibles", "Ingreso de Combustibles", "Dispensadores", "Dispensado de Combustible" }));
+        Jcb_Dispensador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Combustibles", "Tanques de Combustibles", "Dispensadores", "Dispensado/Ingreso Combustible" }));
         jPanel6.add(Jcb_Dispensador, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 220, -1));
 
         Cb_Dispensador.setText("Estado Activo");
@@ -186,6 +194,46 @@ public class Status extends javax.swing.JPanel {
         jPanel2.add(Btn_Desactivar_Estado_Mecanica, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, -1, -1));
 
         jTabbedPane1.addTab("Sector Mecanica", jPanel2);
+
+        Pnl_Empleados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Cb_Empleado.setText("Estado Activo");
+        Pnl_Empleados.add(Cb_Empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, -1, -1));
+
+        Jcb_Empleados.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Jcb_Empleados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Chofer", "Mecanico" }));
+        Pnl_Empleados.add(Jcb_Empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 220, -1));
+
+        lblIniciarSesion4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblIniciarSesion4.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion4.setText("Estado de Empleados");
+        Pnl_Empleados.add(lblIniciarSesion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 200, 40));
+
+        jScrollPane5.setViewportView(Tbl_Empleados);
+
+        Pnl_Empleados.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 800, -1));
+
+        Btn_Desactivar_Estado_Empleado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Desactivar_Estado_Empleado.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Desactivar_Estado_Empleado.setText("Desactivar Estado");
+        Btn_Desactivar_Estado_Empleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Desactivar_Estado_EmpleadoActionPerformed(evt);
+            }
+        });
+        Pnl_Empleados.add(Btn_Desactivar_Estado_Empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, -1, -1));
+
+        Btn_Activar_Estado_Empleado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Btn_Activar_Estado_Empleado.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_Activar_Estado_Empleado.setText("Activar Estado");
+        Btn_Activar_Estado_Empleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Activar_Estado_EmpleadoAdminActionPerformed(evt);
+            }
+        });
+        Pnl_Empleados.add(Btn_Activar_Estado_Empleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, -1, -1));
+
+        jTabbedPane1.addTab("Empleados", Pnl_Empleados);
 
         Pnl_Admin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -311,13 +359,53 @@ public class Status extends javax.swing.JPanel {
                 Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (Selected_Item.equals("Tanques de Combustibles")) {
-
-        } else if (Selected_Item.equals("Ingreso de Combustibles")) {
-
+            try {
+                if (Cb_Dispensador.isSelected()) {
+                    Btn_Activar_Estado_Dispensador.setVisible(false);
+                    Btn_Desactivar_Estado_Dispensador.setVisible(true);
+                    ResultSet rs = Connection_SQL.get_Fuel_Tank_Information(1);
+                    Tbl_Dispensador.setModel(DbUtils.resultSetToTableModel(rs));
+                } else {
+                    Btn_Activar_Estado_Dispensador.setVisible(true);
+                    Btn_Desactivar_Estado_Dispensador.setVisible(false);
+                    ResultSet rs = Connection_SQL.get_Fuel_Tank_Information(0);
+                    Tbl_Dispensador.setModel(DbUtils.resultSetToTableModel(rs));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (Selected_Item.equals("Dispensado/Ingreso Combustible")) {
+            try {
+                if (Cb_Dispensador.isSelected()) {
+                    Btn_Activar_Estado_Dispensador.setVisible(false);
+                    Btn_Desactivar_Estado_Dispensador.setVisible(true);
+                    ResultSet rs = Connection_SQL.get_Fuel_Entry_Exit_Information(1);
+                    Tbl_Dispensador.setModel(DbUtils.resultSetToTableModel(rs));
+                } else {
+                    Btn_Activar_Estado_Dispensador.setVisible(true);
+                    Btn_Desactivar_Estado_Dispensador.setVisible(false);
+                    ResultSet rs = Connection_SQL.get_Fuel_Entry_Exit_Information(0);
+                    Tbl_Dispensador.setModel(DbUtils.resultSetToTableModel(rs));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (Selected_Item.equals("Dispensadores")) {
-
-        } else if (Selected_Item.equals("Dispensado de Combustible")) {
-
+            try {
+                if (Cb_Dispensador.isSelected()) {
+                    Btn_Activar_Estado_Dispensador.setVisible(false);
+                    Btn_Desactivar_Estado_Dispensador.setVisible(true);
+                    ResultSet rs = Connection_SQL.get_Dispenser_Information(1);
+                    Tbl_Dispensador.setModel(DbUtils.resultSetToTableModel(rs));
+                } else {
+                    Btn_Activar_Estado_Dispensador.setVisible(true);
+                    Btn_Desactivar_Estado_Dispensador.setVisible(false);
+                    ResultSet rs = Connection_SQL.get_Dispenser_Information(0);
+                    Tbl_Dispensador.setModel(DbUtils.resultSetToTableModel(rs));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -357,8 +445,38 @@ public class Status extends javax.swing.JPanel {
                 Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (Selected_Item.equals("Asignacion de Mantenimientos")) {
-
+            try {
+                if (Cb_Estado_Mecanica.isSelected()) {
+                    Btn_Desactivar_Estado_Mecanica.setVisible(true);
+                    Btn_Activar_Estado_Mecanica.setVisible(false);
+                    ResultSet rs = Connection_SQL.get_Maintenance_Assigments_Information(1);
+                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
+                } else {
+                    Btn_Desactivar_Estado_Mecanica.setVisible(false);
+                    Btn_Activar_Estado_Mecanica.setVisible(true);
+                    ResultSet rs = Connection_SQL.get_Maintenance_Assigments_Information(0);
+                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (Selected_Item.equals("Boletas de Mantenimiento")) {
+            try {
+                if (Cb_Estado_Mecanica.isSelected()) {
+                    Btn_Desactivar_Estado_Mecanica.setVisible(true);
+                    Btn_Activar_Estado_Mecanica.setVisible(false);
+                    ResultSet rs = Connection_SQL.get_Header_and_Details_Information(1);
+                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
+                } else {
+                    Btn_Desactivar_Estado_Mecanica.setVisible(false);
+                    Btn_Activar_Estado_Mecanica.setVisible(true);
+                    ResultSet rs = Connection_SQL.get_Header_and_Details_Information(0);
+                    Tbl_Mecanica.setModel(DbUtils.resultSetToTableModel(rs));
+
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
@@ -382,9 +500,19 @@ public class Status extends javax.swing.JPanel {
                 Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (Selected_Item.equals("Asignacion de Mantenimientos")) {
-
+            try {
+                String License_Plate = (String) Tbl_Mecanica.getValueAt(Selected_Row, 0);
+                CUD_SQL.Update_Maintenance_Assigments_Status(License_Plate, 0);
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (Selected_Item.equals("Boletas de Mantenimiento")) {
-
+            try {
+                int Header_Id = (int) Tbl_Mecanica.getValueAt(Selected_Row, 0);
+                CUD_SQL.Update_Header_and_Details_Status(Header_Id, 0);
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_Btn_Desactivar_Estado_MecanicaActionPerformed
     // Metodo para colocar inactivo el estado de todas las secciones de dispensador
@@ -400,19 +528,32 @@ public class Status extends javax.swing.JPanel {
                 Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (Selected_Item.equals("Tanques de Combustibles")) {
-
-        } else if (Selected_Item.equals("Ingreso de Combustibles")) {
-
+            try {
+                int Tank_Id = (int) Tbl_Dispensador.getValueAt(Selected_Row, 0);
+                CUD_SQL.Update_Fuel_Tank_Status(Tank_Id, 0);
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (Selected_Item.equals("Dispensado/Ingreso Combustible")) {
+            try {
+                int Id = (int) Tbl_Dispensador.getValueAt(Selected_Row, 0);
+                CUD_SQL.Update_Fuel_Entry_Exit_Status(Id, 0);
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (Selected_Item.equals("Dispensadores")) {
-
-        } else if (Selected_Item.equals("Dispensado de Combustible")) {
-
+            try {
+                int Id = (int) Tbl_Dispensador.getValueAt(Selected_Row, 0);
+                CUD_SQL.Update_Dispenser_Status(Id, 0);
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_Btn_Desactivar_Estado_DispensadorActionPerformed
 
     // Metodo para colocar activo el estado de todas las secciones de dispensador
     private void Btn_Activar_Estado_DispensadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Activar_Estado_DispensadorActionPerformed
-        int Selected_Row = Tbl_Dispensador.getSelectedRow();
+      int Selected_Row = Tbl_Dispensador.getSelectedRow();
         String Selected_Item = (String) Jcb_Dispensador.getSelectedItem();
 
         if (Selected_Item.equals("Combustibles")) {
@@ -423,13 +564,26 @@ public class Status extends javax.swing.JPanel {
                 Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (Selected_Item.equals("Tanques de Combustibles")) {
-
-        } else if (Selected_Item.equals("Ingreso de Combustibles")) {
-
+            try {
+                int Tank_Id = (int) Tbl_Dispensador.getValueAt(Selected_Row, 0);
+                CUD_SQL.Update_Fuel_Tank_Status(Tank_Id, 1);
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (Selected_Item.equals("Dispensado/Ingreso Combustible")) {
+            try {
+                int Id = (int) Tbl_Dispensador.getValueAt(Selected_Row, 0);
+                CUD_SQL.Update_Fuel_Entry_Exit_Status(Id, 1);
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (Selected_Item.equals("Dispensadores")) {
-
-        } else if (Selected_Item.equals("Dispensado de Combustible")) {
-
+            try {
+                int Id = (int) Tbl_Dispensador.getValueAt(Selected_Row, 0);
+                CUD_SQL.Update_Dispenser_Status(Id, 1);
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_Btn_Activar_Estado_DispensadorActionPerformed
     // Metodo para colocar inactivo el estado de todas las secciones admin
@@ -446,8 +600,8 @@ public class Status extends javax.swing.JPanel {
             }
         } else {
             try {
-                String Licensed_Plate = (String) Tbl_Admin.getValueAt(Selected_Row, 1);
-                CUD_SQL.Update_Vehicle_Status(Licensed_Plate, 0);
+                String License_Plate = (String) Tbl_Admin.getValueAt(Selected_Row, 1);
+                CUD_SQL.Update_Vehicle_Status(License_Plate, 0);
             } catch (SQLException ex) {
                 Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -494,29 +648,53 @@ public class Status extends javax.swing.JPanel {
                 Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (Selected_Item.equals("Asignacion de Mantenimientos")) {
-
+            try {
+                String License_Plate = (String) Tbl_Mecanica.getValueAt(Selected_Row, 0);
+                CUD_SQL.Update_Maintenance_Assigments_Status(License_Plate, 1);
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (Selected_Item.equals("Boletas de Mantenimiento")) {
-
+            try {
+                int Header_Id = (int) Tbl_Mecanica.getValueAt(Selected_Row, 0);
+                CUD_SQL.Update_Header_and_Details_Status(Header_Id, 1);
+            } catch (SQLException ex) {
+                Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_Btn_Activar_Estado_MecanicaActionPerformed
+
+    private void Btn_Desactivar_Estado_EmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Desactivar_Estado_EmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Desactivar_Estado_EmpleadoActionPerformed
+
+    private void Btn_Activar_Estado_EmpleadoAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Activar_Estado_EmpleadoAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Activar_Estado_EmpleadoAdminActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Activar_Estado_Admin;
     private javax.swing.JButton Btn_Activar_Estado_Dispensador;
+    private javax.swing.JButton Btn_Activar_Estado_Empleado;
     private javax.swing.JButton Btn_Activar_Estado_Mecanica;
     private javax.swing.JButton Btn_Desactivar_Estado_Admin;
     private javax.swing.JButton Btn_Desactivar_Estado_Dispensador;
+    private javax.swing.JButton Btn_Desactivar_Estado_Empleado;
     private javax.swing.JButton Btn_Desactivar_Estado_Mecanica;
     private javax.swing.JCheckBox Cb_Admin;
     private javax.swing.JCheckBox Cb_Dispensador;
+    private javax.swing.JCheckBox Cb_Empleado;
     private javax.swing.JCheckBox Cb_Estado_Mecanica;
     private javax.swing.JComboBox<String> Jcb_Admin;
     private javax.swing.JComboBox<String> Jcb_Dispensador;
+    private javax.swing.JComboBox<String> Jcb_Empleados;
     private javax.swing.JComboBox<String> Jcb_Mecanica;
     private javax.swing.JPanel Pnl_Admin;
+    private javax.swing.JPanel Pnl_Empleados;
     private javax.swing.JTable Tbl_Admin;
     private javax.swing.JTable Tbl_Dispensador;
+    private javax.swing.JTable Tbl_Empleados;
     private javax.swing.JTable Tbl_Mecanica;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -525,9 +703,11 @@ public class Status extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblIniciarSesion;
     private javax.swing.JLabel lblIniciarSesion1;
     private javax.swing.JLabel lblIniciarSesion3;
+    private javax.swing.JLabel lblIniciarSesion4;
     // End of variables declaration//GEN-END:variables
 }

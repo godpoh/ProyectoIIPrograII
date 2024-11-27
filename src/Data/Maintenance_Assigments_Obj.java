@@ -17,13 +17,15 @@ public class Maintenance_Assigments_Obj {
     int Part_Id;
     int Frecuency_Days;
     double Mileage;
+    int Status;
 
-    public Maintenance_Assigments_Obj(String License_Plate, int Maintenance_Type_Id, int Part_Id, int Frecuency_Days, double Mileage) {
+    public Maintenance_Assigments_Obj(String License_Plate, int Maintenance_Type_Id, int Part_Id, int Frecuency_Days, double Mileage, int Status) {
         this.License_Plate = License_Plate;
         this.Maintenance_Type_Id = Maintenance_Type_Id;
         this.Part_Id = Part_Id;
         this.Frecuency_Days = Frecuency_Days;
         this.Mileage = Mileage;
+        this.Status = Status;
     }
 
     public String getLicense_Plate() {
@@ -64,6 +66,14 @@ public class Maintenance_Assigments_Obj {
 
     public void setMileage(double Mileage) {
         this.Mileage = Mileage;
+    }
+
+    public int getStatus() {
+        return Status;
+    }
+
+    public void setStatus(int Status) {
+        this.Status = Status;
     }
 
 }

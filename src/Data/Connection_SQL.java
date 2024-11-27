@@ -118,78 +118,171 @@ public class Connection_SQL {
 
     // Consultas TABLA DE ESTADO
     // Devuelve en una tabla el estado e informacion del usuario
-    public static ResultSet get_User_Information(int Status) throws SQLException {
-        Statement sql = Connection_SQL.getConnection().createStatement();
+  public static ResultSet get_User_Information(int Status) throws SQLException {
+    Statement sql = Connection_SQL.getConnection().createStatement();
 
-        String qry = "Select Id as Cedula, Name as Nombre,\n"
-                + "Role as Rol, Status as Estado from Users where Status = " + Status;
+    String qry = "Select Id as Cedula, Name as Nombre,\n"
+               + "Role as Rol, Status as Estado from Users where Status = " + Status;
 
-        ResultSet rs = sql.executeQuery(qry);
+    ResultSet rs = sql.executeQuery(qry);
 
-        return rs;
-    }
+    return rs;
+}
 
-    // Devuelve en una tabla el estado del vehiculo y su informacion 
-    public static ResultSet get_Vehicle_Information(int Status) throws SQLException {
-        Statement sql = Connection_SQL.getConnection().createStatement();
+// Devuelve en una tabla el estado del vehiculo y su informacion
+public static ResultSet get_Vehicle_Information(int Status) throws SQLException {
+    Statement sql = Connection_SQL.getConnection().createStatement();
 
-        String qry = "Select Id as Id_Vehiculo, License_Plate as Placa, "
-                + "Brand as Marca, Model as Modelo, Year as Año, "
-                + "Color as Color, Type as Tipo, Seat_Count as Asientos, "
-                + "Load_Capacity as Capacidad_Carga, Status as Estado "
-                + "From Vehicle Where Status = " + Status;
-        ResultSet rs = sql.executeQuery(qry);
+    String qry = "Select Id as Id_Vehiculo, License_Plate as Placa, "
+               + "Brand as Marca, Model as Modelo, Year as Año, "
+               + "Color as Color, Type as Tipo, Seat_Count as Asientos, "
+               + "Load_Capacity as Capacidad_Carga, Status as Estado "
+               + "From Vehicle Where Status = " + Status;
+    ResultSet rs = sql.executeQuery(qry);
 
-        return rs;
-    }
+    return rs;
+}
 
-    // Devuelve en una tabla el estado de la gasolina y su informacion
-    public static ResultSet get_Fuel_Information(int Status) throws SQLException {
-        Statement sql = Connection_SQL.getConnection().createStatement();
+// Devuelve en una tabla el estado de la gasolina y su informacion
+public static ResultSet get_Fuel_Information(int Status) throws SQLException {
+    Statement sql = Connection_SQL.getConnection().createStatement();
 
-        String qry = "Select Fuel_ID as Id_Combustible, Name as Nombre, "
-                + "Type as Tipo, Price_Per_Liter as Precio_Por_Litro, "
-                + "Status as Estado "
-                + "From Fuel Where Status = " + Status;
+    String qry = "Select Fuel_ID as Id_Combustible, Name as Nombre, "
+               + "Type as Tipo, Price_Per_Liter as Precio_Por_Litro, "
+               + "Status as Estado "
+               + "From Fuel Where Status = " + Status;
 
-        ResultSet rs = sql.executeQuery(qry);
+    ResultSet rs = sql.executeQuery(qry);
 
-        return rs;
-    }
+    return rs;
+}
 
-    // Devuelve en una tabla el estado de las piezas de vehiculos e informacion
-    public static ResultSet get_Equipment_Parts_Information(int Status) throws SQLException {
-        Statement sql = Connection_SQL.getConnection().createStatement();
+// Devuelve en una tabla el estado de las piezas de vehiculos e informacion
+public static ResultSet get_Equipment_Parts_Information(int Status) throws SQLException {
+    Statement sql = Connection_SQL.getConnection().createStatement();
 
-        String qry = "Select Part_ID as Id_Parte, Part_Name as Nombre, "
-                + "Part_Category as Categoria, Manu_Facturer as Fabricante, "
-                + "Compatibility as Compatibilidad, Warranty_Period as Periodo_Garantia, "
-                + "Unit_Cost as Costo_Unitario, Status as Estado "
-                + "From Equipment_Parts Where Status = " + Status;
+    String qry = "Select Part_ID as Id_Parte, Part_Name as Nombre, "
+               + "Part_Category as Categoria, Manu_Facturer as Fabricante, "
+               + "Compatibility as Compatibilidad, Warranty_Period as Periodo_Garantia, "
+               + "Unit_Cost as Costo_Unitario, Status as Estado "
+               + "From Equipment_Parts Where Status = " + Status;
 
-        ResultSet rs = sql.executeQuery(qry);
+    ResultSet rs = sql.executeQuery(qry);
 
-        return rs;
-    }
+    return rs;
+}
 
-    // Devuelve en una tabla el estado de los tipos de mantenimientos e informacion
-    public static ResultSet get_Maintenance_Types_Information(int Status) throws SQLException {
-        Statement sql = Connection_SQL.getConnection().createStatement();
+// Devuelve en una tabla el estado de los tipos de mantenimientos e informacion
+public static ResultSet get_Maintenance_Types_Information(int Status) throws SQLException {
+    Statement sql = Connection_SQL.getConnection().createStatement();
 
-        String qry = "Select Maintenance_Id as Id_Mantenimiento, "
-                + "Type as Tipo_Mantenimiento, "
-                + "Description as Descripcion, "
-                + "Frequency as Frecuencia, "
-                + "Material_Cost_Estimate as Costo_Estimado, "
-                + "Vehicle_Id as Id_Vehiculo, "
-                + "Status as Estado "
-                + "From Maintenance_Types Where Status = " + Status;
+    String qry = "Select Maintenance_Id as Id_Mantenimiento, "
+               + "Type as Tipo_Mantenimiento, "
+               + "Description as Descripcion, "
+               + "Frequency as Frecuencia, "
+               + "Material_Cost_Estimate as Costo_Estimado, "
+               + "Status as Estado "
+               + "From Maintenance_Types Where Status = " + Status;
 
-        ResultSet rs = sql.executeQuery(qry);
+    ResultSet rs = sql.executeQuery(qry);
 
-        return rs;
-    }
+    return rs;
+}
 
+// Para la tabla Employees
+public static ResultSet get_Employee_Information(int Status) throws SQLException {
+    Statement sql = Connection_SQL.getConnection().createStatement();
+
+    String qry = "Select Id as Id_Empleado, Name as Nombre, Type as Tipo, Status as Estado "
+               + "From Employees Where Status = " + Status;
+    ResultSet rs = sql.executeQuery(qry);
+
+    return rs;
+}
+
+// Para la tabla Fuel_Tank
+public static ResultSet get_Fuel_Tank_Information(int Status) throws SQLException {
+    Statement sql = Connection_SQL.getConnection().createStatement();
+
+    String qry = "Select Id as Id_Tanque, Description as Descripcion, Capacity as Capacidad, "
+               + "Status as Estado, Fuel_Id as Id_Combustible "
+               + "From Fuel_Tank Where Status = " + Status;
+    ResultSet rs = sql.executeQuery(qry);
+
+    return rs;
+}
+
+// Para la tabla Dispenser
+public static ResultSet get_Dispenser_Information(int Status) throws SQLException {
+    Statement sql = Connection_SQL.getConnection().createStatement();
+
+    String qry = "Select Id as Id_Dispenser, Description as Descripcion, Status as Estado, "
+               + "Fuel_Tank_Id as Id_Tanque, Current_Fuel_Amount as Cantidad_Combustible_Actual "
+               + "From Dispenser Where Status = " + Status;
+    ResultSet rs = sql.executeQuery(qry);
+
+    return rs;
+}
+
+// Para la tabla Header
+public static ResultSet get_Header_and_Details_Information(int Status) throws SQLException {
+    Statement sql = Connection_SQL.getConnection().createStatement();
+
+    String qry = "Select H.Id as Id_Boleta, H.Vehicle_License_Plate as Placa_Vehiculo, "
+               + "H.Date as Fecha, H.Mechanic_Name as Nombre_Mecanico, H.Driver_Name as Nombre_Conductor, "
+               + "H.Mileage as Kilometraje, D.Detail_Id as Id_Detalle, D.Part_Id as Id_Parte, "
+               + "D.Maintenance_Id as Id_Mantenimiento, H.Status as Estado_Header, D.Status as Estado_Detail "
+               + "From Header H "
+               + "Join Details D ON H.Id = D.Header_Id "
+               + "Where H.Status = " + Status + " AND D.Status = " + Status;
+
+    ResultSet rs = sql.executeQuery(qry);
+
+    return rs;
+} 
+
+// Para la tabla Maintenance_Assigments
+public static ResultSet get_Maintenance_Assigments_Information(int Status) throws SQLException {
+    Statement sql = Connection_SQL.getConnection().createStatement();
+
+    String qry = "Select Id as Id_Asignacion, License_Plate as Placa_Vehiculo, "
+               + "Maintenance_Type_Id as Id_Tipo_Mantenimiento, Part_Id as Id_Parte, "
+               + "Frecuency_Days as Dias_Frecuencia, Mileage as Kilometraje, "
+               + "Status as Estado "
+               + "From Maintenance_Assigments "
+               + "Where Status = " + Status;
+
+    ResultSet rs = sql.executeQuery(qry);
+
+    return rs;
+}
+
+// Para la tabla Fuel_Entry_Exit
+public static ResultSet get_Fuel_Entry_Exit_Information(int Status) throws SQLException {
+    Statement sql = Connection_SQL.getConnection().createStatement();
+
+    String qry = "Select Id as Id_Entrada_Salida, Vehicle_License_Plate as Placa_Vehiculo, "
+               + "Dispenser_Id as Id_Dispenser, Fuel_Amount as Cantidad_Combustible, "
+               + "Buy_Id as Id_Compra, Mileage as Kilometraje, Date as Fecha, "
+               + "Transaction_Type as Tipo_Transaccion, Status as Estado "
+               + "From Fuel_Entry_Exit Where Status = " + Status;
+    ResultSet rs = sql.executeQuery(qry);
+
+    return rs;
+}
+
+// Para la tabla Binnacle
+public static ResultSet get_Binnacle_Information(int Status) throws SQLException {
+    Statement sql = Connection_SQL.getConnection().createStatement();
+
+    String qry = "Select Id_Binnacle as Id_Binnacle, Operation as Operacion, "
+               + "User_Binnacle as Usuario_Binnacle, Place as Lugar, "
+               + "Date_Binnacle as Fecha_Binnacle "
+               + "From Binnacle";
+    ResultSet rs = sql.executeQuery(qry);
+
+    return rs;
+}
     public static int get_Fuel_Id_By_Name(String Fuel_Name) throws SQLException {
 
         int Id = 0;

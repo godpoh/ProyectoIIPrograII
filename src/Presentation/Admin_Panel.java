@@ -405,10 +405,10 @@ public class Admin_Panel extends javax.swing.JPanel {
 
         try {
             Update_Vehicle(Vehicle);
-                            Date Current_Date = new Date();
-                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Vehiculo", Actual_User, "Seccion de Administracion", Current_Date);
-                Insert_Binnacle_Record(Binnacle);
-                
+            Date Current_Date = new Date();
+            Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Vehiculo", Actual_User, "Seccion de Administracion", Current_Date);
+            Insert_Binnacle_Record(Binnacle);
+
             Txt_Placa.setText("");
             Txt_Marca.setText("");
             Txt_Modelo.setText("");

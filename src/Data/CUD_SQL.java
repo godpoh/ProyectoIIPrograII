@@ -713,17 +713,6 @@ public class CUD_SQL {
         return affectedRows;
     }
 
-    // Actualizar el estado en la tabla Header
-    public static int Update_Header_Status(int id, int status) throws SQLException {
-        String qry = "Update Header Set Status = " + status + " Where Id = " + id;
-
-        Statement sql = Connection_SQL.getConnection().createStatement();
-        int affectedRows = sql.executeUpdate(qry);
-
-        JOptionPane.showMessageDialog(null, "Estado del encabezado actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
-        return affectedRows;
-    }
-
     // Insertar un registro en la tabla Details
     public static int Insert_Details(Details_Obj Details) throws SQLException {
         String qry = "Insert Into Details (Detail_Id, Header_Id, Part_Id, Maintenance_Id) "
@@ -753,16 +742,24 @@ public class CUD_SQL {
         JOptionPane.showMessageDialog(null, "Registro de detalle actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
         return affectedRows;
     }
-// Actualizar el estado en la tabla Details
+// Actualizar el estado en la tabla Details y Header(Boleta)
 
-    public static int Update_Details_Status(int detailId, int status) throws SQLException {
-        String qry = "Update Details Set Status = " + status + " Where Detail_Id = " + detailId;
+    public static int Update_Header_and_Details_Status(int Header_Id, int Status) throws SQLException {
+        String Qry_Header = "Update Header Set Status = " + Status + " Where Id = " + Header_Id;
 
-        Statement sql = Connection_SQL.getConnection().createStatement();
-        int affectedRows = sql.executeUpdate(qry);
+        Statement sqlHeader = Connection_SQL.getConnection().createStatement();
+        int Affected_Rows_Header = sqlHeader.executeUpdate(Qry_Header);
 
-        JOptionPane.showMessageDialog(null, "Estado del detalle actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
-        return affectedRows;
+        String Qry_Details = "Update Details Set Status = " + Status + " Where Header_Id = " + Header_Id;
+
+        Statement sqlDetails = Connection_SQL.getConnection().createStatement();
+        int Affected_Rows_Details = sqlDetails.executeUpdate(Qry_Details);
+
+        JOptionPane.showMessageDialog(null, "Estado de la boleta de mantenimiento y detalles actualizado satisfactoriamente",
+                "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+
+        // Retornar el total de filas afectadas
+        return Affected_Rows_Header + Affected_Rows_Details;
     }
 
     // Insertar un registro en la tabla Maintenance_Assigments
@@ -798,8 +795,8 @@ public class CUD_SQL {
     }
 // Actualizar el estado en la tabla Maintenance_Assigments
 
-    public static int Update_Maintenance_Assigments_Status(String licensePlate, int status) throws SQLException {
-        String qry = "Update Maintenance_Assigments Set Status = " + status + " Where License_Plate = '" + licensePlate + "'";
+    public static int Update_Maintenance_Assigments_Status(String License_Plate, int Status) throws SQLException {
+        String qry = "Update Maintenance_Assigments Set Status = " + Status + " Where License_Plate = '" + License_Plate + "'";
 
         Statement sql = Connection_SQL.getConnection().createStatement();
         int affectedRows = sql.executeUpdate(qry);
@@ -811,7 +808,7 @@ public class CUD_SQL {
     public static int Insert_Binnacle_Record(Binnacle_Obj Binnacle) throws SQLException {
         SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
         String Formatted_Date = SDF.format(Binnacle.getDate_Binnacle());
-        
+
         String qry = "Insert Into Binnacle (Operation, User_Binnacle, Place, Date_Binnacle) "
                 + "Values ('" + Binnacle.getOperation() + "', "
                 + Binnacle.getUser_Binnacle() + ", '"
@@ -823,4 +820,5 @@ public class CUD_SQL {
 
         return affectedRows;
     }
+
 }

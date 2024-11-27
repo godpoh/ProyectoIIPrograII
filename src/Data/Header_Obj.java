@@ -18,14 +18,16 @@ public class Header_Obj {
     String Mechanic_Name;
     String Driver_Name;
     double Mileage;
+    int Status;
 
-    public Header_Obj(int Id, String License_Plate, Date Date, String Mechanic_Name, String Driver_Name, double Mileage) {
+    public Header_Obj(int Id, String License_Plate, Date Date, String Mechanic_Name, String Driver_Name, double Mileage, int Status) {
         this.Id = Id;
         this.License_Plate = License_Plate;
         this.Date = Date;
         this.Mechanic_Name = Mechanic_Name;
         this.Driver_Name = Driver_Name;
         this.Mileage = Mileage;
+        this.Status = Status;
     }
 
     public int getId() {
@@ -75,5 +77,15 @@ public class Header_Obj {
     public void setMileage(double Mileage) {
         this.Mileage = Mileage;
     }
+
+    public int getStatus() {
+        return Status;
+    }
+
+    public void setStatus(int Status) {
+        this.Status = Status;
+    }
+  
+    
 
 }

@@ -888,7 +888,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             String Mechanic = (String) Jcb_Mecanico.getSelectedItem();
             double Mileage = Float.parseFloat(Txt_Kilometraje_Boleta.getText());
 
-            Header_Obj Obj = new Header_Obj(Id, License_Plate, Date, Mechanic, Driver, Mileage);
+            Header_Obj Obj = new Header_Obj(Id, License_Plate, Date, Mechanic, Driver, Mileage, 1);
 
             int Affected_Rows;
             Affected_Rows = CUD_SQL.Insert_Header(Obj);
@@ -918,7 +918,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             String Mechanic = (String) Jcb_Mecanico.getSelectedItem();
             double Mileage = Float.parseFloat(Txt_Kilometraje_Boleta.getText());
 
-            Header_Obj Obj = new Header_Obj(Id, License_Plate, Date, Mechanic, Driver, Mileage);
+            Header_Obj Obj = new Header_Obj(Id, License_Plate, Date, Mechanic, Driver, Mileage, 1);
 
             int Affected_Rows;
             Affected_Rows = CUD_SQL.Update_Header(Obj);
@@ -948,7 +948,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             String Maintenance_Type = (String) Jcb_Tipo_Mantenimiento_Detalle.getSelectedItem();
             int Maintenance_Type_Id = Connection_SQL.get_Maintenance_Type_Id_By_Name(Maintenance_Type);
 
-            Details_Obj Obj = new Details_Obj(Detail_Id, Ticket_Id, Part_Id, Maintenance_Type_Id);
+            Details_Obj Obj = new Details_Obj(Detail_Id, Ticket_Id, Part_Id, Maintenance_Type_Id, 1);
 
             int Affected_Rows;
             Affected_Rows = CUD_SQL.Insert_Details(Obj);
@@ -976,7 +976,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             String Maintenance_Type = (String) Jcb_Nombre_Pieza.getSelectedItem();
             int Maintenance_Type_Id = Connection_SQL.get_Maintenance_Type_Id_By_Name(Maintenance_Type);
 
-            Details_Obj Obj = new Details_Obj(Detail_Id, Ticket_Id, Part_Id, Maintenance_Type_Id);
+            Details_Obj Obj = new Details_Obj(Detail_Id, Ticket_Id, Part_Id, Maintenance_Type_Id, 1);
 
             int Affected_Rows;
             Affected_Rows = CUD_SQL.Update_Details(Obj);
@@ -1006,7 +1006,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             int Frecuency = Integer.parseInt(Txt_Frecuencia_Dias.getText());
             double Mileage = Double.parseDouble(Txt_Kilometraje.getText());
 
-            Maintenance_Assigments_Obj Obj = new Maintenance_Assigments_Obj(License_Plate, Maintenance_Type_Id, Part_Id, Frecuency, Mileage);
+            Maintenance_Assigments_Obj Obj = new Maintenance_Assigments_Obj(License_Plate, Maintenance_Type_Id, Part_Id, Frecuency, Mileage, 1);
             int Affected_Rows;
             Affected_Rows = CUD_SQL.Insert_Maintenance_Assigments(Obj);
             if (Affected_Rows != 0) {
@@ -1036,7 +1036,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             int Frecuency = Integer.parseInt(Txt_Frecuencia_Dias.getText());
             double Mileage = Double.parseDouble(Txt_Kilometraje.getText());
 
-            Maintenance_Assigments_Obj Obj = new Maintenance_Assigments_Obj(License_Plate, Maintenance_Type_Id, Part_Id, Frecuency, Mileage);
+            Maintenance_Assigments_Obj Obj = new Maintenance_Assigments_Obj(License_Plate, Maintenance_Type_Id, Part_Id, Frecuency, Mileage, 1);
             int Affected_Rows;
             Affected_Rows = CUD_SQL.Update_Maintenance_Assigments(Obj);
             if (Affected_Rows != 0) {

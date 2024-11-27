@@ -14,12 +14,14 @@ public class Details_Obj {
     int Header_Id;
     int Part_Id;
     int Maintenance_Id;
+    int Status;
 
-    public Details_Obj(int Detail_Id, int Header_Id, int Part_Id, int Maintenance_Id) {
+    public Details_Obj(int Detail_Id, int Header_Id, int Part_Id, int Maintenance_Id, int Status) {
         this.Detail_Id = Detail_Id;
         this.Header_Id = Header_Id;
         this.Part_Id = Part_Id;
         this.Maintenance_Id = Maintenance_Id;
+        this.Status = Status;
     }
 
     public int getDetail_Id() {
@@ -53,5 +55,15 @@ public class Details_Obj {
     public void setMaintenance_Id(int Maintenance_Id) {
         this.Maintenance_Id = Maintenance_Id;
     }
+
+    public int getStatus() {
+        return Status;
+    }
+
+    public void setStatus(int Status) {
+        this.Status = Status;
+    }
+
+    
 
 }
