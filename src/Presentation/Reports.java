@@ -37,16 +37,33 @@ public class Reports extends javax.swing.JPanel {
     private void Action_Listener() {
         JCB.addActionListener(evt -> {
             try {
-                load_info();
+                Load_Maintenance_Made();
+            } catch (SQLException ex) {
+                Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        JCB1.addActionListener(evt -> {
+            try {
+                Load_Fuel_Performance();
+            } catch (SQLException ex) {
+                Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
+        JCB_2.addActionListener(evt -> {
+            try {
+                Load_Binnacle();
             } catch (SQLException ex) {
                 Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
         
+        
     }
-    
+
     private void Load_JCB() throws SQLException {
         Connection_SQL.get_Vehicle_Name(JCB);
+        Connection_SQL.get_Vehicle_Name(JCB1);
+          Connection_SQL.get_User_Id(JCB_2);
     }
 
     /**
@@ -60,6 +77,16 @@ public class Reports extends javax.swing.JPanel {
 
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Tbl_Info2 = new javax.swing.JTable();
+        lblIniciarSesion2 = new javax.swing.JLabel();
+        JCB1 = new javax.swing.JComboBox<>();
+        lblIniciarSesion14 = new javax.swing.JLabel();
+        lblIniciarSesion24 = new javax.swing.JLabel();
+        CCC_Inicio1 = new datechooser.beans.DateChooserCombo();
+        CCB_Final1 = new datechooser.beans.DateChooserCombo();
         jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -70,8 +97,51 @@ public class Reports extends javax.swing.JPanel {
         lblIniciarSesion23 = new javax.swing.JLabel();
         CCC_Inicio = new datechooser.beans.DateChooserCombo();
         CCB_Final = new datechooser.beans.DateChooserCombo();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        Tbl_Info1 = new javax.swing.JTable();
+        lblIniciarSesion3 = new javax.swing.JLabel();
+        JCB_2 = new javax.swing.JComboBox<>();
+        lblIniciarSesion15 = new javax.swing.JLabel();
+        lblIniciarSesion25 = new javax.swing.JLabel();
+        CCC_Inicio2 = new datechooser.beans.DateChooserCombo();
+        CCB_Final2 = new datechooser.beans.DateChooserCombo();
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane3.setViewportView(Tbl_Info2);
+
+        jPanel7.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 800, -1));
+
+        lblIniciarSesion2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblIniciarSesion2.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion2.setText("Fecha Final");
+        jPanel7.add(lblIniciarSesion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 110, 30));
+
+        JCB1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        JCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion", "Combustibles", "Tanques de Combustibles", "Ingreso de Combustibles", "Dispensadores", "Dispensado de Combustible" }));
+        jPanel7.add(JCB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 220, -1));
+
+        lblIniciarSesion14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblIniciarSesion14.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion14.setText("Rendimiento de Combustible por Vehiculo");
+        jPanel7.add(lblIniciarSesion14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 390, 40));
+
+        lblIniciarSesion24.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblIniciarSesion24.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion24.setText("Fecha de Inicio");
+        jPanel7.add(lblIniciarSesion24, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 140, 30));
+        jPanel7.add(CCC_Inicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
+        jPanel7.add(CCB_Final1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, -1, -1));
+
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 760));
+
+        jTabbedPane1.addTab("Rendimiento de Combustible ", jPanel2);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -93,7 +163,7 @@ public class Reports extends javax.swing.JPanel {
         lblIniciarSesion13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblIniciarSesion13.setForeground(new java.awt.Color(0, 0, 0));
         lblIniciarSesion13.setText("Mantenimientos realizados por Vehiculo");
-        jPanel6.add(lblIniciarSesion13, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 370, 40));
+        jPanel6.add(lblIniciarSesion13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 370, 40));
 
         lblIniciarSesion23.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblIniciarSesion23.setForeground(new java.awt.Color(0, 0, 0));
@@ -104,7 +174,40 @@ public class Reports extends javax.swing.JPanel {
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 760));
 
-        jTabbedPane1.addTab("Sector Dispensador", jPanel1);
+        jTabbedPane1.addTab("Mantenimientos Realizados", jPanel1);
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane4.setViewportView(Tbl_Info1);
+
+        jPanel8.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 800, -1));
+
+        lblIniciarSesion3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblIniciarSesion3.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion3.setText("Fecha Final");
+        jPanel8.add(lblIniciarSesion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 110, 30));
+
+        JCB_2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        JCB_2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion" }));
+        jPanel8.add(JCB_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 220, -1));
+
+        lblIniciarSesion15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblIniciarSesion15.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion15.setText("Bitacora");
+        jPanel8.add(lblIniciarSesion15, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 90, 40));
+
+        lblIniciarSesion25.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblIniciarSesion25.setForeground(new java.awt.Color(0, 0, 0));
+        lblIniciarSesion25.setText("Fecha de Inicio");
+        jPanel8.add(lblIniciarSesion25, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 140, 30));
+        jPanel8.add(CCC_Inicio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, -1, -1));
+        jPanel8.add(CCB_Final2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, -1, -1));
+
+        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 760));
+
+        jTabbedPane1.addTab("Bitacora Movimientos", jPanel4);
 
         jPanel3.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -166,7 +269,7 @@ public class Reports extends javax.swing.JPanel {
 
     }
 
-    private void load_info() throws SQLException {
+    private void Load_Maintenance_Made() throws SQLException {
         String License_Plate = (String) JCB.getSelectedItem();
 
         Date Start_Date = CCC_Inicio.getSelectedDate().getTime();
@@ -175,19 +278,58 @@ public class Reports extends javax.swing.JPanel {
         Tbl_Info.setModel(DbUtils.resultSetToTableModel(rs));
     }
 
+    private void Load_Fuel_Performance() throws SQLException {
+        String License_Plate = (String) JCB1.getSelectedItem();
+
+        Date Start_Date = CCC_Inicio1.getSelectedDate().getTime();
+        Date End_Date = CCB_Final1.getSelectedDate().getTime();
+        ResultSet rs = Connection_SQL.get_Fuel_Performance(Start_Date, End_Date, License_Plate);
+        Tbl_Info2.setModel(DbUtils.resultSetToTableModel(rs));
+    }
+
+        private void Load_Binnacle() throws SQLException {
+        String License_Plate = (String) JCB_2.getSelectedItem();
+
+        Date Start_Date = CCC_Inicio2.getSelectedDate().getTime();
+        Date End_Date = CCB_Final2.getSelectedDate().getTime();
+        ResultSet rs = Connection_SQL.get_Fuel_Performance(Start_Date, End_Date, License_Plate);
+        Tbl_Info1.setModel(DbUtils.resultSetToTableModel(rs));
+    }
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private datechooser.beans.DateChooserCombo CCB_Final;
+    private datechooser.beans.DateChooserCombo CCB_Final1;
+    private datechooser.beans.DateChooserCombo CCB_Final2;
     private datechooser.beans.DateChooserCombo CCC_Inicio;
+    private datechooser.beans.DateChooserCombo CCC_Inicio1;
+    private datechooser.beans.DateChooserCombo CCC_Inicio2;
     private javax.swing.JComboBox<String> JCB;
+    private javax.swing.JComboBox<String> JCB1;
+    private javax.swing.JComboBox<String> JCB_2;
     private javax.swing.JTable Tbl_Info;
+    private javax.swing.JTable Tbl_Info1;
+    private javax.swing.JTable Tbl_Info2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblIniciarSesion1;
     private javax.swing.JLabel lblIniciarSesion13;
+    private javax.swing.JLabel lblIniciarSesion14;
+    private javax.swing.JLabel lblIniciarSesion15;
+    private javax.swing.JLabel lblIniciarSesion2;
     private javax.swing.JLabel lblIniciarSesion23;
+    private javax.swing.JLabel lblIniciarSesion24;
+    private javax.swing.JLabel lblIniciarSesion25;
+    private javax.swing.JLabel lblIniciarSesion3;
     // End of variables declaration//GEN-END:variables
 }

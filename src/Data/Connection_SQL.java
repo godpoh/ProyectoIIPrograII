@@ -397,4 +397,60 @@ public class Connection_SQL {
         return rs;
     }
 
+    public static ResultSet get_Fuel_Performance(Date Start_Date, Date End_Date, String License_Plate) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        // Convertir las fechas Java a String en formato SQL (yyyy-MM-dd)
+        SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
+        String Start_Date_Str = SDF.format(Start_Date);
+        String End_Date_Str = SDF.format(End_Date);
+
+        // Consulta SQL con los filtros por vehículo y fechas
+        String qry = "SELECT FEE.Vehicle_License_Plate AS Placa_Vehicular, "
+                + "SUM(FEE.Fuel_Amount) AS Combustible_Consumido, "
+                + "MAX(FEE.Mileage) - MIN(FEE.Mileage) AS Kilometraje_Recorrido, "
+                + "CASE WHEN SUM(FEE.Fuel_Amount) > 0 THEN "
+                + "(MAX(FEE.Mileage) - MIN(FEE.Mileage)) / SUM(FEE.Fuel_Amount) ELSE 0 END AS Rendimiento "
+                + "FROM Fuel_Entry_Exit FEE "
+                + "WHERE FEE.Vehicle_License_Plate = '" + License_Plate + "' "
+                + "AND FEE.Date BETWEEN '" + Start_Date_Str + "' AND '" + End_Date_Str + "' "
+                + "AND FEE.Status = 1 "
+                + "GROUP BY FEE.Vehicle_License_Plate";
+
+        // Ejecutar la consulta y devolver los resultados
+        ResultSet rs = sql.executeQuery(qry);
+        return rs;
+    }
+    
+    public static ResultSet Load_Binnacle_Info(Date Start_Date, Date End_Date, int User_Id) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        
+        SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
+        String Start_Date_Str = SDF.format(Start_Date);
+        String End_Date_Str = SDF.format(End_Date);
+        
+        String qry = "Select Id_Binnacle as Id_Bitacora, Operation as Proceso_Realizado, User_Binnacle as Usuario_Asignado,"
+                + " Place as Seccion, Date_Binnacle as Fecha_Realizado From Binnacle Where Date Between"
+                + " '" + Start_Date_Str + "' And '" + End_Date_Str + "' And User_Binnacle = " + User_Id;
+        
+        ResultSet rs = sql.executeQuery(qry);
+        
+        return rs;
+    }
+    
+    
+    public static void get_User_Id(JComboBox Jcb) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Id From Users";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            String Name = rs.getString("Id");
+            Jcb.addItem(Name);
+        }
+    }
+
+
 }
