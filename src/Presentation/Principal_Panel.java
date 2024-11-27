@@ -19,6 +19,7 @@ import javax.swing.SwingUtilities;
 public class Principal_Panel extends javax.swing.JFrame {
 
     String Instance_Role = "";
+    int Actual_User = Log_In.User_Id;
 
     public Principal_Panel(String Role) {
         initComponents();

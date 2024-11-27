@@ -4,7 +4,9 @@
  */
 package Presentation;
 
+import Data.Binnacle_Obj;
 import Data.CUD_SQL;
+import static Data.CUD_SQL.Insert_Binnacle_Record;
 import Data.Connection_SQL;
 import Data.Details_Obj;
 import Data.Header_Obj;
@@ -28,6 +30,8 @@ public class Mechanics_Section extends javax.swing.JPanel {
     /**
      * Creates new form Mechanic
      */
+    int Actual_User = Log_In.User_Id;
+
     public Mechanics_Section() throws SQLException {
         initComponents();
         Load_Jcb_Default();
@@ -774,6 +778,10 @@ public class Mechanics_Section extends javax.swing.JPanel {
             int Rows_Affected = CUD_SQL.Update_Part(Obj);
 
             if (Rows_Affected != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Pieza", Actual_User, "Seccion de Mecanica", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
+
                 Txt_Id.setText("");
                 Txt_Nombre_Pieza.setText("");
                 Txt_Categoria_Pieza.setText("");
@@ -803,6 +811,9 @@ public class Mechanics_Section extends javax.swing.JPanel {
             int Rows_Affected = CUD_SQL.Insert_Part(Obj);
 
             if (Rows_Affected != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de Pieza", Actual_User, "Seccion de Mecanica", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id.setText("");
                 Txt_Nombre_Pieza.setText("");
                 Txt_Categoria_Pieza.setText("");
@@ -826,6 +837,9 @@ public class Mechanics_Section extends javax.swing.JPanel {
             Maintenance_Type_Obj Obj = new Maintenance_Type_Obj(Maintenance_Id, Maintenance_Type, Description, Frequency, Approximate_Cost, 1);
             int Rows_Affected = CUD_SQL.Insert_Maintenance_Type(Obj);
             if (Rows_Affected != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de Mantenimiento", Actual_User, "Seccion de Mecanica", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id.setText("");
                 Txt_Tipo_Mantenimiento.setText("");
                 Txt_Frecuencia.setText("");
@@ -850,6 +864,9 @@ public class Mechanics_Section extends javax.swing.JPanel {
             Maintenance_Type_Obj Obj = new Maintenance_Type_Obj(Maintenance_Id, Maintenance_Type, Description, Frequency, Approximate_Cost, 1);
             int Rows_Affected = CUD_SQL.Update_Maintenance_Type(Obj);
             if (Rows_Affected != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Mantenimiento", Actual_User, "Seccion de Mecanica", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id.setText("");
                 Txt_Tipo_Mantenimiento.setText("");
                 Txt_Frecuencia.setText("");
@@ -863,9 +880,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
     }//GEN-LAST:event_Btn_Actualizar_MantenimientoActionPerformed
 
     private void Btn_Registrar_Boleta_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Boleta_MantenimientoActionPerformed
-
         try {
-
             int Id = Integer.parseInt(Txt_Id_Boleta.getText());
             String License_Plate = (String) Jcb_Matricula_Boleta.getSelectedItem();
             Date Date = DCC_Fecha.getSelectedDate().getTime();
@@ -878,6 +893,9 @@ public class Mechanics_Section extends javax.swing.JPanel {
             int Affected_Rows;
             Affected_Rows = CUD_SQL.Insert_Header(Obj);
             if (Affected_Rows != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de Boleta", Actual_User, "Seccion de Mecanica", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id_Boleta.setText("");
                 Jcb_Matricula_Boleta.setSelectedItem("Seleccione una matricula:");
 
@@ -888,8 +906,6 @@ public class Mechanics_Section extends javax.swing.JPanel {
         } catch (SQLException ex) {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
     }//GEN-LAST:event_Btn_Registrar_Boleta_MantenimientoActionPerformed
 
     private void Btn_Actualizar_Boleta_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Boleta_MantenimientoActionPerformed
@@ -907,6 +923,9 @@ public class Mechanics_Section extends javax.swing.JPanel {
             int Affected_Rows;
             Affected_Rows = CUD_SQL.Update_Header(Obj);
             if (Affected_Rows != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Boleta", Actual_User, "Seccion de Mecanica", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id_Boleta.setText("");
                 Jcb_Matricula_Boleta.setSelectedItem("Seleccione una matricula:");
 
@@ -934,6 +953,9 @@ public class Mechanics_Section extends javax.swing.JPanel {
             int Affected_Rows;
             Affected_Rows = CUD_SQL.Insert_Details(Obj);
             if (Affected_Rows != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de Detalle de Boleta", Actual_User, "Seccion de Mecanica", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id_Detalle.setText("");
                 Jcb_Id_Boleta.setSelectedItem("Seleccione la boleta:");
                 Jcb_Nombre_Pieza.setSelectedItem("Seleccione la pieza");
@@ -959,6 +981,9 @@ public class Mechanics_Section extends javax.swing.JPanel {
             int Affected_Rows;
             Affected_Rows = CUD_SQL.Update_Details(Obj);
             if (Affected_Rows != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Detalle de Boleta", Actual_User, "Seccion de Mecanica", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id_Detalle.setText("");
                 Jcb_Id_Boleta.setSelectedItem("Seleccione la boleta:");
                 Jcb_Nombre_Pieza.setSelectedItem("Seleccione la pieza");
@@ -985,6 +1010,9 @@ public class Mechanics_Section extends javax.swing.JPanel {
             int Affected_Rows;
             Affected_Rows = CUD_SQL.Insert_Maintenance_Assigments(Obj);
             if (Affected_Rows != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de asignacion de mantenimiento", Actual_User, "Seccion de Mecanica", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Frecuencia_Dias.setText("");
                 Txt_Kilometraje.setText("");
                 Jcb_Vehiculo.setSelectedItem("Seleccione la matricula:");
@@ -1012,6 +1040,9 @@ public class Mechanics_Section extends javax.swing.JPanel {
             int Affected_Rows;
             Affected_Rows = CUD_SQL.Update_Maintenance_Assigments(Obj);
             if (Affected_Rows != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de asignacion de mantenimiento", Actual_User, "Seccion de Mecanica", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Frecuencia_Dias.setText("");
                 Txt_Kilometraje.setText("");
                 Jcb_Vehiculo.setSelectedItem("Seleccione la matricula:");

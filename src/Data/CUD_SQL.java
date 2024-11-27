@@ -15,6 +15,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -807,4 +808,19 @@ public class CUD_SQL {
         return affectedRows;
     }
 
+    public static int Insert_Binnacle_Record(Binnacle_Obj Binnacle) throws SQLException {
+        SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
+        String Formatted_Date = SDF.format(Binnacle.getDate_Binnacle());
+        
+        String qry = "Insert Into Binnacle (Operation, User_Binnacle, Place, Date_Binnacle) "
+                + "Values ('" + Binnacle.getOperation() + "', "
+                + Binnacle.getUser_Binnacle() + ", '"
+                + Binnacle.getPlace() + "', '"
+                + Formatted_Date + "')";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        return affectedRows;
+    }
 }

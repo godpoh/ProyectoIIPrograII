@@ -4,7 +4,9 @@
  */
 package Presentation;
 
+import Data.Binnacle_Obj;
 import Data.CUD_SQL;
+import static Data.CUD_SQL.Insert_Binnacle_Record;
 import static Data.CUD_SQL.Insert_User;
 import static Data.CUD_SQL.Insert_Vehicle;
 import static Data.CUD_SQL.Update_User;
@@ -16,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
+import java.util.Date;
 
 /**
  *
@@ -26,6 +29,8 @@ public class Admin_Panel extends javax.swing.JPanel {
     /**
      * Creates new form Admin_Panel
      */
+    int Actual_User = Log_In.User_Id;
+
     public Admin_Panel() {
         initComponents();
     }
@@ -308,6 +313,11 @@ public class Admin_Panel extends javax.swing.JPanel {
         try {
             Rows_Affected = Insert_User(User);
             if (Rows_Affected != 0) {
+
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de Usuario", Actual_User, "Seccion de Administracion", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
+
                 Txt_Usuario.setText("");
                 Txt_Nombre.setText("");
                 Jcb_Rol.setSelectedItem("Seleccione un rol");
@@ -318,7 +328,7 @@ public class Admin_Panel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_Btn_RegistrarActionPerformed
 
-   // Boton que actualiza los datos del usuario mediante la cedula o id
+    // Boton que actualiza los datos del usuario mediante la cedula o id
     private void Btn_ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ActualizarActionPerformed
         int User_Id = Integer.parseInt(Txt_Usuario.getText());
         String Name = Txt_Nombre.getText();
@@ -331,6 +341,10 @@ public class Admin_Panel extends javax.swing.JPanel {
         try {
             Rows_Affected = Update_User(User);
             if (Rows_Affected != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Usuario", Actual_User, "Seccion de Administracion", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
+
                 Txt_Usuario.setText("");
                 Txt_Nombre.setText("");
                 Jcb_Rol.setSelectedItem("Seleccione un rol");
@@ -357,6 +371,10 @@ public class Admin_Panel extends javax.swing.JPanel {
 
         try {
             Insert_Vehicle(Vehicle);
+            Date Current_Date = new Date();
+            Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de Vehiculo", Actual_User, "Seccion de Administracion", Current_Date);
+            Insert_Binnacle_Record(Binnacle);
+
             Txt_Placa.setText("");
             Txt_Marca.setText("");
             Txt_Modelo.setText("");
@@ -372,7 +390,7 @@ public class Admin_Panel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_Btn_Registrar_VehiculoActionPerformed
 
-   // Boton que actualiza los datos del vehiculo mediante la Placa
+    // Boton que actualiza los datos del vehiculo mediante la Placa
     private void Btn_Actualizar_VehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_VehiculoActionPerformed
         String License_Plate = Txt_Placa.getText();
         String Brand = Txt_Marca.getText();
@@ -387,6 +405,10 @@ public class Admin_Panel extends javax.swing.JPanel {
 
         try {
             Update_Vehicle(Vehicle);
+                            Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Vehiculo", Actual_User, "Seccion de Administracion", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
+                
             Txt_Placa.setText("");
             Txt_Marca.setText("");
             Txt_Modelo.setText("");

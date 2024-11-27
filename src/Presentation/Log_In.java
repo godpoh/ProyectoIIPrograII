@@ -16,6 +16,8 @@ public class Log_In extends javax.swing.JFrame {
 
     private Principal_Panel parent;
 
+    public static int User_Id;
+
     public Log_In() {
         initComponents();
         setLocationRelativeTo(null);
@@ -112,11 +114,19 @@ public class Log_In extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+     private void SetUserId() {
+        try {
+            User_Id = Integer.parseInt(txtUsuario.getText());
+        } catch (NumberFormatException e) {
+            User_Id = -1;
+        }
+     }
+    
     // Boton que ingresa al panel principal despues de validad que las credenciales son correcta, utilizando el metodo de Logic
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         Log_In_Logic login = new Log_In_Logic();
         try {
-
+            SetUserId();
             login.Open_Principal_Panel_Logic(txtUsuario, txtContrasena);
 
             this.dispose();
@@ -136,6 +146,7 @@ public class Log_In extends javax.swing.JFrame {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             Log_In_Logic login = new Log_In_Logic();
             try {
+                 SetUserId();
                 login.Open_Principal_Panel_Logic(txtUsuario, txtContrasena);
                 this.dispose();
             } catch (SQLException ex) {

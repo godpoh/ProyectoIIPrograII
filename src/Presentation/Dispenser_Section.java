@@ -4,7 +4,9 @@
  */
 package Presentation;
 
+import Data.Binnacle_Obj;
 import Data.CUD_SQL;
+import static Data.CUD_SQL.Insert_Binnacle_Record;
 import Data.Connection_SQL;
 import Data.Dispenser_Obj;
 import Data.Fuel_Entry_Exit_Obj;
@@ -25,6 +27,8 @@ public class Dispenser_Section extends javax.swing.JPanel {
     /**
      * Creates new form Dispenser_Section
      */
+    int Actual_User = Log_In.User_Id;
+
     public Dispenser_Section() throws SQLException {
         initComponents();
         Default_JCB();
@@ -537,6 +541,9 @@ public class Dispenser_Section extends javax.swing.JPanel {
 
             int Rows_Affected = CUD_SQL.Update_Fuel_Tank(Obj);
             if (Rows_Affected != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Tanque", Actual_User, "Seccion de Dispensador", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id_Tanque.setText("");
                 Txt_Capacidad_Tanque.setText("");
                 Jcb_Gasolina_Tanque.setSelectedItem("Seleccione una opcion");
@@ -562,6 +569,9 @@ public class Dispenser_Section extends javax.swing.JPanel {
 
             int Rows_Affected = CUD_SQL.Insert_Fuel_Tank(Obj);
             if (Rows_Affected != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de Tanque", Actual_User, "Seccion de Dispensador", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id_Tanque.setText("");
                 Txt_Capacidad_Tanque.setText("");
                 Jcb_Gasolina_Tanque.setSelectedItem("Seleccione una opcion");
@@ -587,6 +597,9 @@ public class Dispenser_Section extends javax.swing.JPanel {
             int Rows_Affected = CUD_SQL.Update_Dispenser(Obj);
 
             if (Rows_Affected != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Dispensador", Actual_User, "Seccion de Dispensador", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id_Dispensador.setText("");
                 Jcb_Id_Tanque.setSelectedItem("Seleccione una opcion");
                 TxA_Descripcion_Dispensador.setText("");
@@ -607,6 +620,9 @@ public class Dispenser_Section extends javax.swing.JPanel {
             int Rows_Affected = CUD_SQL.Insert_Dispenser(Obj);
 
             if (Rows_Affected != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de Dispensador", Actual_User, "Seccion de Dispensador", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id_Dispensador.setText("");
                 Jcb_Id_Tanque.setSelectedItem("Seleccione una opcion");
                 TxA_Descripcion_Dispensador.setText("");
@@ -631,6 +647,9 @@ public class Dispenser_Section extends javax.swing.JPanel {
         try {
             int Affected_Rows = CUD_SQL.Update_Fuel(Fuel);
             if (Affected_Rows != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Combustible", Actual_User, "Seccion de Dispensador", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id_Combustible.setText("");
                 Txt_Nombre_Combustible.setText("");
                 Txt_Tipo_Combustible.setText("");
@@ -654,6 +673,9 @@ public class Dispenser_Section extends javax.swing.JPanel {
         try {
             int Affected_Rows = CUD_SQL.Insert_Fuel(Fuel);
             if (Affected_Rows != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de combustible", Actual_User, "Seccion de Dispensador", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id_Combustible.setText("");
                 Txt_Nombre_Combustible.setText("");
                 Txt_Tipo_Combustible.setText("");
@@ -678,7 +700,9 @@ public class Dispenser_Section extends javax.swing.JPanel {
             if (Updated) {
                 int Affected_Rows = CUD_SQL.Insert_Fuel_Entry_Exit(Obj);
                 if (Affected_Rows != 0) {
-
+                    Date Current_Date = new Date();
+                    Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de Ingreso de Combustible al Dispensador", Actual_User, "Seccion de Dispensador", Current_Date);
+                    Insert_Binnacle_Record(Binnacle);
                     Txt_Id_Ingreso.setText("");
                     Jcb_Disp.setSelectedItem("Seleccione una opcion");
                     DCC_Fecha_Ingreso.setText("");
@@ -707,6 +731,9 @@ public class Dispenser_Section extends javax.swing.JPanel {
             int Affected_Rows = CUD_SQL.Update_Fuel_Entry_Exit(Obj);
 
             if (Affected_Rows != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Ingreso de Combustible al Dispensador", Actual_User, "Seccion de Dispensador", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id_Ingreso.setText("");
                 Jcb_Disp.setSelectedItem("Seleccione una opcion");
                 DCC_Fecha_Ingreso.setText("");
@@ -742,6 +769,9 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 boolean Updated = CUD_SQL.Update_Fuel_Amount_On_Tank(Dispenser, Liters);
 
                 if (Updated) {
+                    Date Current_Date = new Date();
+                    Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de Retiro de Combustible del Dispensador", Actual_User, "Seccion de Dispensador", Current_Date);
+                    Insert_Binnacle_Record(Binnacle);
                     Txt_Id_Dispensador_Combustible.setText("");
                     Jcb_Id_Dispensador.setSelectedItem("Seleccione una opcion");
                     Jcb_Matricula.setSelectedItem("Seleccione una opcion");
@@ -770,6 +800,9 @@ public class Dispenser_Section extends javax.swing.JPanel {
             int Affected_Rows = CUD_SQL.Update_Fuel_Entry_Exit(Obj);
 
             if (Affected_Rows != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Retiro de Combustible del Dispensador", Actual_User, "Seccion de Dispensador", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Id_Dispensador_Combustible.setText("");
                 Jcb_Id_Dispensador.setSelectedItem("Seleccione una opcion");
                 Jcb_Matricula.setSelectedItem("Seleccione una opcion");

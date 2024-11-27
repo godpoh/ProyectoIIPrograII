@@ -4,9 +4,12 @@
  */
 package Presentation;
 
+import Data.Binnacle_Obj;
 import Data.CUD_SQL;
+import static Data.CUD_SQL.Insert_Binnacle_Record;
 import Data.Employee_Obj;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,6 +22,8 @@ public class Driver_Mechanic extends javax.swing.JPanel {
     /**
      * Creates new form Driver_Mechanic
      */
+    int Actual_User = Log_In.User_Id;
+
     public Driver_Mechanic() {
         initComponents();
     }
@@ -138,6 +143,9 @@ public class Driver_Mechanic extends javax.swing.JPanel {
             int Rows_Affected = CUD_SQL.Update_Employee(Obj);
 
             if (Rows_Affected != 0) {
+                                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Empleado", Actual_User, "Seccion Empleado", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Cedula.setText("");
                 Txt_Nombre.setText("");
                 Jcb_Rol.setSelectedItem("Seleccione una opcion");
@@ -162,6 +170,9 @@ public class Driver_Mechanic extends javax.swing.JPanel {
             int Rows_Affected = CUD_SQL.Insert_Employee(Obj);
 
             if (Rows_Affected != 0) {
+                Date Current_Date = new Date();
+                Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de Empleado", Actual_User, "Seccion Empleado", Current_Date);
+                Insert_Binnacle_Record(Binnacle);
                 Txt_Cedula.setText("");
                 Txt_Nombre.setText("");
                 Jcb_Rol.setSelectedItem("Seleccione una opcion");

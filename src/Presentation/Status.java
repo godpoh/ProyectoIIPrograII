@@ -19,6 +19,8 @@ import java.sql.ResultSet;
  */
 public class Status extends javax.swing.JPanel {
 
+    int Actual_User = Log_In.User_Id;
+
     public Status(String Role) {
         initComponents();
         Show_Admin_Tab(Role);
@@ -248,7 +250,7 @@ public class Status extends javax.swing.JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
-    
+
     // Metodo que es utilizado en el action listener para mostrar la informacion en una tabla, con la condicion del CheckBox
     private void Show_Admin_Tab_Information() {
         String Selected_Item = (String) Jcb_Admin.getSelectedItem();
@@ -288,6 +290,7 @@ public class Status extends javax.swing.JPanel {
             }
         }
     }
+
     // Metodo que es utilizado en el action listener para mostrar la informacion en una tabla, con la condicion del CheckBox
     private void Show_Dispenser_Tab_Information() {
         String Selected_Item = (String) Jcb_Dispensador.getSelectedItem();
@@ -317,6 +320,7 @@ public class Status extends javax.swing.JPanel {
 
         }
     }
+
     // Metodo que es utilizado en el action listener para mostrar la informacion en una tabla, con la condicion del CheckBox
     private void Show_Mechanic_Tab_Information() {
         String Selected_Item = (String) Jcb_Mecanica.getSelectedItem();
@@ -357,6 +361,7 @@ public class Status extends javax.swing.JPanel {
         } else if (Selected_Item.equals("Boletas de Mantenimiento")) {
         }
     }
+
     // Metodo para colocar inactivo el estado de todas las secciones de mecanica
     private void Btn_Desactivar_Estado_MecanicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Desactivar_Estado_MecanicaActionPerformed
         int Selected_Row = Tbl_Mecanica.getSelectedRow();
