@@ -821,4 +821,14 @@ public class CUD_SQL {
         return affectedRows;
     }
 
+    public static int Update_Employee_Status(int Id, int Status) throws SQLException {
+        String qry = "Update Employees Set Status = " + Status + " Where Id = " + Id;
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        int affectedRows = sql.executeUpdate(qry);
+
+        JOptionPane.showMessageDialog(null, "Estado del empleado actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        return affectedRows;
+    }
+
 }
