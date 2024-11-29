@@ -5,6 +5,7 @@
 package Presentation;
 
 import Data.Connection_SQL;
+import static Data.Connection_SQL.get_Current_Mileage;
 import java.util.Calendar;
 import java.sql.SQLException;
 import java.sql.ResultSet;
@@ -31,7 +32,7 @@ public class Reports extends javax.swing.JPanel {
         Attention();
         Load_JCB();
         Action_Listener();
-
+        AttentionByMileage();
     }
 
     private void Action_Listener() {
@@ -56,14 +57,13 @@ public class Reports extends javax.swing.JPanel {
                 Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
-        
-        
+
     }
 
     private void Load_JCB() throws SQLException {
         Connection_SQL.get_Vehicle_Name(JCB);
         Connection_SQL.get_Vehicle_Name(JCB1);
-          Connection_SQL.get_User_Id(JCB_2);
+        Connection_SQL.get_User_Id(JCB_2);
     }
 
     /**
@@ -265,8 +265,8 @@ public class Reports extends javax.swing.JPanel {
         }
     }
 
-    private void Attention2() {
-
+    private void AttentionByMileage() throws SQLException {
+     
     }
 
     private void Load_Maintenance_Made() throws SQLException {
@@ -287,7 +287,7 @@ public class Reports extends javax.swing.JPanel {
         Tbl_Info2.setModel(DbUtils.resultSetToTableModel(rs));
     }
 
-        private void Load_Binnacle() throws SQLException {
+    private void Load_Binnacle() throws SQLException {
         String License_Plate = (String) JCB_2.getSelectedItem();
 
         Date Start_Date = CCC_Inicio2.getSelectedDate().getTime();
@@ -296,7 +296,6 @@ public class Reports extends javax.swing.JPanel {
         Tbl_Info1.setModel(DbUtils.resultSetToTableModel(rs));
     }
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private datechooser.beans.DateChooserCombo CCB_Final;

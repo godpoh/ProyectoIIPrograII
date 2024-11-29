@@ -557,4 +557,21 @@ public class Connection_SQL {
         }
     }
 
+    public static double get_Current_Mileage(String License_Plate) throws SQLException {
+        double Mileage = 0.0;
+
+        String qry = "Select Mileage "
+                + "From Fuel_Entry_Exit "
+                + "Where Vehicle_License_Plate = '" + License_Plate + "'";
+
+        Statement sql = Connection_SQL.getConnection().prepareStatement(qry);
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        if (rs.next()) {
+            Mileage = rs.getDouble("Current_Kilometers");
+        }
+        return Mileage;
+    }
+
 }

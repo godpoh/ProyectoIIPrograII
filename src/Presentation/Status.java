@@ -522,8 +522,8 @@ public class Status extends javax.swing.JPanel {
             }
         } else if (Selected_Item.equals("Asignacion de Mantenimientos")) {
             try {
-                String License_Plate = (String) Tbl_Mecanica.getValueAt(Selected_Row, 0);
-                CUD_SQL.Update_Maintenance_Assigments_Status(License_Plate, 0);
+                int Id = (int) Tbl_Mecanica.getValueAt(Selected_Row, 0);
+                CUD_SQL.Update_Maintenance_Assigments_Status(Id, 0);
             } catch (SQLException ex) {
                 Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -670,8 +670,8 @@ public class Status extends javax.swing.JPanel {
             }
         } else if (Selected_Item.equals("Asignacion de Mantenimientos")) {
             try {
-                String License_Plate = (String) Tbl_Mecanica.getValueAt(Selected_Row, 0);
-                CUD_SQL.Update_Maintenance_Assigments_Status(License_Plate, 1);
+                int Id = (int) Tbl_Mecanica.getValueAt(Selected_Row, 0);
+                CUD_SQL.Update_Maintenance_Assigments_Status(Id, 1);
             } catch (SQLException ex) {
                 Logger.getLogger(Status.class.getName()).log(Level.SEVERE, null, ex);
             }

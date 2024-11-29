@@ -795,8 +795,8 @@ public class CUD_SQL {
     }
 // Actualizar el estado en la tabla Maintenance_Assigments
 
-    public static int Update_Maintenance_Assigments_Status(String License_Plate, int Status) throws SQLException {
-        String qry = "Update Maintenance_Assigments Set Status = " + Status + " Where License_Plate = '" + License_Plate + "'";
+    public static int Update_Maintenance_Assigments_Status(int Id, int Status) throws SQLException {
+        String qry = "Update Maintenance_Assigments Set Status = " + Status + " Where Id = '" + Id + "'";
 
         Statement sql = Connection_SQL.getConnection().createStatement();
         int affectedRows = sql.executeUpdate(qry);
