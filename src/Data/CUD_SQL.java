@@ -674,17 +674,17 @@ public class CUD_SQL {
 
     // Insertar un registro en la tabla Header
     public static int Insert_Header(Header_Obj Header) throws SQLException {
-
         SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
         String Formatted_Date = SDF.format(Header.getDate());
 
-        String qry = "Insert Into Header (Id, Vehicle_License_Plate, Date, Mechanic_Name, Driver_Name, Mileage) "
+        String qry = "Insert Into Header (Id, Vehicle_License_Plate, Date, Mechanic_Name, Driver_Name, Mileage, Status) "
                 + "Values (" + Header.getId() + ", '"
                 + Header.getLicense_Plate() + "', '"
                 + Formatted_Date + "', '"
                 + Header.getMechanic_Name() + "', '"
                 + Header.getDriver_Name() + "', "
-                + Header.getMileage() + ")";
+                + Header.getMileage() + ", "
+                + Header.getStatus() + ")";
 
         Statement sql = Connection_SQL.getConnection().createStatement();
         int affectedRows = sql.executeUpdate(qry);
@@ -703,7 +703,8 @@ public class CUD_SQL {
                 + "Date = '" + Formatted_Date + "', "
                 + "Mechanic_Name = '" + Header.getMechanic_Name() + "', "
                 + "Driver_Name = '" + Header.getDriver_Name() + "', "
-                + "Mileage = " + Header.getMileage() + " "
+                + "Mileage = " + Header.getMileage() + ", "
+                + "Status = " + Header.getStatus() + " "
                 + "Where Id = " + Header.getId();
 
         Statement sql = Connection_SQL.getConnection().createStatement();
@@ -713,13 +714,14 @@ public class CUD_SQL {
         return affectedRows;
     }
 
-    // Insertar un registro en la tabla Details
+// Insertar un registro en la tabla Details
     public static int Insert_Details(Details_Obj Details) throws SQLException {
-        String qry = "Insert Into Details (Detail_Id, Header_Id, Part_Id, Maintenance_Id) "
+        String qry = "Insert Into Details (Detail_Id, Header_Id, Part_Id, Maintenance_Id, Status) "
                 + "Values (" + Details.getDetail_Id() + ", "
                 + Details.getHeader_Id() + ", "
                 + Details.getPart_Id() + ", "
-                + Details.getMaintenance_Id() + ")";
+                + Details.getMaintenance_Id() + ", "
+                + Details.getStatus() + ")";
 
         Statement sql = Connection_SQL.getConnection().createStatement();
         int affectedRows = sql.executeUpdate(qry);
@@ -733,7 +735,8 @@ public class CUD_SQL {
         String qry = "Update Details Set "
                 + "Header_Id = " + Details.getHeader_Id() + ", "
                 + "Part_Id = " + Details.getPart_Id() + ", "
-                + "Maintenance_Id = " + Details.getMaintenance_Id() + " "
+                + "Maintenance_Id = " + Details.getMaintenance_Id() + ", "
+                + "Status = " + Details.getStatus() + " "
                 + "Where Detail_Id = " + Details.getDetail_Id();
 
         Statement sql = Connection_SQL.getConnection().createStatement();
@@ -764,12 +767,13 @@ public class CUD_SQL {
 
     // Insertar un registro en la tabla Maintenance_Assigments
     public static int Insert_Maintenance_Assigments(Maintenance_Assigments_Obj Assignment) throws SQLException {
-        String qry = "Insert Into Maintenance_Assigments (License_Plate, Maintenance_Type_Id, Part_Id, Frecuency_Days, Mileage) "
+        String qry = "Insert Into Maintenance_Assigments (License_Plate, Maintenance_Type_Id, Part_Id, Frecuency_Days, Mileage, Status) "
                 + "Values ('" + Assignment.getLicense_Plate() + "', "
                 + Assignment.getMaintenance_Type_Id() + ", "
                 + Assignment.getPart_Id() + ", '"
                 + Assignment.getFrecuency_Days() + "', "
-                + Assignment.getMileage() + ")";
+                + Assignment.getMileage() + ", "
+                + Assignment.getStatus() + ")";
 
         Statement sql = Connection_SQL.getConnection().createStatement();
         int affectedRows = sql.executeUpdate(qry);
@@ -784,7 +788,8 @@ public class CUD_SQL {
                 + "Maintenance_Type_Id = " + Assignment.getMaintenance_Type_Id() + ", "
                 + "Part_Id = " + Assignment.getPart_Id() + ", "
                 + "Frecuency_Days = '" + Assignment.getFrecuency_Days() + "', "
-                + "Mileage = " + Assignment.getMileage() + " "
+                + "Mileage = " + Assignment.getMileage() + ", "
+                + "Status = " + Assignment.getStatus() + " " 
                 + "Where License_Plate = '" + Assignment.getLicense_Plate() + "'";
 
         Statement sql = Connection_SQL.getConnection().createStatement();

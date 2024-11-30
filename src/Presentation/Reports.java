@@ -5,6 +5,8 @@
 package Presentation;
 
 import Data.Connection_SQL;
+import static Data.Connection_SQL.Check_Date_Maintenance;
+import static Data.Connection_SQL.Check_Mileage_Maintenance;
 import static Data.Connection_SQL.get_Current_Mileage;
 import java.util.Calendar;
 import java.sql.SQLException;
@@ -29,10 +31,9 @@ public class Reports extends javax.swing.JPanel {
      */
     public Reports() throws SQLException {
         initComponents();
-        Attention();
         Load_JCB();
         Action_Listener();
-        AttentionByMileage();
+        Attentions();
     }
 
     private void Action_Listener() {
@@ -232,41 +233,10 @@ public class Reports extends javax.swing.JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
-    private void Attention() throws SQLException {
-        Date Current_Date = new Date();
 
-        String qry = "SELECT V.License_Plate, H.Date, MA.Frecuency_Days "
-                + "FROM Vehicle V "
-                + "JOIN Header H ON V.License_Plate = H.Vehicle_License_Plate "
-                + "JOIN Maintenance_Assigments MA ON V.License_Plate = MA.License_Plate";
-
-        Statement sql = Connection_SQL.getConnection().createStatement();
-        ResultSet rs = sql.executeQuery(qry);
-
-        while (rs.next()) {
-            String License_Plate = rs.getString("License_Plate");
-            Date Ticket_Date = rs.getDate("Date");
-            int Maintenance_Frecuency = rs.getInt("Frecuency_Days");
-
-            if (Ticket_Date != null) {
-                // Calcular la proxima fecha de mantenimiento sumando la frecuencia de dias
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTime(Ticket_Date);
-                calendar.add(Calendar.DAY_OF_MONTH, Maintenance_Frecuency);
-                Date Next_Maintenance_Date = calendar.getTime();
-
-                // Comparar la fecha actual con la proxima fecha de mantenimiento
-                if (Current_Date.after(Next_Maintenance_Date)) {
-                    // Si el mnatenimientoe es verdadero, mostrar el mensaje
-                    JOptionPane.showMessageDialog(null, "El vehiculo con matrícula " + License_Plate + " tiene mantenimiento pendiente.",
-                            "ATENCION!", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
-        }
-    }
-
-    private void AttentionByMileage() throws SQLException {
-     
+    private void Attentions() throws SQLException {
+        Check_Mileage_Maintenance();
+        Check_Date_Maintenance();
     }
 
     private void Load_Maintenance_Made() throws SQLException {
@@ -288,11 +258,11 @@ public class Reports extends javax.swing.JPanel {
     }
 
     private void Load_Binnacle() throws SQLException {
-        String License_Plate = (String) JCB_2.getSelectedItem();
+        int Id = Integer.parseInt((String) JCB_2.getSelectedItem());
 
         Date Start_Date = CCC_Inicio2.getSelectedDate().getTime();
         Date End_Date = CCB_Final2.getSelectedDate().getTime();
-        ResultSet rs = Connection_SQL.get_Fuel_Performance(Start_Date, End_Date, License_Plate);
+        ResultSet rs = Connection_SQL.Load_Binnacle_Info(Start_Date, End_Date, Id);
         Tbl_Info1.setModel(DbUtils.resultSetToTableModel(rs));
     }
 

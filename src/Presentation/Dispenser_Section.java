@@ -8,6 +8,7 @@ import Data.Binnacle_Obj;
 import Data.CUD_SQL;
 import static Data.CUD_SQL.Insert_Binnacle_Record;
 import Data.Connection_SQL;
+import static Data.Connection_SQL.Disable_Past_Fuel_Inserts;
 import Data.Dispenser_Obj;
 import Data.Fuel_Entry_Exit_Obj;
 import Data.Fuel_Obj;
@@ -761,7 +762,8 @@ public class Dispenser_Section extends javax.swing.JPanel {
             }
 
             Fuel_Entry_Exit_Obj Obj = new Fuel_Entry_Exit_Obj(Id_Dispenser_Fuel, License_Plate, Dispenser, Liters, Mileage, Exit_Date, "Salida de Combustible", 1);
-
+            Disable_Past_Fuel_Inserts(License_Plate);
+            
             int Affected_Rows = CUD_SQL.Insert_Fuel_Entry_Exit(Obj);
 
             if (Affected_Rows != 0) {
@@ -769,6 +771,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
                 boolean Updated = CUD_SQL.Update_Fuel_Amount_On_Tank(Dispenser, Liters);
 
                 if (Updated) {
+
                     Date Current_Date = new Date();
                     Binnacle_Obj Binnacle = new Binnacle_Obj("Registro de Retiro de Combustible del Dispensador", Actual_User, "Seccion de Dispensador", Current_Date);
                     Insert_Binnacle_Record(Binnacle);

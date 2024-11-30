@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -536,7 +537,7 @@ public class Connection_SQL {
         String End_Date_Str = SDF.format(End_Date);
 
         String qry = "Select Id_Binnacle as Id_Bitacora, Operation as Proceso_Realizado, User_Binnacle as Usuario_Asignado,"
-                + " Place as Seccion, Date_Binnacle as Fecha_Realizado From Binnacle Where Date Between"
+                + " Place as Seccion, Date_Binnacle as Fecha_Realizado From Binnacle Where Date_Binnacle Between"
                 + " '" + Start_Date_Str + "' And '" + End_Date_Str + "' And User_Binnacle = " + User_Id;
 
         ResultSet rs = sql.executeQuery(qry);
@@ -569,9 +570,127 @@ public class Connection_SQL {
         ResultSet rs = sql.executeQuery(qry);
 
         if (rs.next()) {
-            Mileage = rs.getDouble("Current_Kilometers");
+            Mileage = rs.getDouble("Mileage");
         }
         return Mileage;
     }
 
+    public static double get_Maintenance_Assigment_Mileage(String License_Plate) throws SQLException {
+        double Mileage = 0.0;
+
+        String qry = "Select Mileage "
+                + "From Maintenance_Assigments "
+                + "Where License_Plate = '" + License_Plate + "'";
+
+        Statement sql = Connection_SQL.getConnection().prepareStatement(qry);
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        if (rs.next()) {
+            Mileage = rs.getDouble("Mileage");
+        }
+        return Mileage;
+    }
+
+    public static void Check_Mileage_Maintenance() throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        String qry = "Select Vehicle_License_Plate, Mileage "
+                + "From Fuel_Entry_Exit Where Status = 1";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            String License_Plate = rs.getString("Vehicle_License_Plate");
+            double Current_Mileage = rs.getDouble("Mileage");
+
+            Statement MAsql = Connection_SQL.getConnection().createStatement();
+            // Consulta en la tabla de asignaciones de mantenimiento
+            String MAqry = "Select Mileage "
+                    + "From Maintenance_Assigments "
+                    + "Where License_Plate = '" + License_Plate + "' And status = 1";
+
+            ResultSet MArs = MAsql.executeQuery(MAqry);
+
+            if (MArs.next()) {
+                double Maintenance_Mileage = MArs.getDouble("Mileage");
+
+                if (Current_Mileage > Maintenance_Mileage) {
+                    JOptionPane.showMessageDialog(null, "El vehiculo con matrícula " + License_Plate + " y kilometraje actual de "
+                            + Current_Mileage + " necesita mantenimiento.");
+                }
+            }
+        }
+    }
+
+    public static void Check_Date_Maintenance() throws SQLException {
+
+        Date Current_Date = new Date();
+
+        String qry = "Select V.License_Plate, H.Date, MA.Frecuency_Days "
+                + "From Vehicle V "
+                + "Join Header H ON V.License_Plate = H.Vehicle_License_Plate "
+                + "Join Maintenance_Assigments MA On V.License_Plate = MA.License_Plate "
+                + "Where V.Status = 1 And H.Status = 1 And MA.Status = 1";
+
+        Statement sql = Connection_SQL.getConnection().createStatement();
+        ResultSet rs = sql.executeQuery(qry);
+
+        while (rs.next()) {
+            String License_Plate = rs.getString("License_Plate");
+            Date Ticket_Date = rs.getDate("Date");
+            int Maintenance_Frecuency = rs.getInt("Frecuency_Days");
+
+            if (Ticket_Date != null) {
+                // Calcular la proxima fecha de mantenimiento sumando la frecuencia de dias
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(Ticket_Date);
+                calendar.add(Calendar.DAY_OF_MONTH, Maintenance_Frecuency);
+                Date Next_Maintenance_Date = calendar.getTime();
+
+                // Comparar la fecha actual con la proxima fecha de mantenimiento
+                if (Current_Date.after(Next_Maintenance_Date)) {
+                    // Si el mnatenimientoe es verdadero, mostrar el mensaje
+                    JOptionPane.showMessageDialog(null, "El vehiculo con matrícula " + License_Plate + " tiene mantenimiento pendiente.",
+                            "ATENCION!", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+        }
+    }
+
+    public static void Disable_Past_Fuel_Inserts(String License_Plate) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
+
+        // Verificar si existen registros para la placa especificada
+        String qry = "Select Id "
+                + "From Fuel_Entry_Exit "
+                + "Where Vehicle_License_Plate = '" + License_Plate + "' And Status = 1";
+
+        ResultSet rs = sql.executeQuery(qry);
+
+        // Si existen registros activos para la placa, desactivar los registros antiguos
+        if (rs.next()) {
+            String Update_Qry = "Update Fuel_Entry_Exit "
+                    + "Set Status = 0 "
+                    + "Where Vehicle_License_Plate = '" + License_Plate + "' And Status = 1";
+
+            sql.executeUpdate(Update_Qry);
+        }
+    }
+
+        public static void Disable_Past_Maintenance_Assigments(String License_Plate) throws SQLException {
+            Statement sql = Connection_SQL.getConnection().createStatement();
+
+            String qry = "Select Id from Maintenance_Assigments Where License_Plate = '" + License_Plate + "' And Status = 1";
+
+            ResultSet rs = sql.executeQuery(qry);
+
+            if (rs.next()) {
+                String Update_Qry = "Update Maintenance_Assigments Set Status = 0 "
+                        + "Where License_Plate = '" + License_Plate + "' And Status = 1";
+
+                sql.executeUpdate(Update_Qry);
+                JOptionPane.showMessageDialog(null, "gdfnhgdfhng");
+            }
+        }
 }

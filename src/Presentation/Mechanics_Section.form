@@ -678,27 +678,29 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lblIniciarSesion15" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <Component id="lblIniciarSesion14" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <Component id="lblIniciarSesion12" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <Component id="lblIniciarSesion11" min="-2" pref="147" max="-2" attributes="0"/>
-                                  <Component id="Jcb_Matricula_Boleta" max="32767" attributes="0"/>
-                                  <Component id="Txt_Id_Boleta" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="DCC_Fecha" max="32767" attributes="0"/>
-                                  <Component id="Jcb_Mecanico" alignment="1" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="lblIniciarSesion15" min="-2" pref="147" max="-2" attributes="0"/>
+                                      <Component id="lblIniciarSesion14" min="-2" pref="147" max="-2" attributes="0"/>
+                                      <Component id="lblIniciarSesion11" min="-2" pref="147" max="-2" attributes="0"/>
+                                      <Component id="Jcb_Matricula_Boleta" max="32767" attributes="0"/>
+                                      <Component id="Txt_Id_Boleta" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Jcb_Mecanico" alignment="1" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="lblIniciarSesion16" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
+                                  <Component id="Jcb_Chofer" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblIniciarSesion16" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
                                   <Component id="lblIniciarSesion17" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="Btn_Registrar_Boleta_Mantenimiento" min="-2" pref="90" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="Btn_Actualizar_Boleta_Mantenimiento" min="-2" pref="100" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="lblIniciarSesion12" min="-2" pref="147" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="Jcb_Chofer" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="DCC_Fecha" alignment="0" max="32767" attributes="0"/>
                                       <Component id="Txt_Kilometraje_Boleta" alignment="0" pref="187" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -720,22 +722,27 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Component id="lblIniciarSesion14" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="Txt_Id_Boleta" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="Jcb_Chofer" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="Txt_Id_Boleta" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="lblIniciarSesion12" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="DCC_Fecha" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                                               <Component id="lblIniciarSesion15" min="-2" pref="15" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="Jcb_Matricula_Boleta" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="lblIniciarSesion16" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
@@ -745,20 +752,27 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="lblIniciarSesion12" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="DCC_Fecha" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="Btn_Registrar_Boleta_Mantenimiento" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="Btn_Actualizar_Boleta_Mantenimiento" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                                                      <Component id="Jcb_Chofer" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="lblIniciarSesion16" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                               <Component id="lblIniciarSesion11" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="Jcb_Mecanico" min="-2" max="-2" attributes="0"/>
