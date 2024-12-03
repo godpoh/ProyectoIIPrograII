@@ -64,7 +64,7 @@ public class Status extends javax.swing.JPanel {
         Cb_Estado_Mecanica.addItemListener(evt -> Show_Mechanic_Tab_Information());
 
         Jcb_Empleados.addActionListener(evt -> Show_Employees_Information());
-        Cb_Empleado.addItemListener(evt -> Show_Mechanic_Tab_Information());
+        Cb_Empleado.addItemListener(evt -> Show_Employees_Information());
     }
 
     @SuppressWarnings("unchecked")
@@ -338,7 +338,7 @@ public class Status extends javax.swing.JPanel {
     }
 
     private void Show_Employees_Information() {
-        String Selected_Item = (String) Jcb_Admin.getSelectedItem();
+        String Selected_Item = (String) Jcb_Empleados.getSelectedItem();
 
         if (Selected_Item.equals("Empleado")) {
             try {
@@ -346,7 +346,7 @@ public class Status extends javax.swing.JPanel {
                     Btn_Activar_Estado_Empleado.setVisible(false);
                     Btn_Desactivar_Estado_Empleado.setVisible(true);
                     ResultSet rs = Connection_SQL.get_Employees_Information(1);
-                    Tbl_Admin.setModel(DbUtils.resultSetToTableModel(rs));
+                    Tbl_Empleados.setModel(DbUtils.resultSetToTableModel(rs));
                 } else {
                     Btn_Activar_Estado_Empleado.setVisible(true);
                     Btn_Desactivar_Estado_Empleado.setVisible(false);

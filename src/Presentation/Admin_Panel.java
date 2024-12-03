@@ -11,12 +11,10 @@ import static Data.CUD_SQL.Insert_User;
 import static Data.CUD_SQL.Insert_Vehicle;
 import static Data.CUD_SQL.Update_User;
 import static Data.CUD_SQL.Update_Vehicle;
-import Data.Connection_SQL;
 import Data.User_Creator;
 import Data.Vehicle_Obj;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import java.util.Date;
 
@@ -130,7 +128,7 @@ public class Admin_Panel extends javax.swing.JPanel {
 
         Jcb_Rol.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jcb_Rol.setForeground(new java.awt.Color(153, 153, 153));
-        Jcb_Rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un rol", "Admin", "Chofer", "Mecanico" }));
+        Jcb_Rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un rol", "Admin", "Usuario" }));
         Pnl_Principal.add(Jcb_Rol, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 350, 40));
 
         lblUsuario2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

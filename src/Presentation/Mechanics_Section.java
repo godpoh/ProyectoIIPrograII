@@ -497,6 +497,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
 
         Jcb_Id_Boleta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jcb_Id_Boleta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la boleta:" }));
+        Jcb_Id_Boleta.setMaximumSize(new java.awt.Dimension(157, 21));
 
         Jcb_Nombre_Pieza.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Jcb_Nombre_Pieza.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la pieza" }));
@@ -538,10 +539,10 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblIniciarSesion20, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Jcb_Id_Boleta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblIniciarSesion21, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblIniciarSesion21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Jcb_Id_Boleta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                         .addComponent(Btn_Registrar_Detalle_Mantenimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -673,9 +674,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
                                     .addGroup(jPanel10Layout.createSequentialGroup()
                                         .addGap(16, 16, 16)
                                         .addComponent(Jcb_Chofer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel10Layout.createSequentialGroup()
-                                        .addComponent(lblIniciarSesion16)
-                                        .addGap(22, 22, 22)))
+                                    .addComponent(lblIniciarSesion16))
                                 .addGap(8, 8, 8)
                                 .addComponent(lblIniciarSesion11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -913,6 +912,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
                 Jcb_Chofer.setSelectedItem("Seleccione un chofer:");
                 Jcb_Mecanico.setSelectedItem("Seleccione un mecanico:");
                 Txt_Kilometraje_Boleta.setText("");
+                Connection_SQL.get_Ticket_Id(Jcb_Id_Boleta);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);

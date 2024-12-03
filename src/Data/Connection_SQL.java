@@ -457,7 +457,8 @@ public class Connection_SQL {
         String qry = "Select Id From Header";
 
         ResultSet rs = sql.executeQuery(qry);
-
+        
+        Jcb.removeAllItems();
         while (rs.next()) {
             String Name = rs.getString("Id");
             Jcb.addItem(Name);
@@ -481,10 +482,10 @@ public class Connection_SQL {
         return Obtained_Date;
     }
 
+    // Consulta que obtiene toda la informacion del vehiculo de todas las tablas
     public static ResultSet get_Vehicle_Movements(Date Start_Date, Date End_Date, String License_Plate) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
 
-        // Convertir las fechas Java a String en formato SQL (yyyy-MM-dd)
         SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
         String Start_Date_Str = SDF.format(Start_Date);
         String End_Date_Str = SDF.format(End_Date);
@@ -493,42 +494,45 @@ public class Connection_SQL {
         String qry = "SELECT H.Id, H.Vehicle_License_Plate as Placa_Vehicular, H.Date as Fecha_Mantenimiento, "
                 + "H.Mechanic_Name as Mecanico_Cargo, H.Driver_Name as Chofer, H.Mileage as Kilometraje, "
                 + "D.Detail_Id as Id_Detalle, EP.Part_Name as Nombre_Pieza, MT.Type as Tipo_Mantenimiento "
-                + "FROM Header H "
-                + "JOIN Details D ON D.Header_Id = H.Id "
-                + "JOIN Equipment_Parts EP ON EP.Part_Id = D.Part_Id "
-                + "JOIN Maintenance_Types MT ON MT.Maintenance_Id = D.Maintenance_Id "
-                + "WHERE H.Vehicle_License_Plate = '" + License_Plate + "' "
-                + "AND H.Date BETWEEN '" + Start_Date_Str + "' AND '" + End_Date_Str + "' "
-                + "ORDER BY H.Date DESC";
+                + "From Header H "
+                + "Join Details D On D.Header_Id = H.Id "
+                + "Join Equipment_Parts EP On EP.Part_Id = D.Part_Id "
+                + "Join Maintenance_Types MT On MT.Maintenance_Id = D.Maintenance_Id "
+                + "Where H.Vehicle_License_Plate = '" + License_Plate + "' "
+                + "And H.Date Between '" + Start_Date_Str + "' And '" + End_Date_Str + "' "
+                + "Order By H.Date Desc";
         ResultSet rs = sql.executeQuery(qry);
         return rs;
     }
 
+    // Metodo con logica para poder sacar el rendimiento de combustible de cada vehiculo
     public static ResultSet get_Fuel_Performance(Date Start_Date, Date End_Date, String License_Plate) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
 
-        // Convertir las fechas Java a String en formato SQL (yyyy-MM-dd)
         SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
         String Start_Date_Str = SDF.format(Start_Date);
         String End_Date_Str = SDF.format(End_Date);
 
-        // Consulta SQL con los filtros por vehículo y fechas
-        String qry = "SELECT FEE.Vehicle_License_Plate AS Placa_Vehicular, "
-                + "SUM(FEE.Fuel_Amount) AS Combustible_Consumido, "
-                + "MAX(FEE.Mileage) - MIN(FEE.Mileage) AS Kilometraje_Recorrido, "
-                + "CASE WHEN SUM(FEE.Fuel_Amount) > 0 THEN "
-                + "(MAX(FEE.Mileage) - MIN(FEE.Mileage)) / SUM(FEE.Fuel_Amount) ELSE 0 END AS Rendimiento "
-                + "FROM Fuel_Entry_Exit FEE "
-                + "WHERE FEE.Vehicle_License_Plate = '" + License_Plate + "' "
-                + "AND FEE.Date BETWEEN '" + Start_Date_Str + "' AND '" + End_Date_Str + "' "
-                + "AND FEE.Status = 1 "
-                + "GROUP BY FEE.Vehicle_License_Plate";
+        // Consulta SQL con los filtros por vehiculo y fechas
+        String qry = "Select FEE.Vehicle_License_Plate AS Placa_Vehicular, "
+                + "Sum(FEE.Fuel_Amount) As Combustible_Consumido, "
+                //Combustible_Consumido: 10 + 15 = 25 10+15=25 litros.
+                + "Max(FEE.Mileage) - MIN(FEE.Mileage) As Kilometraje_Recorrido, "
+                //Kilometraje_Recorrido: 1200 − 1000 = 200 kilómetros.
+                + "Case When Sum(FEE.Fuel_Amount) > 0 Then "
+                + "(Max(FEE.Mileage) - Min(FEE.Mileage)) / SUM(FEE.Fuel_Amount) Else 0 End As Rendimiento "
+                //Rendimiento: 200 / 25 = 8 kilómetros por litro.
+                + "From Fuel_Entry_Exit FEE "
+                + "Where FEE.Vehicle_License_Plate = '" + License_Plate + "' "
+                + "And FEE.Date Between '" + Start_Date_Str + "' And '" + End_Date_Str + "' "
+                + "Group By FEE.Vehicle_License_Plate";
 
         // Ejecutar la consulta y devolver los resultados
         ResultSet rs = sql.executeQuery(qry);
         return rs;
     }
 
+    // metodo utilizado para cargar los datos de la tabla bitacora en una tabla
     public static ResultSet Load_Binnacle_Info(Date Start_Date, Date End_Date, int User_Id) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
 
@@ -545,6 +549,7 @@ public class Connection_SQL {
         return rs;
     }
 
+    // Metodo que obtiene el id del usuario
     public static void get_User_Id(JComboBox Jcb) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
 
@@ -558,40 +563,8 @@ public class Connection_SQL {
         }
     }
 
-    public static double get_Current_Mileage(String License_Plate) throws SQLException {
-        double Mileage = 0.0;
-
-        String qry = "Select Mileage "
-                + "From Fuel_Entry_Exit "
-                + "Where Vehicle_License_Plate = '" + License_Plate + "'";
-
-        Statement sql = Connection_SQL.getConnection().prepareStatement(qry);
-
-        ResultSet rs = sql.executeQuery(qry);
-
-        if (rs.next()) {
-            Mileage = rs.getDouble("Mileage");
-        }
-        return Mileage;
-    }
-
-    public static double get_Maintenance_Assigment_Mileage(String License_Plate) throws SQLException {
-        double Mileage = 0.0;
-
-        String qry = "Select Mileage "
-                + "From Maintenance_Assigments "
-                + "Where License_Plate = '" + License_Plate + "'";
-
-        Statement sql = Connection_SQL.getConnection().prepareStatement(qry);
-
-        ResultSet rs = sql.executeQuery(qry);
-
-        if (rs.next()) {
-            Mileage = rs.getDouble("Mileage");
-        }
-        return Mileage;
-    }
-
+    // Metodo para consultar el kilometraje del vehiculo mediante los registros de ingreso de combustible. 
+    // Este metodo es utilizado para que avise cuando un vehiculo debe un mantenimiento por kilometraje
     public static void Check_Mileage_Maintenance() throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
 
@@ -623,6 +596,7 @@ public class Connection_SQL {
         }
     }
 
+    // Metodo para consultar la fecha del mantenimiento. Este metodo es utilizado para que avise cuando un vehiculo debe un mantenimiento por fecha
     public static void Check_Date_Maintenance() throws SQLException {
 
         Date Current_Date = new Date();
@@ -658,6 +632,7 @@ public class Connection_SQL {
         }
     }
 
+    // Cuando se inserta combustible. Este metodo es utilizado para desactivar toda=os los registros anteriores. Para asi que el foco este en la mas reciente
     public static void Disable_Past_Fuel_Inserts(String License_Plate) throws SQLException {
         Statement sql = Connection_SQL.getConnection().createStatement();
 
@@ -678,19 +653,19 @@ public class Connection_SQL {
         }
     }
 
-        public static void Disable_Past_Maintenance_Assigments(String License_Plate) throws SQLException {
-            Statement sql = Connection_SQL.getConnection().createStatement();
+    // Cuando se inserta una nueva asignacion de mantenimiento. Este metodo es utilizado para desactivar todas las anteriores. Para asi que el foco este en la mas reciente
+    public static void Disable_Past_Maintenance_Assigments(String License_Plate) throws SQLException {
+        Statement sql = Connection_SQL.getConnection().createStatement();
 
-            String qry = "Select Id from Maintenance_Assigments Where License_Plate = '" + License_Plate + "' And Status = 1";
+        String qry = "Select Id from Maintenance_Assigments Where License_Plate = '" + License_Plate + "' And Status = 1";
 
-            ResultSet rs = sql.executeQuery(qry);
+        ResultSet rs = sql.executeQuery(qry);
 
-            if (rs.next()) {
-                String Update_Qry = "Update Maintenance_Assigments Set Status = 0 "
-                        + "Where License_Plate = '" + License_Plate + "' And Status = 1";
+        if (rs.next()) {
+            String Update_Qry = "Update Maintenance_Assigments Set Status = 0 "
+                    + "Where License_Plate = '" + License_Plate + "' And Status = 1";
 
-                sql.executeUpdate(Update_Qry);
-                JOptionPane.showMessageDialog(null, "gdfnhgdfhng");
-            }
+            sql.executeUpdate(Update_Qry);
         }
+    }
 }

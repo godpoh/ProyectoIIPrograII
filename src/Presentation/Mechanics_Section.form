@@ -767,10 +767,7 @@
                                                       <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
                                                       <Component id="Jcb_Chofer" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="lblIniciarSesion16" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
-                                                  </Group>
+                                                  <Component id="lblIniciarSesion16" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                               <Component id="lblIniciarSesion11" min="-2" max="-2" attributes="0"/>
@@ -949,10 +946,10 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="lblIniciarSesion20" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
-                                              <Component id="Jcb_Id_Boleta" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblIniciarSesion21" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
+                                              <Component id="lblIniciarSesion21" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="Jcb_Id_Boleta" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace pref="21" max="32767" attributes="0"/>
                                           <Component id="Btn_Registrar_Detalle_Mantenimiento" min="-2" pref="90" max="-2" attributes="0"/>
@@ -1084,6 +1081,9 @@
                               <StringArray count="1">
                                 <StringItem index="0" value="Seleccione la boleta:"/>
                               </StringArray>
+                            </Property>
+                            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[157, 21]"/>
                             </Property>
                           </Properties>
                           <AuxValues>

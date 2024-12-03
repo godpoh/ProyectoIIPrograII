@@ -290,7 +290,11 @@ public class CUD_SQL {
         Statement sql = Connection_SQL.getConnection().createStatement();
         int affectedRows = sql.executeUpdate(qry);
 
-        JOptionPane.showMessageDialog(null, "Pieza actualizada satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        if (affectedRows != 0) {
+            JOptionPane.showMessageDialog(null, "Pieza actualizada satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        }else {
+                        JOptionPane.showMessageDialog(null, "Pieza no se pudo actualizar satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
+        }
 
         return affectedRows;
     }
@@ -607,7 +611,8 @@ public class CUD_SQL {
         }
 
         return Rows_Affected;
-    }
+    }    
+    // Metodo para actualizar la cantidad de combustible retirado del dispensador
 
     public static boolean Update_Fuel_Amount_On_Tank(int Dispenser_Id, double Liters_Dispensed) throws SQLException {
 
@@ -620,7 +625,7 @@ public class CUD_SQL {
         return Rows_Affected > 0;
 
     }
-
+    // Metodo para agregar gasolina al tanque de combustible
     public static boolean Add_Fuel_Amount_On_Tank(int Dispenser_Id, double Liters_Dispensed) throws SQLException {
 
         Statement sql = Connection_SQL.getConnection().createStatement();
@@ -637,7 +642,7 @@ public class CUD_SQL {
         return Rows_Affected > 0;
 
     }
-
+    // Inserta la informacion de un empleado
     public static int Insert_Employee(Employee_Obj Employee) throws SQLException {
 
         String qry = "Insert Into Employees (Id, Name, Type, Status) "
@@ -652,7 +657,7 @@ public class CUD_SQL {
         JOptionPane.showMessageDialog(null, "Empleado registrado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
         return affectedRows;
     }
-
+    // Actualiza la informacion de un empleado
     public static int Update_Employee(Employee_Obj employee) throws SQLException {
 
         String qry = "Update Employees "
@@ -789,7 +794,7 @@ public class CUD_SQL {
                 + "Part_Id = " + Assignment.getPart_Id() + ", "
                 + "Frecuency_Days = '" + Assignment.getFrecuency_Days() + "', "
                 + "Mileage = " + Assignment.getMileage() + ", "
-                + "Status = " + Assignment.getStatus() + " " 
+                + "Status = " + Assignment.getStatus() + " "
                 + "Where License_Plate = '" + Assignment.getLicense_Plate() + "'";
 
         Statement sql = Connection_SQL.getConnection().createStatement();
@@ -809,7 +814,7 @@ public class CUD_SQL {
         JOptionPane.showMessageDialog(null, "Estado de la asignación de mantenimiento actualizado satisfactoriamente", "Aviso importante", JOptionPane.INFORMATION_MESSAGE);
         return affectedRows;
     }
-
+    // Insertar informacion de la bitacora
     public static int Insert_Binnacle_Record(Binnacle_Obj Binnacle) throws SQLException {
         SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd");
         String Formatted_Date = SDF.format(Binnacle.getDate_Binnacle());
@@ -825,7 +830,7 @@ public class CUD_SQL {
 
         return affectedRows;
     }
-
+    // Actualiza el estado de los empleados
     public static int Update_Employee_Status(int Id, int Status) throws SQLException {
         String qry = "Update Employees Set Status = " + Status + " Where Id = " + Id;
 

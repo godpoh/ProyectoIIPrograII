@@ -261,6 +261,7 @@ public class Principal_Panel extends javax.swing.JFrame {
 
         Pnl_Contenedor.revalidate();
         Pnl_Contenedor.repaint();
+            // Boton que muestra el Panel de la administracion
     }//GEN-LAST:event_Btn_Pnl_AdActionPerformed
 
     private void Btn_Cerrar_SesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cerrar_SesionActionPerformed
@@ -269,7 +270,7 @@ public class Principal_Panel extends javax.swing.JFrame {
         Log_In Log_Window = new Log_In();
         Log_Window.setVisible(true);
     }//GEN-LAST:event_Btn_Cerrar_SesionActionPerformed
-
+    // Boton que muestra el panel de empleados
     private void Btn_Chofer_ConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Chofer_ConductorActionPerformed
         Driver_Mechanic Window = new Driver_Mechanic();
         Window.setSize(820, 688);
