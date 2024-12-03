@@ -228,12 +228,13 @@ public class Reports extends javax.swing.JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    // Metodo que llama a los metodos de Connection_SQL para que salten aviso
     private void Attentions() throws SQLException {
         Check_Mileage_Maintenance();
         Check_Date_Maintenance();
     }
-
+    // Metodo que carga en el jTable la informacion de mantenimientos
     private void Load_Maintenance_Made() throws SQLException {
         String License_Plate = (String) JCB.getSelectedItem();
 
@@ -243,6 +244,7 @@ public class Reports extends javax.swing.JPanel {
         Tbl_Info.setModel(DbUtils.resultSetToTableModel(rs));
     }
 
+    // Metodo que carga en el jTable la informacion de rendimiento de gasolina
     private void Load_Fuel_Performance() throws SQLException {
         String License_Plate = (String) JCB1.getSelectedItem();
 
@@ -252,6 +254,7 @@ public class Reports extends javax.swing.JPanel {
         Tbl_Info2.setModel(DbUtils.resultSetToTableModel(rs));
     }
 
+    // Metodo que carga en el jTable la informacion de la bitacora
     private void Load_Binnacle() throws SQLException {
         int Id = Integer.parseInt((String) JCB_2.getSelectedItem());
 

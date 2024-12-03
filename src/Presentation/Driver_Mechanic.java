@@ -130,7 +130,7 @@ public class Driver_Mechanic extends javax.swing.JPanel {
             .addComponent(jTabbedPane1)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+// Boton que actualiza la informacion obtenida de los empleados
     private void Btn_ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ActualizarActionPerformed
 
         try {
@@ -143,7 +143,7 @@ public class Driver_Mechanic extends javax.swing.JPanel {
             int Rows_Affected = CUD_SQL.Update_Employee(Obj);
 
             if (Rows_Affected != 0) {
-                                Date Current_Date = new Date();
+                Date Current_Date = new Date();
                 Binnacle_Obj Binnacle = new Binnacle_Obj("Actualizacion de Empleado", Actual_User, "Seccion Empleado", Current_Date);
                 Insert_Binnacle_Record(Binnacle);
                 Txt_Cedula.setText("");
@@ -157,7 +157,7 @@ public class Driver_Mechanic extends javax.swing.JPanel {
 
 
     }//GEN-LAST:event_Btn_ActualizarActionPerformed
-
+    // Boton que registra la informacion obtenida de los empleados
     private void Btn_RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_RegistrarActionPerformed
 
         try {

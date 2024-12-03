@@ -39,7 +39,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
 
         Actions_Listeners_Method();
     }
-
+    // Metodo que contiene metodos para cargar informacion JComboBoxes
     private void Load_Jcb_Default() throws SQLException {
         Connection_SQL.get_Vehicle_Name(Jcb_Vehiculo);
         Connection_SQL.get_Vehicle_Name(Jcb_Matricula_Boleta);
@@ -886,7 +886,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Actualizar_MantenimientoActionPerformed
-
+    // Boton que registra informacion de la boleta de mantenimiento
     private void Btn_Registrar_Boleta_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Boleta_MantenimientoActionPerformed
         try {
             int Id = Integer.parseInt(Txt_Id_Boleta.getText());
@@ -918,7 +918,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Registrar_Boleta_MantenimientoActionPerformed
-
+    // Boton que actualiza informacion de una boleta de mantenimiento
     private void Btn_Actualizar_Boleta_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Boleta_MantenimientoActionPerformed
         try {
 
@@ -948,7 +948,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Actualizar_Boleta_MantenimientoActionPerformed
-
+    // Boton que registra la informacion de los detalles de una boleta de mantenimiento
     private void Btn_Registrar_Detalle_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Detalle_MantenimientoActionPerformed
         try {
             int Detail_Id = Integer.parseInt(Txt_Id_Detalle.getText());
@@ -976,7 +976,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Registrar_Detalle_MantenimientoActionPerformed
-
+    // Boton que actualiza la informacion de los detalles de una boleta de mantenimiento
     private void Btn_Actualizar_Detalle_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Detalle_MantenimientoActionPerformed
         try {
             int Detail_Id = Integer.parseInt(Txt_Id_Detalle.getText());
@@ -1004,7 +1004,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Actualizar_Detalle_MantenimientoActionPerformed
-
+    // Boton que registra la informacion sobre una asignacion de mantenimiento
     private void Btn_Registrar_Asignacion_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Asignacion_MantenimientoActionPerformed
 
         try {
@@ -1035,7 +1035,7 @@ public class Mechanics_Section extends javax.swing.JPanel {
             Logger.getLogger(Mechanics_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Registrar_Asignacion_MantenimientoActionPerformed
-
+    // Boton que actualiza la informacion sobre una asignacion de mantenimiento
     private void Btn_Actualizar_Asignacion_MantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Asignacion_MantenimientoActionPerformed
         try {
             String License_Plate = (String) Jcb_Vehiculo.getSelectedItem();

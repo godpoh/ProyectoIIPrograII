@@ -520,7 +520,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
             .addComponent(jTabbedPane1)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    // Metodo para inicializar en el constructor. Contiene metodos que generan informacion y deben de ser guardados por defecto en JComboBox
     private void Default_JCB() throws SQLException {
         Connection_SQL.get_Fuel_Name_In_JCB(Jcb_Gasolina_Tanque);
         Connection_SQL.get_Tank_Id_In_JCB(Jcb_Id_Tanque);
@@ -529,7 +529,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
         Connection_SQL.get_Dispenser_Id(Jcb_Id_Dispensador);
 
     }
-
+    // Boton que actualiza la informacion de un tanque de gasolina
     private void Btn_Actualizar_TanqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_TanqueActionPerformed
         try {
             int Id = Integer.parseInt(Txt_Id_Tanque.getText());
@@ -557,7 +557,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
             Logger.getLogger(Dispenser_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Actualizar_TanqueActionPerformed
-
+    // Boton que registra la informacion de un tanque de gasolina
     private void Btn_Registrar_TanqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_TanqueActionPerformed
         try {
             int Id = Integer.parseInt(Txt_Id_Tanque.getText());
@@ -587,7 +587,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
 
 
     }//GEN-LAST:event_Btn_Registrar_TanqueActionPerformed
-
+    // Boton que actualiza la informacion sobre un dispensador
     private void Btn_Actualizar_DispensadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_DispensadorActionPerformed
         try {
             int Id = Integer.parseInt(Txt_Id_Dispensador.getText());
@@ -610,7 +610,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
             Logger.getLogger(Dispenser_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Actualizar_DispensadorActionPerformed
-
+    // Boton que ingresa los datos de un dispensador
     private void Btn_Registrar_DispensadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_DispensadorActionPerformed
         try {
             int Id = Integer.parseInt(Txt_Id_Dispensador.getText());
@@ -687,6 +687,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_Btn_Registro_CombustibleActionPerformed
 
+    // Guarda la informacion, sobre un registro de combustible
     private void Btn_Registrar_Ingreso_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Ingreso_CombustibleActionPerformed
 
         try {
@@ -720,7 +721,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
 
 
     }//GEN-LAST:event_Btn_Registrar_Ingreso_CombustibleActionPerformed
-
+    // Actualiza la informacion guardada previamente, sobre un registro de ingreso de combustible
     private void Btn_Actualizar_Ingreso_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Ingreso_CombustibleActionPerformed
         try {
             int Id = Integer.parseInt(Txt_Id_Ingreso.getText());
@@ -745,7 +746,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
             Logger.getLogger(Dispenser_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Actualizar_Ingreso_CombustibleActionPerformed
-
+    // Guarda la informacion del retiro de gasolina a los dispensadores
     private void Btn_Registrar_Dispensado_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Registrar_Dispensado_CombustibleActionPerformed
         try {
             int Id_Dispenser_Fuel = Integer.parseInt(Txt_Id_Dispensador_Combustible.getText());
@@ -788,7 +789,7 @@ public class Dispenser_Section extends javax.swing.JPanel {
             Logger.getLogger(Dispenser_Section.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Btn_Registrar_Dispensado_CombustibleActionPerformed
-
+    // Actualiza la informacion del retiro de gasolina a los dispensadores
     private void Btn_Actualizar_Dispensado_CombustibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Actualizar_Dispensado_CombustibleActionPerformed
         try {
             int Id_Dispenser_Fuel = Integer.parseInt(Txt_Id_Dispensador_Combustible.getText());

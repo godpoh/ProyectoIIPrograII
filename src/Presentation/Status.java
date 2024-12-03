@@ -336,7 +336,7 @@ public class Status extends javax.swing.JPanel {
             }
         }
     }
-
+    // Metodo que es utilizado en el action listener para mostrar la informacion en una tabla, con la condicion del CheckBox
     private void Show_Employees_Information() {
         String Selected_Item = (String) Jcb_Empleados.getSelectedItem();
 
@@ -684,7 +684,7 @@ public class Status extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_Btn_Activar_Estado_MecanicaActionPerformed
-
+    // Metodo para colocar desactivado el estado de todas las secciones de empleado
     private void Btn_Desactivar_Estado_EmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Desactivar_Estado_EmpleadoActionPerformed
         int Selected_Row = Tbl_Empleados.getSelectedRow();
         String Selected_Item = (String) Jcb_Empleados.getSelectedItem();
@@ -699,6 +699,7 @@ public class Status extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_Btn_Desactivar_Estado_EmpleadoActionPerformed
 
+    // Metodo para colocar activado el estado de todas las secciones de empleado
     private void Btn_Activar_Estado_EmpleadoAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Activar_Estado_EmpleadoAdminActionPerformed
         int Selected_Row = Tbl_Empleados.getSelectedRow();
         String Selected_Item = (String) Jcb_Empleados.getSelectedItem();
